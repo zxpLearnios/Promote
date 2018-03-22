@@ -1,0 +1,19 @@
+PODS:
+  - Cartography (3.0.1)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - Cartography
+  - RxCocoa
+  - RxSwift
+
+SPEC CHECKSUMS:
+  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: cab462f5ac814086521d2e745e8f6b13312dc21a
+
+COCOAPODS: 1.4.0
