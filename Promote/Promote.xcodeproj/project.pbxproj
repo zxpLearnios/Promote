@@ -119,8 +119,8 @@
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
 				5566E93E2062697300600B3E /* Info.plist */,
-				5566E9742063561400600B3E /* Extension */,
 				5566E9782063561400600B3E /* Protocol */,
+				5566E9742063561400600B3E /* Extension */,
 			);
 			path = Promote;
 			sourceTree = "<group>";

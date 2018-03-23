@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             if name == "for_shake" {
                 // 1.
 //                animView.shake()
-                // 2.
+                // 2. UIView的实例的pt属性即为Promote<UIView>类型
                 animView.pt.shake()
 //                animView.pt.base.shake()
             } else if name == "for_scale" {

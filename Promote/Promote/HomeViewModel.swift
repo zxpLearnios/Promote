@@ -47,13 +47,13 @@ class HomeViewModel: NSObject {
             return "pwd:"+repwd!
         })
         
-        rePwdObserver = Observable.combineLatesultSelector: )
+//        rePwdObserver = Observable.combineLatesultSelector: )
 //        Observable.combineLatest(name.asObservable(), name.asObservable()) {_,_ in
 //
 //        }
     }
     
-    @objc private func verifyPassword(_ pwd: String, rePwd: String) -> Bool {
-        return ""
-    }
+//    @objc private func verifyPassword(_ pwd: String, rePwd: String) -> Bool {
+//        return ""
+//    }
 }
