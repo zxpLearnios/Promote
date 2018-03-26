@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5562B90F206396D700469923 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562B90E206396D700469923 /* HomeViewModel.swift */; };
+		555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D7BCD2068A80B0096CB50 /* PTModel.swift */; };
+		5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562B90E206396D700469923 /* PTHomeViewModel.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
 		5566E9382062697300600B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E9362062697300600B3E /* Main.storyboard */; };
@@ -15,9 +16,9 @@
 		5566E93D2062697300600B3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E93B2062697300600B3E /* LaunchScreen.storyboard */; };
 		5566E9482062697300600B3E /* PromoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9472062697300600B3E /* PromoteTests.swift */; };
 		5566E9532062697300600B3E /* PromoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9522062697300600B3E /* PromoteUITests.swift */; };
-		5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */; };
-		5566E97C2063561400600B3E /* AnimateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9792063561400600B3E /* AnimateProtocol.swift */; };
-		5566E97D2063561400600B3E /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* BaseProtocol.swift */; };
+		5566E97B2063561400600B3E /* PTPromoteProtocol+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9772063561400600B3E /* PTPromoteProtocol+UIView.swift */; };
+		5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9792063561400600B3E /* PTAnimateProtocol.swift */; };
+		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,8 @@
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
-		5562B90E206396D700469923 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		555D7BCD2068A80B0096CB50 /* PTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTModel.swift; sourceTree = "<group>"; };
+		5562B90E206396D700469923 /* PTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewModel.swift; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5566E9342062697300600B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +56,9 @@
 		5566E94E2062697300600B3E /* PromoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9522062697300600B3E /* PromoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoteUITests.swift; sourceTree = "<group>"; };
 		5566E9542062697300600B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
-		5566E9792063561400600B3E /* AnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateProtocol.swift; sourceTree = "<group>"; };
-		5566E97A2063561400600B3E /* BaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		5566E9772063561400600B3E /* PTPromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PTPromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
+		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
+		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +116,8 @@
 			children = (
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
-				5562B90E206396D700469923 /* HomeViewModel.swift */,
+				5562B90E206396D700469923 /* PTHomeViewModel.swift */,
+				555D7BCD2068A80B0096CB50 /* PTModel.swift */,
 				5566E9362062697300600B3E /* Main.storyboard */,
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
@@ -162,7 +165,7 @@
 		5566E9762063561400600B3E /* ProtocolExtension */ = {
 			isa = PBXGroup;
 			children = (
-				5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */,
+				5566E9772063561400600B3E /* PTPromoteProtocol+UIView.swift */,
 			);
 			path = ProtocolExtension;
 			sourceTree = "<group>";
@@ -170,8 +173,8 @@
 		5566E9782063561400600B3E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				5566E9792063561400600B3E /* AnimateProtocol.swift */,
-				5566E97A2063561400600B3E /* BaseProtocol.swift */,
+				5566E9792063561400600B3E /* PTAnimateProtocol.swift */,
+				5566E97A2063561400600B3E /* PTBaseProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 		5566E9272062697300600B3E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PT;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				TargetAttributes = {
@@ -387,12 +391,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
-				5562B90F206396D700469923 /* HomeViewModel.swift in Sources */,
+				5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
-				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
-				5566E97D2063561400600B3E /* BaseProtocol.swift in Sources */,
-				5566E97C2063561400600B3E /* AnimateProtocol.swift in Sources */,
+				5566E97B2063561400600B3E /* PTPromoteProtocol+UIView.swift in Sources */,
+				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
+				5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

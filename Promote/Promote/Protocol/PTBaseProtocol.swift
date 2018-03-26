@@ -11,22 +11,22 @@ import UIKit
 /**
  * 抽象协议
  */
-public protocol PromoteProtocol {
+public protocol PTPromoteProtocol {
 }
 
 /**
  * 扩展
  */
-public extension PromoteProtocol {
+public extension PTPromoteProtocol {
 
     // 获取遵循此协议的抽象类的实例
-    public var pt: Promote<Self> {
-        return Promote.init(self)
+    public var pt: PTPromote<Self> {
+        return PTPromote.init(self)
     }
     
-    public static var pt: Promote<Self>.Type {
+    public static var pt: PTPromote<Self>.Type {
         get {
-            return Promote<Self>.self
+            return PTPromote<Self>.self
         }
         set {
             // this enables using Reactive to "mutate" base type
@@ -37,7 +37,7 @@ public extension PromoteProtocol {
 /**
  * 抽象类型
  */
-public final class Promote<Base> {
+public final class PTPromote<Base> {
     var base: Base
 //    static var pt: Base> {
 //        self.base = base

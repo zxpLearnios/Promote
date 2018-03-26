@@ -9,7 +9,7 @@ import UIKit
 
 // 1.
 //extension UIView :ShakeAble {}
-extension UIView: PromoteProtocol {}
+extension UIView: PTPromoteProtocol {}
 
 // 2.
 //extension UIView: PromoteProtocol {
@@ -44,7 +44,7 @@ extension UIView: PromoteProtocol {}
 //}
 
 // 2. 扩展抽象类，给特定的类以特定的行为。 即必须是Promote类切遵循Base协议，此Base协议为UIView协议，即为Promote<UIView>类型扩展类、实例方法
-extension Promote where Base: UIView {
+extension PTPromote where Base: UIView {
  
     func shake() {
         base.layer.removeAllAnimations()

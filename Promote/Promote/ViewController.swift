@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pwdField: UITextField!
     
     @IBOutlet weak var rePwdField: UITextField!
-    let viewModel = HomeViewModel()
+    let viewModel = PTHomeViewModel()
     let disposeBag = DisposeBag()
     
     // 类型限定
