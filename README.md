@@ -1,2 +1,6 @@
 # Promote
-项目名字：提升
++
++[![License](http://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://github.com/tokijh/RxSwiftMVVMTableView/blob/master/LICENSE)
++[![Swift 4](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)
++
+

@@ -1,19 +1,25 @@
 PODS:
+  - Alamofire (4.7.0)
   - Cartography (3.0.1)
+  - PKHUD (5.0.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - Alamofire
   - Cartography
+  - PKHUD
   - RxCocoa
   - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: cab462f5ac814086521d2e745e8f6b13312dc21a
+PODFILE CHECKSUM: d17003d3259ec4e3462fe90fd801a90074cee2bb
 
 COCOAPODS: 1.4.0

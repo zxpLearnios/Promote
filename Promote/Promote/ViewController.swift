@@ -30,7 +30,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let a = [1, 2, 3]
+        let b = a[safe: 4]
 //        addSubviews()
+        
+        URLSession.shared.rx.json(url: URL.init(string: "")!)
         
         nameField.rx.text.orEmpty.bind(to: viewModel.name).disposed(by: disposeBag)
 //        pwdField.rx.text.orEmpty.bind(to: viewModel.pwd).disposed(by: disposeBag)
@@ -85,6 +89,15 @@ class ViewController: UIViewController {
         default :
             let _ = ""
         }
+    }
+}
+
+
+extension Array {
+    subscript(safe index: Int) -> Element? {
+//        debugPrint("111", indices)
+//        return indices ~= index ? self[index] : nil
+        return indices.contains(index) ? self[index] : nil
     }
 }
 
