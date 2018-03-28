@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewModel: NSObject {
+class PTHomeViewModel: NSObject {
 
 //    let name = Variable<String?>("")
     let name = BehaviorRelay<String>.init(value: "")

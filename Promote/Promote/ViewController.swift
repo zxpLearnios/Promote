@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pwdField: UITextField!
     
     @IBOutlet weak var rePwdField: UITextField!
-    let viewModel = HomeViewModel()
+    let viewModel = PTHomeViewModel()
     let disposeBag = DisposeBag()
     
     // 类型限定
@@ -30,7 +30,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let a = [1, 2, 3]
+        let b = a[safe: 4]
 //        addSubviews()
+        
         
         nameField.rx.text.orEmpty.bind(to: viewModel.name).disposed(by: disposeBag)
 //        pwdField.rx.text.orEmpty.bind(to: viewModel.pwd).disposed(by: disposeBag)
@@ -67,6 +70,8 @@ class ViewController: UIViewController {
     
     @IBAction func clickAction(_ sender: UIButton) {
         doAnimate(Enum.name("for_scale"))
+        let vc =  PTLoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // switch的判断分支，若无任何操作，则须加break
@@ -85,6 +90,15 @@ class ViewController: UIViewController {
         default :
             let _ = ""
         }
+    }
+}
+
+
+extension Array {
+    subscript(safe index: Int) -> Element? {
+//        debugPrint("111", indices)
+//        return indices ~= index ? self[index] : nil
+        return indices.contains(index) ? self[index] : nil
     }
 }
 

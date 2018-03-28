@@ -12,9 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Config.shareInstance.networkStatusChanged()
         return true
     }
 
@@ -43,3 +43,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    // MARK: 是否是首次使用\当前版本号与已存储的不一致, 只要不一致，就引导
+    private func isShowGuide() {
+        // 从沙盒里获取以前的版本号
+        let previousVersion = kUserDefaults.value(forKeyPath: ksaveAppVersionkey) as? String
+        // 当前版本号
+        let currentVersion = kbundle.infoDictionary![kappVersionKey] as! String
+        
+        let guideVC = PTGuideViewController()
+        if previousVersion == nil { // 首次使用
+            
+            // 存储版本号
+            kUserDefaults.setValue(currentVersion, forKey: ksaveAppVersionkey)
+            kUserDefaults.synchronize()
+            
+            window!.rootViewController = guideVC
+            window!.makeKeyAndVisible()
+        }else{
+            if previousVersion! != currentVersion { // 当前版本号与已存储的不一致
+                // 存储版本号
+                kUserDefaults.setValue(currentVersion, forKey: ksaveAppVersionkey)
+                kUserDefaults.synchronize()
+                
+                window!.rootViewController = guideVC
+                window!.makeKeyAndVisible()
+            }else{ // 当前版本号与已存储的一致 ，看是否已经登陆了
+                isHaveLogined()
+            }
+        }
+        
+    }
+   
+    func loadLoginPage() {
+        let loginVC =  l()
+        let nav = QLNavigationController.init(rootViewController: loginVC)
+        window!.rootViewController =  nav
+        window!.makeKeyAndVisible()
+    }
+}
