@@ -79,6 +79,7 @@ class PTLoginViewModel: NSObject {
                 return (self?.loginAction(name, password: pwd).observeOn(MainScheduler.instance).catchErrorJustReturn(false).asDriver(onErrorJustReturn: false))!
                 }.subscribe { (event) in
                     if let result = event.element {
+                        kUserDefaults.set("username", forKey: ksaveUserNamekey)
                         Config.showAlert(withMessage: result ? kloginSuccess : kloginFailed)
                     } else {
                         Config.showAlert(withMessage: kloginFailed)

@@ -7,20 +7,6 @@ import UIKit
 class PTGuideViewController: PTBaseViewController {
 
     let totalCount = 3
-
-    
-    var scrollView: UIScrollView = {
-        let scroller = UIScrollView()
-        scroller.frame = view.bounds
-        scroller.backgroundColor = UIColor.yellow
-        scroller.contentSize = CGSize(width: kwidth*CGFloat(totalCount), height: 0)
-        scroller.delegate = self
-        scroller.isPagingEnabled = true
-        scroller.bounces = false
-        scroller.bouncesZoom = false
-        scroller.showsVerticalScrollIndicator = false
-        scroller.showsHorizontalScrollIndicator = false
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +15,21 @@ class PTGuideViewController: PTBaseViewController {
     }
 
     
-    fileprivate func addScroller()  {
+    private func addScroller()  {
+        
+        let scrollView: UIScrollView = {
+            let scroller = UIScrollView()
+            scroller.frame = kBounds
+            scroller.backgroundColor = UIColor.yellow
+            scroller.contentSize = CGSize(width: kwidth*CGFloat(totalCount), height: 0)
+            scroller.delegate = self
+            scroller.isPagingEnabled = true
+            scroller.bounces = false
+            scroller.bouncesZoom = false
+            scroller.showsVerticalScrollIndicator = false
+            scroller.showsHorizontalScrollIndicator = false
+            return scroller
+        }()
         
         view.addSubview(scrollView)
         
@@ -66,7 +66,6 @@ class PTGuideViewController: PTBaseViewController {
     @objc private func convertedToRootController() {
         
     }
-
    
 }
 
