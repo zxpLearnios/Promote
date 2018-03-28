@@ -5,7 +5,7 @@
 //  Created by Bavaria on 27/03/2018.
 //  导入OC第三方
 
-#if os(ios)
+#if os(iOS)
 import RxCocoa
 import RxSwift
 import Cartography

@@ -18,4 +18,11 @@ extension UIViewController {
         return vc
     }
     
+    /**
+     * 给控制器添加子view
+     */
+    func addSubview(_ view: UIView) {
+        self.view.addSubview(view)
+    }
+    
 }

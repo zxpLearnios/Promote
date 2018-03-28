@@ -108,6 +108,8 @@ let khaveNoAccessToContact = "夸时贷应用已禁止读取本地通讯录，�
 
 /** 密码 提示 */
 let kpwdLenghtLimit = 14
+let kloginSuccess = "登录成功"
+let kloginFailed = "登录失败"
 let kphonePrompt = "请输入11位手机号！"
 let kidCardPrompt = "请输入身份证号！"
 let kverCodePrompt = "请输入验证码！"

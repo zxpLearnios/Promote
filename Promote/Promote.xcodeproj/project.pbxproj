@@ -25,6 +25,13 @@
 		5544B038206A3EA10073F5FF /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5544B037206A3EA10073F5FF /* readme.txt */; };
 		5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B039206A3FB30073F5FF /* UIView+extension.swift */; };
 		5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B03C206A41960073F5FF /* PTOCReference.swift */; };
+		5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553327E206B313E00F91354 /* PTBaseViewController.swift */; };
+		55533287206B812D00F91354 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* readme.txt */; };
+		5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553328A206B84A600F91354 /* PTGuideViewController.swift */; };
+		55533295206B84F900F91354 /* guideImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5553328F206B84F900F91354 /* guideImage1@2x.png */; };
+		55533296206B84F900F91354 /* guideImage1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533290206B84F900F91354 /* guideImage1@3x.png */; };
+		55533297206B84F900F91354 /* guideImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533291206B84F900F91354 /* guideImage2@2x.png */; };
+		55533298206B84F900F91354 /* guideImage2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533292206B84F900F91354 /* guideImage2@3x.png */; };
 		555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D7BCD2068A80B0096CB50 /* PTModel.swift */; };
 		5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562B90E206396D700469923 /* PTHomeViewModel.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
@@ -77,6 +84,13 @@
 		5544B037206A3EA10073F5FF /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		5544B039206A3FB30073F5FF /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extension.swift"; path = "../../../../../所有项目/夸时贷/KSDSVN的 16-12-5的 swift3 OK/QTimelyLoan/QTimelyLoan/Extension/UIView+extension.swift"; sourceTree = "<group>"; };
 		5544B03C206A41960073F5FF /* PTOCReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOCReference.swift; sourceTree = "<group>"; };
+		5553327E206B313E00F91354 /* PTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseViewController.swift; sourceTree = "<group>"; };
+		55533286206B812D00F91354 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		5553328A206B84A600F91354 /* PTGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGuideViewController.swift; sourceTree = "<group>"; };
+		5553328F206B84F900F91354 /* guideImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@2x.png"; sourceTree = "<group>"; };
+		55533290206B84F900F91354 /* guideImage1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@3x.png"; sourceTree = "<group>"; };
+		55533291206B84F900F91354 /* guideImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@2x.png"; sourceTree = "<group>"; };
+		55533292206B84F900F91354 /* guideImage2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@3x.png"; sourceTree = "<group>"; };
 		555D7BCD2068A80B0096CB50 /* PTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTModel.swift; sourceTree = "<group>"; };
 		5562B90E206396D700469923 /* PTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewModel.swift; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +211,7 @@
 				5544B023206A30D90073F5FF /* PTBankCardTextField.swift */,
 				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
 				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
+				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
 				5544B022206A30D90073F5FF /* PTCaptchaButton.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
 				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
@@ -214,6 +229,42 @@
 				5544B03C206A41960073F5FF /* PTOCReference.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		55533288206B848200F91354 /* Mudules */ = {
+			isa = PBXGroup;
+			children = (
+				55533289206B849F00F91354 /* Guide */,
+				5544AFF7206A21950073F5FF /* Login&Regist */,
+			);
+			path = Mudules;
+			sourceTree = "<group>";
+		};
+		55533289206B849F00F91354 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				5553328A206B84A600F91354 /* PTGuideViewController.swift */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		5553328C206B84D400F91354 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5553328D206B84E500F91354 /* GuideImage */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5553328D206B84E500F91354 /* GuideImage */ = {
+			isa = PBXGroup;
+			children = (
+				5553328F206B84F900F91354 /* guideImage1@2x.png */,
+				55533290206B84F900F91354 /* guideImage1@3x.png */,
+				55533291206B84F900F91354 /* guideImage2@2x.png */,
+				55533292206B84F900F91354 /* guideImage2@3x.png */,
+			);
+			path = GuideImage;
 			sourceTree = "<group>";
 		};
 		5566E9262062697300600B3E = {
@@ -241,6 +292,7 @@
 		5566E9312062697300600B3E /* Promote */ = {
 			isa = PBXGroup;
 			children = (
+				5553328C206B84D400F91354 /* Resources */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
 				5562B90E206396D700469923 /* PTHomeViewModel.swift */,
@@ -249,9 +301,10 @@
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
 				5566E93E2062697300600B3E /* Info.plist */,
+				55533286206B812D00F91354 /* readme.txt */,
+				55533288206B848200F91354 /* Mudules */,
 				5544B006206A2C160073F5FF /* Config */,
 				5544B005206A2C060073F5FF /* Tools */,
-				5544AFF7206A21950073F5FF /* Login&Regist */,
 				5566E9782063561400600B3E /* Protocol */,
 				5566E9742063561400600B3E /* Extension */,
 			);
@@ -440,8 +493,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55533298206B84F900F91354 /* guideImage2@3x.png in Resources */,
+				55533295206B84F900F91354 /* guideImage1@2x.png in Resources */,
+				55533287206B812D00F91354 /* readme.txt in Resources */,
+				55533296206B84F900F91354 /* guideImage1@3x.png in Resources */,
 				5544B038206A3EA10073F5FF /* readme.txt in Resources */,
 				5566E93D2062697300600B3E /* LaunchScreen.storyboard in Resources */,
+				55533297206B84F900F91354 /* guideImage2@2x.png in Resources */,
 				5566E93A2062697300600B3E /* Assets.xcassets in Resources */,
 				5566E9382062697300600B3E /* Main.storyboard in Resources */,
 			);
@@ -536,6 +594,7 @@
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
+				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
@@ -553,6 +612,7 @@
 				5544B032206A323C0073F5FF /* PTMsgLabel.swift in Sources */,
 				5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */,
 				5544B02D206A30FC0073F5FF /* Const.swift in Sources */,
+				5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */,
 				5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

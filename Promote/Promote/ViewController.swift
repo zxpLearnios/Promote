@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         let b = a[safe: 4]
 //        addSubviews()
         
-        URLSession.shared.rx.json(url: URL.init(string: "")!)
         
         nameField.rx.text.orEmpty.bind(to: viewModel.name).disposed(by: disposeBag)
 //        pwdField.rx.text.orEmpty.bind(to: viewModel.pwd).disposed(by: disposeBag)
@@ -71,6 +70,8 @@ class ViewController: UIViewController {
     
     @IBAction func clickAction(_ sender: UIButton) {
         doAnimate(Enum.name("for_scale"))
+        let vc =  PTLoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // switch的判断分支，若无任何操作，则须加break
