@@ -26,7 +26,7 @@
 		5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B039206A3FB30073F5FF /* UIView+extension.swift */; };
 		5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B03C206A41960073F5FF /* PTOCReference.swift */; };
 		5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553327E206B313E00F91354 /* PTBaseViewController.swift */; };
-		55533287206B812D00F91354 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* readme.txt */; };
+		55533287206B812D00F91354 /* khowledge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* khowledge.txt */; };
 		5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553328A206B84A600F91354 /* PTGuideViewController.swift */; };
 		55533295206B84F900F91354 /* guideImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5553328F206B84F900F91354 /* guideImage1@2x.png */; };
 		55533296206B84F900F91354 /* guideImage1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533290206B84F900F91354 /* guideImage1@3x.png */; };
@@ -85,7 +85,7 @@
 		5544B039206A3FB30073F5FF /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extension.swift"; path = "../../../../../所有项目/夸时贷/KSDSVN的 16-12-5的 swift3 OK/QTimelyLoan/QTimelyLoan/Extension/UIView+extension.swift"; sourceTree = "<group>"; };
 		5544B03C206A41960073F5FF /* PTOCReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOCReference.swift; sourceTree = "<group>"; };
 		5553327E206B313E00F91354 /* PTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseViewController.swift; sourceTree = "<group>"; };
-		55533286206B812D00F91354 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		55533286206B812D00F91354 /* khowledge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = khowledge.txt; sourceTree = "<group>"; };
 		5553328A206B84A600F91354 /* PTGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGuideViewController.swift; sourceTree = "<group>"; };
 		5553328F206B84F900F91354 /* guideImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@2x.png"; sourceTree = "<group>"; };
 		55533290206B84F900F91354 /* guideImage1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@3x.png"; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
 				5566E93E2062697300600B3E /* Info.plist */,
-				55533286206B812D00F91354 /* readme.txt */,
+				55533286206B812D00F91354 /* khowledge.txt */,
 				55533288206B848200F91354 /* Mudules */,
 				5544B006206A2C160073F5FF /* Config */,
 				5544B005206A2C060073F5FF /* Tools */,
@@ -495,7 +495,7 @@
 			files = (
 				55533298206B84F900F91354 /* guideImage2@3x.png in Resources */,
 				55533295206B84F900F91354 /* guideImage1@2x.png in Resources */,
-				55533287206B812D00F91354 /* readme.txt in Resources */,
+				55533287206B812D00F91354 /* khowledge.txt in Resources */,
 				55533296206B84F900F91354 /* guideImage1@3x.png in Resources */,
 				5544B038206A3EA10073F5FF /* readme.txt in Resources */,
 				5566E93D2062697300600B3E /* LaunchScreen.storyboard in Resources */,
