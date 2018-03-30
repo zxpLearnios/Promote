@@ -15,13 +15,15 @@ class PTLoginViewModel: NSObject {
     var password: Driver<String>!
 //    var loginBtnDriver: Driver<Void>!
     var loginTap: Observable<Void>!
-    var isLoginBtnEnable: Observable<Bool>!
+    var isLoginBtnEnable = Observable.just(false)
     var isAutoLogin: Driver<Bool>!
     
     /** 是否正在自动登录中 */
-    var isAutoLogining: Driver<Bool>!
+//    var isAutoLogining: Driver<Bool>!
+    /** 代替了Variable，且自身可以不停地赋新值，从而实现信号的发送 */
+    var isAutoLogining: BehaviorRelay<Bool>!
     /** 是否自动登录完成  */
-    var isAutoLoginCompleted: Driver<Bool>!
+    var isAutoLoginCompleted: Variable<Bool>!
     
     var emptyObservable = BehaviorRelay<(String, String)>.just(("", ""))
     
@@ -37,8 +39,9 @@ class PTLoginViewModel: NSObject {
         self.loginTap = loginTap
         // 初始化
         self.isAutoLogin = Driver<Bool>.just(autoLogin)
-        self.isAutoLogining = Driver.just(false)
-        self.isAutoLoginCompleted = Driver.of(false)
+//        self.isAutoLogining = Driver.just(false)
+        self.isAutoLogining = BehaviorRelay.init(value: false)
+        self.isAutoLoginCompleted = Variable.init(false)
         
         
         // 合并用户名 密码, 使用Driver
@@ -57,15 +60,12 @@ class PTLoginViewModel: NSObject {
                 if name == "123" && pwd == "123" {
                     debugPrint("=-=-=-=-=")
                     // 发送信息
-//                    delay(3, callback: {
-                        self.isAutoLogining = Driver.just(true)
-//                    })
-                    
-                    delay(7, callback: {
-                        self.isAutoLoginCompleted = Driver.just(true)
+                     self.isAutoLogining.accept(true)
+                    delay(3, callback: {
+                        self.isAutoLoginCompleted.value = true
                     })
-                } else {
-                    self.isAutoLogining = Driver.just(false)
+                } else {  
+                    self.isAutoLogining.accept(false)
                 }
                 
             }).disposed(by: kdisposeBag)

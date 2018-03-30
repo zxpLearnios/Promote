@@ -80,10 +80,11 @@ public final class PTTest: NSObject {
 //        behaviorReplay.accept("这是订阅后发送的信息")
         
         var e = Driver<Bool>.just(false)
-        e.asObservable().single().subscribe({ e in
+        _ = e.asObservable().subscribe({ e in
             debugPrint("---", e.element)
         })
-        e = Driver<Bool>.just(true)
+        
+        
     }
     
 }
