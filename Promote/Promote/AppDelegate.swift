@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        isShowGuide()
-        Config.shareInstance.networkStatusChanged()
+        _ = PTTest()
+//        isShowGuide()
+//        Config.shareInstance.networkStatusChanged()
+//        Delay(10) {
+//            debugPrint("========")
+//        }
         return true
     }
 

@@ -23,6 +23,7 @@ class PTLoginViewModel: NSObject {
     /** 是否自动登录完成  */
     var isAutoLoginCompleted: Driver<Bool>!
     
+    var emptyObservable = BehaviorRelay<(String, String)>.just(("", ""))
     
     /**
      * loginTap： 点击事件
@@ -46,23 +47,28 @@ class PTLoginViewModel: NSObject {
         
         if autoLogin {
             // driver 不需要添加share(1)
-            let emptyObservable = Observable<Void>.empty()
-            _ = emptyObservable.withLatestFrom(usernameAndPwd).map({ tuple in
-                return tuple
-            }).subscribe({
-                if let name = $0.element?.name, let pwd = $0.element?.passwrod {
-                    if name == "123" && pwd == "123" {
-                        // 发送信息
-                        self.isAutoLogining = Driver.of(true)
-                        
-                        defer {
-                            self.isAutoLoginCompleted = Driver.of(true)
-                        }
-                    } else {
-                        self.isAutoLogining = Driver.just(false)
-                    }
+    
+            let usernameAndPwdDriver = Driver.combineLatest(username, pwd) { ($0, $1)
+            }
+            
+            usernameAndPwd.asObservable().subscribe({
+                let (name, pwd) = ($0.element?.name, $0.element?.passwrod)
+                
+                if name == "123" && pwd == "123" {
+                    debugPrint("=-=-=-=-=")
+                    // 发送信息
+//                    delay(3, callback: {
+                        self.isAutoLogining = Driver.just(true)
+//                    })
+                    
+                    delay(7, callback: {
+                        self.isAutoLoginCompleted = Driver.just(true)
+                    })
+                } else {
+                    self.isAutoLogining = Driver.just(false)
                 }
-            })
+                
+            }).disposed(by: kdisposeBag)
             
         } else { // 使用Observable
             self.isLoginBtnEnable = Observable.combineLatest(username.asObservable(), pwd.asObservable(), resultSelector: { (name, pwd) in
@@ -79,7 +85,9 @@ class PTLoginViewModel: NSObject {
                 return (self?.loginAction(name, password: pwd).observeOn(MainScheduler.instance).catchErrorJustReturn(false).asDriver(onErrorJustReturn: false))!
                 }.subscribe { (event) in
                     if let result = event.element {
-                        kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                        if result {
+                            kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                        }
                         Config.showAlert(withMessage: result ? kloginSuccess : kloginFailed)
                     } else {
                         Config.showAlert(withMessage: kloginFailed)

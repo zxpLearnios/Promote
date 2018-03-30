@@ -32,8 +32,11 @@
 		55533296206B84F900F91354 /* guideImage1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533290206B84F900F91354 /* guideImage1@3x.png */; };
 		55533297206B84F900F91354 /* guideImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533291206B84F900F91354 /* guideImage2@2x.png */; };
 		55533298206B84F900F91354 /* guideImage2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533292206B84F900F91354 /* guideImage2@3x.png */; };
+		555431BC206DD27100CC2CC0 /* PTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431BB206DD27100CC2CC0 /* PTError.swift */; };
+		555431C3206E1F2400CC2CC0 /* PTGlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431C2206E1F2400CC2CC0 /* PTGlobalFunction.swift */; };
+		555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTTest.swift */; };
+		555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFE206CD45E00DECE85 /* Array+extension.swift */; };
 		555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D7BCD2068A80B0096CB50 /* PTModel.swift */; };
-		5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562B90E206396D700469923 /* PTHomeViewModel.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
 		5566E9382062697300600B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E9362062697300600B3E /* Main.storyboard */; };
@@ -91,8 +94,11 @@
 		55533290206B84F900F91354 /* guideImage1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@3x.png"; sourceTree = "<group>"; };
 		55533291206B84F900F91354 /* guideImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@2x.png"; sourceTree = "<group>"; };
 		55533292206B84F900F91354 /* guideImage2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@3x.png"; sourceTree = "<group>"; };
+		555431BB206DD27100CC2CC0 /* PTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTError.swift; sourceTree = "<group>"; };
+		555431C2206E1F2400CC2CC0 /* PTGlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTGlobalFunction.swift; sourceTree = "<group>"; };
+		555CBDFC206CD3E700DECE85 /* PTTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTest.swift; sourceTree = "<group>"; };
+		555CBDFE206CD45E00DECE85 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		555D7BCD2068A80B0096CB50 /* PTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTModel.swift; sourceTree = "<group>"; };
-		5562B90E206396D700469923 /* PTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewModel.swift; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5566E9342062697300600B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		5544B005206A2C060073F5FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B023206A30D90073F5FF /* PTBankCardTextField.swift */,
 				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
 				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
@@ -217,6 +224,7 @@
 				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
 				5544B01E206A30D80073F5FF /* PTTabBarController.swift */,
 				5544B031206A323C0073F5FF /* PTMsgLabel.swift */,
+				555431C2206E1F2400CC2CC0 /* PTGlobalFunction.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -295,8 +303,8 @@
 				5553328C206B84D400F91354 /* Resources */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
-				5562B90E206396D700469923 /* PTHomeViewModel.swift */,
 				555D7BCD2068A80B0096CB50 /* PTModel.swift */,
+				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
 				5566E9362062697300600B3E /* Main.storyboard */,
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
@@ -345,6 +353,7 @@
 				5544B02F206A31DF0073F5FF /* UIViewController+extension.swift */,
 				5544B033206A35570073F5FF /* UIColor+extension.swift */,
 				5544B037206A3EA10073F5FF /* readme.txt */,
+				555CBDFE206CD45E00DECE85 /* Array+extension.swift */,
 			);
 			path = OtherExtension;
 			sourceTree = "<group>";
@@ -591,6 +600,7 @@
 				5544B02A206A30D90073F5FF /* PTBankCardTextField.swift in Sources */,
 				5544B025206A30D90073F5FF /* PTTabBarController.swift in Sources */,
 				555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */,
+				555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */,
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
@@ -598,14 +608,16 @@
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
-				5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */,
 				5544B030206A31DF0073F5FF /* UIViewController+extension.swift in Sources */,
+				555431C3206E1F2400CC2CC0 /* PTGlobalFunction.swift in Sources */,
+				555431BC206DD27100CC2CC0 /* PTError.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
 				5544B029206A30D90073F5FF /* PTCaptchaButton.swift in Sources */,
+				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
 				5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */,
 				5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */,
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,

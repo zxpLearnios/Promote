@@ -6,19 +6,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-
 class ViewController: UIViewController {
 
-    @IBOutlet weak var lab: UILabel!
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var pwdField: UITextField!
-    
-    @IBOutlet weak var rePwdField: UITextField!
-    let viewModel = PTHomeViewModel()
-    let disposeBag = DisposeBag()
-    
     // 类型限定
     enum Enum {
         case name(String)
@@ -30,17 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let a = [1, 2, 3]
-        let b = a[safe: 4]
+//        let a = [1, 2, 3]
+//        let b = a[safe: 4]
 //        addSubviews()
-        
-        
-        nameField.rx.text.orEmpty.bind(to: viewModel.name).disposed(by: disposeBag)
-//        pwdField.rx.text.orEmpty.bind(to: viewModel.pwd).disposed(by: disposeBag)
-        
-        viewModel.nameObserver.subscribe(onNext: { [weak self] (str) in
-            self?.lab.text = str
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
     }
 
@@ -93,13 +74,5 @@ class ViewController: UIViewController {
     }
 }
 
-
-extension Array {
-    subscript(safe index: Int) -> Element? {
-//        debugPrint("111", indices)
-//        return indices ~= index ? self[index] : nil
-        return indices.contains(index) ? self[index] : nil
-    }
-}
 
 

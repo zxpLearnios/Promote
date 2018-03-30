@@ -10,7 +10,7 @@ import RxSwift
 
 let ApiType = "dev://..."
 
-let disposeBag = DisposeBag()
+let kdisposeBag = DisposeBag()
 
 let kenterBackgroundTimeLimit:Double =  30 * 60 // 5.0 // 30 * 60
 
