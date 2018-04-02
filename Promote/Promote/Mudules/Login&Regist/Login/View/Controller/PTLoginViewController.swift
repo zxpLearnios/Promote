@@ -50,23 +50,27 @@ class PTLoginViewController: PTBaseViewController {
         
         // （1）我们可以使用 doOn 方法来监听事件的生命周期，它会在每一次事件发送前被调用。  （2）同时它和 subscribe 一样，可以通过不同的block 回调处理不同类型的 event。比如：      do(onNext:)方法就是在subscribe(onNext:) 前调用     而 do(onCompleted:) 方法则会在 subscribe(onCompleted:) 前面调用。
         
-        viewModel.isAutoLogining.drive(onNext: { [unowned self] res in
-            self.autoLoginLab.text = res ? "正在自动登录中..." : ""
+//        viewModel.isAutoLogining.drive(onNext: { [unowned self] res in
+//            self.autoLoginLab.text = res ? "正在自动登录中..." : ""
+//        }).disposed(by: disposeBag)
+        viewModel.isAutoLogining.subscribe({ [unowned self] res in
+            self.autoLoginLab.text = res.element! ? "正在自动登录中..." : ""
         }).disposed(by: disposeBag)
         
-        viewModel.isAutoLoginCompleted.drive(onNext: { [unowned self] res in
-            self.autoLoginLab.text = res ? "自动登录完成" : ""
+        viewModel.isAutoLoginCompleted.asObservable().subscribe({ [unowned self] res in
+            self.autoLoginLab.text = res.element! ? "自动登录完成" : ""
             kUserDefaults.set("username", forKey: ksaveUserNamekey)
             kUserDefaults.synchronize()
             kAppDelegate.makeSureTheMainRouter()
         }).disposed(by: disposeBag)
         
-        delay(5) { [unowned self] in
-            self.viewModel.isAutoLogin.drive(onNext: {  (result) in
-                self.loginBtn.isHidden = result
-//                self.autoLoginLab.isHidden = !result
-            }).disposed(by: self.disposeBag)
+        delay(5) { [weak self] in
+            self?.viewModel.isAutoLogin.drive(onNext: {  (result) in
+                self?.loginBtn.isHidden = result
+                self?.autoLoginLab.isHidden = !result
+            }).disposed(by: (self?.disposeBag)!)
         }
+        
         
     }
 
