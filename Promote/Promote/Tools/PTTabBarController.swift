@@ -9,7 +9,6 @@ import UIKit
 class PTTabBarController: UITabBarController {
 
     
-    // MARK: 做一些事
     class  func doInit() {
         
         // 所有的字控制器的tabbarItem的 字体属性
@@ -28,25 +27,17 @@ class PTTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 选中时的title和图片颜色  252,116,6
-        self.tabBar.tintColor = UIColor.RGBA(252, g: 116, b: 6, a: 1)
-        // -1
-//        self.delegate = self
+        
         self.view.backgroundColor = UIColor.white
-        
-        // 1， 加子控制器
-//        let homeVC = QLHomePageViewController()
-//        self.addChildViewControllers(homeVC, title: "首页", itemImage: UIImage(named: "arrow_down"), itemSelectedImage: UIImage(named: "arrow_down"))
-//
-//        let accountVC = QLAccountViewController()
-//        self.addChildViewControllers(accountVC, title: "账户", itemImage: UIImage(named: "arrow_down"), itemSelectedImage: UIImage(named: "arrow_down"))
-//
-//        let helpVC = QLHelpViewController()
-//        self.addChildViewControllers(helpVC, title: "帮助", itemImage: UIImage(named: "arrow_down"), itemSelectedImage: UIImage(named: "arrow_down"))
-        
-      
-//        self.tabBar.alpha = 0.8
-        
+        self.tabBar.alpha = 0.8
+        self.tabBar.tintColor = UIColor.RGBA(252, g: 116, b: 6, a: 1)
+    
+        let homeVc = PTHomeViewController()
+        self.addChildViewControllers(homeVc, title: "Home", itemImageUnicode: "\u{e617}")
+        let OtherVc = PTOtherViewController()
+        self.addChildViewControllers(OtherVc, title: "Other", itemImageUnicode: "\u{e618}")
+        let myVc = PTMyViewController()
+        self.addChildViewControllers(myVc, title: "Mine", itemImageUnicode: "\u{e61a}")
         
     }
     
@@ -73,22 +64,17 @@ class PTTabBarController: UITabBarController {
     }
     
     // MARK: 添加子控制器
-    fileprivate func addChildViewControllers(_ viewController:UIViewController, title:String, itemImage:UIImage?, itemSelectedImage:UIImage?){
+    private func addChildViewControllers(_ viewController: UIViewController, title: String, itemImageUnicode code: String){
         
-//        let newItemSelectdImg = itemSelectedImage?.imageWithRenderingMode(.AlwaysOriginal)
+        let normalImg = UIImage.if_image(withUniCode: code, fontSize: 21)
+        let selectImg = UIImage.if_image(withUniCode: code, familyName: "iconfont", fontSize: 21, fontColor: UIColor.orange)
         
-//        let iconImgNormal = UIImage.if_image(withUniCode: title, fontSize: 21)
-//        let iconSelectImg = UIImage.if_image(withUniCode: title, familyName: "iconfont", fontSize: 21, fontColor: UIColor.orangeColor())
+        let newItemNormalImg = normalImg.withRenderingMode(.alwaysOriginal)
+        let newItemSelectdImg = selectImg.withRenderingMode(.automatic) // 这也是默认样式
         
-        var unicode = ""
-        if title == "首页" {
-            unicode = "\u{e617}"
-        }else if title == "账户" {
-            unicode = "\u{e61a}"
-        }else if title == "帮助"{
-            unicode = "\u{e618}"
-        }
-        
+        viewController.title = title
+        viewController.tabBarItem.image = newItemNormalImg
+        viewController.tabBarItem.selectedImage = newItemSelectdImg
         
         let nav = UINavigationController.init(rootViewController: viewController)
         self.addChildViewController(nav)

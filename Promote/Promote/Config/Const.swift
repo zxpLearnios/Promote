@@ -7,10 +7,12 @@
 
 import UIKit
 import RxSwift
+import Alamofire
 
 let ApiType = "dev://..."
 
-let kdisposeBag = DisposeBag()
+let kreachabilityManager = NetworkReachabilityManager.init()
+//let kdisposeBag = DisposeBag()
 
 let kenterBackgroundTimeLimit:Double =  30 * 60 // 5.0 // 30 * 60
 

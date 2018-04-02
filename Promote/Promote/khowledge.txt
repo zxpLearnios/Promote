@@ -11,4 +11,10 @@ var autoLoginLab: UILabel = {
 }   则每次调用都会重新创建一次
 
 
-2.
+2. iPhone X 尺寸：
+#define IS_IPHONE_X (Screen_Height == 812.0f) ? YES : NO
+
+1.导航栏高度 88 非非IPoneX手机为64
+2.状态栏高度44 非IPoneX手机为20
+3.tabar高度83 非IPhoneX手机为49  如下图所示；
+

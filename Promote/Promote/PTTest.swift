@@ -7,7 +7,10 @@
 //  所有的类型都可以受到订阅后的 所有发出的信息
 // 只要是同一个信号发送了error或completed，则之后再发送的信息都不会被订阅者观察到了
 //  订阅规则： （如果代码在一个地方的话）一般是先发信息，后订阅，
-
+/**
+ // dispose(by 后会对disposeBag弱引用，故disposeBag应该所谓当前实例的属性，随当前实例一起销毁，从而使得RxSwift在此实例上绑定的资源得到释放。
+    labObservable.bindTo(self.lab.rx.text).dispose(by: disposeBag)
+ */
 
 import UIKit
 import RxCocoa
@@ -16,11 +19,14 @@ import RxSwift
 
 public final class PTTest: NSObject {
     
+    var db:DisposeBag?
     override init() {
         super.init()
         
+//        disposeBag = DisposeBag()
+        db = DisposeBag()
         // 0.
-//        let publicSubject = PublishSubject<String>.init()
+        let publicSubject = PublishSubject<String>.init()
 //        publicSubject.onNext("begin-onNext") // 不会打印
 //        publicSubject.onCompleted()
 //        // 此类型，不会受到订阅前的信息(其中error和completed除外)
@@ -30,6 +36,25 @@ public final class PTTest: NSObject {
 //
 //        publicSubject.onNext("goon-onNext")
 //        publicSubject.onCompleted()
+        // 0.1 每隔3s发射一组信号，信号个数<=3，不足的话则发射[]， //每缓存3个元素则组合起来一起发出。如果3s内不够3个也会发出（有几个发几个，一个都没有发空数组 []）
+//        publicSubject.buffer(timeSpan: 3, count: 3, scheduler: MainScheduler.instance).subscribe({
+//            debugPrint("publicSubject buffer发射：", $0)
+//        }).disposed(by: disposeBag)
+//
+//        delay(2) {
+//            publicSubject.onNext("a")
+//            publicSubject.onNext("b")
+//            publicSubject.onNext("c")
+//        }
+//        delay(6) {
+//            publicSubject.onNext("1")
+//            publicSubject.onNext("2")
+//            publicSubject.onNext("3")
+//        }
+//        delay(10) {
+//            publicSubject.onCompleted()
+//        }
+        
         
         // 1. ReplaySubject和PublishSubject不同的是：Observer有可能接收到订阅之前 发出的bufferSize个信息，其中error和completed信息也可以收到但不算个数,
 //        let replaySubject = ReplaySubject<Any>.create(bufferSize: 2)
@@ -79,12 +104,20 @@ public final class PTTest: NSObject {
 //        }).disposed(by: kdisposeBag)
 //        behaviorReplay.accept("这是订阅后发送的信息")
         
-        var e = Driver<Bool>.just(false)
-        e.asObservable().single().subscribe({ e in
-            debugPrint("---", e.element)
-        })
-        e = Driver<Bool>.just(true)
+//        var e = Driver<Bool>.just(false)
+//        e.asObservable().single().subscribe({ e in
+//            debugPrint("---", e.element)
+//        })
+//        e = Driver<Bool>.just(true)
     }
     
+    // 的Init方法，用处不太大，因为有时属性会在deinit几秒后才会销毁
+    deinit {
+        let obj = self
+        delay(3) {
+            let a = (obj.db == nil)
+            debugPrint("PTTest 销毁了, )", a)
+        }
+    }
 }
 
