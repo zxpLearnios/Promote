@@ -55,7 +55,6 @@ class PTLoginViewModel: NSObject {
                 let (name, pwd) = ($0.element?.name, $0.element?.passwrod)
                 
                 if name == "123" && pwd == "123" {
-                    debugPrint("=-=-=-=-=")
                     // 发送信息
 //                    delay(3, callback: {
                         self.isAutoLogining = Driver.just(true)
@@ -68,7 +67,7 @@ class PTLoginViewModel: NSObject {
                     self.isAutoLogining = Driver.just(false)
                 }
                 
-            }).disposed(by: kdisposeBag)
+            }).disposed(by: disposeBag)
             
         } else { // 使用Observable
             self.isLoginBtnEnable = Observable.combineLatest(username.asObservable(), pwd.asObservable(), resultSelector: { (name, pwd) in
@@ -87,6 +86,7 @@ class PTLoginViewModel: NSObject {
                     if let result = event.element {
                         if result {
                             kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                            kUserDefaults.synchronize()
                         }
                         Config.showAlert(withMessage: result ? kloginSuccess : kloginFailed)
                     } else {

@@ -54,7 +54,7 @@ extension AppDelegate {
     
     // MARK: 是否是首次使用\当前版本号与已存储的不一致, 只要不一致，就引导
     private func isShowGuide() {
-        let previousVersion = kUserDefaults.value(forKeyPath: ksaveAppVersionkey) as? String
+        let previousVersion = kUserDefaults.value(forKey: ksaveAppVersionkey) as? String
         let currentVersion = kbundle.infoDictionary![kappVersionKey] as! String
         
         let guideVC = PTGuideViewController()

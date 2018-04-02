@@ -51,26 +51,27 @@ class PTLoginViewController: PTBaseViewController {
         // （1）我们可以使用 doOn 方法来监听事件的生命周期，它会在每一次事件发送前被调用。  （2）同时它和 subscribe 一样，可以通过不同的block 回调处理不同类型的 event。比如：      do(onNext:)方法就是在subscribe(onNext:) 前调用     而 do(onCompleted:) 方法则会在 subscribe(onCompleted:) 前面调用。
         
         viewModel.isAutoLogining.drive(onNext: { [unowned self] res in
-            
-            debugPrint("123234", res)
             self.autoLoginLab.text = res ? "正在自动登录中..." : ""
-        }).disposed(by: kdisposeBag)
+        }).disposed(by: disposeBag)
         
         viewModel.isAutoLoginCompleted.drive(onNext: { [unowned self] res in
-            
             self.autoLoginLab.text = res ? "自动登录完成" : ""
-        }).disposed(by: kdisposeBag)
+            kUserDefaults.set("username", forKey: ksaveUserNamekey)
+            kUserDefaults.synchronize()
+            kAppDelegate.makeSureTheMainRouter()
+        }).disposed(by: disposeBag)
         
         delay(5) { [unowned self] in
             self.viewModel.isAutoLogin.drive(onNext: {  (result) in
-                debugPrint("000", Thread.current, result, self.autoLoginLab, self.autoLoginLab.text)
                 self.loginBtn.isHidden = result
 //                self.autoLoginLab.isHidden = !result
-            }).disposed(by: kdisposeBag)
+            }).disposed(by: self.disposeBag)
         }
         
     }
 
+    
+    
 
     private func addSubviews() {
         addSubview(usernameField)

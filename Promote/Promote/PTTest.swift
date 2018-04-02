@@ -109,6 +109,7 @@ public final class PTTest: NSObject {
 //            debugPrint("---", e.element)
 //        })
 //        e = Driver<Bool>.just(true)
+        
     }
     
     // 的Init方法，用处不太大，因为有时属性会在deinit几秒后才会销毁
@@ -120,4 +121,6 @@ public final class PTTest: NSObject {
         }
     }
 }
+
+
 
