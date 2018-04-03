@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27EF20738C2C00A6561C /* UIView+extension.swift */; };
+		551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F120738CDD00A6561C /* UIViewController+extension.swift */; };
+		551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F320738F2500A6561C /* PTTitleScroller.swift */; };
+		551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */; };
+		551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */; };
 		5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */; };
 		5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B001206A22F80073F5FF /* PTLoginModel.swift */; };
 		5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B003206A23070073F5FF /* PTLoginViewModel.swift */; };
@@ -19,11 +24,9 @@
 		5544B02A206A30D90073F5FF /* PTBankCardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B023206A30D90073F5FF /* PTBankCardTextField.swift */; };
 		5544B02D206A30FC0073F5FF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B02B206A30FC0073F5FF /* Const.swift */; };
 		5544B02E206A30FC0073F5FF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B02C206A30FC0073F5FF /* Config.swift */; };
-		5544B030206A31DF0073F5FF /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B02F206A31DF0073F5FF /* UIViewController+extension.swift */; };
 		5544B032206A323C0073F5FF /* PTMsgLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B031206A323C0073F5FF /* PTMsgLabel.swift */; };
 		5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B033206A35570073F5FF /* UIColor+extension.swift */; };
 		5544B038206A3EA10073F5FF /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5544B037206A3EA10073F5FF /* readme.txt */; };
-		5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B039206A3FB30073F5FF /* UIView+extension.swift */; };
 		5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B03C206A41960073F5FF /* PTOCReference.swift */; };
 		5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553327E206B313E00F91354 /* PTBaseViewController.swift */; };
 		55533287206B812D00F91354 /* khowledge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* khowledge.txt */; };
@@ -83,6 +86,11 @@
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
+		551E27EF20738C2C00A6561C /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		551E27F120738CDD00A6561C /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		551E27F320738F2500A6561C /* PTTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScroller.swift; sourceTree = "<group>"; };
+		551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCollectionView.swift; sourceTree = "<group>"; };
+		551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCell.swift; sourceTree = "<group>"; };
 		5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewController.swift; sourceTree = "<group>"; };
 		5544B001206A22F80073F5FF /* PTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginModel.swift; sourceTree = "<group>"; };
 		5544B003206A23070073F5FF /* PTLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewModel.swift; sourceTree = "<group>"; };
@@ -95,11 +103,9 @@
 		5544B023206A30D90073F5FF /* PTBankCardTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBankCardTextField.swift; sourceTree = "<group>"; };
 		5544B02B206A30FC0073F5FF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		5544B02C206A30FC0073F5FF /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		5544B02F206A31DF0073F5FF /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		5544B031206A323C0073F5FF /* PTMsgLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTMsgLabel.swift; sourceTree = "<group>"; };
 		5544B033206A35570073F5FF /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		5544B037206A3EA10073F5FF /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		5544B039206A3FB30073F5FF /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extension.swift"; path = "../../../../../所有项目/夸时贷/KSDSVN的 16-12-5的 swift3 OK/QTimelyLoan/QTimelyLoan/Extension/UIView+extension.swift"; sourceTree = "<group>"; };
 		5544B03C206A41960073F5FF /* PTOCReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOCReference.swift; sourceTree = "<group>"; };
 		5553327E206B313E00F91354 /* PTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseViewController.swift; sourceTree = "<group>"; };
 		55533286206B812D00F91354 /* khowledge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = khowledge.txt; sourceTree = "<group>"; };
@@ -173,6 +179,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		551E27F52073919800A6561C /* TitleScroller */ = {
+			isa = PBXGroup;
+			children = (
+				551E27F320738F2500A6561C /* PTTitleScroller.swift */,
+				551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */,
+				551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */,
+			);
+			path = TitleScroller;
+			sourceTree = "<group>";
+		};
 		5544AFF7206A21950073F5FF /* Login&Regist */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +258,7 @@
 		5544B005206A2C060073F5FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				551E27F52073919800A6561C /* TitleScroller */,
 				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
 				555431C2206E1F2400CC2CC0 /* PTFunction.swift */,
@@ -421,9 +438,9 @@
 			children = (
 				555B8F822071E09C008646B5 /* String+extension.swift */,
 				555B8F802071E09C008646B5 /* UIImage+extension.swift */,
+				551E27EF20738C2C00A6561C /* UIView+extension.swift */,
+				551E27F120738CDD00A6561C /* UIViewController+extension.swift */,
 				555B8F812071E09C008646B5 /* UIFont+extension.swift */,
-				5544B039206A3FB30073F5FF /* UIView+extension.swift */,
-				5544B02F206A31DF0073F5FF /* UIViewController+extension.swift */,
 				5544B033206A35570073F5FF /* UIColor+extension.swift */,
 				5544B037206A3EA10073F5FF /* readme.txt */,
 				555CBDFE206CD45E00DECE85 /* Array+extension.swift */,
@@ -688,16 +705,20 @@
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
 				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
+				551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */,
+				551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
-				5544B030206A31DF0073F5FF /* UIViewController+extension.swift in Sources */,
 				555B8F832071E09C008646B5 /* UIImage+extension.swift in Sources */,
 				555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */,
+				551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */,
 				555B8F842071E09C008646B5 /* UIFont+extension.swift in Sources */,
 				555431BC206DD27100CC2CC0 /* PTError.swift in Sources */,
+				551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
+				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
@@ -705,7 +726,6 @@
 				5544B029206A30D90073F5FF /* PTCaptchaButton.swift in Sources */,
 				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
 				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
-				5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */,
 				5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */,
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,
 				555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */,

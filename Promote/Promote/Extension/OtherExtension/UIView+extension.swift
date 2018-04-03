@@ -30,7 +30,32 @@ extension UIView{
         
     }
     
-    
+    /**  宽度 */
+    var width: CGFloat {
+        get {
+            return self.frame.width
+        }
+        set {
+            var frame = self.frame
+            frame.size.width = newValue
+            self.frame = frame
+        }
+
+    }
+
+    /**  高度 */
+    var height: CGFloat {
+        get {
+            return self.frame.height
+        }
+        set {
+            var frame = self.frame
+            frame.size.height = newValue
+            self.frame = frame
+        }
+
+    }
+
     
     
 }
