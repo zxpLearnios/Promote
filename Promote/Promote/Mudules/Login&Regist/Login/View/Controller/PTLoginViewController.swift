@@ -64,7 +64,7 @@ class PTLoginViewController: PTBaseViewController {
             kAppDelegate.makeSureTheMainRouter()
         }).disposed(by: disposeBag)
         
-        delay(5) { [weak self] in
+        delay(2) { [weak self] in
             self?.viewModel.isAutoLogin.drive(onNext: {  (result) in
                 self?.loginBtn.isHidden = result
                 self?.autoLoginLab.isHidden = !result

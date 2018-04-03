@@ -76,6 +76,9 @@ class PTHomeViewController: PTBaseViewController, UICollectionViewDataSource, UI
     }
     
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
     
 }
 
@@ -155,7 +158,7 @@ class Cell: UITableViewCell {
         }
         
 //        contentView.layer.anchorPoint = CGPoint.zero
-//        titleLab.layer.transform = CATransform3DMakeRotation(CGFloat (M_PI / 2), 0, 0, 1)
+//        titleLab.layer.transform = CATransform3DMakeRotation(CGFloat (Double.pi / 2), 0, 0, 1)
     }
     
     required init?(coder aDecoder: NSCoder) {
