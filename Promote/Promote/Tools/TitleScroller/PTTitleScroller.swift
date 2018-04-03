@@ -17,43 +17,45 @@ class PTTitleScroller: UIView {
     var leftDisplayLink: CADisplayLink!
     //    var rightDisplayLink: CADisplayLink!
     let mutiply: CGFloat = 3
+    let cellId = "item_key"
     
-    let ary: [String] = {
-        let a = ["000", "1111111", "22", "333", "444", "555555", "6", "7777"]
-        return a
-    }()
+    var dataSource = [""] {
+        didSet {
+            guard leftCv == nil else {
+                leftCv.reloadData()
+                return
+            }
+            
+            doThing()
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.cyan
-        doThing()
     }
     
-    func doThing() {
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func doThing() {
         
-        leftCv = PTTitleScrollerCollectionView.init(frame: CGRect.init(x: 0, y: 200, width: kwidth, height: 100))
+        leftCv = PTTitleScrollerCollectionView.init(frame: bounds)
+        addSubview(leftCv)
+        
         leftCv.delegate = self
         leftCv.dataSource = self
-//        if #available(iOS 11.0, *) {
-//            leftCv.contentInsetAdjustmentBehavior = .never
-//        } else {
+        if #available(iOS 11.0, *) {
+            leftCv.contentInsetAdjustmentBehavior = .never
+        } else {
 //            self.automaticallyAdjustsScrollViewInsets = false
-//        }
+        }
         
-        leftCv.register(PTTitleScrollerCell.self, forCellWithReuseIdentifier: "item_key")
-        kwindow?.addSubview(leftCv)
+        leftCv.register(PTTitleScrollerCell.self, forCellWithReuseIdentifier: cellId)
         
-        
-        //        rightCv = CollectionView.init(frame: CGRect.init(x: kwidth, y:  leftCv.y, width: kwidth, height: 100))
-        //
-        //        rightCv.delegate = self
-        //        rightCv.dataSource = self
-        //        rightCv.register(Item.self, forCellWithReuseIdentifier: "item_key")
-        //        kwindow?.addSubview(rightCv)
-        let fl = leftCv.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        
-        let lastElement = ary.last!
+        let lastElement = dataSource.last!
         let leftPadding = CGFloat(lastElement.count * 15 + 30 * 2) + 30
         //        leftCv.setContentOffset(CGPoint.init(x: leftPadding, y: 0), animated: false)
         self.leftCv.contentInset = UIEdgeInsets.init(top: 0, left: -leftPadding, bottom: 0, right: 0)
@@ -61,14 +63,9 @@ class PTTitleScroller: UIView {
         
         delay(0.5) {
             self.startTimer()
-            
-            //            self.leftCv.scrollToItem(at: IndexPath.init(row: 3, section: 0), at: .left, animated: false)
-            
         }
         
-        
     }
-    
     
     
     
@@ -98,31 +95,6 @@ class PTTitleScroller: UIView {
         
     }
     
-    @objc func handleRightCollectionViewAnimate() {
-        DispatchQueue.main.async {
-            let x = self.rightCv.contentOffset.x
-            self.rightCv.setContentOffset(CGPoint.init(x: x + self.mutiply, y: 0), animated: false)
-            
-        }
-        
-    }
-    
-    @objc func handleRightCollectionViewFrameAnimate() {
-        DispatchQueue.main.async {
-            
-            //            let time = kwidth / (self.mutiply * 60)
-            //            UIView.animate(withDuration: TimeInterval(time), animations: {
-            //                self.leftCv.layer.transform = CATransform3DMakeTranslation(-kwidth, 0, 0)
-            //
-            //                self.rightCv.layer.transform = CATransform3DMakeTranslation(-kwidth, 0, 0)
-            //            }, completion: { res in
-            //                self.leftCv.removeFromSuperview()
-            //                self.rightCv.frame = CGRect.init(x: 0, y: 200, width: kwidth, height: 100)
-            //            })
-            
-        }
-        
-    }
     
     
     private func calculateLength(withString str: String) -> CGFloat {
@@ -132,18 +104,18 @@ class PTTitleScroller: UIView {
         return 1
     }
     
-    func lastCell(_ cell: UICollectionViewCell, atIndexPath index: Int)  {
-        if index % 2 == 0 { // 最后一个cell从将要显示到完全显示所需要的时间
-            let offsetX = leftCv.contentOffset.x
-            
-            
-            //            righttDisplayLink.add(to: RunLoop.main, forMode: .commonModes)
-            //            righttDisplayLink.invalidate()
-            
-            
-        } else {
-            
-        }
+    private func lastCell(_ cell: UICollectionViewCell, atIndexPath index: Int)  {
+//        if index % 2 == 0 { // 最后一个cell从将要显示到完全显示所需要的时间
+//            let offsetX = leftCv.contentOffset.x
+//
+//
+//            //            righttDisplayLink.add(to: RunLoop.main, forMode: .commonModes)
+//            //            righttDisplayLink.invalidate()
+//
+//
+//        } else {
+//
+//        }
         
         //        let frame = leftCv.convert(cell.frame, to: kwindow!)
         
@@ -182,17 +154,10 @@ class PTTitleScroller: UIView {
     }
     
     
-    
-   
-    
     deinit {
         if leftDisplayLink != nil {
             leftDisplayLink.invalidate()
             leftDisplayLink = nil
-        }
-        if rightDisplayLink != nil {
-            rightDisplayLink.invalidate()
-            rightDisplayLink = nil
         }
         
     }
@@ -208,14 +173,14 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
         var width: CGFloat
         
         if indexPath.item == 0 {
-            let lastElement = ary.last!
+            let lastElement = dataSource.last!
             width = CGFloat(lastElement.count * 15 + 30 * 2)
         } else {
-            let currentElement = ary[index - 1]
+            let currentElement = dataSource[index - 1]
             width = CGFloat(currentElement.count * 15 + 30 * 2)
             
         }
-        return CGSize.init(width: width, height: 50)
+        return CGSize.init(width: width, height: height)
     }
     
     //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -229,12 +194,14 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ary.count + 1
+        return dataSource.count + 1
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let cl = scrollView as! PTTitleScrollerCollectionView
-        let lastIndexPath = IndexPath.init(row: ary.count, section: 0)
+        let lastIndexPath = IndexPath.init(row: dataSource.count, section: 0)
         let lastCell = cl.cellForItem(at: lastIndexPath)
         guard lastCell != nil else {
             return
@@ -248,14 +215,14 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
             if kBounds.contains(maxPoint) { // 最后一个cell已经完全显示
                 stopTimer()
                 
-                let lastElement = ary.last!
+                let lastElement = dataSource.last!
                 // item宽度 + item之间的间距
                 let leftPadding = CGFloat(lastElement.count * 15 + 30 * 2) + 30
                 //                leftCv.setContentOffset(CGPoint.init(x: leftPadding, y: 0), animated: false)
-                //                leftCv.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .left)
-                leftCv.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .left, animated: false)
+                leftCv.selectItem(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .left)
+//                leftCv.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .left, animated: false)
                 
-                delay(0.05, callback: { [weak self] in
+                delay(0.25, callback: { [weak self] in
                     self?.startTimer()
                 })
             }
@@ -265,12 +232,12 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
     
     // 先调
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item_key", for: indexPath) as! PTTitleScrollerCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PTTitleScrollerCell
         
         if indexPath.item == 0 {
-            cell.titleLab.text = ary.last
+            cell.titleLab.text = dataSource.last
         } else {
-            cell.titleLab.text = ary[indexPath.item - 1]
+            cell.titleLab.text = dataSource[indexPath.item - 1]
         }
         
         return cell
@@ -281,7 +248,7 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if collectionView == leftCv {
-            if indexPath.item == ary.count {
+            if indexPath.item == dataSource.count {
                 
                 lastCell(cell, atIndexPath: indexPath.item)
                 //                debugPrint("将要展示最后一个cell \(cell)")
