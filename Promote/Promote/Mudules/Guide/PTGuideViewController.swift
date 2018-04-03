@@ -64,7 +64,7 @@ class PTGuideViewController: PTBaseViewController {
     }
     
     @objc private func convertedToRootController() {
-        
+        kAppDelegate.makeSureTheMainRouter()
     }
    
 }

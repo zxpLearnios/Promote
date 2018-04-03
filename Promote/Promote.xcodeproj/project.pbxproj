@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55377D03206BDA9C00C54B88 /* PTUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55377D02206BDA9C00C54B88 /* PTUserDefaults.swift */; };
 		5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */; };
 		5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B001206A22F80073F5FF /* PTLoginModel.swift */; };
 		5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B003206A23070073F5FF /* PTLoginViewModel.swift */; };
@@ -27,14 +26,31 @@
 		5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B039206A3FB30073F5FF /* UIView+extension.swift */; };
 		5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B03C206A41960073F5FF /* PTOCReference.swift */; };
 		5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553327E206B313E00F91354 /* PTBaseViewController.swift */; };
-		55533287206B812D00F91354 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* readme.txt */; };
+		55533287206B812D00F91354 /* khowledge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* khowledge.txt */; };
 		5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553328A206B84A600F91354 /* PTGuideViewController.swift */; };
 		55533295206B84F900F91354 /* guideImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5553328F206B84F900F91354 /* guideImage1@2x.png */; };
 		55533296206B84F900F91354 /* guideImage1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533290206B84F900F91354 /* guideImage1@3x.png */; };
 		55533297206B84F900F91354 /* guideImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533291206B84F900F91354 /* guideImage2@2x.png */; };
 		55533298206B84F900F91354 /* guideImage2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533292206B84F900F91354 /* guideImage2@3x.png */; };
+		555431BC206DD27100CC2CC0 /* PTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431BB206DD27100CC2CC0 /* PTError.swift */; };
+		555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431C2206E1F2400CC2CC0 /* PTFunction.swift */; };
+		555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */; };
+		555B8F792071DF63008646B5 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F722071DF63008646B5 /* demo.css */; };
+		555B8F7A2071DF63008646B5 /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F732071DF63008646B5 /* iconfont.woff */; };
+		555B8F7B2071DF63008646B5 /* iconfont.eot in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F742071DF63008646B5 /* iconfont.eot */; };
+		555B8F7C2071DF63008646B5 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F752071DF63008646B5 /* iconfont.ttf */; };
+		555B8F7D2071DF63008646B5 /* iconfont.svg in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F762071DF63008646B5 /* iconfont.svg */; };
+		555B8F7E2071DF63008646B5 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F772071DF63008646B5 /* demo.html */; };
+		555B8F7F2071DF63008646B5 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = 555B8F782071DF63008646B5 /* iconfont.css */; };
+		555B8F832071E09C008646B5 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F802071E09C008646B5 /* UIImage+extension.swift */; };
+		555B8F842071E09C008646B5 /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F812071E09C008646B5 /* UIFont+extension.swift */; };
+		555B8F852071E09C008646B5 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F822071E09C008646B5 /* String+extension.swift */; };
+		555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F89207201ED008646B5 /* PTHomeViewController.swift */; };
+		555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8B207201F8008646B5 /* PTOtherViewController.swift */; };
+		555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8D20720202008646B5 /* PTMyViewController.swift */; };
+		555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTTest.swift */; };
+		555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFE206CD45E00DECE85 /* Array+extension.swift */; };
 		555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D7BCD2068A80B0096CB50 /* PTModel.swift */; };
-		5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562B90E206396D700469923 /* PTHomeViewModel.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
 		5566E9382062697300600B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E9362062697300600B3E /* Main.storyboard */; };
@@ -67,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
-		55377D02206BDA9C00C54B88 /* PTUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTUserDefaults.swift; sourceTree = "<group>"; };
 		5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewController.swift; sourceTree = "<group>"; };
 		5544B001206A22F80073F5FF /* PTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginModel.swift; sourceTree = "<group>"; };
 		5544B003206A23070073F5FF /* PTLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewModel.swift; sourceTree = "<group>"; };
@@ -87,14 +102,31 @@
 		5544B039206A3FB30073F5FF /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extension.swift"; path = "../../../../../所有项目/夸时贷/KSDSVN的 16-12-5的 swift3 OK/QTimelyLoan/QTimelyLoan/Extension/UIView+extension.swift"; sourceTree = "<group>"; };
 		5544B03C206A41960073F5FF /* PTOCReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOCReference.swift; sourceTree = "<group>"; };
 		5553327E206B313E00F91354 /* PTBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseViewController.swift; sourceTree = "<group>"; };
-		55533286206B812D00F91354 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		55533286206B812D00F91354 /* khowledge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = khowledge.txt; sourceTree = "<group>"; };
 		5553328A206B84A600F91354 /* PTGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGuideViewController.swift; sourceTree = "<group>"; };
 		5553328F206B84F900F91354 /* guideImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@2x.png"; sourceTree = "<group>"; };
 		55533290206B84F900F91354 /* guideImage1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@3x.png"; sourceTree = "<group>"; };
 		55533291206B84F900F91354 /* guideImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@2x.png"; sourceTree = "<group>"; };
 		55533292206B84F900F91354 /* guideImage2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@3x.png"; sourceTree = "<group>"; };
+		555431BB206DD27100CC2CC0 /* PTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTError.swift; sourceTree = "<group>"; };
+		555431C2206E1F2400CC2CC0 /* PTFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTFunction.swift; sourceTree = "<group>"; };
+		555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extention.swift"; sourceTree = "<group>"; };
+		555B8F722071DF63008646B5 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		555B8F732071DF63008646B5 /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		555B8F742071DF63008646B5 /* iconfont.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.eot; sourceTree = "<group>"; };
+		555B8F752071DF63008646B5 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		555B8F762071DF63008646B5 /* iconfont.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iconfont.svg; sourceTree = "<group>"; };
+		555B8F772071DF63008646B5 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		555B8F782071DF63008646B5 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		555B8F802071E09C008646B5 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		555B8F812071E09C008646B5 /* UIFont+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		555B8F822071E09C008646B5 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+extension.swift"; path = "../../../../../所有项目/夸时贷/KSDSVN的 16-12-5的 swift3 OK/QTimelyLoan/QTimelyLoan/Extension/String+extension.swift"; sourceTree = "<group>"; };
+		555B8F89207201ED008646B5 /* PTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewController.swift; sourceTree = "<group>"; };
+		555B8F8B207201F8008646B5 /* PTOtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOtherViewController.swift; sourceTree = "<group>"; };
+		555B8F8D20720202008646B5 /* PTMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTMyViewController.swift; sourceTree = "<group>"; };
+		555CBDFC206CD3E700DECE85 /* PTTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTest.swift; sourceTree = "<group>"; };
+		555CBDFE206CD45E00DECE85 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		555D7BCD2068A80B0096CB50 /* PTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTModel.swift; sourceTree = "<group>"; };
-		5562B90E206396D700469923 /* PTHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewModel.swift; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5566E9342062697300600B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,16 +242,17 @@
 		5544B005206A2C060073F5FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5544B023206A30D90073F5FF /* PTBankCardTextField.swift */,
-				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
-				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
-				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
-				5544B022206A30D90073F5FF /* PTCaptchaButton.swift */,
+				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
-				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
-				5544B01E206A30D80073F5FF /* PTTabBarController.swift */,
+				555431C2206E1F2400CC2CC0 /* PTFunction.swift */,
 				5544B031206A323C0073F5FF /* PTMsgLabel.swift */,
-				55377D02206BDA9C00C54B88 /* PTUserDefaults.swift */,
+				5544B022206A30D90073F5FF /* PTCaptchaButton.swift */,
+				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
+				5544B023206A30D90073F5FF /* PTBankCardTextField.swift */,
+				5544B01E206A30D80073F5FF /* PTTabBarController.swift */,
+				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
+				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
+				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -237,6 +270,9 @@
 		55533288206B848200F91354 /* Mudules */ = {
 			isa = PBXGroup;
 			children = (
+				555B8F86207201A6008646B5 /* Home */,
+				555B8F88207201C8008646B5 /* Other */,
+				555B8F87207201C8008646B5 /* My */,
 				55533289206B849F00F91354 /* Guide */,
 				5544AFF7206A21950073F5FF /* Login&Regist */,
 			);
@@ -254,6 +290,7 @@
 		5553328C206B84D400F91354 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				555B8F712071DF63008646B5 /* IconfontResource */,
 				5553328D206B84E500F91354 /* GuideImage */,
 			);
 			path = Resources;
@@ -268,6 +305,44 @@
 				55533292206B84F900F91354 /* guideImage2@3x.png */,
 			);
 			path = GuideImage;
+			sourceTree = "<group>";
+		};
+		555B8F712071DF63008646B5 /* IconfontResource */ = {
+			isa = PBXGroup;
+			children = (
+				555B8F722071DF63008646B5 /* demo.css */,
+				555B8F732071DF63008646B5 /* iconfont.woff */,
+				555B8F742071DF63008646B5 /* iconfont.eot */,
+				555B8F752071DF63008646B5 /* iconfont.ttf */,
+				555B8F762071DF63008646B5 /* iconfont.svg */,
+				555B8F772071DF63008646B5 /* demo.html */,
+				555B8F782071DF63008646B5 /* iconfont.css */,
+			);
+			path = IconfontResource;
+			sourceTree = "<group>";
+		};
+		555B8F86207201A6008646B5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				555B8F89207201ED008646B5 /* PTHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		555B8F87207201C8008646B5 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				555B8F8D20720202008646B5 /* PTMyViewController.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		555B8F88207201C8008646B5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				555B8F8B207201F8008646B5 /* PTOtherViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		5566E9262062697300600B3E = {
@@ -295,16 +370,16 @@
 		5566E9312062697300600B3E /* Promote */ = {
 			isa = PBXGroup;
 			children = (
+				5553328C206B84D400F91354 /* Resources */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
-				5562B90E206396D700469923 /* PTHomeViewModel.swift */,
 				555D7BCD2068A80B0096CB50 /* PTModel.swift */,
+				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
 				5566E9362062697300600B3E /* Main.storyboard */,
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
 				5566E93E2062697300600B3E /* Info.plist */,
-				55533286206B812D00F91354 /* readme.txt */,
-				5553328C206B84D400F91354 /* Resources */,
+				55533286206B812D00F91354 /* khowledge.txt */,
 				55533288206B848200F91354 /* Mudules */,
 				5544B006206A2C160073F5FF /* Config */,
 				5544B005206A2C060073F5FF /* Tools */,
@@ -344,10 +419,15 @@
 		5566E9752063561400600B3E /* OtherExtension */ = {
 			isa = PBXGroup;
 			children = (
+				555B8F822071E09C008646B5 /* String+extension.swift */,
+				555B8F802071E09C008646B5 /* UIImage+extension.swift */,
+				555B8F812071E09C008646B5 /* UIFont+extension.swift */,
 				5544B039206A3FB30073F5FF /* UIView+extension.swift */,
 				5544B02F206A31DF0073F5FF /* UIViewController+extension.swift */,
 				5544B033206A35570073F5FF /* UIColor+extension.swift */,
 				5544B037206A3EA10073F5FF /* readme.txt */,
+				555CBDFE206CD45E00DECE85 /* Array+extension.swift */,
+				555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */,
 			);
 			path = OtherExtension;
 			sourceTree = "<group>";
@@ -498,12 +578,19 @@
 			files = (
 				55533298206B84F900F91354 /* guideImage2@3x.png in Resources */,
 				55533295206B84F900F91354 /* guideImage1@2x.png in Resources */,
-				55533287206B812D00F91354 /* readme.txt in Resources */,
+				555B8F7D2071DF63008646B5 /* iconfont.svg in Resources */,
+				555B8F7F2071DF63008646B5 /* iconfont.css in Resources */,
+				55533287206B812D00F91354 /* khowledge.txt in Resources */,
+				555B8F7E2071DF63008646B5 /* demo.html in Resources */,
+				555B8F7A2071DF63008646B5 /* iconfont.woff in Resources */,
 				55533296206B84F900F91354 /* guideImage1@3x.png in Resources */,
 				5544B038206A3EA10073F5FF /* readme.txt in Resources */,
 				5566E93D2062697300600B3E /* LaunchScreen.storyboard in Resources */,
+				555B8F792071DF63008646B5 /* demo.css in Resources */,
 				55533297206B84F900F91354 /* guideImage2@2x.png in Resources */,
+				555B8F7C2071DF63008646B5 /* iconfont.ttf in Resources */,
 				5566E93A2062697300600B3E /* Assets.xcassets in Resources */,
+				555B8F7B2071DF63008646B5 /* iconfont.eot in Resources */,
 				5566E9382062697300600B3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,26 +681,35 @@
 				5544B02A206A30D90073F5FF /* PTBankCardTextField.swift in Sources */,
 				5544B025206A30D90073F5FF /* PTTabBarController.swift in Sources */,
 				555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */,
+				555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */,
+				555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */,
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
+				555B8F852071E09C008646B5 /* String+extension.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
 				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
-				5562B90F206396D700469923 /* PTHomeViewModel.swift in Sources */,
 				5544B030206A31DF0073F5FF /* UIViewController+extension.swift in Sources */,
+				555B8F832071E09C008646B5 /* UIImage+extension.swift in Sources */,
+				555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */,
+				555B8F842071E09C008646B5 /* UIFont+extension.swift in Sources */,
+				555431BC206DD27100CC2CC0 /* PTError.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
+				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
 				5544B029206A30D90073F5FF /* PTCaptchaButton.swift in Sources */,
+				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
+				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
 				5544B03A206A3FB30073F5FF /* UIView+extension.swift in Sources */,
 				5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */,
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,
+				555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */,
 				5544B032206A323C0073F5FF /* PTMsgLabel.swift in Sources */,
-				55377D03206BDA9C00C54B88 /* PTUserDefaults.swift in Sources */,
 				5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */,
 				5544B02D206A30FC0073F5FF /* Const.swift in Sources */,
 				5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */,
@@ -703,7 +799,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

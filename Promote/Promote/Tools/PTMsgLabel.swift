@@ -12,9 +12,10 @@ class PTMsgLabel: UILabel {
 
     
     private var count: Int = 0
-    private var height: CGFloat {
-        return 18
-    }
+    
+//    internal var height: CGFloat {
+//        return 18
+//    }
     
     private var _errorMessage: String?
     /** 错误信息 */
@@ -34,7 +35,7 @@ class PTMsgLabel: UILabel {
                     //执行动画, 改变Y值  没用
                     UIView.animate(withDuration: 0.6, animations: { () -> Void in
                         self.count = 1
-                        self.transform = CGAffineTransform(translationX: 0, y: self.height)
+                        self.transform = CGAffineTransform(translationX: 0, y: 18)
                         }, completion: { (finished) -> Void in
                             UIView.animate(withDuration: 0.6, delay: 2, options:.curveLinear, animations: { () -> Void in
                                 self.transform = CGAffineTransform.identity

@@ -48,6 +48,9 @@ class Config: NSObject {
         alert.title = title
         alert.message = message
         
+//        let alertVc = UIAlertController()
+//        alertVc.
+        
         if cancleTitle != nil {   
             alert.addButton(withTitle: cancleTitle)
         }
@@ -55,15 +58,13 @@ class Config: NSObject {
         alert.addButton(withTitle: confirmTitle)
         
         alert.show()
-       
     }
     
     
     /** 网络状态的改变   */
     func networkStatusChanged(){
         // 监听网络状态的改变
-        let manager = NetworkReachabilityManager.init()
-        manager?.listener = { status in
+        kreachabilityManager?.listener = { status in
             if status == .notReachable {
                 self.opeateStuatusBar("没有网络/断网")
             }else if status == .unknown {
@@ -76,10 +77,10 @@ class Config: NSObject {
                 }
             }
         }
-        manager?.startListening()
+        kreachabilityManager?.startListening()
         
         if msgLabel == nil {
-            msgLabel = PTMsgLabel.init(frame: CGRect(x: 0, y: -18, width: kwidth, height: 18))
+            msgLabel = PTMsgLabel.init(frame: CGRect(x: 0, y: 8, width: kwidth, height: 18))
         }
         kwindow?.addSubview(msgLabel)
     }

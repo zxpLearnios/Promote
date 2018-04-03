@@ -15,14 +15,17 @@ class PTLoginViewModel: NSObject {
     var password: Driver<String>!
 //    var loginBtnDriver: Driver<Void>!
     var loginTap: Observable<Void>!
-    var isLoginBtnEnable: Observable<Bool>!
+    var isLoginBtnEnable = Observable.just(false)
     var isAutoLogin: Driver<Bool>!
     
     /** 是否正在自动登录中 */
-    var isAutoLogining: Driver<Bool>!
+//    var isAutoLogining: Driver<Bool>!
+    /** 代替了Variable，且自身可以不停地赋新值，从而实现信号的发送 */
+    var isAutoLogining: BehaviorRelay<Bool>!
     /** 是否自动登录完成  */
-    var isAutoLoginCompleted: Driver<Bool>!
+    var isAutoLoginCompleted: Variable<Bool>!
     
+    var emptyObservable = BehaviorRelay<(String, String)>.just(("", ""))
     
     /**
      * loginTap： 点击事件
@@ -36,8 +39,9 @@ class PTLoginViewModel: NSObject {
         self.loginTap = loginTap
         // 初始化
         self.isAutoLogin = Driver<Bool>.just(autoLogin)
-        self.isAutoLogining = Driver.just(false)
-        self.isAutoLoginCompleted = Driver.of(false)
+//        self.isAutoLogining = Driver.just(false)
+        self.isAutoLogining = BehaviorRelay.init(value: false)
+        self.isAutoLoginCompleted = Variable.init(false)
         
         
         // 合并用户名 密码, 使用Driver
@@ -46,23 +50,24 @@ class PTLoginViewModel: NSObject {
         
         if autoLogin {
             // driver 不需要添加share(1)
-            let emptyObservable = Observable<Void>.empty()
-            _ = emptyObservable.withLatestFrom(usernameAndPwd).map({ tuple in
-                return tuple
-            }).subscribe({
-                if let name = $0.element?.name, let pwd = $0.element?.passwrod {
-                    if name == "123" && pwd == "123" {
-                        // 发送信息
-                        self.isAutoLogining = Driver.of(true)
-                        
-                        defer {
-                            self.isAutoLoginCompleted = Driver.of(true)
-                        }
-                    } else {
-                        self.isAutoLogining = Driver.just(false)
-                    }
+    
+            let usernameAndPwdDriver = Driver.combineLatest(username, pwd) { ($0, $1)
+            }
+            
+            usernameAndPwd.asObservable().subscribe({
+                let (name, pwd) = ($0.element?.name, $0.element?.passwrod)
+                
+                if name == "123" && pwd == "123" {
+                    // 发送信息
+                     self.isAutoLogining.accept(true)
+                    delay(3, callback: {
+                        self.isAutoLoginCompleted.value = true
+                    })
+                } else {  
+                    self.isAutoLogining.accept(false)
                 }
-            })
+                
+            }).disposed(by: disposeBag)
             
         } else { // 使用Observable
             self.isLoginBtnEnable = Observable.combineLatest(username.asObservable(), pwd.asObservable(), resultSelector: { (name, pwd) in
@@ -79,7 +84,10 @@ class PTLoginViewModel: NSObject {
                 return (self?.loginAction(name, password: pwd).observeOn(MainScheduler.instance).catchErrorJustReturn(false).asDriver(onErrorJustReturn: false))!
                 }.subscribe { (event) in
                     if let result = event.element {
-                        kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                        if result {
+                            kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                            kUserDefaults.synchronize()
+                        }
                         Config.showAlert(withMessage: result ? kloginSuccess : kloginFailed)
                     } else {
                         Config.showAlert(withMessage: kloginFailed)

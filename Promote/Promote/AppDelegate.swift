@@ -13,8 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+//        autoreleasepool {
+//            debugPrint("fsdfsdffsd \(a)")
+//        }
+//        _  = PTTest()
+        
         isShowGuide()
         Config.shareInstance.networkStatusChanged()
+        
         return true
     }
 
@@ -47,7 +54,7 @@ extension AppDelegate {
     
     // MARK: 是否是首次使用\当前版本号与已存储的不一致, 只要不一致，就引导
     private func isShowGuide() {
-        let previousVersion = kUserDefaults.value(forKeyPath: ksaveAppVersionkey) as? String
+        let previousVersion = kUserDefaults.value(forKey: ksaveAppVersionkey) as? String
         let currentVersion = kbundle.infoDictionary![kappVersionKey] as! String
         
         let guideVC = PTGuideViewController()
@@ -66,7 +73,7 @@ extension AppDelegate {
                 window!.makeKeyAndVisible()
             }else{
                 if isHaveLogined() {
-//                    loadHomePage()
+                    loadHomePage()
                 } else {
                     loadLoginPage()
                 }
@@ -80,10 +87,25 @@ extension AppDelegate {
         return !(username == nil)
     }
     
-    func loadLoginPage() {
+    private func loadLoginPage() {
         let loginVC =  PTLoginViewController()
         let nav = UINavigationController.init(rootViewController: loginVC)
         window!.rootViewController =  nav
         window!.makeKeyAndVisible()
+    }
+    
+    private func loadHomePage() {
+        let loginVC =  PTTabBarController()
+        let nav = UINavigationController.init(rootViewController: loginVC)
+        window!.rootViewController =  nav
+        window!.makeKeyAndVisible()
+    }
+    
+    func makeSureTheMainRouter() {
+        if isHaveLogined() {
+            loadHomePage()
+        } else {
+            loadLoginPage()
+        }
     }
 }
