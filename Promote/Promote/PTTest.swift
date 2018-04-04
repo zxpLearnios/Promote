@@ -120,7 +120,7 @@ public final class PTTest: NSObject {
     }
    
     private func testAllFilter() {
-        let observable = Observable.of(1, 2, 3, 2, 2, 4)
+        let observable = Observable.of(1, 2, 3, 2, 2, 5, 4)
 //        observable.subscribe({
 //            debugPrint("打印observable的所有事件", $0)
 //        }).disposed(by: disposeBag)
@@ -137,11 +137,85 @@ public final class PTTest: NSObject {
 //            debugPrint("打印observable的所有事件", $0)
 //        }).disposed(by: disposeBag)
         
-        observable.single { (res) -> Bool in
-            return  res >= 2
-        }.subscribe({
-            debugPrint("打印observable的被single过滤后第一个的事件，没有则发送error", $0)
-        }).disposed(by: disposeBag)
+        // 1. 限制只发送一次事件，或者满足条件的第一个事件。  如果存在有多个事件或者没有事件都会发出一个 error 事件。  如果只有一个事件，则不会发出 error事件
+//        observable.single { (res) -> Bool in
+//            return  res >= 2
+//        }.subscribe({
+//            debugPrint("打印observable的被single过滤后第一个的事件，没有则发送error \($0)")
+//        }).disposed(by: disposeBag)
+        
+        // 2. 只处理在指定位置的事件
+//        observable.elementAt(4).subscribe({
+//            debugPrint("打印observable的被elementAt过滤后的事件\($0)")
+//        }).disposed(by: disposeBag)
+        
+        // 3. 该操作符可以忽略掉所有的元素，只发出 error或completed 事件。如果我们并不关心 Observable 的任何元素，只想知道 Observable 在什么时候终止，那就可以使用 ignoreElements 操作符
+//        observable.ignoreElements().subscribe({
+//            debugPrint("打印observable的被ignoreElements过滤后的终止事件\($0)")
+//        }).disposed(by: disposeBag)
+
+        // 4. take操作符
+        /**
+         1. take: 实现仅发送 Observable 序列中的前 n 个事件，在满足数量之后会自动 .completed
+         2. takeLast: 仅发送 Observable序列中的后 n 个事件
+         3.
+         */
+//        var a =  BehaviorRelay.init(value: 1)
+//        // a 不能为nil，只要a发送一次事件后，observable经takeUtil过滤后只会发出终止事件（error\complete）
+//        observable.takeUntil(a).subscribe({
+//            debugPrint("打印observable的被takeUntil过滤后的事件\($0)")
+//        }).disposed(by: disposeBag)
+//        
+//        a.accept(2)
+//        a.accept(3)
+//
+//        a.subscribe({
+//            debugPrint("将observable的生命周期交由a来控制,此时a的事件为： \($0)")
+//        }).disposed(by: disposeBag)
+        
+        // 5. skip: 跳过源 Observable 序列发出的前 n 个事件。
+//        observable.skip(4).subscribe({
+//            debugPrint("打印observable的被skip过滤后的事件 \($0)")
+//        }).disposed(by: disposeBag)
+        
+        // 6. sample
+//        let observable1 = Variable.init(1)
+//        let observable2 = BehaviorSubject<String>.init(value: "one")
+//       // 将observable2 并对\绑对 到observable1，当observable2发送事件时，observable1的观察者会收到1发送的最新的一个信息
+//        observable1.asObservable().sample(observable2).subscribe({
+//            debugPrint("打印observable1的被sample过滤后的事件 \($0)")
+//        }).disposed(by: disposeBag)
+//
+//        observable2.onNext("two")
+//        observable1.value = 2
+//        observable1.value = 3
+//        observable1.value = 4
+//        observable2.onNext("three")
+//        observable1.value = 5
+//        observable2.onCompleted()
+        
+        // 7. debounce 操作符可以用来过滤掉高频产生的元素，它只会发出这种元素：该元素产生后，一段时间内没有新元素产生。即队列中的元素如果和下一个元素的间隔 小于等于 了指定的时间间隔，那么这个元素将被过滤掉。 常用在用户输入的时候，不需要每个字母敲进去都发送一个事件，而是稍等一下取最后一个事件。
+        
+//        observable.debounce(3, scheduler: MainScheduler.instance).subscribe({
+//            debugPrint("打印observable的被debounce过滤后的事件\($0)")
+//        }).disposed(by: disposeBag)
+//        let vtArray = [
+//            ["value" : 1, "timeInterval": 0.5],
+//            ["value" : 2, "timeInterval": 0.8],
+//            ["value" : 3, "timeInterval": 1.2],
+//            ["value" : 4, "timeInterval": 1.5],
+//            ["value" : 5, "timeInterval": 2]
+//        ]
+//
+//        Observable.from(vtArray).flatMap({ dic in
+//            return Observable.of(Int(dic["value"]!)).delaySubscription(dic["timeInterval"]!, scheduler: MainScheduler.instance)
+//        }).debounce(0.3, scheduler: MainScheduler.instance).subscribe({
+//            debugPrint("打印observable的被debounce过滤后的事件\($0)")
+//        }).disposed(by: disposeBag)
+//
+        
+        // 8. 
+
         
     }
     
@@ -150,7 +224,7 @@ public final class PTTest: NSObject {
         let obj = self.db
         delay(3) {
             let a = (obj == nil)
-            debugPrint("PTTest 销毁了, )", a)
+//            debugPrint("PTTest 销毁了, )", a)
         }
     }
 }

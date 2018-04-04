@@ -198,19 +198,17 @@ class Config: NSObject {
                         let count = phoneAry.count
                         for i in 0..<count {
                             let labelValue = phoneAry[i]
-                            if let phoneNumber = labelValue.value as? CNPhoneNumber {
-                                let phone = (phoneNumber.stringValue) ?? ""
-                                //  // 拼接所有的手机号  ， 多个手机号之间有逗号分开
-                                if phoneAry.count == 1 {
-                                    phoneStr = phone
-                                }else {
-                                    if i == count - 1 {
-                                        phoneStr += phone
-                                    }else{
-                                        phoneStr += phone + ","
-                                    }
+                            let phoneNumber = labelValue.value
+                            let phone = (phoneNumber.stringValue)
+                            // 拼接所有的手机号  ， 多个手机号之间有逗号分开
+                            if phoneAry.count == 1 {
+                                phoneStr = phone
+                            }else {
+                                if i == count - 1 {
+                                    phoneStr += phone
+                                }else{
+                                    phoneStr += phone + ","
                                 }
-                                
                             }
                         }
                     }

@@ -100,6 +100,7 @@ class PTLoginViewModel: NSObject {
     }
     
     private func loginAction(_ name: String, password: String) -> Observable<Bool> {
+        // just即只发送一次事件，无法写on系列方法
 //        debugPrint("用户名：\(name)，密码：\(password)")
         var result = Observable.just(false)
         if name == "123" && password == "123" {
