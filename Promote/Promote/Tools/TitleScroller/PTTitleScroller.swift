@@ -16,7 +16,7 @@ class PTTitleScroller: UIView {
     var  rightCv: PTTitleScrollerCollectionView!
     var leftDisplayLink: CADisplayLink!
     //    var rightDisplayLink: CADisplayLink!
-    let mutiply: CGFloat = 3
+    let mutiply: CGFloat = 1
     let cellId = "item_key"
     
     var dataSource = [""] {
@@ -72,6 +72,9 @@ class PTTitleScroller: UIView {
     
     private func startTimer() {
         if leftDisplayLink == nil {
+            
+            //            leftDisplayLink = Timer.init(timeInterval: 0.5, target: self, selector: #selector(handleLeftCollectionViewAnimate), userInfo: nil, repeats: true)
+            //            RunLoop.main.add(leftDisplayLink, forMode: .commonModes)
             leftDisplayLink = CADisplayLink.init(target: self, selector: #selector(self.handleLeftCollectionViewAnimate))
             leftDisplayLink.add(to: .main, forMode: .commonModes)
         }

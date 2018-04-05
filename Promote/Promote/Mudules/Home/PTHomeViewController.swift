@@ -13,9 +13,10 @@ import Cartography
 class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
+    var richTitleScroller: PTRichTitleScroller!
     
     let ary: [String] = {
-       let a = ["000", "1111111", "22", "333", "444", "555555", "6", "7777"]
+       let a = ["000", "1111111", "22", "333"]
         return a
     }()
     
@@ -28,9 +29,28 @@ class PTHomeViewController: PTBaseViewController {
 
     func doThing() {
         
-        titleScroller = PTTitleScroller.init(frame: CGRect.init(x: 0, y: 200, width: kwidth, height: 40))
-        addSubview(titleScroller)
-        titleScroller.dataSource = ary
+        // 1. normal
+//        titleScroller = PTTitleScroller.init(frame: CGRect.init(x: 0, y: 200, width: kwidth, height: 40))
+//        addSubview(titleScroller)
+//        titleScroller.dataSource = ary
+        
+        // 2. rich
+        let frame = CGRect.init(x: 0, y: 200, width: kwidth, height: 200)
+//        richTitleScroller = PTRichTitleScroller.init(frame: frame)
+        richTitleScroller = PTRichTitleScroller.init(with: .right, frame: frame)
+        addSubview(richTitleScroller)
+        
+        // 2.1 先赋空数组
+//        richTitleScroller.dataSource = []
+        
+        // 2.2 先赋非空数组
+        richTitleScroller.dataSource = ary
+        
+        // 2.3
+        delay(6) {
+            self.richTitleScroller.dataSource = self.ary + ["这是", "新加的数据", "是", "为了测试在异步情况下", "该框架的性能与效果如何？", "看来，不错！"]
+            
+        }
         
     }
     

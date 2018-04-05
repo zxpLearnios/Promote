@@ -12,6 +12,7 @@
 		551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F320738F2500A6561C /* PTTitleScroller.swift */; };
 		551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */; };
 		551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */; };
+		553827D020764B620014C809 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 553827CF20764B620014C809 /* readme.txt */; };
 		5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */; };
 		5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B001206A22F80073F5FF /* PTLoginModel.swift */; };
 		5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B003206A23070073F5FF /* PTLoginViewModel.swift */; };
@@ -64,6 +65,7 @@
 		5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */; };
 		5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9792063561400600B3E /* PTAnimateProtocol.swift */; };
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
+		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,7 @@
 		551E27F320738F2500A6561C /* PTTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScroller.swift; sourceTree = "<group>"; };
 		551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCollectionView.swift; sourceTree = "<group>"; };
 		551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCell.swift; sourceTree = "<group>"; };
+		553827CF20764B620014C809 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewController.swift; sourceTree = "<group>"; };
 		5544B001206A22F80073F5FF /* PTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginModel.swift; sourceTree = "<group>"; };
 		5544B003206A23070073F5FF /* PTLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
 		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
+		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -182,9 +186,11 @@
 		551E27F52073919800A6561C /* TitleScroller */ = {
 			isa = PBXGroup;
 			children = (
+				55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */,
 				551E27F320738F2500A6561C /* PTTitleScroller.swift */,
 				551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */,
 				551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */,
+				553827CF20764B620014C809 /* readme.txt */,
 			);
 			path = TitleScroller;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 				5566E93D2062697300600B3E /* LaunchScreen.storyboard in Resources */,
 				555B8F792071DF63008646B5 /* demo.css in Resources */,
 				55533297206B84F900F91354 /* guideImage2@2x.png in Resources */,
+				553827D020764B620014C809 /* readme.txt in Resources */,
 				555B8F7C2071DF63008646B5 /* iconfont.ttf in Resources */,
 				5566E93A2062697300600B3E /* Assets.xcassets in Resources */,
 				555B8F7B2071DF63008646B5 /* iconfont.eot in Resources */,
@@ -709,6 +716,7 @@
 				551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
+				55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
 				555B8F832071E09C008646B5 /* UIImage+extension.swift in Sources */,
 				555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */,

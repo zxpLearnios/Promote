@@ -34,7 +34,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xor-OE-lsn">
-                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
+                                <rect key="frame" x="148" y="300.5" width="79" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="skip"/>
                                 <connections>
                                     <action selector="clickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cjh-BN-5Vw"/>
