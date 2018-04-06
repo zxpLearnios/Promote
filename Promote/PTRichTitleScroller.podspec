@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   # 所有需要用到的文件	
   s.source_files  = 'Promote/*'
   s.swift_version  = '4.0'
+  s.requires_arc = 'true'
   #s.dependency 'Cartography', '~>3.0.1'
 
 end
