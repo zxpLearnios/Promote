@@ -94,7 +94,6 @@
 		551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCollectionView.swift; sourceTree = "<group>"; };
 		551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCell.swift; sourceTree = "<group>"; };
 		553827CF20764B620014C809 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		553827FD207659600014C809 /* PTTitleScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTTitleScroller.h; sourceTree = "<group>"; };
 		5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewController.swift; sourceTree = "<group>"; };
 		5544B001206A22F80073F5FF /* PTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginModel.swift; sourceTree = "<group>"; };
 		5544B003206A23070073F5FF /* PTLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewModel.swift; sourceTree = "<group>"; };
@@ -187,7 +186,6 @@
 		551E27F52073919800A6561C /* TitleScroller */ = {
 			isa = PBXGroup;
 			children = (
-				553827FD207659600014C809 /* PTTitleScroller.h */,
 				55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */,
 				551E27F320738F2500A6561C /* PTTitleScroller.swift */,
 				551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */,
