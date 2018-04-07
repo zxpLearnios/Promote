@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg936\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset134 .PingFangSC-Regular;\f2\fnil\fcharset134 PingFangSC-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red53\green53\blue53;}
+{\*\expandedcolortbl;;\cssrgb\c27059\c27059\c27059;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat2\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f0\fs24 \cf2 \
+\
+0.   
+\f1 \'c8\'b7\'b1\'a3
+\f0 cocoapods
+\f1 \'bf\'e2\'c3\'bb\'ce\'ca\'cc\'e2,\'d3\'d0\'ca\'b1\'ba\'f2\'a3\'ac\'d1\'e9\'d6\'a4\'d2\'bb\'d6\'b1\'ce\'de\'b7\'a8\'cd\'a8\'b9\'fd\'a3\'ac\'bf\'c9\'c4\'dc\'be\'cd\'ca\'c7\'b4\'cb\'ce\'ca\'cc\'e2\'a1\'a3\'d7\'a2\'d2\'e2\'b8\'fc\'d0\'c2
+\f0 gem
+\f1 \'bb\'f2
+\f0 cocoapods
+\f1 \'a3\'ac\'bf\'c9\'cf\'c8\'b2\'bb\'b8\'fc\'d0\'c2\'a3\'ac\'b5\'bd\'d1\'cf\'d6\'d8
+\f0 .podspec
+\f1 \'ce\'c4\'bc\'fe\'ca\'b1\'a3\'ac
+\f0  
+\f1 \'c3\'f7\'c3\'f7\'c3\'bb\'b4\'ed\'ce\'f3\'c8\'b4\'cc\'e1\'ca\'be\'b4\'ed\'ce\'f3\'a3\'ac\'d4\'f2\'d7\'ee\'ba\'c3\'b8\'fc\'d0\'c2\'cf\'c2
+\f0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf2 1.  *.podspec
+\f1 \'b5\'c4\'c3\'fb\'d7\'d6\'b1\'d8\'d0\'eb\'d3\'eb
+\f0 podspec
+\f1 \'c0\'ef\'c3\'e6\'b5\'c4\'d7\'d4\'bc\'ba\'d2\'aa\'b7\'a2\'b2\'bc\'b5\'c4\'bf\'e2\'c3\'fb\'d2\'bb\'d6\'c2\'a3\'ac
+\f0 swift
+\f1 \'d0\'b4\'b5\'c4\'cf\'ee\'c4\'bf\'a3\'ac\'d0\'e8\'d6\'b8\'b6\'a8s.swift_version\'a3\'acs.source_files\'d7\'ee\'d6\'d8\'d2\'aa\'c1\'cb\'a3\'ac\'b2\'bb\'c4\'dc\'d0\'b4\'b4\'ed\'d0\'e8\'d2\'aa\'d7\'f7\'ce\'aa\'b5\'da\'c8\'fd\'b7\'bd\'b5\'c4\'c0\'e0\'d3\'eb.
+\f0 podspec
+\f1 \'b5\'c4\'cf\'e0\'b6\'d4\'ce\'c4\'bc\'fe\'c2\'b7\'be\'b6
+\f0 \
+\ls2\ilvl02.    
+\f1 \'c8\'f4\'cc\'e1\'bd\'bb\'b3\'c9\'b9\'a6\'ba\'f3\'a3\'ac
+\f0 pod search 
+\f1 \'b5\'da\'c8\'fd\'b7\'bd\'bf\'e2
+\f0  
+\f1 \'d5\'d2\'b2\'bb\'b5\'bd\'ca\'b1\'a3\'ac\'d3\'a6\'b8\'c3\'d6\'b4\'d0\'d0
+\f0 pod setup 
+\f1 (\'b4\'cb\'b9\'fd\'b3\'cc\'bb\'e1\'ba\'dc\'c2\'fd\'a3\'ac\'d2\'f2\'ce\'aa\'d3\'d0\'ba\'dc\'b6\'e0\'b6\'ab\'ce\'f7\'d0\'e8\'d2\'aa\'cf\'c2\'d4\'d8)\'a3\'ac\'c8\'bb\'ba\'f3\'d6\'b4\'d0\'d0\'d6\'d5\'b6\'cb\'ca\'e4\'c8\'eb
+\f0 rm ~/Library/Caches/CocoaPods/search_index.json 
+\f1 \'c9\'be\'b3\'fd\'d2\'d1\'d3\'d0\'b5\'c4\'cb\'f7\'d2\'fd\'ce\'c4\'bc\'fe\'a3\'ac\'d4\'d9\'b4\'ce\'d6\'b4\'d0\'d0
+\f0 pod search Rxswift
+\f1 \'a3\'ac\'bb\'e1\'c9\'fa\'b3\'c9\'d0\'c2\'b5\'c4\'cb\'f7\'d2\'fd\'ce\'c4\'bc\'fe\'a1\'a3
+\f0 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97 git  
+\f2 \'c9\'be\'b3\'fd
+\f0 tag
+\f2 \'d7\'a2\'d2\'e2
+\f0 \'97\'97\'97\'97\'97\'97\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0
+\fs38 \cf2 {\listtext	0.	}
+\f1 \'c9\'be\'b3\'fd\'b1\'be\'b5\'d8\'b7\'d6\'d6\'a7\
+\ls3\ilvl0
+\f0 {\listtext	0.	}
+\f1  Git  tag  \'b2\'e9\'bf\'b4\'cb\'f9\'d3\'d0\'b7\'d6\'d6\'a7\'a3\'ac \'c8\'bb\'ba\'f3git tag -d + \'b7\'d6\'d6\'a7\'c3\'fb\'d7\'d6\'a3\'ac \'c8\'e7git tag -d 0.0.1; \'d5\'e2\'ca\'b1\'ba\'f2\'a3\'ac\'b1\'be\'b5\'d8\'c3\'bb\'d3\'d0\'b4\'cbtag\'c1\'cb\'a3\'ac\'b5\'ab\'ca\'c7\'d4\'b6\'b3\'cc\'b5\'c4tag\'d2\'c0\'c8\'bb\'b4\'e6\'d4\'da\'a3\'ac\'ca\'b9\'d3\'c3
+\f0 git push origin :refs/tags/0.0.1  
+\f1 \'bc\'b4\'bf\'c9\'c9\'be\'b3\'fd\'d4\'b6\'b3\'cc
+\f0 tag
+\f1 \'a1\'a3
+\f0   
+\fs52 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\fs24 \cf2 \
+}

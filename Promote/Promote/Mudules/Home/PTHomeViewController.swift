@@ -16,7 +16,7 @@ class PTHomeViewController: PTBaseViewController {
     var richTitleScroller: PTRichTitleScroller!
     
     let ary: [String] = {
-       let a = ["000", "1111111", "22", "333"]
+       let a = ["000", "11"] //, "22", "333", "4444444", "5"]
         return a
     }()
     
@@ -37,7 +37,7 @@ class PTHomeViewController: PTBaseViewController {
         // 2. rich
         let frame = CGRect.init(x: 0, y: 200, width: kwidth, height: 200)
 //        richTitleScroller = PTRichTitleScroller.init(frame: frame)
-        richTitleScroller = PTRichTitleScroller.init(with: .right, frame: frame)
+        richTitleScroller = PTRichTitleScroller.init(with: .left, frame: frame)
         addSubview(richTitleScroller)
         
         // 2.1 先赋空数组
@@ -47,9 +47,21 @@ class PTHomeViewController: PTBaseViewController {
         richTitleScroller.dataSource = ary
         
         // 2.3
-        delay(6) {
-            self.richTitleScroller.dataSource = self.ary + ["这是", "新加的数据", "是", "为了测试在异步情况下", "该框架的性能与效果如何？", "看来，不错！"]
+        delay(2) {
+            // 2.4.0
+//              self.richTitleScroller.dataSource = self.ary + ["3"]
+            // 2.4.1
+//            self.richTitleScroller.dataSource = self.ary + ["这是", "新加的数据", "是", "为了测试在异步情况下", "该框架的性能与效果如何？", "看来，不错！"]
             
+        }
+        
+        // 2.5 
+        delay(4) {
+            self.richTitleScroller.dataSource = self.ary +  ["这是", "新加的数据", "是", "为了测试在异步情况下", "该框架的性能与效果如何？", "看来，不错！"]
+        }
+        
+        delay(6) {
+            self.richTitleScroller.dataSource = self.ary
         }
         
     }

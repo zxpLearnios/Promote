@@ -17,12 +17,13 @@ class ViewController: UIViewController {
     private let animView = UIView()
     private var ary: Array<String>?
     
+    private var testAry = [""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let a = [1, 2, 3]
 //        let b = a[safe: 4]
 //        addSubviews()
-        
     }
 
     func doOther() {
@@ -51,7 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction func clickAction(_ sender: UIButton) {
         doAnimate(Enum.name("for_scale"))
-        let vc =  PTLoginViewController()
+        let vc =  PTTestViewController()  // PTTestViewController PTLoginViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

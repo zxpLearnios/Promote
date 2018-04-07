@@ -6,10 +6,10 @@
 //  全局函数
 
 import UIKit
-//import Foundation
+import Foundation
 
 /**
- * 在子线程里延迟，延迟结束后立马回到主线程异步执行
+ * 0. 在子线程里延迟，延迟结束后立马回到主线程异步执行
  */
 func delay(_ time: Double, callback: @escaping () -> ()) {
 
@@ -22,5 +22,38 @@ func delay(_ time: Double, callback: @escaping () -> ()) {
         }
     }
     
+}
+
+/**
+ * 1. 在子线程异步执行
+ */
+func asyncExecuteInSubThread(_ after: Double, callback: @escaping () -> ()) {
+    let dgQueue = DispatchQueue.global()
+    dgQueue.async {
+        callback()
+    }
+}
+
+@discardableResult func asyncExecuteInSubThread(_ after: Double, callback: @escaping (_ thrad: Thread) -> ()) {
+    var thd: Thread!
+
+    let dgQueue = DispatchQueue.global()
+    dgQueue.async {
+        thd = Thread.current
+        callback(thd)
+    }
+}
+
+/**2. 在主线程异步执行
+ */
+func asyncExecuteInMainThread(_ after: UInt64, callback: @escaping () -> ()) {
+    let time = DispatchTime.init(uptimeNanoseconds: after)
+    DispatchQueue.main.asyncAfter(deadline: time) {
+        callback()
+    }
+    
     
 }
+
+
+

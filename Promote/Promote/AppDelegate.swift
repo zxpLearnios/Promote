@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        autoreleasepool {
 //            debugPrint("fsdfsdffsd \(a)")
 //        }
-        _  = PTTest()
-        
-//        isShowGuide()
+//        _  = PTTest()
+        isShowGuide()
 //        Config.shareInstance.networkStatusChanged()
         
         return true

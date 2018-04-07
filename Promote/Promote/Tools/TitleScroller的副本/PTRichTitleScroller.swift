@@ -3,10 +3,7 @@
 //  Promote
 //
 //  Created by bavaria on 2018/4/5.
-//  1. 由于PTTitleScroller不能最好的实现效果，故我选择使用2个collectionView来实现分段、无限循环滚动、可点击的跑马灯。
-//  2. 禁止用户滚动，允许用户滚动的话时需要处理很多事情
-//  3. 内部自动处理是否需要滚动，外部只需设置数据源和UI即可
-//  4. 其实异步数据处理，就算是banner也一样难以处理，比如banner正在滚动或用户正在滑动，新数据源来了，你怎么办，更新？那UI有可能会瞬间乱掉的。banner的情况比这个简单的多
+//  由于PTTitleScroller不能最好的实现效果，故我选择使用2个collectionView来实现分段、无限循环滚动、可点击的跑马灯。  禁止用户滚动
 
 import UIKit
 
@@ -30,7 +27,7 @@ class PTRichTitleScroller: UIView {
     private var leftDisplayLink: CADisplayLink!
     private var rightDisplayLink: CADisplayLink!
     /** 速度系数，可以自行调节 */
-    private let mutiply: CGFloat = 2
+    private let mutiply: CGFloat = 1
     /** cell的间距，可以自行设置 */
     private let itemGap: CGFloat = 30
     /** item里的label距左右的距离，可自行调节 */
@@ -39,7 +36,6 @@ class PTRichTitleScroller: UIView {
     private let cellId = "item_key"
     private var scrollDirection = ScrollDirection.left
     
-    var leftPadding: CGFloat = 0
     /**
      * 用于处理异步数据过来时，而此时rightCv正在translate时导致的数据错乱问题。即外部异步设置新的数据源后，不会马上reloadData，而是等到rightDisplayLink结束后才执行reloadData */
     private var isDataSourceChanged = false
@@ -48,6 +44,18 @@ class PTRichTitleScroller: UIView {
     private var isFirstSetDataSource = true
     /** 定时器是否正在运行 */
     private var isTimerRun = false
+    
+    private var rightCvTransform = CGAffineTransform.init()
+    
+    
+    /** 用户滑动（至最后一个item完全显示出来）时是否该触发定时器
+     * 不该触发定时器，因为在所有的cell加一起显示不满一屏时，此时用户拖拽至最后一个item完全显示出来，此时不该触发定时器，因为只有cell超出一屏时才会启动定时器 */
+    private var isUserScrollWhenLastItemShowAllShouldStartTimer = false
+    /**用户是否正在滚动*/
+    private var isUserScroll = false
+    /** 用户滚动前，timer是否处于运行状态*/
+    private var isTimerRunBeforeUserScroll = false
+    private var leftPadding: CGFloat = 0
     
     /**
      * 按正常左右顺序传入即可，内部已做处理
@@ -145,12 +153,12 @@ class PTRichTitleScroller: UIView {
         rightCv.register(PTTitleScrollerCell.self, forCellWithReuseIdentifier: cellId)
     }
 
-    private func updateSetup(_ padding: CGFloat = 0, isfromStopRightTimer: Bool = false) {
+    private func updateSetup(_ padding: CGFloat = 0) {
         
         // 一定要先加载所有的行，否则，因为有的行暂时没显示，故会导致scrollToItem出错
 //        leftCv.reloadData()
-//        rightCv.reloadData()
         
+//        rightCv.reloadData()
         if isFirstSetDataSource {
             
             rightCv.isHidden = false
@@ -173,23 +181,18 @@ class PTRichTitleScroller: UIView {
             
         } else { // 非第一次赋数据源
             
+            // 此时用户滚动已经结束
+//            if !isUserScroll {
+//
+//            } else { // 当新数据过来\分析新数据结束时，若此时用户正在滚动则先不处理，直到用户滚动结束后会返回此处重新处理的
+//                return
+//            }
+            
             if padding != 0 { // 说明所有的cell加一起也占不满整个屏幕
+                rightCv.isHidden = true
                 
-
+                // 一定要先加载所有的行，否则，因为有的行暂时没显示，故会导致scrollToItem出错
                 leftCv.reloadData()
-                
-                if isTimerRun {
-                    if isfromStopRightTimer {
-                        stopTimer()
-                        rightCv.isOpaque = false
-                        
-                        // 一定要先加载所有的行，否则，因为有的行暂时没显示，故会导致scrollToItem出错
-//                        leftCv.reloadData()
-                    } else {
-                    }
-                } else {
-                    rightCv.isOpaque = false
-                }
                 
                 
                 // 调整UI
@@ -284,6 +287,7 @@ class PTRichTitleScroller: UIView {
         }
         
         isTimerRun = true
+        isUserScrollWhenLastItemShowAllShouldStartTimer = true
     }
     
     private func stopTimer(_ isForLeftTimer: Bool = true) {
@@ -301,11 +305,10 @@ class PTRichTitleScroller: UIView {
             rightDisplayLink = nil
             
             if isDataSourceChanged {
-                updateSetup(leftPadding, isfromStopRightTimer: true)
+                updateSetup()
             }
             isDataSourceChanged = false
         }
-        
        isTimerRun = false
     }
     
@@ -456,7 +459,7 @@ extension PTRichTitleScroller: UICollectionViewDataSource, UICollectionViewDeleg
             }
         }
         
-        cell.tag = index
+        
         return cell
     }
     
@@ -487,9 +490,47 @@ extension PTRichTitleScroller: UICollectionViewDataSource, UICollectionViewDeleg
 
     // MARK: UIScrollViewDelegate
     
+    // MARK: 用户拖拽开始
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        debugPrint("4444")
+
+        // 用户拖拽过程中，2个collectionView都停止运动
+        
+        return
+        stopTimer()
+        stopTimer(false)
+        isTimerRunBeforeUserScroll = true
+        isUserScroll = true
+        isUserScrollWhenLastItemShowAllShouldStartTimer = false
+        rightCvTransform = rightCv.transform
+    }
+    
+    
+    
+    // MARK: 用户拖拽结束，结束后，有可能继续调用didsScroll方法的，为了回到原位置。若用户拽着不动，则此法结束后不会调用任何方法
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        startTimer()
+//        debugPrint("3333")
+        
+//        isUserScroll = false
+//        isUserScrollWhenLastItemShowAllShouldStartTimer = true
+//        updateSetup(leftPadding)
+        
+        // 若用户拽着不动，则此法结束后不会调用任何方法. 故这里住的调用
+        scrollViewDidEndDecelerating(scrollView)
+    }
+    
     // 1. 滚动
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        debugPrint("2222")
+        let x = rightCv.transform.tx
+        if isUserScroll {
+            rightCv.transform = CGAffineTransform.init(translationX: x + scrollView.contentOffset.x, y: 0)
+        }
+        
+        if !isUserScrollWhenLastItemShowAllShouldStartTimer {
+            return
+        }
         let cl = scrollView as! PTTitleScrollerCollectionView
         
         if cl == leftCv {
@@ -528,6 +569,18 @@ extension PTRichTitleScroller: UICollectionViewDataSource, UICollectionViewDeleg
             
         }
         
+    }
+    
+    // MARK: 2. 用户滚动结束后
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        debugPrint("0000")
+//        if isTimerRunBeforeUserScroll {
+//            startTimer()
+//        }
+//        rightCv.transform = rightCvTransform
+//        isUserScroll = false
+//        isUserScrollWhenLastItemShowAllShouldStartTimer = true
+//        updateSetup(leftPadding)
     }
     
     // MARK: 2‘ 系统自动滚动结束后: setContentOffset \ selectItem

@@ -65,6 +65,7 @@
 		5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */; };
 		5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9792063561400600B3E /* PTAnimateProtocol.swift */; };
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
+		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
 		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
+		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +398,7 @@
 				5553328C206B84D400F91354 /* Resources */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
+				559A88622077B2F4005E8447 /* PTTestViewController.swift */,
 				555D7BCD2068A80B0096CB50 /* PTModel.swift */,
 				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
 				5566E9362062697300600B3E /* Main.storyboard */,
@@ -731,6 +734,7 @@
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
+				559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */,
 				5544B029206A30D90073F5FF /* PTCaptchaButton.swift in Sources */,
 				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
 				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
