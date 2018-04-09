@@ -17,6 +17,17 @@ import RxCocoa
 import RxSwift
 
 
+//class X: UIView {
+//
+////    let lab = UILabel()
+//    var btn: UIButton!
+//
+//    convenience init(_ x: String) {
+//        self.init(frame: .zero)
+//    }
+//
+//}
+
 public final class PTTest: NSObject {
     
     var db:DisposeBag?
