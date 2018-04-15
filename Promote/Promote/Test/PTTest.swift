@@ -1,7 +1,8 @@
 //
 //  PTTest.swift
 //  Promote
-//
+//   作者：八级大狂风AM链接：https://www.jianshu.com/p/dd0ce2de7056
+
 //  Created by Bavaria on 29/03/2018.
 //  Subject是一个代理，它既是Observer，也是Observable。因为它是一个Observer，它可以订阅一个或多个Observable;因为它是一个Observable，它又可以被其他的Observer订阅。它可以传递/转发作为Observer收到的值，也可以主动发射值。
 //  所有的类型都可以受到订阅后的 所有发出的信息
@@ -28,9 +29,11 @@ import RxSwift
 //
 //}
 
-public final class PTTest: NSObject {
+final class PTTest: NSObject {
     
     var db:DisposeBag?
+    let selfDisposeBag = DisposeBag.init()
+    
     override init() {
         super.init()
         
@@ -38,9 +41,76 @@ public final class PTTest: NSObject {
 //        db = DisposeBag()
         
 //        testAllSubjects()
-        
         testAllFilter()
+//        testTraitSequence()
     }
+    
+    // 特征序列1：Single、Completable、Maybe
+    private func testTraitSequence() {
+       // Single 是 Observable 的另外一个版本。但它不像 Observable 可以发出多个元素，它要么只能发出一个元素，要么产生一个 error 事件。发出一个元素，或一个 error 事件, 不会共享状态变化. 适用于HTTP请求，返回一个err或body
+        
+        // do(onNext:)方法就是在subscribe(onNext:) 前调用; 而 do(onCompleted:) 方法则会在 subscribe(onCompleted:) 前面调用。
+        let s = Single<Int>.just(2)
+        _ = s.asObservable().do(onNext: {
+            debugPrint("signal do onNext \($0)")
+        }, onCompleted: {
+            debugPrint("signal do onCompleted " )
+        }, onSubscribe: {
+            debugPrint("signal do onSubscribe " )
+        }, onSubscribed: {
+            debugPrint("signal do onSubscribed ")
+        }, onDispose: {
+            debugPrint("signal do onDispose ")
+        }).subscribe({
+            debugPrint("signal \($0) ")
+        })
+        /*
+        subscribe(onNext: {
+            debugPrint("signal onNext \($0)")
+        }, onError: { (err) in
+            debugPrint("signal onError \(err)")
+        }, onCompleted: {
+            debugPrint("signal onCompleted ")
+        }, onDisposed: {
+            debugPrint("signal onDispose ")
+        })  */
+        
+        // 1. http请求成功和失败的处理
+        s.subscribe(onSuccess: { (result) in
+            
+        }) { (err) in
+            
+        }.disposed(by: disposeBag)
+        
+        
+        // 2. ele 是SingleEvent<Int>类型
+        Single<Int>.create { (ele) -> Disposable in
+
+            let err = NSError.init()
+            let errElement = SingleEvent<Int>.error(err)
+            let successElement = SingleEvent<Int>.success(1)
+            
+            // 成功时返回
+            ele(successElement)
+            // 失败时返回
+            ele(errElement)
+            
+            return Disposables.create {
+
+            }
+
+            }.subscribe(onSuccess: { (reault) in
+
+            }) { (err) in
+
+        }
+        
+        
+        
+    }
+    
+    
+    
     
     private func testAllSubjects() {
         
@@ -109,27 +179,39 @@ public final class PTTest: NSObject {
         //        }).disposed(by: kdisposeBag)
         //        variableSubject.value = "1111"
         
-        // 3. Variable已经过期，用BehaviorRelay代替。不会发射error和completed，只能收到订阅前的最后一个信息和订阅后的所有信息
+        // 3. Variable已经过期，用BehaviorRelay代替。不会发射error和completed，只能收到订阅前的最后一个信息和订阅后的所有信息, 但是会收到2次
         /** 三种序列
          HistoricalScheduler
          CurrentThreadScheduler
          ConcurrentDispatchQueueScheduler
          */
-        //        let behaviorReplay = BehaviorRelay<String>.init(value: "这是发送的第一个信号")
-        //        behaviorReplay.accept("这是发送的第二个信号")
-        //        behaviorReplay.accept("1---")
-        //        behaviorReplay.subscribeOn(CurrentThreadScheduler.instance).subscribe({ observe in
-        //            debugPrint("behaviorReplay: \(observe)")
-        //        }).disposed(by: kdisposeBag)
-        //        behaviorReplay.accept("这是订阅后发送的信息")
+//                let behaviorReplay = BehaviorRelay<String>.init(value: "这是发送的第一个信号")
+//                behaviorReplay.accept("这是发送的第二个信号")
+//                behaviorReplay.accept("1---")
+        
+//    behaviorReplay.map({$0}).share().subscribeOn(CurrentThreadScheduler.instance).subscribe({ observe in
+//                    debugPrint("behaviorReplay: \(observe)")
+//                }).disposed(by: disposeBag)
+//                behaviorReplay.accept("这是订阅后发送的信息")
         
         //        var e = Driver<Bool>.just(false)
         //        e.asObservable().single().subscribe({ e in
         //            debugPrint("---", e.element)
         //        })
-        //        e = Driver<Bool>.just(true)
+        
+
+//        let a = BehaviorRelay<String>.just("312")
+//        a.subscribe({ a in
+//            debugPrint("haha-312........\(a)")
+//        }).disposed(by: disposeBag)
+
+       
     }
    
+    private func ca(_ str: String) -> String {
+        return "haha-312"
+    }
+    
     private func testAllFilter() {
         let observable = Observable.of(1, 2, 3, 2, 2, 5, 4)
 //        observable.subscribe({
@@ -172,16 +254,16 @@ public final class PTTest: NSObject {
          3.
          */
 //        var a =  BehaviorRelay.init(value: 1)
-//        // a 不能为nil，只要a发送一次事件后，observable经takeUtil过滤后只会发出终止事件（error\complete）
+////        // a 不能为nil，只要a发送一次事件后，observable经takeUtil过滤后只会发出终止事件（error\complete）
 //        observable.takeUntil(a).subscribe({
 //            debugPrint("打印observable的被takeUntil过滤后的事件\($0)")
 //        }).disposed(by: disposeBag)
-//        
+//
 //        a.accept(2)
 //        a.accept(3)
-//
+
 //        a.subscribe({
-//            debugPrint("将observable的生命周期交由a来控制,此时a的事件为： \($0)")
+//            debugPrint("将a的生命周期交由a来控制,此时a的事件为： \($0)")
 //        }).disposed(by: disposeBag)
         
         // 5. skip: 跳过源 Observable 序列发出的前 n 个事件。
@@ -225,17 +307,71 @@ public final class PTTest: NSObject {
 //        }).disposed(by: disposeBag)
 //
         
-        // 8. 
+        // 8.
+//        let subject1 = BehaviorSubject(value: 1)
+//        let subject2 = BehaviorSubject(value: 2)
+//
+//        let variable = Variable(subject1)
+//        variable.asObservable()
+//            .concat()
+//            .subscribe(onNext: { print($0) })
+//            .disposed(by: selfDisposeBag)
+//
+//        subject2.onNext(3)
+//        subject1.onNext(1)
+//        subject1.onNext(1)
+//        subject1.onCompleted()
+        
+//        variable.value = subject2
+//        subject2.onNext(4)
+    
+        //每隔1秒钟发送1个事件
+        
+//        Observable.of(1, 2, 1)
+//            .delay(3, scheduler: MainScheduler.instance) //元素延迟3秒才发出
+//            .debug("用于和其他的打印信息区分")
+//            .subscribe(onNext: { print("....\($0)" )})
+//            .disposed(by: disposeBag)
+//     9.    通过将 RxSwift.Resources.total 打印出来，我们可以查看当前 RxSwift 申请的所有资源数量。这个在检查内存泄露的时候非常有用。
+        
+        let va = Variable.init(1)
+        var count = 4
+        let vb = Variable.init(-2) // Variable.init(false)
+        // takeUntil(vb.asObservable().filter($0))时，只要takeUntil里面的条件为true ，va就会被丢弃，即va会立马发送终止\完成信号； takeUntil(vb.asObservable())时，只要vb 发出一个信号或终止\结束时，va就会被丢弃。即只要满足takeUntil的条件，则va会立即终止；否则等它自动结束
+        va.asObservable().takeUntil(vb.asObservable().filter({$0 == -2})).subscribe({ // vb.asObservable()
+            debugPrint("cc \($0)")
+        }).disposed(by: disposeBag)
 
         
+        va.value = 2
+        va.value = 3
+        va.value = 4
+        
+//        let a = vb.asObservable().share(replay: 1, scope: SubjectLifetimeScope.whileConnected).filter{$0}.subscribe({
+//            debugPrint("vb  \($0)")
+//        })
+        //创建一个计时器
+//        Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//            .takeUntil(countDownStopped.asObservable().filter{ $0 })
+//            .subscribe { event in
+//                print("倒计时 \(event)")
+//                count -= 1
+//                if(count == 0) {
+//                    print("倒计时结束！")
+//                    countDownStopped.value = true
+//                }
+//            }.disposed(by: disposeBag)
+      
+          
     }
     
-    // 的Init方法，用处不太大，因为有时属性会在deinit几秒后才会销毁
+    // 在对象被释放前调用Init方法。 故用处不太大，因为有时属性会在deinit几秒后才会销毁，即会在self销毁后才紧接着销毁
     deinit {
+        
         let obj = self.db
         delay(3) {
             let a = (obj == nil)
-//            debugPrint("PTTest 销毁了, )", a)
+//            debugPrint("PTTest销毁了)", a)
         }
     }
 }

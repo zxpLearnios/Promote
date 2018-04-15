@@ -7,6 +7,8 @@
 
 import UIKit
 import Cartography
+import RxSwift
+import RxCocoa
 
 class PTLoginViewController: PTBaseViewController {
 
@@ -53,21 +55,24 @@ class PTLoginViewController: PTBaseViewController {
 //        viewModel.isAutoLogining.drive(onNext: { [unowned self] res in
 //            self.autoLoginLab.text = res ? "正在自动登录中..." : ""
 //        }).disposed(by: disposeBag)
-        viewModel.isAutoLogining.subscribe({ [unowned self] res in
-            self.autoLoginLab.text = res.element! ? "正在自动登录中..." : ""
+        viewModel.isAutoLogining.subscribe({ [weak self] res in
+            self?.autoLoginLab.text = res.element! ? "正在自动登录中..." : ""
         }).disposed(by: disposeBag)
         
-        viewModel.isAutoLoginCompleted.asObservable().subscribe({ [unowned self] res in
-            self.autoLoginLab.text = res.element! ? "自动登录完成" : ""
-            kUserDefaults.set("username", forKey: ksaveUserNamekey)
-            kUserDefaults.synchronize()
-            kAppDelegate.makeSureTheMainRouter()
+        viewModel.isAutoLoginCompleted.asObservable().subscribe({ [weak self] res in
+            if res.element! {
+                self?.autoLoginLab.text = res.element! ? "自动登录完成" : ""
+                kUserDefaults.set("username", forKey: ksaveUserNamekey)
+                kUserDefaults.synchronize()
+                kAppDelegate.makeSureTheMainRouter()
+            }
         }).disposed(by: disposeBag)
         
-        delay(5) { [weak self] in
+        delay(10) { [weak self] in
             self?.viewModel.isAutoLogin.drive(onNext: {  (result) in
                 self?.loginBtn.isHidden = result
                 self?.autoLoginLab.isHidden = !result
+                debugPrint("即使控制器释放了，但使用(self?.disposeBag)!也不会崩溃。因为根本不会执行此block，因为self已经nil了 😁")
             }).disposed(by: (self?.disposeBag)!)
         }
         

@@ -47,5 +47,22 @@ extension UIImage{
         return image!
     }
     
+    /**
+     * 2. 传一张图片，取中间一部分获取一个圆形图片
+     */
+    static func cr_image(with image: UIImage, size: CGSize) -> UIImage {
+        var img = UIImage()
+        let drawRect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(CGSize.init(width: size.width, height: size.height), false, 1)
+        if let ctx = UIGraphicsGetCurrentContext() {
 
+            ctx.addEllipse(in: CGRect.init(x: 0, y: 0, width: size.width, height: size.height))
+            ctx.clip()
+            ctx.draw(image.cgImage!, in: drawRect)
+            img = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        }
+        
+        return img
+    }
 }

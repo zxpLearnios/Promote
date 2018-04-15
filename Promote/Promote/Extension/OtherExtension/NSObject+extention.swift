@@ -9,15 +9,15 @@ import UIKit
 import RxSwift
 
 
-let disposeBagObj = DisposeBag()
-var disposeKey = "dispose_Key"
+var disposeKey = 0 // "" 亦可
 
 extension NSObject {
     var disposeBag: DisposeBag {
         get {
             var obj = objc_getAssociatedObject(self, &disposeKey) as? DisposeBag
             if obj == nil {
-                obj = disposeBagObj
+                obj = DisposeBag.init() // disposeBagObj
+                objc_setAssociatedObject(self, &disposeKey, obj, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
             return  obj!
         }

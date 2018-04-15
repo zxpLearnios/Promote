@@ -12,6 +12,7 @@
 		551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F320738F2500A6561C /* PTTitleScroller.swift */; };
 		551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */; };
 		551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */; };
+		5530EE1F2082305D00D2A6AD /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530EE1E2082305D00D2A6AD /* UIImageView+extension.swift */; };
 		553827D020764B620014C809 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 553827CF20764B620014C809 /* readme.txt */; };
 		5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */; };
 		5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B001206A22F80073F5FF /* PTLoginModel.swift */; };
@@ -54,7 +55,6 @@
 		555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8D20720202008646B5 /* PTMyViewController.swift */; };
 		555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTTest.swift */; };
 		555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFE206CD45E00DECE85 /* Array+extension.swift */; };
-		555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D7BCD2068A80B0096CB50 /* PTModel.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
 		5566E9382062697300600B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E9362062697300600B3E /* Main.storyboard */; };
@@ -67,6 +67,7 @@
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
+		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		551E27F320738F2500A6561C /* PTTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScroller.swift; sourceTree = "<group>"; };
 		551E27F6207391C000A6561C /* PTTitleScrollerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCollectionView.swift; sourceTree = "<group>"; };
 		551E27F8207391E600A6561C /* PTTitleScrollerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScrollerCell.swift; sourceTree = "<group>"; };
+		5530EE1E2082305D00D2A6AD /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		553827CF20764B620014C809 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		5544AFF8206A21B10073F5FF /* PTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginViewController.swift; sourceTree = "<group>"; };
 		5544B001206A22F80073F5FF /* PTLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTLoginModel.swift; sourceTree = "<group>"; };
@@ -136,7 +138,6 @@
 		555B8F8D20720202008646B5 /* PTMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTMyViewController.swift; sourceTree = "<group>"; };
 		555CBDFC206CD3E700DECE85 /* PTTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTest.swift; sourceTree = "<group>"; };
 		555CBDFE206CD45E00DECE85 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
-		555D7BCD2068A80B0096CB50 /* PTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTModel.swift; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5566E9342062697300600B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
+		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -195,6 +197,15 @@
 				553827CF20764B620014C809 /* readme.txt */,
 			);
 			path = TitleScroller;
+			sourceTree = "<group>";
+		};
+		552A257D2081FEA4000B86F8 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				559A88622077B2F4005E8447 /* PTTestViewController.swift */,
+				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		5544AFF7206A21950073F5FF /* Login&Regist */ = {
@@ -398,9 +409,7 @@
 				5553328C206B84D400F91354 /* Resources */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
-				559A88622077B2F4005E8447 /* PTTestViewController.swift */,
-				555D7BCD2068A80B0096CB50 /* PTModel.swift */,
-				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
+				552A257D2081FEA4000B86F8 /* Test */,
 				5566E9362062697300600B3E /* Main.storyboard */,
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
@@ -447,6 +456,7 @@
 			children = (
 				555B8F822071E09C008646B5 /* String+extension.swift */,
 				555B8F802071E09C008646B5 /* UIImage+extension.swift */,
+				5530EE1E2082305D00D2A6AD /* UIImageView+extension.swift */,
 				551E27EF20738C2C00A6561C /* UIView+extension.swift */,
 				551E27F120738CDD00A6561C /* UIViewController+extension.swift */,
 				555B8F812071E09C008646B5 /* UIFont+extension.swift */,
@@ -471,6 +481,7 @@
 			children = (
 				5566E9792063561400600B3E /* PTAnimateProtocol.swift */,
 				5566E97A2063561400600B3E /* PTBaseProtocol.swift */,
+				55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -504,7 +515,6 @@
 				5566E92C2062697300600B3E /* Frameworks */,
 				5566E92D2062697300600B3E /* Resources */,
 				D7EEFA13E545B175427D15DF /* [CP] Embed Pods Frameworks */,
-				C78BB8C2BA53208DD3B59F8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -657,21 +667,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C78BB8C2BA53208DD3B59F8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Promote/Pods-Promote-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D7EEFA13E545B175427D15DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -707,7 +702,6 @@
 			files = (
 				5544B02A206A30D90073F5FF /* PTBankCardTextField.swift in Sources */,
 				5544B025206A30D90073F5FF /* PTTabBarController.swift in Sources */,
-				555D7BCE2068A80B0096CB50 /* PTModel.swift in Sources */,
 				555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */,
 				555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */,
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
@@ -726,6 +720,7 @@
 				551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */,
 				555B8F842071E09C008646B5 /* UIFont+extension.swift in Sources */,
 				555431BC206DD27100CC2CC0 /* PTError.swift in Sources */,
+				55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */,
 				551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
@@ -745,6 +740,7 @@
 				5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */,
 				5544B02D206A30FC0073F5FF /* Const.swift in Sources */,
 				5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */,
+				5530EE1F2082305D00D2A6AD /* UIImageView+extension.swift in Sources */,
 				5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

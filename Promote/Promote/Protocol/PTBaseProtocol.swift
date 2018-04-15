@@ -3,7 +3,7 @@
 //  Promote
 //
 //  Created by 张净南 on 2018/3/22.
-//
+//  基协议
 
 import UIKit
 
@@ -47,9 +47,10 @@ public final class PTPromote<Base> {
     }
 }
 
-/*   ---------------  2. 利于不同类型里又有别的类型切需要给其他类型进行(协议)扩展， 参考kingfisher
+/*   ---------------  2. 利于不同类型里又有别的类型且需要给其他类型进行(协议)扩展， 参考kingfisher
 // 此两句必须在协议里，不能再xie'y
 public protocol PromoteProtocol {
+ // 协议里的泛型必须如此写，这不同于struct class里的<T>
     associatedtype Associatedtype
     var ele: Associatedtype { get }
 }

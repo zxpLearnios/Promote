@@ -263,13 +263,13 @@ extension PTTitleScroller: UICollectionViewDataSource, UICollectionViewDelegate,
         
         
         if cell.frame.maxY >= kwidth {
-            debugPrint("第%d个cell已超出边界", indexPath.item)
+//            debugPrint("第%d个cell已超出边界", indexPath.item)
         }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("点击了---%d", indexPath.item)
+//        debugPrint("点击了---%d", indexPath.item)
     }
     
 }

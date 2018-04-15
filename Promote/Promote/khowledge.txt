@@ -20,3 +20,8 @@ var autoLoginLab: UILabel = {
 
 3. setValue:forKey 与value:forKey 必须配对后使用
 
+
+4. OS X Server搭建Bots持续集成环境
+5. 控制器a push或present出控制器b，a都不会被释放，除非rootViewcontroller由1变为1‘。
+
+6. Rxswift： Map 与 FlatMap，merge()， 参考： https://www.cnblogs.com/scott-mr/p/7234769.html#5

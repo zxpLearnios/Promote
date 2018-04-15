@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        let a = [1, 2, 3]
 //        let b = a[safe: 4]
-//        addSubviews()
+        addSubviews()
     }
 
     func doOther() {

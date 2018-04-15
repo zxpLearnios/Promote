@@ -11,16 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let test = PTTest()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
 //        autoreleasepool {
 //            debugPrint("fsdfsdffsd \(a)")
 //        }
-//        _  = PTTest()
         isShowGuide()
 //        Config.shareInstance.networkStatusChanged()
-        
+
+        window?.rootViewController = PTTestViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 

@@ -532,7 +532,7 @@ extension PTRichTitleScroller: UICollectionViewDataSource, UICollectionViewDeleg
     
     // MARK: 2‘ 系统自动滚动结束后: setContentOffset \ selectItem
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        debugPrint("1111")
+//        debugPrint("1111")
     }
     
     
