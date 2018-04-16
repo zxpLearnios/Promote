@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         isShowGuide()
 //        Config.shareInstance.networkStatusChanged()
 
-        window?.rootViewController = PTTestViewController()
-        window?.makeKeyAndVisible()
+//        window?.rootViewController = PTTestViewController()
+//        window?.makeKeyAndVisible()
         return true
     }
 

@@ -21,7 +21,10 @@ var autoLoginLab: UILabel = {
 3. setValue:forKey 与value:forKey 必须配对后使用
 
 
-4. OS X Server搭建Bots持续集成环境
-5. 控制器a push或present出控制器b，a都不会被释放，除非rootViewcontroller由1变为1‘。
+3. setValue:forKey 与value:forKey 必须配对后使用
 
-6. Rxswift： Map 与 FlatMap，merge()， 参考： https://www.cnblogs.com/scott-mr/p/7234769.html#5
+4. 控制器a通过 在touchesBegan时present 出 控制器b, 则在b控制器里点击页面的话还是会对于控制器a的touchesBegan方法的（前提是b为实现touchesBegan方法），这是事件传递，即事件由屏幕离用户最近的地方网远处传，和寻找响应者正好相反。即若控制器a实现了touchesBegan方法，则，点击b页面时，不会再出发控制器a的touchesBegan方法
+5. OS X Server搭建Bots持续集成环境
+6. 控制器a push或present出控制器b，a都不会被释放，除非rootViewcontroller由1变为1‘。
+
+7. Rxswift： Map 与 FlatMap，merge()， 参考： https://www.cnblogs.com/scott-mr/p/7234769.html#5
