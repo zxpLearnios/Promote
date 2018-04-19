@@ -68,6 +68,7 @@
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
+		55EDBC8B208866AA0052660B /* PTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTWebViewController.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,7 @@
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
+		55EDBC8A208866A90052660B /* PTWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTWebViewController.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
 				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
 				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
+				55EDBC8A208866A90052660B /* PTWebViewController.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
 				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
 				5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */,
+				55EDBC8B208866AA0052660B /* PTWebViewController.swift in Sources */,
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,
 				555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */,
 				5544B032206A323C0073F5FF /* PTMsgLabel.swift in Sources */,

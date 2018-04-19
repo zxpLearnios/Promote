@@ -8,12 +8,11 @@
 
 import UIKit
 import Cartography
-
-
 class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
     var richTitleScroller: PTRichTitleScroller!
+    
     
     let ary: [String] = {
        let a = ["000", "11"] //, "22", "333", "4444444", "5"]
@@ -23,27 +22,21 @@ class PTHomeViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
+        
+        hidesBottomBarWhenPushed = true
 //        doThing()
         setSubviews()
     }
     
-    override func loadView() {
-        super.loadView()
-//        view = MyView() //(image: #imageLiteral(resourceName: "bg"))
-    }
-
-   
     func setSubviews() {
         
         let img =  #imageLiteral(resourceName: "bg")
         // 1.
-        let imagV = MyClipImageView.init(image: img)
+        let imagV = UIImageView.init(image: img)
+        addSubview(imagV)
         imagV.backgroundColor = .white
-        imagV.frame = CGRect.init(x: 10, y: 100, width: 300, height: 300)
-//        let detensFrame = CGRect.init(x: 0, y: 0, width: imagV.width, height: imagV.height)
-//        imagV.image = UIImage.cr_image(with: img, size: detensFrame.size)
-        // 2.
         
+       // 2.
         let beziPath = UIBezierPath()
         beziPath.move(to: CGPoint(x: 5, y: 100))
         beziPath.addLine(to: CGPoint.init(x: 100, y: 80))
@@ -52,9 +45,6 @@ class PTHomeViewController: PTBaseViewController {
         
         
         imagV.clipImage(with: beziPath)
-
-        
-        self.view.addSubview(imagV)
         
     }
     
@@ -97,99 +87,13 @@ class PTHomeViewController: PTBaseViewController {
         
     }
     
-}
-
-
-class MyClipView: UIView {
-    convenience init () {
-        self.init(frame: .zero)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = PTWebViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        let path =  CGMutablePath.init()
-        path.move(to: CGPoint(x: 50, y: 500))
-        path.addLine(to: CGPoint.init(x: 100, y: 300))
-        path.addLine(to: CGPoint.init(x: 300, y: 00))
-        //        path.addLine(to: CGPoint.init(x: 50, y: 500))
-        
-        let beziPath = UIBezierPath.init(cgPath: path)
-        
-        let shpl = CAShapeLayer.init()
-        shpl.path = beziPath.cgPath
-        layer.mask = shpl
-
     }
     
 }
 
-/**UIImageView是专门为显示图片做的控件，用了最优显示技术，所以不让调用darwrect方法。所以我们如果写了一个UIImageView的子类里面重写了drawRect方法是不会被调用的*/
-class MyClipImageView: UIImageView {
-    override init(image: UIImage?) {
-        super.init(image: image)
-        
-        delay(2) {
-//            self.drawThing(with: image!)
-        }
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    // 因为UIImageView的drawRect方法永远不会调（即使是外部主动setNeedsDisplay也没用），所以，获取不到上下文，故此时需要自行创建
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-    
-    
-}
 
 
-class C {
-    
-    static func drawThing(with image: UIImage, frame: CGRect) -> UIImage {
-        
-        var img = UIImage()
-        // 因为UIImageView的drawRect方法不会调，所以，获取不到上下文，故此时需要自行创建. 此法只能剪切方形区域
-        UIGraphicsBeginImageContextWithOptions(CGSize.init(width: frame.size.width, height: frame.size.height), true, 1)
-        if let ctx = UIGraphicsGetCurrentContext() {
-            
-            ctx.beginPath()
-            ctx.addEllipse(in: frame)
-            //
-            //            UIColor.red.set()
-            //            ctx.setLineWidth(5)
-            //            ctx.fillPath()
-            
-            //            ctx.addPath(path)
-            //            ctx.closePath()
-            ctx.clip()
-            
-            ctx.draw(image.cgImage!, in: frame)
-            img = UIGraphicsGetImageFromCurrentImageContext()!
-            
-            //5关闭上下文
-            UIGraphicsEndImageContext()
-            
-        }
-        
-        UIGraphicsEndImageContext()
-        
-        return img
-        // 2.
-        //        let path =  CGMutablePath.init()
-        //        path.move(to: CGPoint(x: 50, y: 500))
-        //        path.addLine(to: CGPoint.init(x: 100, y: 300))
-        //        path.addLine(to: CGPoint.init(x: 300, y: 400))
-        ////        path.addLine(to: CGPoint.init(x: 50, y: 500))
-        //
-        //        let beziPath = UIBezierPath.init(cgPath: path)
-        //
-        //        let shpl = CAShapeLayer.init()
-        //        shpl.path = beziPath.cgPath
-        //        layer.mask = shpl
-    }
-    
-}

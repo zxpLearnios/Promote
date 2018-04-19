@@ -11,7 +11,7 @@ import UIKit
 extension UIImageView {
     
     /**
-     *  在UIImageView上面直接剪切它
+     *  在UIImageView上面直接剪切它，传入Path\BezierPath
      */
     func clipImage<T>(with path: T) {
         
