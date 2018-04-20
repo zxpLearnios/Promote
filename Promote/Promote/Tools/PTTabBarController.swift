@@ -73,8 +73,7 @@ class PTTabBarController: UITabBarController {
         viewController.title = title
         viewController.tabBarItem.image = newItemNormalImg
         viewController.tabBarItem.selectedImage = newItemSelectdImg
-        
-        let nav = UINavigationController.init(rootViewController: viewController)
+        let nav = PTNavigationController.init(rootViewController: viewController)
         // 在ios的导航栏更改后，调整导航栏是无效的
 //        let navSubviews = nav.navigationBar.subviews
 //        for i in 0..<navSubviews.count {

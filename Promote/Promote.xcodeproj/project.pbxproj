@@ -39,6 +39,7 @@
 		55533296206B84F900F91354 /* guideImage1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533290206B84F900F91354 /* guideImage1@3x.png */; };
 		55533297206B84F900F91354 /* guideImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533291206B84F900F91354 /* guideImage2@2x.png */; };
 		55533298206B84F900F91354 /* guideImage2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55533292206B84F900F91354 /* guideImage2@3x.png */; };
+		5553D6F5208A2B32006E29B4 /* PTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553D6F4208A2B32006E29B4 /* PTTabBar.swift */; };
 		555431BC206DD27100CC2CC0 /* PTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431BB206DD27100CC2CC0 /* PTError.swift */; };
 		555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555431C2206E1F2400CC2CC0 /* PTFunction.swift */; };
 		555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */; };
@@ -67,6 +68,7 @@
 		5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */; };
 		5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9792063561400600B3E /* PTAnimateProtocol.swift */; };
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
+		558AF110208A237600EFE21D /* PTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558AF10F208A237600EFE21D /* PTRouter.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
 		55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C23B7120899B0300E9EA9B /* URL+extension.swift */; };
@@ -127,6 +129,7 @@
 		55533290206B84F900F91354 /* guideImage1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@3x.png"; sourceTree = "<group>"; };
 		55533291206B84F900F91354 /* guideImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@2x.png"; sourceTree = "<group>"; };
 		55533292206B84F900F91354 /* guideImage2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage2@3x.png"; sourceTree = "<group>"; };
+		5553D6F4208A2B32006E29B4 /* PTTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTabBar.swift; sourceTree = "<group>"; };
 		555431BB206DD27100CC2CC0 /* PTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTError.swift; sourceTree = "<group>"; };
 		555431C2206E1F2400CC2CC0 /* PTFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTFunction.swift; sourceTree = "<group>"; };
 		555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extention.swift"; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
 		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
+		558AF10F208A237600EFE21D /* PTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRouter.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
 		55C23B7120899B0300E9EA9B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
@@ -288,9 +292,10 @@
 			isa = PBXGroup;
 			children = (
 				551E27F52073919800A6561C /* TitleScroller */,
+				555431C2206E1F2400CC2CC0 /* PTFunction.swift */,
 				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
-				555431C2206E1F2400CC2CC0 /* PTFunction.swift */,
+				5553D6F4208A2B32006E29B4 /* PTTabBar.swift */,
 				5544B031206A323C0073F5FF /* PTMsgLabel.swift */,
 				554465142089C55D0057A2BC /* PTBaseLabel.swift */,
 				554465162089C5C20057A2BC /* PTTapLabel.swift */,
@@ -313,6 +318,7 @@
 				5544B02C206A30FC0073F5FF /* Config.swift */,
 				5544B02B206A30FC0073F5FF /* Const.swift */,
 				5544B03C206A41960073F5FF /* PTOCReference.swift */,
+				558AF10F208A237600EFE21D /* PTRouter.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5544B02A206A30D90073F5FF /* PTBankCardTextField.swift in Sources */,
+				5553D6F5208A2B32006E29B4 /* PTTabBar.swift in Sources */,
 				5544B025206A30D90073F5FF /* PTTabBarController.swift in Sources */,
 				555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */,
 				555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */,
@@ -745,6 +752,7 @@
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
+				558AF110208A237600EFE21D /* PTRouter.swift in Sources */,
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
 				554465172089C5C20057A2BC /* PTTapLabel.swift in Sources */,
 				559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */,

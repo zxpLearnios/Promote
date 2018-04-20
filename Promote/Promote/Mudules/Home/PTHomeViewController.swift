@@ -24,9 +24,13 @@ class PTHomeViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
-//        hidesBottomBarWhenPushed = true
 //        doThing()
         setSubviews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PTRouter.reShowTabBar()
     }
     
     func setSubviews() {

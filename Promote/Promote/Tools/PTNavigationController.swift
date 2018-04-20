@@ -3,7 +3,7 @@
 //  Promote
 //
 //  Created by Bavaria on 2018/4/19.
-//
+//  ios10后的tabbar问题，通过自定义导航控制器即可解决，否则用那种tabbar.ishidden = true 根本没用的
 
 import UIKit
 
@@ -34,7 +34,7 @@ class PTNavigationController: UINavigationController {
     func doInit() {
         // 大标题样式
         if #available(iOS 11.0, *) {
-            navigationBar.prefersLargeTitles = true
+//            navigationBar.prefersLargeTitles = true
         } else {
         }
         
@@ -81,22 +81,19 @@ class PTNavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: 重写此法以拦截所有push的控制器
+    // MARK: 重写此法以拦截所有push的控制器. ios 10 后，隐藏tabbar用此法不会出现任何问题.经测试，ios10后在别处设置hidesBottomBarWhenPushed都会有问题。
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         if self.childViewControllers.count > 0 { // 非第一批控制器时 的情况
             
             // 左边的按钮
-//            let leftBtn = QLIconFontLabel()
-//            leftBtn.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
-//            leftBtn.text = kleftIconfont
-//            leftBtn.fontSize = 20
-//
-//            leftBtn.addTap(self, action: #selector(back))
-//            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBtn)
+            let leftBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+            leftBtn.setImage(UIImage(named: "navigationbar_back"), for: UIControlState())
+            leftBtn.setImage(UIImage(named: "navigationbar_back"), for: .highlighted)
+            leftBtn.addTarget(self, action: #selector(back), for: .touchUpInside)
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBtn)
             
             // 右边的按钮
-            
           viewController.hidesBottomBarWhenPushed = true // statusBra有阴影
             
         }
@@ -105,7 +102,7 @@ class PTNavigationController: UINavigationController {
     }
     
     // pop 无须再在 相应控制器里设置navPopDelegate并在控制器消失时令navPopDelegate==nil了, 手势滑动返回只有一滑动即使还没返回也会调用， 故会导致在意见反馈也有内容时，只滑动不返回再点击返回按钮时 不提示 “是否放弃”
-    internal override func popViewController(animated: Bool) -> UIViewController?{
+    @discardableResult internal override func popViewController(animated: Bool) -> UIViewController? {
         super.popViewController(animated: true)
 //        if !isOpinionFeedbackHaveContent { // 已经反馈有内容时，滑动也不清空代理
 //            navPopDelegate = nil
@@ -114,7 +111,7 @@ class PTNavigationController: UINavigationController {
     }
     
     // MARK: 返回
-    func back() {
+    @objc private func back() {
         if navPopDelegate != nil {
             navPopDelegate.didClickBackButton!()
             return
@@ -123,7 +120,7 @@ class PTNavigationController: UINavigationController {
     }
     
     // MARK: 右边按钮的方法
-    func rightItemAction() {
+    @objc private func rightItemAction() {
         
     }
     
