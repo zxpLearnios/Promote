@@ -92,7 +92,8 @@ let kscanQrIconfont = "\u{e616}"
 let kloginAccountIconFont = "\u{e61a}"
 let kloginPwdIconFont = "\u{e609}"
 
-
+/** 主题橙色 */
+let korangeColor = UIColor.colorWithHexString("FF7F50")!
 /** 查看详情cell的背景色 */
 let kdetailInfoCellBgColor = UIColor.RGBA(245, g: 245, b: 245, a: 1)
 /** 所有非白色view的 背景色 */

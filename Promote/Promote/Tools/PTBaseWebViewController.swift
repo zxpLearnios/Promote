@@ -9,26 +9,17 @@ import UIKit
 import WebKit
 
 
-
 class PTBaseWebViewController: UIViewController {
 
     private let webView = WKWebView()
     private let activity = UIActivity()
     private let indicator = UIActivityIndicatorView()
-    private let errLabl = PTBaseLabel()
+    private let errLabl = PTTapLabel()
     
     fileprivate var webCookies = [String]()
-    
-//    private var errLab: PTBaseLabel = {
-//        let lab = UILabel()
-//        lab.text = "加载失败，点击屏幕重试"
-////        let tap = UITapGestureRecognizer.init(target: self, action: <#T##Selector?#>)
-////        lab.addGestureRecognizer(tap)
-//        return lab
-//    }()
-    
     var cookiesDidChange: ((WKWebView) -> Void)?
     
+    // MARK: 通过让所有 WKWebView 共享同一个 WKProcessPool 实例，可以实现多个 WKWebView 之间共享 Cookie（session Cookie and persistent Cookie）数据
     private var processPool: WKProcessPool = {
        return WKProcessPool()
     }()
@@ -69,6 +60,7 @@ class PTBaseWebViewController: UIViewController {
     private func setSubviews() {
         addSubview(webView)
         addSubview(indicator)
+        addSubview(errLabl)
         
         webView.frame = view.bounds
         //        webView.uiDelegate = self
@@ -80,7 +72,16 @@ class PTBaseWebViewController: UIViewController {
         indicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
         indicator.center = view.center
         
-        
+        errLabl.backgroundColor = .gray
+        errLabl.center = view.center
+        errLabl.bounds = CGRect.init(x: 0, y: 0, width: kwidth, height: 20)
+        errLabl.textAlignment = .center
+        errLabl.set(korangeColor, fontSize: 18)
+        errLabl.text = "加载失败，点击屏幕重试"
+        errLabl.isHidden = true
+        errLabl.tapClosure = {[weak self] _, _ in
+            self?.reloadData()
+        }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back", style: .plain, target: self, action: #selector(didClickLeftNavigationItem))
         
@@ -96,16 +97,19 @@ class PTBaseWebViewController: UIViewController {
             debugPrint("webview---cookies： \(cookies.debugDescription)")
         }
         
-        let urlStr = "https://blog.csdn.net/u010105969/article/details/53942862" // https://
-        let url = URL.init(string: urlStr)!
-        var request = URLRequest.init(url: url)
-//        request.addValue(cookieValue, forHTTPHeaderField: "Cookie")
-        
-        webView.load(request)
+       loadRequest()
         
     }
     
     
+    private func loadRequest () {
+        let urlStr = "https://blog.csdn.net/u010105969/article/details/53942862" // https://
+        let url = URL.init(string: urlStr)!
+        var request = URLRequest.init(url: url)
+        //        request.addValue(cookieValue, forHTTPHeaderField: "Cookie")
+        
+        webView.load(request)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,6 +117,12 @@ class PTBaseWebViewController: UIViewController {
     
 
     // -----------  private UI func  --------------- //
+    func reloadData() {
+        webView.stopLoading()
+        loadRequest()
+        hideLoadFail()
+    }
+    
     @objc private func didClickLeftNavigationItem() {
         navigationController?.popViewController(animated: true)
     }
@@ -123,6 +133,14 @@ class PTBaseWebViewController: UIViewController {
     
     private func hideIndicator() {
         indicator.stopAnimating()
+    }
+    
+    private func showLoadFail() {
+        errLabl.isHidden = false
+    }
+    
+    private func hideLoadFail() {
+        errLabl.isHidden = true
     }
     
     
@@ -277,13 +295,13 @@ extension PTBaseWebViewController: WKNavigationDelegate, WKScriptMessageHandler 
     
     // MARK： 网页导航加载完毕
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         hideIndicator()
     }
     
     // MARK： 网页导航加载失败
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         hideIndicator()
+        showLoadFail()
     }
     
    
@@ -320,13 +338,11 @@ extension PTBaseWebViewController: WKNavigationDelegate, WKScriptMessageHandler 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
         hideIndicator()
-        
+        showLoadFail()
     }
     
     // MARK： 跳转到其他的服务器\权限认证
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
-        
         
         if challenge.previousFailureCount >= 0 {
             if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust { // 被信任的
@@ -348,7 +364,7 @@ extension PTBaseWebViewController: WKNavigationDelegate, WKScriptMessageHandler 
         
     }
     
-    // MARK： 重定向 ，一般不管
+    // MARK： 重定向，一般不管
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         
         hideIndicator()
