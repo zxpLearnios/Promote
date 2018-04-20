@@ -10,7 +10,6 @@ class PTTabBarController: UITabBarController {
 
     
     class  func doInit() {
-        
         // 所有的字控制器的tabbarItem的 字体属性
         let tabbarItem = UITabBarItem.appearance() // 不能用UIBarButtonItem
         let itemAttributeNormal = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10), NSAttributedStringKey.foregroundColor: UIColor.red]
@@ -27,17 +26,16 @@ class PTTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        self.tabBar.alpha = 0.8
-        self.tabBar.tintColor = UIColor.RGBA(252, g: 116, b: 6, a: 1)
+        view.backgroundColor = UIColor.white
+        tabBar.alpha = 0.8
+        tabBar.tintColor = ColorRGBA(252, g: 116, b: 6, a: 1)
     
         let homeVc = PTHomeViewController()
-        self.addChildViewControllers(homeVc, title: "Home", itemImageUnicode: "\u{e617}")
+        addChildViewControllers(homeVc, title: "Home", itemImageUnicode: "\u{e617}")
         let OtherVc = PTOtherViewController()
-        self.addChildViewControllers(OtherVc, title: "Other", itemImageUnicode: "\u{e618}")
+        addChildViewControllers(OtherVc, title: "Other", itemImageUnicode: "\u{e618}")
         let myVc = PTMyViewController()
-        self.addChildViewControllers(myVc, title: "Mine", itemImageUnicode: "\u{e61a}")
+        addChildViewControllers(myVc, title: "Mine", itemImageUnicode: "\u{e61a}")
         
     }
     
@@ -64,7 +62,7 @@ class PTTabBarController: UITabBarController {
     }
     
     // MARK: 添加子控制器
-    private func addChildViewControllers(_ viewController: UIViewController, title: String, itemImageUnicode code: String){
+    private func addChildViewControllers(_ viewController: UIViewController, title: String, itemImageUnicode code: String) {
         
         let normalImg = UIImage.if_image(withUniCode: code, fontSize: 21)
         let selectImg = UIImage.if_image(withUniCode: code, familyName: "iconfont", fontSize: 21, fontColor: UIColor.orange)
@@ -77,6 +75,18 @@ class PTTabBarController: UITabBarController {
         viewController.tabBarItem.selectedImage = newItemSelectdImg
         
         let nav = UINavigationController.init(rootViewController: viewController)
+        // 在ios的导航栏更改后，调整导航栏是无效的
+//        let navSubviews = nav.navigationBar.subviews
+//        for i in 0..<navSubviews.count {
+//            let subview = navSubviews[i]
+//            if i == 1 {
+//                subview.backgroundColor = .red
+//                nav.navigationBar.bringSubview(toFront: subview)
+//            } else {
+//                subview.removeFromSuperview()
+//            }
+//        }
+        
         self.addChildViewController(nav)
     }
     

@@ -67,8 +67,10 @@
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
+		55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C23B7120899B0300E9EA9B /* URL+extension.swift */; };
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		55EDBC8B208866AA0052660B /* PTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTWebViewController.swift */; };
+		55EDBC9820897C7A0052660B /* PTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC9720897C7A0052660B /* PTNavigationController.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,8 +159,10 @@
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
+		55C23B7120899B0300E9EA9B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		55EDBC8A208866A90052660B /* PTWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTWebViewController.swift; sourceTree = "<group>"; };
+		55EDBC9720897C7A0052660B /* PTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTNavigationController.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -287,11 +291,12 @@
 				5544B022206A30D90073F5FF /* PTCaptchaButton.swift */,
 				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
 				5544B023206A30D90073F5FF /* PTBankCardTextField.swift */,
+				55EDBC8A208866A90052660B /* PTWebViewController.swift */,
 				5544B01E206A30D80073F5FF /* PTTabBarController.swift */,
+				55EDBC9720897C7A0052660B /* PTNavigationController.swift */,
 				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
 				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
 				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
-				55EDBC8A208866A90052660B /* PTWebViewController.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				5544B037206A3EA10073F5FF /* readme.txt */,
 				555CBDFE206CD45E00DECE85 /* Array+extension.swift */,
 				555B8F6C2071C4C2008646B5 /* NSObject+extention.swift */,
+				55C23B7120899B0300E9EA9B /* URL+extension.swift */,
 			);
 			path = OtherExtension;
 			sourceTree = "<group>";
@@ -719,6 +725,7 @@
 				55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */,
 				5544B024206A30D90073F5FF /* PTBaseTableViewController.swift in Sources */,
 				555B8F832071E09C008646B5 /* UIImage+extension.swift in Sources */,
+				55EDBC9820897C7A0052660B /* PTNavigationController.swift in Sources */,
 				555431C3206E1F2400CC2CC0 /* PTFunction.swift in Sources */,
 				551E27F9207391E600A6561C /* PTTitleScrollerCell.swift in Sources */,
 				555B8F842071E09C008646B5 /* UIFont+extension.swift in Sources */,
@@ -741,6 +748,7 @@
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,
 				555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */,
 				5544B032206A323C0073F5FF /* PTMsgLabel.swift in Sources */,
+				55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */,
 				5566E97C2063561400600B3E /* PTAnimateProtocol.swift in Sources */,
 				5544B02D206A30FC0073F5FF /* Const.swift in Sources */,
 				5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */,
@@ -914,6 +922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Promote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -929,6 +938,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Promote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote;
 				PRODUCT_NAME = "$(TARGET_NAME)";

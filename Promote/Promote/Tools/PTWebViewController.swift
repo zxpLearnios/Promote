@@ -12,7 +12,8 @@ import WebKit
 
 class PTWebViewController: UIViewController {
 
-    let webView = WKWebView()
+    private let webView = WKWebView()
+    private let activity = UIActivityIndicatorView()
     
     private var defaultPreference: WKPreferences = {
         let preference = WKPreferences()
@@ -30,6 +31,7 @@ class PTWebViewController: UIViewController {
      */
     convenience init(with config: WKWebViewConfiguration, preference: WKPreferences) {
         self.init()
+        
         var configuration = config
         configuration.userContentController = WKUserContentController()
         // 传入代理与要执行的方法
@@ -46,10 +48,10 @@ class PTWebViewController: UIViewController {
     private func setSubviews() {
         addSubview(webView)
         webView.frame = view.bounds
-        webView.uiDelegate = self
+//        webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "<", style: .plain, target: self, action: #selector(didClickLeftNavigationItem))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back", style: .plain, target: self, action: #selector(didClickLeftNavigationItem))
         
         var cookieDic = [String: String]()
         var cookieValue = ""
@@ -83,13 +85,38 @@ class PTWebViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    
 }
 
 
-extension PTWebViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+extension PTWebViewController: WKNavigationDelegate, WKScriptMessageHandler { // WKUIDelegate
    
     
     // MARK： WKNavigationDelegate
+    // MARK: 在请求发起时拦截
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        
+        if let url = navigationAction.request.url {
+            
+            let urlStr = url.absoluteString
+            
+            if url.isFileURL {
+                
+            } else {
+                if urlStr.hasPrefix("http://") || urlStr.hasPrefix("https://") {
+                    
+                } else {
+                    
+                }
+            }
+            decisionHandler(.allow)
+        } else {
+            decisionHandler(.cancel)
+        }
+        
+    }
+    
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         
     }
@@ -106,11 +133,7 @@ extension PTWebViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessa
         
     }
     
-    // 拦截t
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        decisionHandler(.allow)
-    }
+   
     
     // 获取请求结果
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -118,7 +141,7 @@ extension PTWebViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessa
         // 由 URLResponse -> HTTPURLResponse，为了获取cookies
         
         
-        
+        decisionHandler(.allow)
         return
         let response = navigationResponse.response as! HTTPURLResponse
         let headers = response.allHeaderFields
@@ -129,6 +152,23 @@ extension PTWebViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessa
         decisionHandler(.allow)
     }
     
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        
+    }
+    
+    // 加载失败
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+        
+    }
+    
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        
+    }
     
     // MARK： WKUIDelegate
     

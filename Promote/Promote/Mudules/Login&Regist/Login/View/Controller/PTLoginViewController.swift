@@ -37,7 +37,7 @@ class PTLoginViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
-        
+        title = "登录"
         // 1. 非自动登录 使用observable
         //            viewModel = PTLoginViewModel.init(usernameField.rx.text.orEmpty.asDriver(), password: passwordField.rx.text.orEmpty.asDriver(), loginTap: loginBtn.rx.tap.asObservable())
         //            // 监听viewModel.isLoginBtnEnable来设置按钮

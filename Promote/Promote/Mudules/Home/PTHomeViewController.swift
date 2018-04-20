@@ -8,6 +8,8 @@
 
 import UIKit
 import Cartography
+
+
 class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
@@ -22,7 +24,6 @@ class PTHomeViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
-        
         hidesBottomBarWhenPushed = true
 //        doThing()
         setSubviews()
@@ -30,20 +31,30 @@ class PTHomeViewController: PTBaseViewController {
     
     func setSubviews() {
         
-        let img =  #imageLiteral(resourceName: "bg")
         // 1.
+        let btn = UIButton()
+        btn.backgroundColor = .gray
+        btn.addTarget(self, action: #selector(clickAction), for: .touchUpInside)
+        addSubview(btn)
+        constrain(btn) { btn in
+            btn.width == 200
+            btn.height == 200
+            btn.top == safeAreaTop + 5
+            btn.left == safeAreaLeft + 5
+        }
+        
+        
+       // 2.
+        let img =  #imageLiteral(resourceName: "bg")
         let imagV = UIImageView.init(image: img)
         addSubview(imagV)
         imagV.backgroundColor = .white
         
-       // 2.
         let beziPath = UIBezierPath()
         beziPath.move(to: CGPoint(x: 5, y: 100))
         beziPath.addLine(to: CGPoint.init(x: 100, y: 80))
         beziPath.addLine(to: CGPoint.init(x: 70, y: 150))
         beziPath.addLine(to: CGPoint.init(x: 5, y: 100))
-        
-        
         imagV.clipImage(with: beziPath)
         
     }
@@ -87,7 +98,7 @@ class PTHomeViewController: PTBaseViewController {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @objc private func clickAction() {
         let vc = PTWebViewController()
         navigationController?.pushViewController(vc, animated: true)
         

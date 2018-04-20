@@ -96,9 +96,10 @@ extension AppDelegate {
     }
     
     private func loadHomePage() {
-        let loginVC =  PTTabBarController()
-        let nav = UINavigationController.init(rootViewController: loginVC)
-        window!.rootViewController =  nav
+        let homeVC =  PTTabBarController()
+        // 不要给TabBarController加导航控制器，因为在ios10会有问题
+//        let nav = UINavigationController.init(rootViewController: homeVC)
+        window!.rootViewController = homeVC
         window!.makeKeyAndVisible()
     }
     
