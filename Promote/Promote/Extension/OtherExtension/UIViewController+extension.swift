@@ -11,7 +11,7 @@ extension UIViewController {
   
     
     /** 安全区域: 上 */
-    var safeAreaTop: Edge {
+    var safeAreaTop: Edge { // 也可以返回Expression<Edge>类型，如 return view.asProxy().top + 10，即Expression<Edge>比Edge多了个运算功能
         if #available(iOS 11.0, *) {
              return view.asProxy().safeAreaLayoutGuide.top
         } else {

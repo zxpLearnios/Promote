@@ -24,14 +24,14 @@ class PTHomeViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
-        hidesBottomBarWhenPushed = true
+//        hidesBottomBarWhenPushed = true
 //        doThing()
         setSubviews()
     }
     
     func setSubviews() {
         
-        // 1.
+        // 1. 测试safeArea扩展
         let btn = UIButton()
         btn.backgroundColor = .gray
         btn.addTarget(self, action: #selector(clickAction), for: .touchUpInside)
@@ -99,7 +99,7 @@ class PTHomeViewController: PTBaseViewController {
     }
     
     @objc private func clickAction() {
-        let vc = PTWebViewController()
+        let vc = PTBaseWebViewController()
         navigationController?.pushViewController(vc, animated: true)
         
     }
