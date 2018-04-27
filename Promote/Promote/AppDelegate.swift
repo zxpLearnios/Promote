@@ -11,7 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let test = PTTest()
+    let test = PTRxSwiftTest()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            debugPrint("fsdfsdffsd \(a)")
 //        }
         isShowGuide()
+        _ = PTCommonTest()
 //        Config.shareInstance.networkStatusChanged()
 
 //        window?.rootViewController = PTTestViewController()

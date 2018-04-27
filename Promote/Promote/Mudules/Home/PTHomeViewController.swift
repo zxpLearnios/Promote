@@ -61,6 +61,9 @@ class PTHomeViewController: PTBaseViewController {
         beziPath.addLine(to: CGPoint.init(x: 5, y: 100))
         imagV.clipImage(with: beziPath)
         
+        // 3.
+        
+        
     }
     
     func doThing() {
@@ -109,6 +112,4 @@ class PTHomeViewController: PTBaseViewController {
     }
     
 }
-
-
 

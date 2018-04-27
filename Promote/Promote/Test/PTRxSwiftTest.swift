@@ -29,7 +29,7 @@ import RxSwift
 //
 //}
 
-final class PTTest: NSObject {
+final class PTRxSwiftTest: NSObject {
     
     var db:DisposeBag?
     let selfDisposeBag = DisposeBag.init()

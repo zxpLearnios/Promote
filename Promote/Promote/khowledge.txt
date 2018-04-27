@@ -40,3 +40,5 @@ var autoLoginLab: UILabel = {
 
 8. opaque也是表示当前的UIView的不透明度，设置是否之后对于UIView的显示并没有什么影响,官方文档的意思简单点说就是opaque默认为YES，如果alpha小于1，那么应该设置opaque设置为NO.  alpha 的开销比hidden大，所以，隐藏，用hidden即可。
 9. UIImageView是专门为显示图片做的控件，用了最优显示技术，所以不让调用darwrect方法。所以我们如果写了一个UIImageView的子类里面重写了drawRect方法是不会被调用的. 因为UIImageView的drawRect方法永远不会调（即使是外部主动setNeedsDisplay也没用），所以，获取不到上下文，故此时需要自行创建
+
+10. 若有时po 打印时会立马crash，则将build setting里的optimization （带level的）release改为 None即可；或将project的build command-line tool 改为debug

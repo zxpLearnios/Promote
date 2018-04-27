@@ -56,7 +56,7 @@
 		555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F89207201ED008646B5 /* PTHomeViewController.swift */; };
 		555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8B207201F8008646B5 /* PTOtherViewController.swift */; };
 		555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8D20720202008646B5 /* PTMyViewController.swift */; };
-		555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTTest.swift */; };
+		555CBDFD206CD3E700DECE85 /* PTRxSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */; };
 		555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFE206CD45E00DECE85 /* Array+extension.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
@@ -75,6 +75,7 @@
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		55EDBC8B208866AA0052660B /* PTBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */; };
 		55EDBC9820897C7A0052660B /* PTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC9720897C7A0052660B /* PTNavigationController.swift */; };
+		55F8DE7E20936984005FFBBF /* PTCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8DE7D20936984005FFBBF /* PTCommonTest.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +147,7 @@
 		555B8F89207201ED008646B5 /* PTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTHomeViewController.swift; sourceTree = "<group>"; };
 		555B8F8B207201F8008646B5 /* PTOtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOtherViewController.swift; sourceTree = "<group>"; };
 		555B8F8D20720202008646B5 /* PTMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTMyViewController.swift; sourceTree = "<group>"; };
-		555CBDFC206CD3E700DECE85 /* PTTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTest.swift; sourceTree = "<group>"; };
+		555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRxSwiftTest.swift; sourceTree = "<group>"; };
 		555CBDFE206CD45E00DECE85 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseWebViewController.swift; sourceTree = "<group>"; };
 		55EDBC9720897C7A0052660B /* PTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTNavigationController.swift; sourceTree = "<group>"; };
+		55F8DE7D20936984005FFBBF /* PTCommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCommonTest.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -217,7 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				559A88622077B2F4005E8447 /* PTTestViewController.swift */,
-				555CBDFC206CD3E700DECE85 /* PTTest.swift */,
+				555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */,
+				55F8DE7D20936984005FFBBF /* PTCommonTest.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -725,7 +728,7 @@
 				5553D6F5208A2B32006E29B4 /* PTTabBar.swift in Sources */,
 				5544B025206A30D90073F5FF /* PTTabBarController.swift in Sources */,
 				555B8F8C207201F8008646B5 /* PTOtherViewController.swift in Sources */,
-				555CBDFD206CD3E700DECE85 /* PTTest.swift in Sources */,
+				555CBDFD206CD3E700DECE85 /* PTRxSwiftTest.swift in Sources */,
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
 				555B8F852071E09C008646B5 /* String+extension.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
@@ -733,6 +736,7 @@
 				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
 				551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */,
 				551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */,
+				55F8DE7E20936984005FFBBF /* PTCommonTest.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				5544B026206A30D90073F5FF /* PTPhoneTextField.swift in Sources */,
 				554465152089C55D0057A2BC /* PTBaseLabel.swift in Sources */,

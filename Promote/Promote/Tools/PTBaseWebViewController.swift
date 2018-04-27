@@ -72,12 +72,12 @@ class PTBaseWebViewController: UIViewController {
         indicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
         indicator.center = view.center
         
-        errLabl.backgroundColor = .gray
+        errLabl.backgroundColor = .clear
+        errLabl.bounds = view.bounds
         errLabl.center = view.center
-        errLabl.bounds = CGRect.init(x: 0, y: 0, width: kwidth, height: 20)
         errLabl.textAlignment = .center
         errLabl.set(korangeColor, fontSize: 18)
-        errLabl.text = "加载失败，点击屏幕重试"
+        errLabl.text = "加载失败，点击屏幕重试！"
         errLabl.isHidden = true
         errLabl.tapClosure = {[weak self] _, _ in
             self?.reloadData()
