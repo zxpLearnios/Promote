@@ -40,3 +40,21 @@ var autoLoginLab: UILabel = {
 
 8. opaque也是表示当前的UIView的不透明度，设置是否之后对于UIView的显示并没有什么影响,官方文档的意思简单点说就是opaque默认为YES，如果alpha小于1，那么应该设置opaque设置为NO.  alpha 的开销比hidden大，所以，隐藏，用hidden即可。
 9. UIImageView是专门为显示图片做的控件，用了最优显示技术，所以不让调用darwrect方法。所以我们如果写了一个UIImageView的子类里面重写了drawRect方法是不会被调用的. 因为UIImageView的drawRect方法永远不会调（即使是外部主动setNeedsDisplay也没用），所以，获取不到上下文，故此时需要自行创建
+10.
+// clipsToBounds是对view的切割，masksToBounds是对layer的切割. label要想有圆角必须设置其一，而其他UIview子类型则不用
+// 11. 使用shadowColor时，原view必须设置背景色且shadowOpacity必须设置为!= 0，且shadowOffset还需要微调.
+
+12. 关于share extension 即ios8 插件扩展开发
+    12.1 Document Types:
+    name:这个可以随便填写
+    types:支持类型文件,为了省事可以在下面两个中选择
+    public.data: 打开大多数文件[文件夹除外],例如: .db, .dat , 包含public.content的全部
+    public.content: 打开一些简单文件时候,例如: png,jpg,plist,文档,表格,html等
+    icon:可以添加也可以不添加
+
+    ExportedUtls:
+    Identifier:必填,为项目的Bundle Identifier
+
+    12. 2 我在Xcode中另外新建了一个分享扩展，然后把他们运行在机器上，但是不知道为什么在我的机器上（iPhone 5，iPhone 6s Plus）上都不显示，后来调了下才发现原来扩展也有它自己的deployment target，当我们把扩展的deployment target改为比我们的设备的iOS 版本低的时候就可以显示出来了，之前新建的时候没改，一直是9.1，我的iPhone 5是8.0的，所以显示不出来。
+
+    12.3 尽管苹果开放了Extension，但是在iOS中extension并不能单独存在，要想提交到AppStore，必须将Extension包含在一个App中提交，并且App的实现部分不能为空,这个包含Extension的App就叫Containing app。Extension会随着Containing App的安装而安装，同时随着ContainingApp的卸载而卸载。）共享的数据介质中（包括NSUserDefault、Sqlite、CoreData），要跟容器程序进行数据交互需要借助AppGroups服务
