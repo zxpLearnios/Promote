@@ -146,7 +146,7 @@ let khud = PTHUD.shareInstance
 //let kappVersionKey = "CFBundleShortVersionString"
 /**大的版本号，build号*/
 let kappVersionKey = "CFBundleVersion"
-/**用户登陆成功的用户名key， 因为退出时会情况用户信息，故须存储之以使用户名框自动有值*/
+/**用户登陆成功的用户名key， 因为退出时会清空用户信息，故须存储之以使用户名框自动有值*/
 let ksaveUserNamekey = "loginUser_success_key"
 /**保存app版本号, 次key加上了环境类型，不加版本号*/
 let ksaveAppVersionkey = "appVersion_key" + ApiType

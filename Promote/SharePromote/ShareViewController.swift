@@ -16,7 +16,14 @@ class ShareViewController: SLComposeServiceViewController {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 1. 用户可以输入时，用
+        //        textView! contentText placeholder
+    }
+    
     override func didSelectCancel() {
         
         
@@ -34,13 +41,17 @@ class ShareViewController: SLComposeServiceViewController {
         return []
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        let vc =  PTShareViewController()
-//        present(vc, animated: true, completion: nil)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let vc =  PTShareViewController.init(with: extensionContext!)
+        present(vc, animated: true, completion: nil)
+//        pushConfigurationViewController(vc)
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
    
 }
 
