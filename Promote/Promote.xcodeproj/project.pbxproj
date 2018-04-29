@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550EF698209474EA00704F17 /* PTShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF697209474EA00704F17 /* PTShareViewController.swift */; };
 		551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27EF20738C2C00A6561C /* UIView+extension.swift */; };
 		551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F120738CDD00A6561C /* UIViewController+extension.swift */; };
 		551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F320738F2500A6561C /* PTTitleScroller.swift */; };
@@ -71,6 +72,9 @@
 		558AF110208A237600EFE21D /* PTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558AF10F208A237600EFE21D /* PTRouter.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
+		55A64DF320945A18000AD40A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A64DF220945A18000AD40A /* ShareViewController.swift */; };
+		55A64DF620945A18000AD40A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A64DF420945A18000AD40A /* MainInterface.storyboard */; };
+		55A64DFA20945A18000AD40A /* SharePromote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55A64DF020945A18000AD40A /* SharePromote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C23B7120899B0300E9EA9B /* URL+extension.swift */; };
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		55EDBC8B208866AA0052660B /* PTBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */; };
@@ -94,10 +98,33 @@
 			remoteGlobalIDString = 5566E92E2062697300600B3E;
 			remoteInfo = Promote;
 		};
+		55A64DF820945A18000AD40A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5566E9272062697300600B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A64DEF20945A18000AD40A;
+			remoteInfo = SharePromote;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55A64DEB2094591D000AD40A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				55A64DFA20945A18000AD40A /* SharePromote.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
+		550EF6962094715100704F17 /* Promote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Promote.entitlements; sourceTree = "<group>"; };
+		550EF697209474EA00704F17 /* PTShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareViewController.swift; sourceTree = "<group>"; };
 		551E27EF20738C2C00A6561C /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		551E27F120738CDD00A6561C /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		551E27F320738F2500A6561C /* PTTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScroller.swift; sourceTree = "<group>"; };
@@ -165,9 +192,14 @@
 		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
 		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
+		55822C90209462F6005DE839 /* SharePromote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharePromote.entitlements; sourceTree = "<group>"; };
 		558AF10F208A237600EFE21D /* PTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRouter.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
+		55A64DF020945A18000AD40A /* SharePromote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SharePromote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A64DF220945A18000AD40A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		55A64DF520945A18000AD40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		55A64DF720945A18000AD40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C23B7120899B0300E9EA9B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseWebViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +226,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5566E94B2062697300600B3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A64DED20945A18000AD40A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -410,6 +449,7 @@
 				5566E9312062697300600B3E /* Promote */,
 				5566E9462062697300600B3E /* PromoteTests */,
 				5566E9512062697300600B3E /* PromoteUITests */,
+				55A64DF120945A18000AD40A /* SharePromote */,
 				5566E9302062697300600B3E /* Products */,
 				7CA4E542C9F99EF773FF99D7 /* Pods */,
 				5C16458AB298E91F70595C23 /* Frameworks */,
@@ -422,6 +462,7 @@
 				5566E92F2062697300600B3E /* Promote.app */,
 				5566E9432062697300600B3E /* PromoteTests.xctest */,
 				5566E94E2062697300600B3E /* PromoteUITests.xctest */,
+				55A64DF020945A18000AD40A /* SharePromote.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,15 +470,16 @@
 		5566E9312062697300600B3E /* Promote */ = {
 			isa = PBXGroup;
 			children = (
-				5553328C206B84D400F91354 /* Resources */,
+				550EF6962094715100704F17 /* Promote.entitlements */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
-				552A257D2081FEA4000B86F8 /* Test */,
 				5566E9362062697300600B3E /* Main.storyboard */,
 				5566E9392062697300600B3E /* Assets.xcassets */,
 				5566E93B2062697300600B3E /* LaunchScreen.storyboard */,
 				5566E93E2062697300600B3E /* Info.plist */,
 				55533286206B812D00F91354 /* khowledge.txt */,
+				5553328C206B84D400F91354 /* Resources */,
+				552A257D2081FEA4000B86F8 /* Test */,
 				55533288206B848200F91354 /* Mudules */,
 				5544B006206A2C160073F5FF /* Config */,
 				5544B005206A2C060073F5FF /* Tools */,
@@ -510,6 +552,18 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		55A64DF120945A18000AD40A /* SharePromote */ = {
+			isa = PBXGroup;
+			children = (
+				55822C90209462F6005DE839 /* SharePromote.entitlements */,
+				55A64DF220945A18000AD40A /* ShareViewController.swift */,
+				55A64DF420945A18000AD40A /* MainInterface.storyboard */,
+				55A64DF720945A18000AD40A /* Info.plist */,
+				550EF697209474EA00704F17 /* PTShareViewController.swift */,
+			);
+			path = SharePromote;
+			sourceTree = "<group>";
+		};
 		5C16458AB298E91F70595C23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,10 +593,12 @@
 				5566E92C2062697300600B3E /* Frameworks */,
 				5566E92D2062697300600B3E /* Resources */,
 				D7EEFA13E545B175427D15DF /* [CP] Embed Pods Frameworks */,
+				55A64DEB2094591D000AD40A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55A64DF920945A18000AD40A /* PBXTargetDependency */,
 			);
 			name = Promote;
 			productName = Promote;
@@ -585,6 +641,23 @@
 			productReference = 5566E94E2062697300600B3E /* PromoteUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		55A64DEF20945A18000AD40A /* SharePromote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55A64DFB20945A18000AD40A /* Build configuration list for PBXNativeTarget "SharePromote" */;
+			buildPhases = (
+				55A64DEC20945A18000AD40A /* Sources */,
+				55A64DED20945A18000AD40A /* Frameworks */,
+				55A64DEE20945A18000AD40A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharePromote;
+			productName = SharePromote;
+			productReference = 55A64DF020945A18000AD40A /* SharePromote.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -598,6 +671,11 @@
 					5566E92E2062697300600B3E = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5566E9422062697300600B3E = {
 						CreatedOnToolsVersion = 9.2;
@@ -608,6 +686,15 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5566E92E2062697300600B3E;
+					};
+					55A64DEF20945A18000AD40A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -627,6 +714,7 @@
 				5566E92E2062697300600B3E /* Promote */,
 				5566E9422062697300600B3E /* PromoteTests */,
 				5566E94D2062697300600B3E /* PromoteUITests */,
+				55A64DEF20945A18000AD40A /* SharePromote */,
 			);
 		};
 /* End PBXProject section */
@@ -667,6 +755,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55A64DEE20945A18000AD40A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A64DF620945A18000AD40A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +889,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55A64DEC20945A18000AD40A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550EF698209474EA00704F17 /* PTShareViewController.swift in Sources */,
+				55A64DF320945A18000AD40A /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -805,6 +910,11 @@
 			isa = PBXTargetDependency;
 			target = 5566E92E2062697300600B3E /* Promote */;
 			targetProxy = 5566E94F2062697300600B3E /* PBXContainerItemProxy */;
+		};
+		55A64DF920945A18000AD40A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55A64DEF20945A18000AD40A /* SharePromote */;
+			targetProxy = 55A64DF820945A18000AD40A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -823,6 +933,14 @@
 				5566E93C2062697300600B3E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		55A64DF420945A18000AD40A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55A64DF520945A18000AD40A /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -939,8 +1057,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Promote/Promote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQLB9MPJWR;
 				INFOPLIST_FILE = Promote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -955,8 +1076,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Promote/Promote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQLB9MPJWR;
 				INFOPLIST_FILE = Promote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1029,6 +1153,41 @@
 			};
 			name = Release;
 		};
+		55A64DFC20945A18000AD40A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SharePromote/SharePromote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QQLB9MPJWR;
+				INFOPLIST_FILE = SharePromote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote.SharePromote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55A64DFD20945A18000AD40A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SharePromote/SharePromote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QQLB9MPJWR;
+				INFOPLIST_FILE = SharePromote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote.SharePromote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1064,6 +1223,15 @@
 			buildConfigurations = (
 				5566E95E2062697300600B3E /* Debug */,
 				5566E95F2062697300600B3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55A64DFB20945A18000AD40A /* Build configuration list for PBXNativeTarget "SharePromote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55A64DFC20945A18000AD40A /* Debug */,
+				55A64DFD20945A18000AD40A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
