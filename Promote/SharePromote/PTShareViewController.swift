@@ -9,6 +9,7 @@ import Social
 import UIKit
 
 class PTShareViewController: UIViewController {
+    
 //    private lazy var spaceItem: SLComposeSheetConfigurationItem = {
 //        let item = SLComposeSheetConfigurationItem()!
 //        item.title = "空间"
@@ -22,11 +23,15 @@ class PTShareViewController: UIViewController {
     private var extensionCtx = NSExtensionContext()
     private let lab = UILabel()
     private let imgV = UIImageView()
+    private var backClosure: (() -> ())?
     
-    convenience init(with extensionContext: NSExtensionContext) {
+    // @noescape 是闭包的默认值
+    convenience init(with extensionContext: NSExtensionContext, backClosure: (() -> Void)? = nil) {
         self.init()
         self.extensionCtx = extensionContext
+        self.backClosure = backClosure
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,11 @@ class PTShareViewController: UIViewController {
     private func setSubviews() {
         view.addSubview(lab)
         view.addSubview(imgV)
+        
+        let backBtn = UIButton.init(frame: CGRect.init(x: 30, y: 160, width: 100, height: 40))
+        backBtn.setTitle("<", for: .normal)
+        backBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        view.addSubview(backBtn)
         
         lab.text = "--"
         lab.textAlignment = .center
@@ -93,6 +103,12 @@ class PTShareViewController: UIViewController {
         }
     }
     
+    
+    @objc private func backAction() {
+        if let callback = backClosure {
+            callback()
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if navigationController != nil {

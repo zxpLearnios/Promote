@@ -14,6 +14,7 @@ class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
     var richTitleScroller: PTRichTitleScroller!
+    let vc = UIDocumentInteractionController()
     
     
     let ary: [String] = {
@@ -62,11 +63,10 @@ class PTHomeViewController: PTBaseViewController {
         imagV.clipImage(with: beziPath)
         
         // 3.
-        
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "点击", style: .plain, target: self, action: #selector(leftItemAction))
     }
     
-    func doThing() {
+    private func doThing() {
         
         // 1. normal
 //        titleScroller = PTTitleScroller.init(frame: CGRect.init(x: 0, y: 200, width: kwidth, height: 40))
@@ -103,6 +103,14 @@ class PTHomeViewController: PTBaseViewController {
             self.richTitleScroller.dataSource = self.ary
         }
         
+        
+    }
+    
+    @objc private  func leftItemAction() {
+        // 3.
+        vc.delegate = self
+        vc.url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "guideImage1@3x.png", ofType: nil)!)
+        vc.presentOpenInMenu(from: view.bounds, in: view, animated: true)
     }
     
     @objc private func clickAction() {
@@ -112,4 +120,15 @@ class PTHomeViewController: PTBaseViewController {
     }
     
 }
+
+extension PTHomeViewController: UIDocumentInteractionControllerDelegate {
+    
+    
+//    此代理方法主要是用来指定UIDocumentInteractionController要显示的视图所在的父视图，这样UIDocumentInteractionController才知道在哪里展示Quick Look预览内容，当然了，这里是指定button所在的VC来做UIDocumentInteractionController的代理对象，添加如下代码：
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+    
+}
+
 

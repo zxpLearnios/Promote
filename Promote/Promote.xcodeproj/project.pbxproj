@@ -79,6 +79,7 @@
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		55EDBC8B208866AA0052660B /* PTBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */; };
 		55EDBC9820897C7A0052660B /* PTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC9720897C7A0052660B /* PTNavigationController.swift */; };
+		55F327CC209610EF007B1775 /* PTcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F327CB209610EF007B1775 /* PTcc.swift */; };
 		55F8DE7E20936984005FFBBF /* PTCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8DE7D20936984005FFBBF /* PTCommonTest.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
@@ -204,6 +205,7 @@
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseWebViewController.swift; sourceTree = "<group>"; };
 		55EDBC9720897C7A0052660B /* PTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTNavigationController.swift; sourceTree = "<group>"; };
+		55F327CB209610EF007B1775 /* PTcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTcc.swift; sourceTree = "<group>"; };
 		55F8DE7D20936984005FFBBF /* PTCommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCommonTest.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				555B8F89207201ED008646B5 /* PTHomeViewController.swift */,
+				55F327CB209610EF007B1775 /* PTcc.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
 				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,
+				55F327CC209610EF007B1775 /* PTcc.swift in Sources */,
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
