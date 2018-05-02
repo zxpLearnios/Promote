@@ -59,6 +59,7 @@
 		555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555B8F8D20720202008646B5 /* PTMyViewController.swift */; };
 		555CBDFD206CD3E700DECE85 /* PTRxSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */; };
 		555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CBDFE206CD45E00DECE85 /* Array+extension.swift */; };
+		556177412099ACA0007E3B3F /* PTShareNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556177402099ACA0007E3B3F /* PTShareNavigationController.swift */; };
 		5566E9332062697300600B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9322062697300600B3E /* AppDelegate.swift */; };
 		5566E9352062697300600B3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E9342062697300600B3E /* ViewController.swift */; };
 		5566E9382062697300600B3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5566E9362062697300600B3E /* Main.storyboard */; };
@@ -124,7 +125,6 @@
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
-		550EF6962094715100704F17 /* Promote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Promote.entitlements; sourceTree = "<group>"; };
 		550EF697209474EA00704F17 /* PTShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareViewController.swift; sourceTree = "<group>"; };
 		551E27EF20738C2C00A6561C /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		551E27F120738CDD00A6561C /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
@@ -177,6 +177,9 @@
 		555B8F8D20720202008646B5 /* PTMyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTMyViewController.swift; sourceTree = "<group>"; };
 		555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRxSwiftTest.swift; sourceTree = "<group>"; };
 		555CBDFE206CD45E00DECE85 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
+		556177402099ACA0007E3B3F /* PTShareNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareNavigationController.swift; sourceTree = "<group>"; };
+		556177422099B81C007E3B3F /* Promote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Promote.entitlements; sourceTree = "<group>"; };
+		556177432099B88C007E3B3F /* SharePromote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharePromote.entitlements; sourceTree = "<group>"; };
 		5566E92F2062697300600B3E /* Promote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5566E9322062697300600B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5566E9342062697300600B3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,7 +196,6 @@
 		5566E9772063561400600B3E /* PromoteProtocol+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PromoteProtocol+UIView.swift"; sourceTree = "<group>"; };
 		5566E9792063561400600B3E /* PTAnimateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAnimateProtocol.swift; sourceTree = "<group>"; };
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
-		55822C90209462F6005DE839 /* SharePromote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SharePromote.entitlements; sourceTree = "<group>"; };
 		558AF10F208A237600EFE21D /* PTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRouter.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
@@ -473,7 +475,7 @@
 		5566E9312062697300600B3E /* Promote */ = {
 			isa = PBXGroup;
 			children = (
-				550EF6962094715100704F17 /* Promote.entitlements */,
+				556177422099B81C007E3B3F /* Promote.entitlements */,
 				5566E9322062697300600B3E /* AppDelegate.swift */,
 				5566E9342062697300600B3E /* ViewController.swift */,
 				5566E9362062697300600B3E /* Main.storyboard */,
@@ -483,11 +485,11 @@
 				55533286206B812D00F91354 /* khowledge.txt */,
 				5553328C206B84D400F91354 /* Resources */,
 				552A257D2081FEA4000B86F8 /* Test */,
-				55533288206B848200F91354 /* Mudules */,
 				5544B006206A2C160073F5FF /* Config */,
 				5544B005206A2C060073F5FF /* Tools */,
 				5566E9782063561400600B3E /* Protocol */,
 				5566E9742063561400600B3E /* Extension */,
+				55533288206B848200F91354 /* Mudules */,
 			);
 			path = Promote;
 			sourceTree = "<group>";
@@ -558,11 +560,12 @@
 		55A64DF120945A18000AD40A /* SharePromote */ = {
 			isa = PBXGroup;
 			children = (
-				55822C90209462F6005DE839 /* SharePromote.entitlements */,
+				556177432099B88C007E3B3F /* SharePromote.entitlements */,
 				55A64DF220945A18000AD40A /* ShareViewController.swift */,
 				55A64DF420945A18000AD40A /* MainInterface.storyboard */,
 				55A64DF720945A18000AD40A /* Info.plist */,
 				550EF697209474EA00704F17 /* PTShareViewController.swift */,
+				556177402099ACA0007E3B3F /* PTShareNavigationController.swift */,
 			);
 			path = SharePromote;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556177412099ACA0007E3B3F /* PTShareNavigationController.swift in Sources */,
 				550EF698209474EA00704F17 /* PTShareViewController.swift in Sources */,
 				55A64DF320945A18000AD40A /* ShareViewController.swift in Sources */,
 			);
@@ -1064,6 +1068,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Promote/Promote.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQLB9MPJWR;
 				INFOPLIST_FILE = Promote/Info.plist;
@@ -1071,6 +1076,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1083,6 +1089,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Promote/Promote.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQLB9MPJWR;
 				INFOPLIST_FILE = Promote/Info.plist;
@@ -1090,6 +1097,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zjn.www.Promote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

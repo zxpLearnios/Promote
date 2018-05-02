@@ -18,6 +18,10 @@ class AppDelegate: UIResponder {
 //        autoreleasepool {
 //            debugPrint("fsdfsdffsd \(a)")
 //        }
+        let us =  UserDefaults.init(suiteName: appGroupskey)!
+        us.set("test_appGroups", forKey: "test_app_groups")
+        us.synchronize()
+        
         isShowGuide()
         _ = PTCommonTest()
 //        Config.shareInstance.networkStatusChanged()
@@ -123,7 +127,7 @@ extension AppDelegate: UIApplicationDelegate {
     
     // MARK： iOS9之后
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+//        options[sourceApplication]
         // 其他应用发送过来的数据
         return true
     }

@@ -14,7 +14,7 @@ class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
     var richTitleScroller: PTRichTitleScroller!
-    let vc = UIDocumentInteractionController()
+    let documentVc = UIDocumentInteractionController()
     
     
     let ary: [String] = {
@@ -108,9 +108,11 @@ class PTHomeViewController: PTBaseViewController {
     
     @objc private  func leftItemAction() {
         // 3.
-        vc.delegate = self
-        vc.url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "guideImage1@3x.png", ofType: nil)!)
-        vc.presentOpenInMenu(from: view.bounds, in: view, animated: true)
+        documentVc.delegate = self
+        
+        documentVc.url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "guideImage1@2x.png", ofType: nil)!)
+//        vc.presentOpenInMenu(from: view.bounds, in: view, animated: true)
+        documentVc.presentPreview(animated: true)
     }
     
     @objc private func clickAction() {
@@ -119,15 +121,30 @@ class PTHomeViewController: PTBaseViewController {
         
     }
     
+    deinit {
+        
+    }
+    
 }
 
 extension PTHomeViewController: UIDocumentInteractionControllerDelegate {
     
     
-//    此代理方法主要是用来指定UIDocumentInteractionController要显示的视图所在的父视图，这样UIDocumentInteractionController才知道在哪里展示Quick Look预览内容，当然了，这里是指定button所在的VC来做UIDocumentInteractionController的代理对象，添加如下代码：
-    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
-        return self
+   // 此代理方法主要是用来指定UIDocumentInteractionController要显示的视图所在的父视图，这样UIDocumentInteractionController才知道在哪里展示Quick Look预览内容
+
+    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
+        let redView = UIView()
+        redView.backgroundColor = .red
+        redView.frame = view.bounds
+        return redView
     }
+    
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        let previewVc = UIViewController()
+        navigationController?.present(previewVc, animated: true, completion: nil)
+        return previewVc
+    }
+    
     
 }
 

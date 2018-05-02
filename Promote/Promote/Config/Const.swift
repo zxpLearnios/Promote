@@ -10,7 +10,7 @@ import RxSwift
 import Alamofire
 
 let ApiType = "dev://..."
-
+let appGroupskey = "appGroupskey_key"
 let kreachabilityManager = NetworkReachabilityManager.init()
 //let kdisposeBag = DisposeBag()
 

@@ -22,11 +22,15 @@ class ShareViewController: SLComposeServiceViewController {
         
         // 1. 用户可以输入时，用
         //        textView! contentText placeholder
+        
+        let us = UserDefaults.init(suiteName: "appGroupskey_key")!
+        let str = us.value(forKey: "test_app_groups") as? String
+        textView.text = str ?? "111"
     }
     
+    // 一定要调用super，否则，点取消后，后续无法操作
     override func didSelectCancel() {
-        
-        
+        super.didSelectCancel()
     }
     
     override func didSelectPost() {
@@ -44,14 +48,18 @@ class ShareViewController: SLComposeServiceViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let vc =  PTShareViewController.init(with: extensionContext!)
-        present(vc, animated: true, completion: nil)
-//        pushConfigurationViewController(vc)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc =  PTShareViewController.init(with: extensionContext!, backClosure: {[weak self] in
+            self?.cancel()
+            // self?.didSelectCancel()
+        })
+        let sharedVc = PTShareNavigationController.init(rootViewController: vc)
+//        present(sharedVc, animated: true, completion: nil)
+
+        //        pushConfigurationViewController(vc) // 相当于加item
         
     }
+    
+    
    
 }
 
