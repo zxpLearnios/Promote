@@ -24,31 +24,47 @@ class PTBaseWebViewController: UIViewController {
        return WKProcessPool()
     }()
     
+    
+    private lazy var defaultConfig: WKWebViewConfiguration = {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        config.allowsAirPlayForMediaPlayback = true
+        config.allowsPictureInPictureMediaPlayback = true
+        return config
+    }()
+    
     // MARK： 默认网页配置
-    private static var defaultPreference: WKPreferences = {
+    private lazy var defaultPreference: WKPreferences = {
         let preference = WKPreferences()
         preference.javaScriptCanOpenWindowsAutomatically = true
         preference.minimumFontSize = 20
         return preference
     }()
     
-    convenience init(with urlStr: String) {
-        self.init()
+    var urlString = "" {
+        didSet {
+            guard urlString != oldValue else {
+                return
+            }
+            loadRequest(with: urlString)
+        }
+    
     }
     
     /**
-     * 配置config，用于js与原生交互
+     * 1. 加载一般的网页
      */
-    convenience init(with config: WKWebViewConfiguration, preference: WKPreferences = defaultPreference ) {
+    convenience init(with urlStr: String) {
         self.init()
-        
-        let configuration = config
-        // 传入代理与要执行的方法
-        configuration.preferences = preference
-        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
-        configuration.processPool = processPool
-        configuration.userContentController = getUserContentControllerWithCookies()
-        
+        setupConfiguration()
+    }
+    
+    /**
+     * 1.1 配置config，用于js与原生交互
+     */
+    convenience init(with config: WKWebViewConfiguration ) {
+        self.init()
+        setupConfiguration()
     }
     
     
@@ -85,30 +101,46 @@ class PTBaseWebViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back", style: .plain, target: self, action: #selector(didClickLeftNavigationItem))
         
-        var cookieDic = [String: String]()
-        var cookieValue = ""
-        let cookieStore = HTTPCookieStorage.shared
-        
-        if let cookies = cookieStore.cookies {
-            for cookie in cookies {
-                cookieDic[cookie.name] = cookie.value
-            }
-            
-            debugPrint("webview---cookies： \(cookies.debugDescription)")
-        }
-        
-       loadRequest()
+//        var cookieDic = [String: String]()
+//        var cookieValue = ""
+//        let cookieStore = HTTPCookieStorage.shared
+//
+//        if let cookies = cookieStore.cookies {
+//            for cookie in cookies {
+//                cookieDic[cookie.name] = cookie.value
+//            }
+//
+//            debugPrint("webview---cookies： \(cookies.debugDescription)")
+//        }
         
     }
     
     
-    private func loadRequest () {
-        let urlStr = "https://blog.csdn.net/u010105969/article/details/53942862" // https://
-        let url = URL.init(string: urlStr)!
-        var request = URLRequest.init(url: url)
-        //        request.addValue(cookieValue, forHTTPHeaderField: "Cookie")
-        
-        webView.load(request)
+    private func loadRequest(with urlStr: String) {
+        var url: URL
+        if String.isUrlStr(urlStr) {
+            url = URL.init(string: urlStr)!
+            let request = URLRequest.init(url: url)
+            //        request.addValue(cookieValue, forHTTPHeaderField: "Cookie")
+            
+            webView.load(request)
+        } else {
+//            url = URL.init(fileURLWithPath: urlStr)
+//            let request = URLRequest.init(url: url)
+//            webView.load(request)
+//            do {
+//                var body = try
+//                    String.init(contentsOf: url, encoding: String.Encoding(rawValue: 0x80000631)) // .utf8  0x80000632  0x80000631
+//
+//                if body.count == 0 {
+//                    body = try
+//                        String.init(contentsOf: url, encoding: String.Encoding(rawValue: 0x80000632))
+//                }
+//                webView.loadHTMLString(body, baseURL: url)
+//            } catch let err {
+//                debugPrint("不能打开本地文件: \(err)")
+//            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -117,9 +149,18 @@ class PTBaseWebViewController: UIViewController {
     
 
     // -----------  private UI func  --------------- //
+    private func setupConfiguration() {
+        let configuration = defaultConfig
+        // 传入代理与要执行的方法
+        configuration.preferences = defaultPreference
+        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
+        configuration.processPool = processPool
+        configuration.userContentController = getUserContentControllerWithCookies()
+    }
+    
     func reloadData() {
         webView.stopLoading()
-        loadRequest()
+        loadRequest(with: urlString)
         hideLoadFail()
     }
     

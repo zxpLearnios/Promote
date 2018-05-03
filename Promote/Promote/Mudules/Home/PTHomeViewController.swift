@@ -8,13 +8,14 @@
 
 import UIKit
 import Cartography
-
+import QuickLook
 
 class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
     var richTitleScroller: PTRichTitleScroller!
     let documentVc = UIDocumentInteractionController()
+    let fileLookVc = PTFilePreviewController()
     
     
     let ary: [String] = {
@@ -111,14 +112,37 @@ class PTHomeViewController: PTBaseViewController {
         documentVc.delegate = self
         
         documentVc.url = URL.init(fileURLWithPath: Bundle.main.path(forResource: "guideImage1@2x.png", ofType: nil)!)
-//        vc.presentOpenInMenu(from: view.bounds, in: view, animated: true)
-        documentVc.presentPreview(animated: true)
+        // 1.
+        // resents a menu allowing the user to open the document in another application.
+//        documentVc.presentOpenInMenu(from: view.bounds, in: view, animated: true)
+        // 2.
+        // Presents a menu allowing the user to Quick Look, open, or copy the item specified by URL.
+        // presentOptionsMenu + documentInteractionControllerViewControllerForPreview{return self } 即可将quick look的功能调出来再列表里
+//        documentVc.presentOptionsMenu(from: view.bounds, in: view, animated: true)
+        // 2.1
+//        documentVc.presentPreview(animated: true)
+//        present(previewVc, animated: true, completion: nil)
+        // 3.
+        fileLookVc.filePaths = ["guideImage1@2x.png"] // ["ios.pdf"]
+        
+//       let nav = UINavigationController.init(rootViewController: fileLookVc)
+       
+//                navigationController?.pushViewController(fileLookVc, animated: true)
+        present(fileLookVc, animated: false, completion: nil)
     }
     
     @objc private func clickAction() {
         let vc = PTBaseWebViewController()
+        let localfile = Bundle.main.path(forResource: "ios.pdf", ofType: nil)!
+        vc.urlString = "https://blog.csdn.net/u010105969/article/details/53942862"
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.navigationController?.navigationBar.transform = CGAffineTransform.init(translationX: 0, y: -44)
+        }
     }
     
     deinit {
@@ -131,20 +155,38 @@ extension PTHomeViewController: UIDocumentInteractionControllerDelegate {
     
     
    // 此代理方法主要是用来指定UIDocumentInteractionController要显示的视图所在的父视图，这样UIDocumentInteractionController才知道在哪里展示Quick Look预览内容
-
-    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
-        let redView = UIView()
-        redView.backgroundColor = .red
-        redView.frame = view.bounds
-        return redView
+//    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+//        navigationController?.pushViewController(previewVc, animated: true)
+////        present(previewVc, animated: false, completion: nil)
+//
+//        return previewVc
+//    }
+    
+//    func documentInteractionControllerRectForPreview(_ controller: UIDocumentInteractionController) -> CGRect {
+//        return  CGRect.init(x: 50, y: 100, width: 300, height: 300)
+//    }
+//
+//    //
+//    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
+//        let redView = UIView()
+//        redView.backgroundColor = .red
+//        view.addSubview(redView)
+//        return redView
+//    }
+//
+    
+    func documentInteractionControllerWillBeginPreview(_ controller: UIDocumentInteractionController) {
+        
     }
     
-    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
-        let previewVc = UIViewController()
-        navigationController?.present(previewVc, animated: true, completion: nil)
-        return previewVc
+    func documentInteractionControllerDidEndPreview(_ controller: UIDocumentInteractionController) {
+//        previewVc.dismiss(animated: false, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
+    func documentInteractionControllerWillPresentOpenInMenu(_ controller: UIDocumentInteractionController) {
+        
+    }
     
 }
 
