@@ -9,6 +9,7 @@
 import UIKit
 import Cartography
 import QuickLook
+import WebKit
 
 class PTHomeViewController: PTBaseViewController {
 
@@ -123,7 +124,8 @@ class PTHomeViewController: PTBaseViewController {
 //        documentVc.presentPreview(animated: true)
 //        present(previewVc, animated: true, completion: nil)
         // 3.
-        fileLookVc.filePaths = ["guideImage1@2x.png"] // ["ios.pdf"]
+        let ary = ["guideImage1", "guideImage1.png", "task@2x", "snapshot", "ios.pdf"]
+        fileLookVc.filePaths = ary //["guideImage1@2x.png"] // ["ios.pdf"]
         
 //       let nav = UINavigationController.init(rootViewController: fileLookVc)
        
@@ -132,10 +134,14 @@ class PTHomeViewController: PTBaseViewController {
     }
     
     @objc private func clickAction() {
+        
         let vc = PTBaseWebViewController()
-        let localfile = Bundle.main.path(forResource: "ios.pdf", ofType: nil)!
-        vc.urlString = "https://blog.csdn.net/u010105969/article/details/53942862"
+        let file = PTBaseBundle.loadImage(name: "ios.pdf")
+       
         navigationController?.pushViewController(vc, animated: true)
+        // 加载本地文件 、网络文件
+         vc.urlString = file //"https://blog.csdn.net/u010105969/article/details/53942862"
+        
         
     }
     

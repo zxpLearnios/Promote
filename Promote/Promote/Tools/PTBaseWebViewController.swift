@@ -56,6 +56,7 @@ class PTBaseWebViewController: UIViewController {
      */
     convenience init(with urlStr: String) {
         self.init()
+        
         setupConfiguration()
     }
     
@@ -125,9 +126,16 @@ class PTBaseWebViewController: UIViewController {
             
             webView.load(request)
         } else {
-//            url = URL.init(fileURLWithPath: urlStr)
+//            let range = Range(str.startIndex..<str.index(str.startIndex, offsetBy: 7))
+//            str.removeSubrange(range)
+//
+            
+             url = URL.init(fileURLWithPath: urlStr, relativeTo: nil)
+//
 //            let request = URLRequest.init(url: url)
-//            webView.load(request)
+//            webView.load(<#T##data: Data##Data#>, mimeType: <#T##String#>, characterEncodingName: <#T##String#>, baseURL: <#T##URL#>)
+            webView.loadFileURL(url, allowingReadAccessTo: url)
+            
 //            do {
 //                var body = try
 //                    String.init(contentsOf: url, encoding: String.Encoding(rawValue: 0x80000631)) // .utf8  0x80000632  0x80000631
@@ -366,7 +374,24 @@ extension PTBaseWebViewController: WKNavigationDelegate, WKScriptMessageHandler 
             
             decisionHandler(.allow)
         } else {
-            decisionHandler(.cancel)
+            if let response = navigationResponse.response as? URLResponse { // NSURLResponse 加载本地pdf等文件时
+                
+//                // 处理特殊code
+//                if response.statusCode == 404 {
+//                    debugPrint("资源找不到！")
+//                    decisionHandler(.cancel)
+//                }
+//
+//                if let headers = response.allHeaderFields as? [String: String], let requestUrl = response.url {
+//
+//                    // 更新cookies
+//                    update(cookies: HTTPCookie.cookies(withResponseHeaderFields: headers, for: requestUrl))
+//                }
+                
+                decisionHandler(.allow)
+            } else {
+                decisionHandler(.cancel)
+            }
         }
         
         

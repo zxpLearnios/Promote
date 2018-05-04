@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 //        let a = [1, 2, 3]
 //        let b = a[safe: 4]
         addSubviews()
+        
     }
 
     func doOther() {

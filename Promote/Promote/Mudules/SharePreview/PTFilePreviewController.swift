@@ -46,7 +46,6 @@ class PTFilePreviewController: QLPreviewController {
         if filePaths.count == 0 {
             return
         }
-        
         self.filePaths = filePaths
     }
 
@@ -59,12 +58,20 @@ class PTFilePreviewController: QLPreviewController {
 extension PTFilePreviewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource {
     
     
+    
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return filePaths.count
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let filePath = Bundle.main.path(forResource: filePaths[index], ofType: nil) ?? ""
+        let fileName = filePaths[index]
+        var filePath = ""
+        if index == filePaths.count - 1 {
+            filePath = PTBaseBundle.loadFile(name: fileName)
+        } else {
+            filePath = PTBaseBundle.loadImage(name: fileName)
+        }
+        
         var url: URL
         if String.isUrlStr(filePath) {
             url = URL.init(string: filePath)!

@@ -7,6 +7,7 @@
 
 import Social
 import UIKit
+import MobileCoreServices
 
 class PTShareViewController: UIViewController {
     
@@ -45,6 +46,10 @@ class PTShareViewController: UIViewController {
         view.backgroundColor = .white
         setSubviews()
         handleExtensionContext()
+        _ = kUTTypePDF
+        kUTTypeMP3
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
