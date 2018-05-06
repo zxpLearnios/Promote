@@ -10,7 +10,8 @@ import RxSwift
 import Alamofire
 
 let ApiType = "dev://..."
-let appGroupskey = "appGroupskey_key"
+// xcode里直接创建即可，或登录开发者账号创建
+let appGroupskey = "group.com.zjn.www.Promote.SharePromote" //"appGroupskey_key"
 let kreachabilityManager = NetworkReachabilityManager.init()
 //let kdisposeBag = DisposeBag()
 

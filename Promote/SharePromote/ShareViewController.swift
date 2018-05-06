@@ -23,7 +23,7 @@ class ShareViewController: SLComposeServiceViewController {
         // 1. 用户可以输入时，用
         //        textView! contentText placeholder
         
-        let us = UserDefaults.init(suiteName: "appGroupskey_key")!
+        let us = UserDefaults.init(suiteName: appGroupskey)!
         let str = us.value(forKey: "test_app_groups") as? String
         textView.text = str ?? "111"
     }
@@ -53,7 +53,7 @@ class ShareViewController: SLComposeServiceViewController {
             // self?.didSelectCancel()
         })
         let sharedVc = PTShareNavigationController.init(rootViewController: vc)
-//        present(sharedVc, animated: true, completion: nil)
+        present(sharedVc, animated: true, completion: nil)
 
         //        pushConfigurationViewController(vc) // 相当于加item
         
