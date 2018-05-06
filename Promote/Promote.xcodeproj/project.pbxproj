@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		550EF698209474EA00704F17 /* PTShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF697209474EA00704F17 /* PTShareViewController.swift */; };
+		55125CB0209E90F10074CFF3 /* PTDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55125CAF209E90F10074CFF3 /* PTDocumentViewController.swift */; };
 		551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27EF20738C2C00A6561C /* UIView+extension.swift */; };
 		551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F120738CDD00A6561C /* UIViewController+extension.swift */; };
 		551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27F320738F2500A6561C /* PTTitleScroller.swift */; };
@@ -86,7 +87,6 @@
 		55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */; };
 		55EDBC8B208866AA0052660B /* PTBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */; };
 		55EDBC9820897C7A0052660B /* PTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDBC9720897C7A0052660B /* PTNavigationController.swift */; };
-		55F327CC209610EF007B1775 /* PTcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F327CB209610EF007B1775 /* PTcc.swift */; };
 		55F8DE7E20936984005FFBBF /* PTCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8DE7D20936984005FFBBF /* PTCommonTest.swift */; };
 		767136200FA60C11095575BA /* Pods_Promote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83752A35956096D0988FEE6E /* Pods_Promote.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +132,7 @@
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
 		550EF697209474EA00704F17 /* PTShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareViewController.swift; sourceTree = "<group>"; };
+		55125CAF209E90F10074CFF3 /* PTDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTDocumentViewController.swift; sourceTree = "<group>"; };
 		551E27EF20738C2C00A6561C /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		551E27F120738CDD00A6561C /* UIViewController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		551E27F320738F2500A6561C /* PTTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTitleScroller.swift; sourceTree = "<group>"; };
@@ -219,7 +220,6 @@
 		55E3B8CC207FA58E00FB6506 /* PTBaseClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseClassProtocol.swift; sourceTree = "<group>"; };
 		55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseWebViewController.swift; sourceTree = "<group>"; };
 		55EDBC9720897C7A0052660B /* PTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTNavigationController.swift; sourceTree = "<group>"; };
-		55F327CB209610EF007B1775 /* PTcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTcc.swift; sourceTree = "<group>"; };
 		55F8DE7D20936984005FFBBF /* PTCommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCommonTest.swift; sourceTree = "<group>"; };
 		6DF8CD81D3906EAFFA53AD2A /* Pods-Promote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.release.xcconfig"; sourceTree = "<group>"; };
 		83752A35956096D0988FEE6E /* Pods_Promote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Promote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -442,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				555B8F89207201ED008646B5 /* PTHomeViewController.swift */,
-				55F327CB209610EF007B1775 /* PTcc.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -600,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				55DA8E68209AC0CC003B2459 /* PTFilePreviewController.swift */,
+				55125CAF209E90F10074CFF3 /* PTDocumentViewController.swift */,
 			);
 			path = SharePreview;
 			sourceTree = "<group>";
@@ -895,7 +895,6 @@
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
 				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,
-				55F327CC209610EF007B1775 /* PTcc.swift in Sources */,
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
@@ -903,6 +902,7 @@
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
 				554465172089C5C20057A2BC /* PTTapLabel.swift in Sources */,
 				559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */,
+				55125CB0209E90F10074CFF3 /* PTDocumentViewController.swift in Sources */,
 				5544B029206A30D90073F5FF /* PTCaptchaButton.swift in Sources */,
 				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
 				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,

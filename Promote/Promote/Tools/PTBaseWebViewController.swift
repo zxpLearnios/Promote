@@ -74,6 +74,11 @@ class PTBaseWebViewController: UIViewController {
         setSubviews()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        webView.stopLoading()
+    }
+    
     private func setSubviews() {
         addSubview(webView)
         addSubview(indicator)

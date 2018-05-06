@@ -20,7 +20,7 @@ class PTBaseBundle: NSObject {
             if ["png", "jpeg", "jpg"].contains(lastCmp) {
                 return loadImage(name: name) 
             } else {
-                return kbundle.path(forResource: name, ofType: lastCmp) ?? ""
+                return kbundle.path(forResource: name, ofType: nil) ?? ""
             }
             
         }
