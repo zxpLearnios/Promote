@@ -137,6 +137,9 @@ class PTHomeViewController: PTBaseViewController {
 //        UIView.animate(withDuration: 0.3) { [weak self] in
 //            self?.navigationController?.navigationBar.transform = CGAffineTransform.init(translationX: 0, y: -44)
 //        }
+        
+        let vc = PTBaseListController()
+        
     }
     
     deinit {
