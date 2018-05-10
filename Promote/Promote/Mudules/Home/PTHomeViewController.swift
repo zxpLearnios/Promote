@@ -138,7 +138,8 @@ class PTHomeViewController: PTBaseViewController {
 //            self?.navigationController?.navigationBar.transform = CGAffineTransform.init(translationX: 0, y: -44)
 //        }
         
-        let vc = PTBaseListController()
+        let vc = PTBasePoorRxListController.init(with: .plain)
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

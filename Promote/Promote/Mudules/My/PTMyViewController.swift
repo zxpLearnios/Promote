@@ -40,7 +40,7 @@ import RxSwift
 //        _ = constrain(tableView) { (tv) in
 //            let sv = tv.superview!
 //            tv.edges == sv.edges
-//            tv.bottom == sv.safeAreaLayoutGuide.bottom
+//            tv.bottom == sv.bottom
 ////            tv.width == sv.width
 ////            tv.height == sv.height
 ////            tv.center == sv.center
@@ -148,13 +148,13 @@ class PTMyViewController: PTBaseTableViewController {
         //        let dataSourceOb = Observable.just(["1", "2"])
       
         
-        // warning: UITableViewController 不能使用此法绑定数据源，因为会和自己冲突，UITableViewController的dataSource、delegate默认为自己
-//        dataSourceOb.bind(to: tableView.rx.items){ [weak self] (tv, index, element) in
-//             var cell = tv.dequeueReusableCell(withIdentifier: (self?.cellId)!)!
-//             cell.contentView.backgroundColor = (index % 2 == 0) ? .red : .white
-//             cell.textLabel?.text = (index % 2 == 0) ? "simple" : "\(element)"
-//             return cell
-//            }.disposed(by: disposeBag)
+        // warning: UITableViewController 不能使用此法绑定数据源，因为会和自己冲突(cellforRow方法和此有冲突，直接crash)，UITableViewController的dataSource、delegate默认为自己
+        dataSourceOb.bind(to: tableView.rx.items){ [weak self] (tv, index, element) in
+             var cell = tv.dequeueReusableCell(withIdentifier: (self?.cellId)!)!
+             cell.contentView.backgroundColor = (index % 2 == 0) ? .red : .white
+             cell.textLabel?.text = (index % 2 == 0) ? "simple" : "\(element)"
+             return cell
+            }.disposed(by: disposeBag)
         
     }
     
