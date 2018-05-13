@@ -138,7 +138,13 @@ class PTHomeViewController: PTBaseViewController {
 //            self?.navigationController?.navigationBar.transform = CGAffineTransform.init(translationX: 0, y: -44)
 //        }
         
-        let vc = PTBaseListController()
+//        let vc = PTBaseListController()
+        let sptView = PTExposureView()
+        sptView.backgroundColor = .white
+        addSubview(sptView)
+        sptView.frame = view.bounds
+//        sptView.startAnimate()
+        sptView.setupOther()
         
     }
     
