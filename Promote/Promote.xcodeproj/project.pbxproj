@@ -80,7 +80,7 @@
 		558AF110208A237600EFE21D /* PTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558AF10F208A237600EFE21D /* PTRouter.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		559CD93D20A1ADF000160012 /* PTSnapshotOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */; };
-		559CD94120A1AFC500160012 /* PTBaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CD94020A1AFC500160012 /* PTBaseListController.swift */; };
+		559CD94120A1AFC500160012 /* PTBasePoorRxListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CD94020A1AFC500160012 /* PTBasePoorRxListController.swift */; };
 		55A2BD932075CDD900533E65 /* PTRichTitleScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */; };
 		55A64DF320945A18000AD40A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A64DF220945A18000AD40A /* ShareViewController.swift */; };
 		55A64DF620945A18000AD40A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A64DF420945A18000AD40A /* MainInterface.storyboard */; };
@@ -217,7 +217,7 @@
 		558AF10F208A237600EFE21D /* PTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRouter.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTSnapshotOperate.swift; sourceTree = "<group>"; };
-		559CD94020A1AFC500160012 /* PTBaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseListController.swift; sourceTree = "<group>"; };
+		559CD94020A1AFC500160012 /* PTBasePoorRxListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBasePoorRxListController.swift; sourceTree = "<group>"; };
 		55A2BD922075CDD900533E65 /* PTRichTitleScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichTitleScroller.swift; sourceTree = "<group>"; };
 		55A64DF020945A18000AD40A /* SharePromote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SharePromote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A64DF220945A18000AD40A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 				5553327E206B313E00F91354 /* PTBaseViewController.swift */,
 				5544B020206A30D80073F5FF /* PTBaseXibViewController.swift */,
 				5544B01D206A30D80073F5FF /* PTBaseTableViewController.swift */,
-				559CD94020A1AFC500160012 /* PTBaseListController.swift */,
+				559CD94020A1AFC500160012 /* PTBasePoorRxListController.swift */,
 				55EDBC8A208866A90052660B /* PTBaseWebViewController.swift */,
 				55DA8E6A209B06E8003B2459 /* PTBaseBundle.swift */,
 				559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */,
@@ -915,7 +915,7 @@
 				55E3B8CD207FA58E00FB6506 /* PTBaseClassProtocol.swift in Sources */,
 				551E27F7207391C000A6561C /* PTTitleScrollerCollectionView.swift in Sources */,
 				55DA8E6B209B06E8003B2459 /* PTBaseBundle.swift in Sources */,
-				559CD94120A1AFC500160012 /* PTBaseListController.swift in Sources */,
+				559CD94120A1AFC500160012 /* PTBasePoorRxListController.swift in Sources */,
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
 				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,

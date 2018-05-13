@@ -63,5 +63,14 @@ extension UIViewController {
         self.view.addSubview(view)
     }
     
+    /**调整UI*/
+    func adjustOffset(for scroller: UIScrollView) {
+        if #available(iOS 11.0, *) {
+            scroller.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+    }
+    
     
 }
