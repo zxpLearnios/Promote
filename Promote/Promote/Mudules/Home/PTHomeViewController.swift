@@ -17,6 +17,8 @@ class PTHomeViewController: PTBaseViewController {
     let fileLookVc = PTFilePreviewController()
     var documentInteractorVc: PTDocumentViewController!
     
+    let sptView = PTExposureView()
+    
     let ary: [String] = {
        let a = ["000", "11"] //, "22", "333", "4444444", "5"]
         return a
@@ -108,6 +110,11 @@ class PTHomeViewController: PTBaseViewController {
     }
     
     @objc private  func leftItemAction() {
+        
+        
+        
+        sptView.stopAnimate()
+        return
        // 2.
         let path = PTBaseBundle.loadFile(name: "ios.pdf")
         let url = URL.init(fileURLWithPath: path)
@@ -124,7 +131,6 @@ class PTHomeViewController: PTBaseViewController {
     }
     
     @objc private func clickAction() {
-        
         let webVc = PTBaseWebViewController()
         let file = PTBaseBundle.loadImage(name: "ios.pdf")
         navigationController?.pushViewController(webVc, animated: true)
@@ -139,12 +145,11 @@ class PTHomeViewController: PTBaseViewController {
 //        }
         
 //        let vc = PTBaseListController()
-        let sptView = PTExposureView()
         sptView.backgroundColor = .white
         addSubview(sptView)
         sptView.frame = view.bounds
-//        sptView.startAnimate()
-        sptView.setupOther()
+        sptView.startAnimate()
+//        sptView.setupOther()
         
     }
     

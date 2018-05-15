@@ -26,43 +26,91 @@ class PTTestViewController: PTBaseViewController {
     let tablelView = UITableView()
     private let btn = UIButton()
     private let animView = UIView()
+    private let testForSelf = PTTestForViewController()
+    private let testBtnForSelf = PTTestButtonForViewController()
+//    private weak var testBtnForSelf: PTTestButtonForViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1. 此时此方法会强引用当前对象，使直到遍历结束才会相应其他操作。即此法有严重问题
-        //        asyncExecuteInMainThread(0) { [weak self] in
-        //            if let `self` = self {
-        //                for i in 0 ..< 10000000 {
-        //                    self.testAry.append("\(i)")
-        //                }
-        //            }
-        //
-        //        }
+        // 1. 此时此方法会强引用当前对象，使直到遍历结束才会相应其他操作。即此法有严重问题。 self会释放，但会延时一段时间在释放。且在此遍历期间不会响应用户的操作
+//        asyncExecuteInMainThread(0) { [weak self] in
+//            if let `self` = self {
+//                for i in 0 ..< 10000000 {
+//                    self.testAry.append("\(i)")
+//                    if i == 10000000 - 10 {
+//                        debugPrint("遍历了挺多了 -----")
+//                    }
+//                }
+//            }
+//
+//        }
         
         
-        // 2. 和第一张情况一模一样
-        //        asyncExecuteInMainThread(0) {
-        //            for i in 0 ..< 10000000 {
-        //                self.testAry.append("\(i)")
-        //            }
-        //        }
+        // 2. self会释放，但会延时一段时间在释放。且在此遍历期间不会响应用户的操作
+//        asyncExecuteInMainThread(0) {
+//            for i in 0 ..< 10000000 {
+//                self.testAry.append("\(i)")
+//                if i == 10000000 - 10 {
+//                    debugPrint("遍历了挺多了 -----")
+//                }
+//            }
+//        }
+        
+        // 2.1 self会释放，但会延时一段时间在释放。且在此遍历期间不会响应用户的操作
+//        asyncExecuteInMainThread(0) { [weak self] in
+//            for i in 0 ..< 10000000 {
+//                self?.testAry.append("\(i)")
+//                if i == 10000000 - 10 {
+//                    debugPrint("遍历了挺多了 -----")
+//                }
+//            }
+//        }
+        
+        // 2.2 类方法的网络请求. self会立即释放。
+//        PTTestForViewController.imitateRequest {[weak self] finish in
+//            if let `self` = self {
+//                self.testStaticFuncForTest()
+//            }
+//
+//        }
+     // 2.3 会延时释放。
+//        PTTestForViewController.imitateRequest { finish in
+//            self.testStaticFuncForTest()
+//        }
+        
+        // 2.4 都可以释放会延时.但不影响响应其他事件. testStaticFuncForTest会触发
+//        testForSelf.imitateRequest { (str) in
+//            self.testStaticFuncForTest()
+//        }
+        // 2.5 会立即释放， 不会触发testStaticFuncForTest了
+//        testForSelf.imitateRequest {[weak self] (str) in
+//            if let `self` = self {
+//                self.testStaticFuncForTest()
+//            }
+//        }
         
         // 3. 完美解决上述问题
-        //        asyncExecuteInSubThread(0) { (currentThread) in
-        //            for i in 0 ..< 10000000 {
-        //                self.testAry.append("\(i)")
-        //                if i == 9999999 {
-        //                    debugPrint("遍历结束了\(self)") // self 有值的
-        //                }
-        //            }
+//        asyncExecuteInSubThread(0) { (currentThread) in
+//            for i in 0 ..< 10000000 {
+//                self.testAry.append("\(i)")
+////                debugPrint("正在遍历呢")
+//                if i == 9999999 {
+//                    debugPrint("遍历结束了\(self)") // self 有值的
+//                }
+//            }
+//        }
+        
+        
         
         // 4.
         
         //        let a = [1, 2, 3]
         //        let b = a[safe: 4]
-        addSubviews()
+//        addSubviews()
         
+        // 5.
+        doOther()
     }
     
 
@@ -73,9 +121,34 @@ class PTTestViewController: PTBaseViewController {
         //        if let num = ary?.count, num <= a {
         //
         //        }
+//        testBtnForSelf = PTTestButtonForViewController()
+        testBtnForSelf.backgroundColor = .red
+        addSubview(testBtnForSelf)
+        constrain(testBtnForSelf, block: {test_btn in
+            test_btn.width == 100
+            test_btn.height == 50
+            test_btn.centerX == test_btn.superview!.centerX
+            test_btn.top == test_btn.superview!.top + 220
+        })
+        
+        // 此种写法会导致循环引用，都不会释放
+        testBtnForSelf.closure = testButtonForSelfCallback
+        // 这样才可以解决循环引用
+        testBtnForSelf.closure = {[weak self] btn in
+            if let `self` = self {
+                testButtonForSelfCallback(btn: btn)
+            }
+        }
+        
     }
     
+    func testButtonForSelfCallback(btn: PTTestButtonForViewController) {
+        debugPrint("testButtonForSelfCallback")
+    }
     
+    func testStaticFuncForTest() {
+        debugPrint("testStaticFuncForTest")
+    }
     
     private func addSubviews() {
         // 1.
@@ -195,7 +268,57 @@ class PTTestViewController: PTBaseViewController {
         }
     }
     
+    deinit {
+        debugPrint("PTTestViewController 释放了")
+    }
     
-   
+}
+
+class PTTestForViewController: NSObject {
     
+    
+    override init() {
+        super.init()
+        
+    }
+    
+    static func imitateRequest(callback: @escaping (Bool) -> Void ) {
+        delay(6) {
+            debugPrint("PTTestForViewController 类方法开始回调")
+            callback(true)
+        }
+    }
+    
+    func imitateRequest(callback: @escaping (String) -> Void ) {
+        delay(6) {
+            debugPrint("PTTestForViewController 实例方法开始回调")
+            callback("its end")
+        }
+    }
+    
+    
+    deinit {
+        debugPrint("PTTestForViewController 释放了")
+    }
+}
+
+class PTTestButtonForViewController: UIButton {
+    
+    var closure: ((PTTestButtonForViewController) -> Void)?
+    
+    convenience init() {
+        self.init(frame: .zero)
+        addTarget(self, action: #selector(btnAction), for: .touchUpInside)
+    }
+    
+    @objc func btnAction() {
+        if let callback = closure {
+            debugPrint("PTTestButtonForViewController 点击回调")
+            callback(self)
+        }
+    }
+    
+    deinit {
+        debugPrint("PTTestButtonForViewController 释放了")
+    }
 }

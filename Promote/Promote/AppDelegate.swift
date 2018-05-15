@@ -22,8 +22,8 @@ class AppDelegate: UIResponder {
         us.set("test_appGroups", forKey: "test_app_groups")
         us.synchronize()
         
-        isShowGuide()
-        _ = PTCommonTest()
+//        isShowGuide()
+//        _ = PTCommonTest()
 //        Config.shareInstance.networkStatusChanged()
 
 //        window?.rootViewController = PTTestViewController()
