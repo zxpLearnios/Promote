@@ -85,7 +85,9 @@
 		55A64DF320945A18000AD40A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A64DF220945A18000AD40A /* ShareViewController.swift */; };
 		55A64DF620945A18000AD40A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A64DF420945A18000AD40A /* MainInterface.storyboard */; };
 		55A64DFA20945A18000AD40A /* SharePromote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55A64DF020945A18000AD40A /* SharePromote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55BF9C9920AC1800006F6352 /* PTOpenGLEarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BF9C9820AC1800006F6352 /* PTOpenGLEarthView.swift */; };
 		55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C23B7120899B0300E9EA9B /* URL+extension.swift */; };
+		55D2148C20AD7874008C4401 /* PTRichLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D2148B20AD7874008C4401 /* PTRichLabel.swift */; };
 		55DA8E66209ABE65003B2459 /* ios.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 55DA8E65209ABE65003B2459 /* ios.pdf */; };
 		55DA8E69209AC0CC003B2459 /* PTFilePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA8E68209AC0CC003B2459 /* PTFilePreviewController.swift */; };
 		55DA8E6B209B06E8003B2459 /* PTBaseBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA8E6A209B06E8003B2459 /* PTBaseBundle.swift */; };
@@ -223,7 +225,9 @@
 		55A64DF220945A18000AD40A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		55A64DF520945A18000AD40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		55A64DF720945A18000AD40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55BF9C9820AC1800006F6352 /* PTOpenGLEarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOpenGLEarthView.swift; sourceTree = "<group>"; };
 		55C23B7120899B0300E9EA9B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
+		55D2148B20AD7874008C4401 /* PTRichLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRichLabel.swift; sourceTree = "<group>"; };
 		55DA8E65209ABE65003B2459 /* ios.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ios.pdf; sourceTree = "<group>"; };
 		55DA8E68209AC0CC003B2459 /* PTFilePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTFilePreviewController.swift; sourceTree = "<group>"; };
 		55DA8E6A209B06E8003B2459 /* PTBaseBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseBundle.swift; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				55DA8E6A209B06E8003B2459 /* PTBaseBundle.swift */,
 				559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */,
 				55823FFB20A6FB810013AC00 /* PTExposureView.swift */,
+				55BF9C9820AC1800006F6352 /* PTOpenGLEarthView.swift */,
+				55D2148B20AD7874008C4401 /* PTRichLabel.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -894,6 +900,7 @@
 				555CBDFD206CD3E700DECE85 /* PTRxSwiftTest.swift in Sources */,
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
 				555B8F852071E09C008646B5 /* String+extension.swift in Sources */,
+				55D2148C20AD7874008C4401 /* PTRichLabel.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
 				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
@@ -919,6 +926,7 @@
 				5566E9332062697300600B3E /* AppDelegate.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
 				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,
+				55BF9C9920AC1800006F6352 /* PTOpenGLEarthView.swift in Sources */,
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,

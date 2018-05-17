@@ -28,7 +28,9 @@ class PTHomeViewController: PTBaseViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
 //        doThing()
-        setSubviews()
+//        setSubviews()
+        
+        testRichLabel()
         
     }
     
@@ -36,6 +38,18 @@ class PTHomeViewController: PTBaseViewController {
         super.viewWillAppear(animated)
 //        PTRouter.reShowTabBar()
     }
+    
+    func testRichLabel() {
+        
+        let richLab = PTRichLabel()
+        addSubview(richLab)
+        constrain(richLab) { (lab) in
+            let sv = lab.superview!
+            lab.center == sv.center
+            lab.width <= 200
+        }
+    }
+    
     
     func setSubviews() {
         
@@ -89,13 +103,13 @@ class PTHomeViewController: PTBaseViewController {
         richTitleScroller.dataSource = ary
         
         // 2.3
-        delay(2) {
+//        delay(2) {
             // 2.4.0
 //              self.richTitleScroller.dataSource = self.ary + ["3"]
             // 2.4.1
 //            self.richTitleScroller.dataSource = self.ary + ["这是", "新加的数据", "是", "为了测试在异步情况下", "该框架的性能与效果如何？", "看来，不错！"]
             
-        }
+//        }
         
         // 2.5 
         delay(4) {
@@ -145,11 +159,11 @@ class PTHomeViewController: PTBaseViewController {
 //        }
         
 //        let vc = PTBaseListController()
-        sptView.backgroundColor = .white
-        addSubview(sptView)
-        sptView.frame = view.bounds
-        sptView.startAnimate()
-//        sptView.setupOther()
+        
+//        sptView.backgroundColor = .white
+//        addSubview(sptView)
+//        sptView.frame = view.bounds
+//        sptView.startAnimate()
         
     }
     

@@ -45,17 +45,16 @@ class PTExposureView: UIView {
         entityLayer.backgroundColor = UIColor.clear.cgColor
         entityLayer.path = UIBezierPath(ovalIn: entityLayer.bounds).cgPath
         entityLayer.fillColor = UIColor.blue.cgColor
-        entityLayer.opacity = 0.8
+        entityLayer.opacity = 0
         
 
         hintLayer.backgroundColor = UIColor.blue.cgColor
         hintLayer.bounds = CGRect.init(x: 0, y: 0, width: 50*6, height: 50*6)
         hintLayer.position = center
         hintLayer.cornerRadius = 150
-        entityLayer.opacity = 0.2
-        delay(3) {
-            self.layer.addSublayer(self.hintLayer)
-        }
+//        delay(3) {
+//            self.layer.addSublayer(self.hintLayer)
+//        }
         
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.bounds = CGRect(x: 0, y: 0, width: width, height: width)
@@ -71,7 +70,7 @@ class PTExposureView: UIView {
     func setupOther() {
         let opacityAnimate = CABasicAnimation(keyPath: "opacity")
         opacityAnimate.fromValue = 0.8
-        opacityAnimate.toValue = 0.2
+        opacityAnimate.toValue = 0
         
         let scaleAnimate = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimate.fromValue = CGPoint.init(x: 1, y: 1)
@@ -92,17 +91,15 @@ class PTExposureView: UIView {
         
         
         
-        hintGroupAnimate.animations = [opacityAnimate,scaleAnimate]
-        hintGroupAnimate.duration = 3
-        //        groupAnimate.beginTime = CACurrentMediaTime() + 1
-        hintGroupAnimate.delegate = self
-        hintGroupAnimate.autoreverses = false  // 循环效果
-        hintGroupAnimate.isRemovedOnCompletion = true
-        hintGroupAnimate.repeatCount = 1
+//        hintGroupAnimate.animations = [opacityAnimate,scaleAnimate]
+//        hintGroupAnimate.duration = 2
+//        //        groupAnimate.beginTime = CACurrentMediaTime() + 1
+//        hintGroupAnimate.delegate = self
+//        hintGroupAnimate.autoreverses = false  // 循环效果
+//        hintGroupAnimate.isRemovedOnCompletion = true
+//        hintGroupAnimate.repeatCount = HUGE
         // 动画执行完成后保持最新的效果
-        groupAnimate.fillMode = kCAFillModeBoth
-        
-        groupAnimate.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+//        groupAnimate.fillMode = kCAFillModeForwards
         
 //        entityLayer.add(groupAnimate, forKey: animatekey)
         
