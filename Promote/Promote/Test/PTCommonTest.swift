@@ -11,8 +11,22 @@ class PTCommonTest {
 
     
     init() {
-        let a = sortArray()
+//        let a = sortArray()
+        
+        do {
+            let result = try testThrow()
+        } catch let err {
+            debugPrint("\(err)")
+        }
     }
+    
+    /**
+     * 0. 方法后缀throws，表示此法须使用try catch样式
+     */
+    func testThrow() throws -> Bool {
+        return true
+    }
+    
     
     /**
      *  1. 将一给定数组里的相同元素放在一个数组里
