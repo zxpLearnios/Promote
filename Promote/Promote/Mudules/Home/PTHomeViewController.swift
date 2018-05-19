@@ -67,6 +67,9 @@ class PTHomeViewController: PTBaseViewController {
         
         // 3.
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "点击", style: .plain, target: self, action: #selector(leftItemAction))
+        
+        // 4.
+         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "聊天", style: .plain, target: self, action: #selector(rightItemAction))
     }
     
     private func doThing() {
@@ -112,8 +115,7 @@ class PTHomeViewController: PTBaseViewController {
     @objc private  func leftItemAction() {
         
         
-        
-        sptView.stopAnimate()
+//        sptView.stopAnimate()
         return
        // 2.
         let path = PTBaseBundle.loadFile(name: "ios.pdf")
@@ -128,6 +130,11 @@ class PTHomeViewController: PTBaseViewController {
        
 //                navigationController?.pushViewController(fileLookVc, animated: true)
 //        present(fileLookVc, animated: false, completion: nil)
+    }
+    
+    @objc func rightItemAction() {
+       let vc = PTBaseChatViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func clickAction() {
@@ -146,9 +153,9 @@ class PTHomeViewController: PTBaseViewController {
         
 //        let vc = PTBaseListController()
         sptView.backgroundColor = .white
-        addSubview(sptView)
+//        addSubview(sptView)
         sptView.frame = view.bounds
-        sptView.startAnimate()
+//        sptView.startAnimate()
 //        sptView.setupOther()
         
     }

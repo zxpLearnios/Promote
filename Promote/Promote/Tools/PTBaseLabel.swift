@@ -15,10 +15,10 @@ class PTBaseLabel: UILabel {
     }
     
     
-    convenience init(with textColor: UIColor, fontSize: Int) {
+    convenience init(with textColor: UIColor, fontSize: CGFloat) {
         self.init()
         self.textColor = textColor
-        font = UIFont.systemFont(ofSize: CGFloat(fontSize))
+        font = UIFont.systemFont(ofSize: fontSize)
     }
     
 }

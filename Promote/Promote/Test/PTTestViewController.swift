@@ -136,7 +136,7 @@ class PTTestViewController: PTBaseViewController {
         // 这样才可以解决循环引用
         testBtnForSelf.closure = {[weak self] btn in
             if let `self` = self {
-                testButtonForSelfCallback(btn: btn)
+                self.testButtonForSelfCallback(btn: btn)
             }
         }
         

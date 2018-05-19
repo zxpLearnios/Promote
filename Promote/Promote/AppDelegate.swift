@@ -22,7 +22,7 @@ class AppDelegate: UIResponder {
         us.set("test_appGroups", forKey: "test_app_groups")
         us.synchronize()
         
-//        isShowGuide()
+        isShowGuide()
 //        _ = PTCommonTest()
 //        Config.shareInstance.networkStatusChanged()
 

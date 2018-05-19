@@ -65,4 +65,12 @@ extension UIImage{
         
         return img
     }
+    
+    /**
+     *  3. 拉伸图片
+     */
+    static func stretch(image: UIImage, with leftCap: Int, topCap: Int) -> UIImage {
+        let newImg = image.stretchableImage(withLeftCapWidth: leftCap, topCapHeight: topCap)
+        return newImg
+    }
 }

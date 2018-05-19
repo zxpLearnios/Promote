@@ -64,7 +64,7 @@ let knavTitleColor = UIColor.RGBA(51, g: 51, b: 51, a: 1)
 /** iconfot 的 fontSize */
 let kfontSize = 20
 /** 字的黑色 */
-let kfontBlackColor = UIColor.colorWithHexString("333333")
+let kfontBlackColor = UIColor.colorWithHexString("333333")!
 
 /** app挂起后，再次激活时的通知， 适用于在二维码扫描页面 */
 let kBecomeActiveNotificate = "kBecomeActiveNotificate"

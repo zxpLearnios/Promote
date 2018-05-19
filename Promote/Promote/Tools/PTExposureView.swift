@@ -45,7 +45,7 @@ class PTExposureView: UIView {
         entityLayer.backgroundColor = UIColor.clear.cgColor
         entityLayer.path = UIBezierPath(ovalIn: entityLayer.bounds).cgPath
         entityLayer.fillColor = UIColor.blue.cgColor
-        entityLayer.opacity = 0.8
+        entityLayer.opacity = Float(0.8)
         
 
         hintLayer.backgroundColor = UIColor.blue.cgColor
