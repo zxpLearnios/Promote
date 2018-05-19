@@ -5,6 +5,7 @@
 //  Created by Bavaria on 02/04/2018.
 //  分段、可点击的跑马灯，自动循环滚动
 //  网上看了使用2个label或自定义横向滚动列表来实现跑马灯效果的，虽然第一种有人也实现了分段、可点击。但是个人感觉还是使用系统自带的CollectionView比较好，因为系统实现了缓存池，个人实现的话，涉及到的东西太多太多。经测试，旋转tableview再旋转tableviewcell是实现不了这样的效果的且连UI都很难实现。故最终使用一个collectionview来实现，类似于banner的实现
+// ios 11 会出现导航栏的item在push一个控制器在pop回来后变灰的情况，故全部自定义即可解决
 
 import UIKit
 import Cartography
@@ -47,7 +48,7 @@ class PTHomeViewController: PTBaseViewController {
         constrain(btn) { btn in
             btn.width == 200
             btn.height == 200
-            btn.top == safeAreaTop + 5
+            btn.top == safeAreaTop + 100
             btn.left == safeAreaLeft + 5
         }
         
@@ -66,10 +67,23 @@ class PTHomeViewController: PTBaseViewController {
         imagV.clipImage(with: beziPath)
         
         // 3.
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "点击", style: .plain, target: self, action: #selector(leftItemAction))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "点击", style: .plain, target: self, action: #selector(leftItemAction))
+        // 必须设置frame，不然ios11 以下的不会显示
+        let customeLeftItem = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        customeLeftItem.setTitleColor(.black, for: .normal)
+//        customeLeftItem.setTitleColor(.black, for: .highlighted)
+        customeLeftItem.setTitle("点击", for: .normal)
+        customeLeftItem.addTarget(self, action: #selector(leftItemAction), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: customeLeftItem)
         
-        // 4.
-         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "聊天", style: .plain, target: self, action: #selector(rightItemAction))
+        // 4. ios 11 右边的item用此法会在pop回来时，此按钮变灰
+//         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "聊天", style: .plain, target: self, action: #selector(rightItemAction))
+        let customeRightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        customeRightItem.setTitle("聊天", for: .normal)
+        customeRightItem.setTitleColor(.black, for: .normal)
+//        customeRightItem.setTitleColor(.black, for: .highlighted)
+        customeRightItem.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
     }
     
     private func doThing() {
@@ -115,12 +129,15 @@ class PTHomeViewController: PTBaseViewController {
     @objc private  func leftItemAction() {
         
         
+        let vc = PTBaseChatViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
 //        sptView.stopAnimate()
-        return
+        
        // 2.
-        let path = PTBaseBundle.loadFile(name: "ios.pdf")
-        let url = URL.init(fileURLWithPath: path)
-        documentInteractorVc = PTDocumentViewController.init(self, fileUrl: url)
+//        let path = PTBaseBundle.loadFile(name: "ios.pdf")
+//        let url = URL.init(fileURLWithPath: path)
+//        documentInteractorVc = PTDocumentViewController.init(self, fileUrl: url)
         
         // 3.
 //        let ary = ["guideImage1", "guideImage1.png", "task@2x", "snapshot", "ios.pdf"]

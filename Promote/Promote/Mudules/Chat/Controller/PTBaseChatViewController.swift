@@ -45,8 +45,10 @@ class PTBaseChatViewController: UIViewController {
         
         constrain(tableView) { (tv) in
             let sv = tv.superview!
-            tv.edges == inset(sv.edges, 0)
             tv.top == self.safeAreaTop
+            tv.bottom == sv.bottom
+            tv.left == sv.left
+            tv.right == sv.right
             
         }
         

@@ -509,8 +509,8 @@
 			children = (
 				55C5472720AFCBB900522B51 /* Model */,
 				55C5472920AFCBB900522B51 /* View */,
-				55C5472820AFCBB900522B51 /* ViewModel */,
 				55C5472620AFCBA400522B51 /* Controller */,
+				55C5472820AFCBB900522B51 /* ViewModel */,
 			);
 			path = Chat;
 			sourceTree = "<group>";

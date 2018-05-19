@@ -29,6 +29,11 @@ class PTNavigationController: UINavigationController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        doInit()
+//        view.layoutIfNeeded()
+    }
     
     // MARK: 初始化
     func doInit() {
