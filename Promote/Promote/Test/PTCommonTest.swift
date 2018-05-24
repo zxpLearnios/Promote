@@ -13,12 +13,21 @@ class PTCommonTest {
     init() {
 //        let a = sortArray()
         
-        do {
-            let result = try testThrow()
-        } catch let err {
-            debugPrint("\(err)")
-        }
+//        do {
+//            let result = try testThrow()
+//        } catch let err {
+//            debugPrint("\(err)")
+//        }
+        
+//        debugPrint(" testDefer \( testDefer())")
+       
+        testSwiftNever()
+        
+        
+        
     }
+    
+    
     
     /**
      * 0. 方法后缀throws，表示此法须使用try catch样式
@@ -61,4 +70,17 @@ class PTCommonTest {
        return mutiplySpaceAry
     }
     
+    func testDefer() -> Bool {
+        defer {
+            debugPrint("defer----")
+        }
+        return true
+    }
+    
+    func testSwiftNever() -> Never {
+       fatalError("testSwiftNever")
+    }
 }
+
+
+

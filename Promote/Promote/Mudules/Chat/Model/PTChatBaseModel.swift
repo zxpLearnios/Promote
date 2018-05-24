@@ -12,7 +12,7 @@ enum PTChatActorMsgType {
     case url
     case video
     case audio
-    
+    case `default`
 }
 
 class PTChatBaseModel: NSObject {

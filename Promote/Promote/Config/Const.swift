@@ -9,6 +9,10 @@ import UIKit
 import RxSwift
 import Alamofire
 
+
+let krealmVersion = 1
+let ksavceRealmVersionKey = "ksavceRealmVersionKey_key"
+
 let ApiType = "dev://..."
 // xcode里直接创建即可，或登录开发者账号创建
 let appGroupskey = "group.com.zjn.www.Promote.SharePromote" //"appGroupskey_key"

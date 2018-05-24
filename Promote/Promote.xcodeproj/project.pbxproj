@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550B144220B56D3200582E52 /* PTTestRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B144120B56D3200582E52 /* PTTestRealm.swift */; };
 		550EF698209474EA00704F17 /* PTShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EF697209474EA00704F17 /* PTShareViewController.swift */; };
 		55125CB0209E90F10074CFF3 /* PTDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55125CAF209E90F10074CFF3 /* PTDocumentViewController.swift */; };
 		551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551E27EF20738C2C00A6561C /* UIView+extension.swift */; };
@@ -89,6 +90,7 @@
 		55A64DF620945A18000AD40A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A64DF420945A18000AD40A /* MainInterface.storyboard */; };
 		55A64DFA20945A18000AD40A /* SharePromote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55A64DF020945A18000AD40A /* SharePromote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C23B7120899B0300E9EA9B /* URL+extension.swift */; };
+		55C35DE820B6C5B3003C3F87 /* PTBasePredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C35DE720B6C5B3003C3F87 /* PTBasePredicate.swift */; };
 		55C5472B20AFCBDB00522B51 /* PTChatBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5472A20AFCBDB00522B51 /* PTChatBaseModel.swift */; };
 		55C5472F20AFDC1100522B51 /* PTBaseChatBubbleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5472E20AFDC1100522B51 /* PTBaseChatBubbleImage.swift */; };
 		55DA8E66209ABE65003B2459 /* ios.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 55DA8E65209ABE65003B2459 /* ios.pdf */; };
@@ -143,6 +145,7 @@
 
 /* Begin PBXFileReference section */
 		16548E874A993B320761E239 /* Pods-Promote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Promote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Promote/Pods-Promote.debug.xcconfig"; sourceTree = "<group>"; };
+		550B144120B56D3200582E52 /* PTTestRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestRealm.swift; sourceTree = "<group>"; };
 		550EF697209474EA00704F17 /* PTShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareViewController.swift; sourceTree = "<group>"; };
 		55125CAF209E90F10074CFF3 /* PTDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTDocumentViewController.swift; sourceTree = "<group>"; };
 		551E27EF20738C2C00A6561C /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 		55A64DF520945A18000AD40A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		55A64DF720945A18000AD40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C23B7120899B0300E9EA9B /* URL+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extension.swift"; sourceTree = "<group>"; };
+		55C35DE720B6C5B3003C3F87 /* PTBasePredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBasePredicate.swift; sourceTree = "<group>"; };
 		55C5472A20AFCBDB00522B51 /* PTChatBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTChatBaseModel.swift; sourceTree = "<group>"; };
 		55C5472E20AFDC1100522B51 /* PTBaseChatBubbleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseChatBubbleImage.swift; sourceTree = "<group>"; };
 		55DA8E65209ABE65003B2459 /* ios.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ios.pdf; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				559A88622077B2F4005E8447 /* PTTestViewController.swift */,
 				555CBDFC206CD3E700DECE85 /* PTRxSwiftTest.swift */,
 				55F8DE7D20936984005FFBBF /* PTCommonTest.swift */,
+				550B144120B56D3200582E52 /* PTTestRealm.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			children = (
 				551E27F52073919800A6561C /* TitleScroller */,
 				555431C2206E1F2400CC2CC0 /* PTFunction.swift */,
+				55C35DE720B6C5B3003C3F87 /* PTBasePredicate.swift */,
 				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
 				5553D6F4208A2B32006E29B4 /* PTTabBar.swift */,
@@ -925,6 +931,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -933,6 +941,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -957,6 +967,7 @@
 				5544B027206A30D90073F5FF /* PTBaseXibViewController.swift in Sources */,
 				555B8F852071E09C008646B5 /* String+extension.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
+				550B144220B56D3200582E52 /* PTTestRealm.swift in Sources */,
 				55E23D6B20AFF3D5001D2862 /* PTBaseChatInputView.swift in Sources */,
 				55C5472F20AFDC1100522B51 /* PTBaseChatBubbleImage.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
@@ -989,6 +1000,7 @@
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
 				5544B028206A30D90073F5FF /* PTHUD.swift in Sources */,
 				55E23D6D20AFF4E6001D2862 /* PTBaseNotificateAdaptor.swift in Sources */,
+				55C35DE820B6C5B3003C3F87 /* PTBasePredicate.swift in Sources */,
 				5544B002206A22F80073F5FF /* PTLoginModel.swift in Sources */,
 				558AF110208A237600EFE21D /* PTRouter.swift in Sources */,
 				5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */,
