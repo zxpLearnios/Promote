@@ -30,9 +30,12 @@ class PTTestViewController: PTBaseViewController {
     private let testBtnForSelf = PTTestButtonForViewController()
 //    private weak var testBtnForSelf: PTTestButtonForViewController!
     
+    let ct = PTCommonTest()
+    let testRealm = PTTestRealm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .gray
         // 1. 此时此方法会强引用当前对象，使直到遍历结束才会相应其他操作。即此法有严重问题。 self会释放，但会延时一段时间在释放。且在此遍历期间不会响应用户的操作
 //        asyncExecuteInMainThread(0) { [weak self] in
 //            if let `self` = self {
@@ -110,7 +113,31 @@ class PTTestViewController: PTBaseViewController {
 //        addSubviews()
         
         // 5.
-        doOther()
+//        doOther()
+        
+        // 6.
+//        ct.testAddViewInPartlyFunc(in: view)
+//        ct.testUseNotViewTypeInPartlyFunc()
+        
+        // 7. realm
+        let realmAddBtn = UIButton(frame: CGRect(x: 20, y: 150, width: 80, height: 30))
+        realmAddBtn.setTitle("realm增", for: .normal)
+        realmAddBtn.addTarget(self, action: #selector(realmAddAction), for: .touchUpInside)
+        
+        
+        let realmQueryBtn = UIButton(frame: CGRect(x: 150, y: 150, width: 100, height: 30))
+        realmQueryBtn.setTitle("realm查", for: .normal)
+        realmQueryBtn.addTarget(self, action: #selector(realmQueryAction), for: .touchUpInside)
+        
+        let realmDeleteBtn = UIButton(frame: CGRect(x: 20, y: realmAddBtn.frame.maxY + 10, width: 100, height: 30))
+        realmDeleteBtn.setTitle("realm删", for: .normal)
+        realmDeleteBtn.addTarget(self, action: #selector(realmDeleteAction), for: .touchUpInside)
+        
+        addSubview(realmAddBtn)
+        addSubview(realmQueryBtn)
+        addSubview(realmDeleteBtn)
+        
+      
     }
     
 
@@ -218,6 +245,20 @@ class PTTestViewController: PTBaseViewController {
         // 2.1.2 使用bind\bind（To）时，必须已经完成初始化了，即不会为空了。比如拖得控件则都不能使用\也无法使用bind，敲不出来的
 
     }
+    
+    
+    
+    @objc private func realmAddAction() {
+        testRealm.add()
+    }
+    
+    @objc private func realmQueryAction() {
+        testRealm.query()
+    }
+    @objc private func realmDeleteAction() {
+        testRealm.delete()
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // 0

@@ -132,7 +132,7 @@ class PTTestRealm {
          */
         // LIKE时必须加通配符*，否则还是用contains, 里面的操作字符不分大小写
 //        let predicate = // "name contains[cd] %@", "0"; peoples.@count > 10; age > 10 OR name BEGINSWITH 'a'
-        let predicate = PTBasePredicate.query(for: "age", from: 8, to: 8) //ishaveSuffix(in: "name", suffix: "b1") //ishaveSuffix(in: "name", suffix: "a1") //ishavePrefix(in: "name", prefix: "第0部") //isContainString(in: "name", string: "1部")
+        let predicate = PTBasePredicate.query(for: "age", from: 8, to: nil) //ishaveSuffix(in: "name", suffix: "b1") //ishaveSuffix(in: "name", suffix: "a1") //ishavePrefix(in: "name", prefix: "第0部") //isContainString(in: "name", string: "1部")
         let result = self.realm?.objects(PTTestRealmPeopleModel.self).filter(predicate)  // self.realm?.objects(PTTestRealmPartModel.self).map({$0.peoples})  //self.realm?.objects(PTTestRealmPeopleModel.self).sorted(byKeyPath: "name", ascending: true) // self.realm?.objects(PTTestRealmPeopleModel.self).filter(predicate)
         
         debugPrint("过滤后的结果为： \(result.debugDescription)")

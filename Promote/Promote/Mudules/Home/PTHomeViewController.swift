@@ -21,8 +21,6 @@ class PTHomeViewController: PTBaseViewController {
     let sptView = PTExposureView()
     
     
-    let testRealm = PTTestRealm()
-    
     let ary: [String] = {
        let a = ["000", "11"] //, "22", "333", "4444444", "5"]
         return a
@@ -88,22 +86,7 @@ class PTHomeViewController: PTBaseViewController {
         customeRightItem.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
         // 5.
-        let realmAddBtn = UIButton(frame: CGRect(x: 20, y: 150, width: 80, height: 30))
-        realmAddBtn.setTitle("realm增", for: .normal)
-        realmAddBtn.addTarget(self, action: #selector(realmAddAction), for: .touchUpInside)
-        
-        
-        let realmQueryBtn = UIButton(frame: CGRect(x: 150, y: 150, width: 100, height: 30))
-        realmQueryBtn.setTitle("realm查", for: .normal)
-        realmQueryBtn.addTarget(self, action: #selector(realmQueryAction), for: .touchUpInside)
-        
-        let realmDeleteBtn = UIButton(frame: CGRect(x: 20, y: realmAddBtn.frame.maxY + 10, width: 100, height: 30))
-        realmDeleteBtn.setTitle("realm删", for: .normal)
-        realmDeleteBtn.addTarget(self, action: #selector(realmDeleteAction), for: .touchUpInside)
-        
-        addSubview(realmAddBtn)
-        addSubview(realmQueryBtn)
-        addSubview(realmDeleteBtn)
+       
         
     }
     
@@ -150,7 +133,7 @@ class PTHomeViewController: PTBaseViewController {
     @objc private  func leftItemAction() {
         
         
-        let vc = PTBaseChatViewController()
+        let vc = PTTestViewController() //PTBaseChatViewController()
         navigationController?.pushViewController(vc, animated: true)
         
 //        sptView.stopAnimate()
@@ -184,17 +167,6 @@ class PTHomeViewController: PTBaseViewController {
         
     }
     
-    
-    @objc private func realmAddAction() {
-        testRealm.add()
-    }
-    
-    @objc private func realmQueryAction() {
-        testRealm.query()
-    }
-    @objc private func realmDeleteAction() {
-        testRealm.delete()
-    }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

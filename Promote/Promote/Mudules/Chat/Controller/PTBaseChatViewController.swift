@@ -37,6 +37,8 @@ class PTBaseChatViewController: UIViewController {
         super.viewDidLoad()
         setupSubViews()
         registeCell()
+        
+        
     }
 
     private func setupSubViews() {
