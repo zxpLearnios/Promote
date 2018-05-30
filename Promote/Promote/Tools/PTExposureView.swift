@@ -131,7 +131,7 @@ class PTExposureView: UIView {
     }
     
     deinit {
-        debugPrint("PTExposureView 释放了")
+        debugPrint("PTExposureView deinit")
     }
     
 }

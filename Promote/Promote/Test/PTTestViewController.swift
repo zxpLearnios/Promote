@@ -273,6 +273,13 @@ class PTTestViewController: PTBaseViewController {
             debugPrint("这是使用 带闭包参数的函数 时的不常用的方式  \(res)")
         }
         
+        dismiss(animated: false) {
+            delay(1) {
+                
+                let mainVc = PTTabBarController()
+                PTRouter.setRootViewController(viewController: mainVc)
+            }
+        }
         
     }
     
@@ -310,7 +317,7 @@ class PTTestViewController: PTBaseViewController {
     }
     
     deinit {
-        debugPrint("PTTestViewController 释放了")
+        debugPrint("PTTestViewController deinit")
     }
     
 }
@@ -339,7 +346,7 @@ class PTTestForViewController: NSObject {
     
     
     deinit {
-        debugPrint("PTTestForViewController 释放了")
+        debugPrint("PTTestForViewController deinit")
     }
 }
 
@@ -360,6 +367,6 @@ class PTTestButtonForViewController: UIButton {
     }
     
     deinit {
-        debugPrint("PTTestButtonForViewController 释放了")
+        debugPrint("PTTestButtonForViewController deinit")
     }
 }

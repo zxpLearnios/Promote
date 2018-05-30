@@ -171,12 +171,13 @@ class PTHomeViewController: PTBaseViewController {
 //        kAppDelegate.makeSureTheMainRouter()
        
         
-//       let testVc = PTTestViewController()
+       let testVc = PTTestViewController()
 //        let nav = PTNavigationController(rootViewController: testVc)
         
 //        let mainVc = PTTabBarController()
 //        PTRouter.setRootViewController(viewController: mainVc)
         
+        navigationController?.present(testVc, animated: true, completion: nil)
     }
     
     @objc private func clickAction() {

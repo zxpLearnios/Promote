@@ -76,7 +76,6 @@ class PTLoginViewController: PTBaseViewController {
             }).disposed(by: (self?.disposeBag)!)
         }
         
-        
     }
 
     
