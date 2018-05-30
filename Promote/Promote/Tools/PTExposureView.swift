@@ -130,6 +130,9 @@ class PTExposureView: UIView {
         
     }
     
+    deinit {
+        debugPrint("PTExposureView deinit")
+    }
     
 }
 

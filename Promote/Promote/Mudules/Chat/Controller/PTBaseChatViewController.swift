@@ -11,7 +11,7 @@ import Cartography
 
 
 class PTBaseChatViewController: UIViewController {
-
+    
     var tableView: PTBaseTableView!
     var cellId = "PTBaseChatCell"
     let inputTextView = PTBaseChatInputView()
@@ -23,7 +23,7 @@ class PTBaseChatViewController: UIViewController {
         for i in 0...24 {
             let model = PTChatActorModel()
             model.isSendByMe = (i % 2 == 0)
-//            model.msgSendDate
+            //            model.msgSendDate
             model.msgContent = "第\(i)次" + content
             content += "开始-----发送的内容=="
             model.msgSendDate = "11-12-10 11:11:\(i)"
@@ -44,8 +44,9 @@ class PTBaseChatViewController: UIViewController {
         customeRightItem.setTitleColor(.black, for: .normal)
         customeRightItem.addTarget(self, action: #selector(reloadMore), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
+        
     }
-
+    
     private func setupSubViews() {
         tableView = PTBaseTableView()
         view.addSubview(tableView)
@@ -84,9 +85,9 @@ class PTBaseChatViewController: UIViewController {
                     self.tableViewScrollToLastRow()
                     self.tableView.transform = CGAffineTransform(translationX: 0, y: ty)
                 } else {
-                     self.tableView.transform = CGAffineTransform.identity
+                    self.tableView.transform = CGAffineTransform.identity
                 }
-
+                
             }
             
         }
@@ -120,7 +121,7 @@ class PTBaseChatViewController: UIViewController {
     
     private func deSelectAllRow() {
         
-//        tableView.deselectRow(at: <#T##IndexPath#>, animated: <#T##Bool#>)
+        //        tableView.deselectRow(at: <#T##IndexPath#>, animated: <#T##Bool#>)
     }
     
     private func tableViewScrollToLastRow() {
@@ -128,9 +129,9 @@ class PTBaseChatViewController: UIViewController {
             return
         }
         let lastRow = IndexPath.init(row: models.count - 1, section: 0)
-         self.tableView.scrollToRow(at: lastRow, at: .bottom, animated: false)
+        self.tableView.scrollToRow(at: lastRow, at: .bottom, animated: false)
     }
-
+    
 }
 
 extension PTBaseChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -142,15 +143,15 @@ extension PTBaseChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // 说是系统推荐用此种写法
-//        var cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? PTBaseChatCell
-//        if cell == nil {
-//            cell = PTBaseChatCell.init(style: .default, reuseIdentifier: cellId)
-//        }
-//        let row = indexPath.row
-//        let model = models[safe: row]
-//        cell!.fillData(chatActorModel: model)
-//
-//        return cell!
+        //        var cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? PTBaseChatCell
+        //        if cell == nil {
+        //            cell = PTBaseChatCell.init(style: .default, reuseIdentifier: cellId)
+        //        }
+        //        let row = indexPath.row
+        //        let model = models[safe: row]
+        //        cell!.fillData(chatActorModel: model)
+        //
+        //        return cell!
         
         // 测试发现上面的写法和下面的(一开始就注册cell)一样，都是会在一开始的时候就立即调10几次 cell里的override init(style: UITableViewCellStyle, reuseIdentifier: String?)方法。之后，就不会再调了
         
@@ -159,8 +160,9 @@ extension PTBaseChatViewController: UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
         let model = models[safe: row]
         cell.fillData(chatActorModel: model)
-
+        
         return cell
     }
     
 }
+

@@ -61,3 +61,38 @@ var autoLoginLab: UILabel = {
 
     13.3 尽管苹果开放了Extension，但是在iOS中extension并不能单独存在，要想提交到AppStore，必须将Extension包含在一个App中提交，并且App的实现部分不能为空,这个包含Extension的App就叫Containing app。Extension会随着Containing App的安装而安装，同时随着ContainingApp的卸载而卸载。）共享的数据介质中（包括NSUserDefault、Sqlite、CoreData），要跟容器程序进行数据交互需要借助AppGroups服务
 
+14. 加了@objc标识的方法、属性无法保证都会被运行时调用，
+因为Swift会做静态优化。要想完全被动态调用，必须使用dynamic修饰。
+使用dynamic修饰将会隐式的加上@objc标识.
+
+15. Swift 3中dynamic是自带@objc，但是Swift 4中，dynamic不在包含@objc了。所以有些需要使用到@objc标明的方法，在Swift 4得补回去。
+Swift 3中，如果是在Objective-C中使用上述的代码，那么是可以成功调用到foo.a和[foo testA]的。在对应的xxx-Swift.h文件中，也可以看到相关的转换成Objective-C的代码。但是！！！在Swift 4，这些都不成立了。如果要使用，那么需要标上@objcMembers或者@objc。也就是——
+
+class Foo {
+@objcMembers let a : Int
+@objcMembers func testA() {}
+// 又或者
+@objc let b : Int
+@objc func testB() {}
+}
+不过，文档更推荐使用@objcMembers。据悉，@objc相对于@objcMembers而来，可能会增大包的编译大小。而且，最好是在需要使用到的地方才用上@objcMembers，而不是所有都标明～～
+
+
+16. 在 Swift 4 中，可以把类型和协议用 & 组合在一起作为一个类型使用，就可以像下面这样写了 let a = protocolA & structB
+
+17. 值类型总是会使用直接派发, 简单易懂
+而协议和类的 extension 都会使用直接派发
+NSObject 的 extension 会使用消息机制进行派发
+NSObject 声明作用域里的函数都会使用函数表进行派发.
+协议里声明的, 并且带有默认实现的函数会使用函数表进行派发
+
+编译语言常见的派发机制： 直接派发、函数表派发（java默认使用）、消息机制派发（ios使用的），ios里可以通过一些关键字如final、static、协议扩展、类扩展等进行派发机制的更改
+
+其他修饰符： @inline(__always) 修饰方法时，表示始终将其修饰为直接派发
+18 .去model化的手段: 字典流，即使用原生的数据流，通过NSDictionary方式传递.
+block会延长相关对象的生命周期。block在离散型场景下不符合使用的规范。因此说block没有代理好
+19. 在项目开发中，只要有present出来的控制器，一定要有对应的dismiss，否则项目中会存在无法估量的内存泄漏
+
+
+
+
