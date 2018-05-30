@@ -46,6 +46,15 @@ class PTRouter: NSObject {
             
     }
     
+    
+    /**
+     * 设置主控制器
+     */
+    static func setRootViewController(viewController vc: UIViewController) {
+        kwindow!.rootViewController = vc
+        kwindow?.makeKeyAndVisible()
+    }
+    
 }
 
 

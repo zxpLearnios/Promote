@@ -18,7 +18,6 @@ class PTHomeViewController: PTBaseViewController {
     let fileLookVc = PTFilePreviewController()
     var documentInteractorVc: PTDocumentViewController!
     
-    let sptView = PTExposureView()
     
     
     let ary: [String] = {
@@ -31,7 +30,6 @@ class PTHomeViewController: PTBaseViewController {
         view.backgroundColor = UIColor.cyan
 //        doThing()
         setSubviews()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,8 +83,17 @@ class PTHomeViewController: PTBaseViewController {
 //        customeRightItem.setTitleColor(.black, for: .highlighted)
         customeRightItem.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
-        // 5.
-       
+        // 5. 退出登录
+       let loginOutBtn = PTTapLabel()
+        loginOutBtn.text = "退出登录"
+        addSubview(loginOutBtn)
+        constrain(loginOutBtn) { btn in
+            btn.center == btn.superview!.center
+        }
+        
+        loginOutBtn.tapClosure = { [weak self] _,_ in
+            self?.loginOutAction()
+        }
         
     }
     
@@ -158,6 +165,20 @@ class PTHomeViewController: PTBaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc private func loginOutAction() {
+        kUserDefaults.setValue(nil, forKey: ksaveUserNamekey)
+        kUserDefaults.synchronize()
+//        kAppDelegate.makeSureTheMainRouter()
+       
+        
+//       let testVc = PTTestViewController()
+//        let nav = PTNavigationController(rootViewController: testVc)
+        
+//        let mainVc = PTTabBarController()
+//        PTRouter.setRootViewController(viewController: mainVc)
+        
+    }
+    
     @objc private func clickAction() {
         let webVc = PTBaseWebViewController()
         let file = PTBaseBundle.loadImage(name: "ios.pdf")
@@ -175,16 +196,23 @@ class PTHomeViewController: PTBaseViewController {
 //        }
         
 //        let vc = PTBaseListController()
+        
+        
+        let sptView = PTExposureView()
         sptView.backgroundColor = .white
-//        addSubview(sptView)
+        addSubview(sptView)
         sptView.frame = view.bounds
+        
+        delay(2) {
+            sptView.removeFromSuperview()
+        }
 //        sptView.startAnimate()
 //        sptView.setupOther()
         
     }
     
     deinit {
-        
+        debugPrint("PTHomeViewController deinit")
     }
     
 }

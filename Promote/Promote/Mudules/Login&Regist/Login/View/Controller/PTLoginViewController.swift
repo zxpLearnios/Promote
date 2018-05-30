@@ -112,5 +112,9 @@ class PTLoginViewController: PTBaseViewController {
             UIView.animate(withDuration: 0.5, animations: view.layoutIfNeeded)
         }
     }
-  
+    
+    
+    deinit {
+        debugPrint("PTLoginViewController deinit")
+    }
 }

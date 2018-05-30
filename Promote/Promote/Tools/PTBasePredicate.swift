@@ -96,6 +96,11 @@ import UIKit
         return predicate
     }
     
-    
+//    open static func isProperyContainedInArray(property: String, in array: [String]) -> NSPredicate {
+//        
+//        let operate  = String(format: "\(property) in %@", array) // "\(property) in  }"
+//        let predicate = NSPredicate.init(format: operate)
+//        return predicate
+//    }
     
 }
