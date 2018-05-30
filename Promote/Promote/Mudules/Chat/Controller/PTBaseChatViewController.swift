@@ -16,6 +16,7 @@ class PTBaseChatViewController: UIViewController {
     var cellId = "PTBaseChatCell"
     let inputTextView = PTBaseChatInputView()
     
+    var testAgainMsg = "最新内容"
     var models: [PTChatActorModel] = {
         var ary = [PTChatActorModel]()
         var content = "发送的内容"
@@ -37,6 +38,12 @@ class PTBaseChatViewController: UIViewController {
         super.viewDidLoad()
         setupSubViews()
         registeCell()
+        
+        let customeRightItem = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        customeRightItem.setTitle("加载更多", for: .normal)
+        customeRightItem.setTitleColor(.black, for: .normal)
+        customeRightItem.addTarget(self, action: #selector(reloadMore), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
     }
 
     private func setupSubViews() {
@@ -58,7 +65,6 @@ class PTBaseChatViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         // 输入框
-        inputTextView.backgroundColor = .gray
         addSubview(inputTextView)
         constrain(inputTextView) { (input) in
             let sv = input.superview!
@@ -69,14 +75,13 @@ class PTBaseChatViewController: UIViewController {
         
         inputTextView.frameChangeClosure = {[weak self] isMoveUp, ty, duration in
             if let `self` = self {
-                if self.models.count == 0 {
+                if self.isEmptyList() {
                     return
                 }
-                let index = IndexPath.init(row: self.models.count - 1, section: 0)
                 
                 if isMoveUp {
                     // 键盘弹出时，列表滚动至（最后一行）最底部
-                    self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+                    self.tableViewScrollToLastRow()
                     self.tableView.transform = CGAffineTransform(translationX: 0, y: ty)
                 } else {
                      self.tableView.transform = CGAffineTransform.identity
@@ -95,8 +100,36 @@ class PTBaseChatViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
     
+    
+    @objc func reloadMore() {
+        let model = PTChatActorModel()
+        model.isSendByMe = true
+        testAgainMsg += testAgainMsg
+        model.msgContent = testAgainMsg
+        models.append(model)
+        
+        tableView.reloadData()
+        
+        tableViewScrollToLastRow()
+    }
+    
+    private func isEmptyList() -> Bool {
+        return models.count == 0
+    }
+    
+    private func deSelectAllRow() {
+        
+//        tableView.deselectRow(at: <#T##IndexPath#>, animated: <#T##Bool#>)
+    }
+    
+    private func tableViewScrollToLastRow() {
+        if isEmptyList() {
+            return
+        }
+        let lastRow = IndexPath.init(row: models.count - 1, section: 0)
+         self.tableView.scrollToRow(at: lastRow, at: .bottom, animated: false)
+    }
 
 }
 
