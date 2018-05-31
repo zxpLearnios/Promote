@@ -27,11 +27,17 @@ class PTTestViewController: PTBaseViewController {
     private let btn = UIButton()
     private let animView = UIView()
     private let testForSelf = PTTestForViewController()
-    private let testBtnForSelf = PTTestButtonForViewController()
+    private var testBtnForSelf: PTTestButtonForViewController! //PTTestButtonForViewController()
 //    private weak var testBtnForSelf: PTTestButtonForViewController!
     
     let ct = PTCommonTest()
     let testRealm = PTTestRealm()
+    
+    override func loadView() {
+        super.loadView()
+        // 测试，自己强引用按钮，按钮初始化传入自己的view做superView，则按钮是需要若引用自己的view的
+        self.view = PTTestViewForViewController()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +119,7 @@ class PTTestViewController: PTBaseViewController {
 //        addSubviews()
         
         // 5.
-//        doOther()
+        doOther()
         
         // 6.
 //        ct.testAddViewInPartlyFunc(in: view)
@@ -148,7 +154,9 @@ class PTTestViewController: PTBaseViewController {
         //        if let num = ary?.count, num <= a {
         //
         //        }
-//        testBtnForSelf = PTTestButtonForViewController()
+        
+        
+        testBtnForSelf = PTTestButtonForViewController.init(with: view)
         testBtnForSelf.backgroundColor = .red
         addSubview(testBtnForSelf)
         constrain(testBtnForSelf, block: {test_btn in
@@ -353,10 +361,28 @@ class PTTestForViewController: NSObject {
 class PTTestButtonForViewController: UIButton {
     
     var closure: ((PTTestButtonForViewController) -> Void)?
+    // 此写法会循环引用
+//    private var superV: UIView?
+    // 此处必须是若引用。 若外部的vc 强引用自己，而自己这里又强引用vc的view，则当vc释放时，自己不会释放的
+    private weak var superV: UIView?
+    
+    // 测试外部传入superView时，引用情况
+    convenience init(with superView: UIView) {
+        self.init(frame: .zero)
+        self.superV = superView
+        setup()
+    }
     
     convenience init() {
         self.init(frame: .zero)
         addTarget(self, action: #selector(btnAction), for: .touchUpInside)
+    }
+    
+    private func setup() {
+        if superV != nil {
+            superV!.addSubview(self)
+            self.frame = CGRect(x: 50, y: 240, width: 100, height: 30)
+        }
     }
     
     @objc func btnAction() {
@@ -368,5 +394,21 @@ class PTTestButtonForViewController: UIButton {
     
     deinit {
         debugPrint("PTTestButtonForViewController deinit")
+    }
+}
+
+class PTTestViewForViewController: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .blue
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        debugPrint("PTTestViewForViewController deinit")
     }
 }

@@ -81,6 +81,8 @@
 		5566E97D2063561400600B3E /* PTBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566E97A2063561400600B3E /* PTBaseProtocol.swift */; };
 		55823FF920A6DE940013AC00 /* PTSpritekitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55823FF820A6DE940013AC00 /* PTSpritekitView.swift */; };
 		55823FFC20A6FB810013AC00 /* PTExposureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55823FFB20A6FB810013AC00 /* PTExposureView.swift */; };
+		558373EA20BF95A000987108 /* PTBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558373E920BF95A000987108 /* PTBaseButton.swift */; };
+		558373EC20BF969F00987108 /* PTBlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558373EB20BF969F00987108 /* PTBlurredView.swift */; };
 		558AF110208A237600EFE21D /* PTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558AF10F208A237600EFE21D /* PTRouter.swift */; };
 		559A88632077B2F4005E8447 /* PTTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A88622077B2F4005E8447 /* PTTestViewController.swift */; };
 		559CD93D20A1ADF000160012 /* PTSnapshotOperate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */; };
@@ -227,6 +229,8 @@
 		5566E97A2063561400600B3E /* PTBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTBaseProtocol.swift; sourceTree = "<group>"; };
 		55823FF820A6DE940013AC00 /* PTSpritekitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTSpritekitView.swift; sourceTree = "<group>"; };
 		55823FFB20A6FB810013AC00 /* PTExposureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTExposureView.swift; sourceTree = "<group>"; };
+		558373E920BF95A000987108 /* PTBaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBaseButton.swift; sourceTree = "<group>"; };
+		558373EB20BF969F00987108 /* PTBlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTBlurredView.swift; sourceTree = "<group>"; };
 		558AF10F208A237600EFE21D /* PTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRouter.swift; sourceTree = "<group>"; };
 		559A88622077B2F4005E8447 /* PTTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestViewController.swift; sourceTree = "<group>"; };
 		559CD93C20A1ADF000160012 /* PTSnapshotOperate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTSnapshotOperate.swift; sourceTree = "<group>"; };
@@ -384,8 +388,10 @@
 				555431BB206DD27100CC2CC0 /* PTError.swift */,
 				5544B021206A30D90073F5FF /* PTHUD.swift */,
 				5553D6F4208A2B32006E29B4 /* PTTabBar.swift */,
+				558373EB20BF969F00987108 /* PTBlurredView.swift */,
 				5544B031206A323C0073F5FF /* PTMsgLabel.swift */,
 				554465142089C55D0057A2BC /* PTBaseLabel.swift */,
+				558373E920BF95A000987108 /* PTBaseButton.swift */,
 				554465162089C5C20057A2BC /* PTTapLabel.swift */,
 				5544B022206A30D90073F5FF /* PTCaptchaButton.swift */,
 				5544B01F206A30D80073F5FF /* PTPhoneTextField.swift */,
@@ -970,10 +976,12 @@
 				550B144220B56D3200582E52 /* PTTestRealm.swift in Sources */,
 				55E23D6B20AFF3D5001D2862 /* PTBaseChatInputView.swift in Sources */,
 				55C5472F20AFDC1100522B51 /* PTBaseChatBubbleImage.swift in Sources */,
+				558373EA20BF95A000987108 /* PTBaseButton.swift in Sources */,
 				5566E9352062697300600B3E /* ViewController.swift in Sources */,
 				556646A920AF1F3E003C1A96 /* PTBaseChatCell.swift in Sources */,
 				5553327F206B313E00F91354 /* PTBaseViewController.swift in Sources */,
 				551E27F420738F2500A6561C /* PTTitleScroller.swift in Sources */,
+				558373EC20BF969F00987108 /* PTBlurredView.swift in Sources */,
 				551E27F020738C2C00A6561C /* UIView+extension.swift in Sources */,
 				55F8DE7E20936984005FFBBF /* PTCommonTest.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
