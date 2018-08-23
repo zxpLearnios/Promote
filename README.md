@@ -1,12 +1,11 @@
 # Promote
 
-# 本项目为[![Swift 4](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)项目，使用<font color=red>cocoapods</font>进行第三方库的管理
+# 本项目为[![Swift 4](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)项目，使用<font color="#FF0000">cocoapods</font>进行第三方库的管理
 <br> 工具
 * Xcode 9.3+ 
 ***
 
 ## 1. 项目采用*MVVM*设计模式
-
 M  | V |  VM
 :-|:-:|-:
 数据模型层，只是一个简单的数据模型，里面会进行相应的转换操作但不进行存储操作     |     视图层    |   逻辑处理层，但是目前一些简单的UI逻辑不会在此进行，仍然在相应的view里进行。此层可直接单元测试    
