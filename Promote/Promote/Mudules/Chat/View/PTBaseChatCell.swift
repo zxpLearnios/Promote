@@ -11,8 +11,9 @@ import Cartography
 
 class PTBaseChatCell: UITableViewCell {
     
-    let meBubbleImg = PTBaseChatBubbleImage(isForMe: true)
-    let otherBubbleImg = PTBaseChatBubbleImage(isForMe: false)
+    
+    let meBubbleImg = PTBaseChatBubbleImage.initWith(isForMe: true)
+    let otherBubbleImg = PTBaseChatBubbleImage.initWith(isForMe: false)
     
     let avatarImgV = UIImageView()
     let bubbleImgV = UIImageView()
@@ -26,7 +27,6 @@ class PTBaseChatCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
-        
 //        debugPrint("reuseIdentifier")
     }
     

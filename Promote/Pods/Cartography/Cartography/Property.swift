@@ -9,11 +9,13 @@
 #if os(iOS) || os(tvOS)
 import UIKit
 
-public typealias LayoutAttribute = NSLayoutAttribute
+public typealias LayoutAttribute =
+    NSLayoutAttribute
+//    NSLayoutAttribute
 #else
 import AppKit
 
-public typealias LayoutAttribute = NSLayoutConstraint.Attribute
+public typealias LayoutAttribute = NSLayoutAttribute
 #endif
 
 public protocol Property {

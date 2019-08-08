@@ -20,14 +20,15 @@ extension LayoutProxy {
     }
 
     internal func edge(with attribute: NSLayoutAttribute) -> Edge {
+        
         return Edge(context, item, attribute)
     }
     #elseif os(OSX)
-    internal func dimension(with attribute: NSLayoutConstraint.Attribute) -> Dimension {
+    internal func dimension(with attribute: NSLayoutAttribute) -> Dimension {
         return Dimension(context, item, attribute)
     }
 
-    internal func edge(with attribute: NSLayoutConstraint.Attribute) -> Edge {
+    internal func edge(with attribute: NSLayoutAttribute) -> Edge {
         return Edge(context, item, attribute)
     }
     #endif

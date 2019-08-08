@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 import Alamofire
 
+// com.zjn.www.Promote
+// group.com.zjn.www.Promote.SharePromote
 
 let krealmVersion = 1
 let ksavceRealmVersionKey = "ksavceRealmVersionKey_key"
@@ -45,6 +47,16 @@ let kUserDefaults = UserDefaults.standard
 
 let kbundle = Bundle.main
 let kbundlePath = kbundle.resourcePath!
+
+let khomeDirectory = NSHomeDirectory()
+/// 外层temp目录
+let ktempDirectory = NSTemporaryDirectory() // NSHomeDirectory + "/tmp"
+/// 外层documents目录
+let kdocumentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) // NSHomeDirectory() + "/Documents"
+/// 外层library下的caches目录
+let kcachesDirectory = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
+/// 外层library下的preference目录.通过 NSUserDefaults 存储直接到此目录下
+let kpreferencesDirectory = NSHomeDirectory() + "/Library/Preferences"
 
 
 /**元*/
@@ -143,14 +155,18 @@ let ksavePayCardInfoSuccess = "保存还款卡信息成功！"
 let ksetNewPwdSuccess = "设置新密码成功！"
 
 
-let khud = PTHUD.shareInstance
+let khud = PTHUD.shared
 
 
 //-------------------------- key  ---------------------- //
+/// 保存app唯一识别号的key
+let ksaveAppUniqueIdentifykey = "appUniqueIdentify_key"
+/// app的bundle id
+let kappBundleIdkey = "CFBundleIdentifier"
 /**当前app版本号,全部版本号 */
-//let kappVersionKey = "CFBundleShortVersionString"
+let kappVersionKey = "CFBundleShortVersionString"
 /**大的版本号，build号*/
-let kappVersionKey = "CFBundleVersion"
+let kappBuildVersionKey = "CFBundleVersion"
 /**用户登陆成功的用户名key， 因为退出时会清空用户信息，故须存储之以使用户名框自动有值*/
 let ksaveUserNamekey = "loginUser_success_key"
 /**保存app版本号, 次key加上了环境类型，不加版本号*/
@@ -158,6 +174,8 @@ let ksaveAppVersionkey = "appVersion_key" + ApiType
 /**保存进入后台时的时间*/
 let ksaveEnterBgDateKey = "lastEnterBackground_key"
 
+/// 保存pdf的保存路径
+let ksavePdfPathkey = ktempDirectory + "/测试pdf的11.pdf"
 
 let ksaveFirstComeHomePageKey = "ksaveFirstComeHomePageKey_key" + ksaveAppVersionkey
 

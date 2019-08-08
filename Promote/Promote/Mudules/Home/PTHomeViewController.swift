@@ -11,6 +11,11 @@ import UIKit
 import Cartography
 import WebKit
 
+
+protocol PTHomeViewControllerProtocol: class {
+    func doThing()
+}
+
 class PTHomeViewController: PTBaseViewController {
 
     var titleScroller: PTTitleScroller!
@@ -18,18 +23,31 @@ class PTHomeViewController: PTBaseViewController {
     let fileLookVc = PTFilePreviewController()
     var documentInteractorVc: PTDocumentViewController!
     
+    var bm: PTBlurredViewManager!
     
+    var testClosure: (() -> ())?
+    
+    weak var delegate: PTHomeViewControllerProtocol!
     
     let ary: [String] = {
        let a = ["000", "11"] //, "22", "333", "4444444", "5"]
         return a
     }()
     
+    lazy var testLazyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        self.view.addSubview(view)
+        return view
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
 //        doThing()
         setSubviews()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +55,14 @@ class PTHomeViewController: PTBaseViewController {
 //        PTRouter.reShowTabBar()
     }
     
+//    override var prefersStatusBarHidden: Bool {
+//
+//    }
+    
     func setSubviews() {
         
         // 1. 测试safeArea扩展
-        let btn = UIButton()
+        let btn = PTBaseButton()
         btn.backgroundColor = .gray
         btn.addTarget(self, action: #selector(clickAction), for: .touchUpInside)
         addSubview(btn)
@@ -52,9 +74,9 @@ class PTHomeViewController: PTBaseViewController {
         }
         
         
-       // 2.
+       // 2. 测试圆角图片
         let img =  #imageLiteral(resourceName: "bg")
-        let imagV = UIImageView.init(image: img)
+        let imagV = UIImageView(frame: CGRect(x: 50, y: 150, width: 100, height: 100)) // UIImageView.init(image: img)
         addSubview(imagV)
         imagV.backgroundColor = .white
         
@@ -63,7 +85,9 @@ class PTHomeViewController: PTBaseViewController {
         beziPath.addLine(to: CGPoint.init(x: 100, y: 80))
         beziPath.addLine(to: CGPoint.init(x: 70, y: 150))
         beziPath.addLine(to: CGPoint.init(x: 5, y: 100))
-        imagV.clipImage(with: beziPath)
+        
+        imagV.image = UIImage.cr_image(with: img, size: CGSize(width: 100, height: 100))
+//        imagV.clipImage(with: beziPath)
         
         // 3.
 //        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "点击", style: .plain, target: self, action: #selector(leftItemAction))
@@ -81,19 +105,37 @@ class PTHomeViewController: PTBaseViewController {
         customeRightItem.setTitle("聊天", for: .normal)
         customeRightItem.setTitleColor(.black, for: .normal)
 //        customeRightItem.setTitleColor(.black, for: .highlighted)
+        // 添加手势，看手势与UIcontrol的touch事件响应情况
+        let tap = UITapGestureRecognizer(target: self, action: #selector(customeRightItemTapAction))
+        customeRightItem.addGestureRecognizer(tap)
+        
         customeRightItem.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
         // 5. 退出登录
        let loginOutBtn = PTTapLabel()
         loginOutBtn.text = "退出登录"
         addSubview(loginOutBtn)
         constrain(loginOutBtn) { btn in
-            btn.center == btn.superview!.center
+            btn.centerX == btn.superview!.centerX
+            btn.top == btn.superview!.centerY + 30
         }
         
         loginOutBtn.tapClosure = { [weak self] _,_ in
-            self?.loginOutAction()
+            if let `self` = self {
+                //            self.loginOutAction()
+                let vc = PTTestOffScreenRenderViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
+        
+        // 6. 测试 离屏渲染
+        
+        // 7. 测试coreText
+        let coreTextManager = PTCoreTextManager(with: view)
+        
+        // 8. 测试按钮扩大点击范围
+        btn.tapEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0)
         
     }
     
@@ -140,29 +182,60 @@ class PTHomeViewController: PTBaseViewController {
     @objc private  func leftItemAction() {
         
         
-        let vc = PTTestViewController() //PTBaseChatViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = PTTestViewController() //PTBaseChatViewController()
+//        navigationController?.pushViewController(vc, animated: true)
         
 //        sptView.stopAnimate()
         
-       // 2.
+       // 2. 快速预览 展示 文档 pdf
 //        let path = PTBaseBundle.loadFile(name: "ios.pdf")
 //        let url = URL.init(fileURLWithPath: path)
-//        documentInteractorVc = PTDocumentViewController.init(self, fileUrl: url)
+//        documentInteractorVc = PTDocumentViewController(self, fileUrl: url)
         
         // 3.
-//        let ary = ["guideImage1", "guideImage1.png", "task@2x", "snapshot", "ios.pdf"]
-//        fileLookVc.filePaths = ary //["guideImage1@2x.png"] // ["ios.pdf"]
+        let ary = ["guideImage1", "guideImage1.png", "task@2x", "snapshot", "ios.pdf"]
+        fileLookVc.filePaths = ary //["guideImage1@2x.png"] // ["ios.pdf"]
         
 //       let nav = UINavigationController.init(rootViewController: fileLookVc)
-       
-//                navigationController?.pushViewController(fileLookVc, animated: true)
-//        present(fileLookVc, animated: false, completion: nil)
+//        present(nav, animated: false, completion: nil)
+//        navigationController?.pushViewController(fileLookVc, animated: true)
+        
+        
+        // 9. 测试 屏幕旋转屏幕
+//        let vc = PTTestScreenRotationViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        // 10,.弹幕
+        let vc = PTPopMessageViewController()
+         navigationController?.pushViewController(vc, animated: true)
+        
+        // 语音朗读
+//        let vc = PTSpeechViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        // 语音识别
+//        let vc = PTVoiceRecognizeViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func rightItemAction() {
-       let vc = PTBaseChatViewController()
-        navigationController?.pushViewController(vc, animated: true)
+       let vc = PTTestPushOrPresentViewController() // PTBaseChatViewController()
+        let nav = UINavigationController(rootViewController: vc)
+//        present(nav, animated: true, completion: nil)
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        // 测试模糊效果
+//        if bm == nil {
+//            bm = PTBlurredViewManager(with: view)
+//        } else {
+//            bm.removeBlurred()
+//        }
+      
+    }
+    
+    /// 事实证明，在UIcontrol上加手势后，它对手势的响应优先级高于addTarget里的事件的优先级，如tap手势与按钮的addTarget里的方法会优先触发tap手势上的事件，即手势识别器对事件的响应级别高于hitTestView
+    @objc private func customeRightItemTapAction(tap: UITapGestureRecognizer) {
+        PTPrint("customeRightItemTapAction-------")
     }
     
     @objc private func loginOutAction() {
@@ -179,16 +252,16 @@ class PTHomeViewController: PTBaseViewController {
         
         navigationController?.present(testVc, animated: true, completion: nil)
     }
-    
+
+    // MARK: 测试 加载本地pdf
     @objc private func clickAction() {
         let webVc = PTBaseWebViewController()
         let file = PTBaseBundle.loadImage(name: "ios.pdf")
         navigationController?.pushViewController(webVc, animated: true)
-        // 加载本地文件 、网络文件
+//        // 加载本地文件 、网络文件
          webVc.urlString = file //"https://blog.csdn.net/u010105969/article/details/53942862"
-        
+//        PTPrint("点击了按钮---")
     }
-    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -199,14 +272,14 @@ class PTHomeViewController: PTBaseViewController {
 //        let vc = PTBaseListController()
         
         
-        let sptView = PTExposureView()
-        sptView.backgroundColor = .white
-        addSubview(sptView)
-        sptView.frame = view.bounds
-        
-        delay(2) {
-            sptView.removeFromSuperview()
-        }
+//        let sptView = PTExposureView()
+//        sptView.backgroundColor = .white
+//        addSubview(sptView)
+//        sptView.frame = view.bounds
+//
+//        delay(2) {
+//            sptView.removeFromSuperview()
+//        }
 //        sptView.startAnimate()
 //        sptView.setupOther()
         

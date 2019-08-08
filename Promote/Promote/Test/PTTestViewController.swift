@@ -273,22 +273,30 @@ class PTTestViewController: PTBaseViewController {
 //        doAnimate(Enum.name("for_shake"))
         
         // 1
-        noUseFunc().testCanUseClosureFunctionThenExcute { (res) in
-            debugPrint("这是常见的使用 带闭包参数的函数 时的情况 \(res)")
-        }
+//        noUseFunc().testCanUseClosureFunctionThenExcute { (res) in
+//            debugPrint("这是常见的使用 带闭包参数的函数 时的情况 \(res)")
+//        }
         // 1.1  此法只是把闭包写在函数外实现而已。如果闭包是最后一个参数, 可以直接将闭包写到参数列表后面, 这样可以提高阅读性. 称之为尾随闭包
-        noUseFunc().testCanUseClosureFunctionThenExcute(){ res in
-            debugPrint("这是使用 带闭包参数的函数 时的不常用的方式  \(res)")
+//        noUseFunc().testCanUseClosureFunctionThenExcute(){ res in
+//            debugPrint("这是使用 带闭包参数的函数 时的不常用的方式  \(res)")
+//        }
+        
+//        dismiss(animated: false) {
+//            delay(1) {
+//
+//                let mainVc = PTTabBarController()
+//                PTRouter.setRootViewController(viewController: mainVc)
+//            }
+//        }
+        
+        // 测试weak 的oc写法
+        weak var wself = self
+        
+        delay(2) {
+            debugPrint("测试weak 的oc写法 \(String(describing: wself))")
         }
         
-        dismiss(animated: false) {
-            delay(1) {
-                
-                let mainVc = PTTabBarController()
-                PTRouter.setRootViewController(viewController: mainVc)
-            }
-        }
-        
+        navigationController?.popViewController(animated: true)
     }
     
     private func noUseFunc() -> Self {

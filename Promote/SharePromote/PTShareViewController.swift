@@ -119,7 +119,9 @@ class PTShareViewController: UIViewController {
                     if path.hasPrefix("file://") {
                         let startIndex = path.startIndex
                         let endIndex =  path.index(path.startIndex, offsetBy: 7, limitedBy: path.endIndex)!
-                        path.replaceSubrange(Range(startIndex ..< endIndex), with: "")
+                        
+//                        path.replaceSubrange(Range(startIndex ..< endIndex), with: "")
+                        path.replaceSubrange(startIndex ..< endIndex, with: "")
                         let img = UIImage.init(contentsOfFile: path)
                         self?.imgV.image = img
                     }

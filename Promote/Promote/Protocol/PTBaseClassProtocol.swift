@@ -26,15 +26,15 @@ protocol PTBaseClassProtocol { // class struct enum
 //
 //}
 
-//struct test1: PTBaseClassProtocol {
-//
-//    var name: String
-//
-//    var part: String
-//
-//    mutating func setNewName(new name: String) {
-//        self.name = name
-//    }
-//}
+struct test1: PTBaseClassProtocol {
+
+    var name: String
+
+    var part: String
+
+    mutating func setNewName(new name: String) {
+        self.name = name
+    }
+}
 
 

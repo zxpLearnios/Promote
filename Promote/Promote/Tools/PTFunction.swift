@@ -62,3 +62,51 @@ func ColorRGBA(_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
     return UIColor.init(red: (r/255.0), green: (g/255.0), blue: (b/255.0), alpha: a)
 }
 
+
+func PTPrint(_ items: Any...) {
+    #if DEBUG
+    debugPrint(items)
+    #else
+    #endif
+}
+
+// -----------  coreText 专用 ------------ //
+func deallocFunc(ref: UnsafeMutableRawPointer) -> Void {
+}
+
+func widthFunc(ref: UnsafeMutableRawPointer) -> CGFloat {
+    let sObj = ref.assumingMemoryBound(to: [String: CGFloat].self)
+    let dicPointee = sObj.pointee
+    if let width = dicPointee["width"] {
+        return width
+    }
+    return 0
+}
+
+func ascentFunc(ref: UnsafeMutableRawPointer) -> CGFloat {
+    //            let x = ref.bindMemory(to: [String: CGFloat].self, capacity: 1)
+    // 由指针获取swift对象
+    let sObj = ref.assumingMemoryBound(to: [String: CGFloat].self)
+    let dicPointee = sObj.pointee
+    if let height = dicPointee["height"] {
+        return height
+    }
+    return 0
+}
+
+func descentFunc(ref: UnsafeMutableRawPointer) -> CGFloat {
+    return 0
+}
+
+// -------     //
+
+func getAppBundleId() -> String {
+    return  kbundle.infoDictionary!["CFBundleIdentifier"] as! String
+}
+
+// MARK: 打印内存地址
+func PTPrintMemoryAddressForAnyObject(_ obj: AnyObject) {
+    let address = Unmanaged<AnyObject>.passUnretained(obj as AnyObject).toOpaque()
+    PTPrint(address)
+}
+

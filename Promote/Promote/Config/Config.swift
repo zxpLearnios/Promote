@@ -18,17 +18,23 @@ import CoreLocation
 
 
 
+class SubConfig: Config {
+    
+    
+}
+
 class Config: NSObject {
     
-
     /** 信息提示label */
     private var msgLabel:PTMsgLabel!
     // MARK: 单例
-    static let shareInstanceObj = Config()
-    class var shareInstance:Config {
-        return shareInstanceObj
+    static let shareInstance = Config()
+    static var shared:Config {
+        return shareInstance
     }
 
+   
+    
     /**
      弹框提醒  ==  khud.showPromptText
      */
@@ -167,172 +173,172 @@ class Config: NSObject {
     }
 
     // MARK: 获取通讯录里所有的联系人信息 无UI（ios8、9）  在主队列（串行的）异步操作  // 过滤掉360的黑名单、白名单库
-    final class func getAllContactsWithoutUI() -> [[String:AnyObject]]{
-        var contactsAry = [[String:AnyObject]]()
-        
-        // 1. 获取联系人仓库
-        if #available(iOS 9.0, *) {
-            let store = CNContactStore()
-            
-            // 2. 创建联系人信息的请求对象
-            let  keys = [CNContactGivenNameKey, CNContactMiddleNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
-            
-            // 3. 根据请求Key, 创建请求对象
-            let fetchRequest = CNContactFetchRequest.init(keysToFetch: keys as [CNKeyDescriptor])
-            
-            // 4. 发送请求
-            do{
-                try store.enumerateContacts(with: fetchRequest, usingBlock: { (contact, stop) in
-                    
-                    // 获取姓名 全名 givenName == firstName   familyName== lastName
-                    let name = contact.familyName + contact.middleName + contact.givenName
-                    
-                    // 获取联系方式
-                    let phoneAry = contact.phoneNumbers
-                    
-                    // 将所有的手机号拼接
-                    var phoneStr = ""
-                    if phoneAry.count == 0 || phoneAry.count >= 10 { // 过滤掉360的黑、白名单
-                        
-                    }else{
-                        let count = phoneAry.count
-                        for i in 0..<count {
-                            let labelValue = phoneAry[i]
-                            let phoneNumber = labelValue.value
-                            let phone = (phoneNumber.stringValue)
-                            // 拼接所有的手机号  ， 多个手机号之间有逗号分开
-                            if phoneAry.count == 1 {
-                                phoneStr = phone
-                            }else {
-                                if i == count - 1 {
-                                    phoneStr += phone
-                                }else{
-                                    phoneStr += phone + ","
-                                }
-                            }
-                        }
-                    }
-                    
-                    // 当前的联系人字典
-                    let contactDic = ["name":name, "mobile":phoneStr]
-                    // 将当前联系人添加到联系人数组
-                    contactsAry.append(contactDic as [String : AnyObject])
-                })
-                
-            } catch{
-                
-                
-            }
-            
-            
-        } else {
-            
-            // 1. 声明一个通讯簿的引用
-            // 2. 创建通讯簿的引用
-            if ABAddressBookCreateWithOptions(nil, nil) == nil {
-                return []
-            }
-            
-            let addBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
-            // 3. 创建一个出事信号量为0的信号
-            //            let  sema = dispatch_semaphore_create(0)
-            
-            //发送一次信号
-            //            dispatch_semaphore_signal(sema)
-            
-            // 4. 等待信号触发 马上触发
-            //            dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)
-            
-            // 5. 获取所有联系人的数组
-            if ABAddressBookCopyArrayOfAllPeople(addBook) == nil { // 通讯录里没有联系人
-                debugPrint("联系人数组为空！")
-                return []
-            }
-            
-            // 对于类似 ABAddressBookCopyArrayOfAllPeople(addBook!) -> Unmanaged<CFArray>!，必须先takeRetainedValue后才能转成其他类型
-            let  allLinkPeople = ABAddressBookCopyArrayOfAllPeople(addBook).takeRetainedValue()
-            
-            
-            // 6. 获取联系人总数
-            for people in  allLinkPeople as NSArray {
-                
-                // 7. 获取全名
-                var firstName:String?
-                var middleName:String?
-                var lastName:String?
-                
-                if  ABRecordCopyValue(people as ABRecord!, kABPersonFirstNameProperty) != nil {
-                    firstName =  ABRecordCopyValue(people as ABRecord!, kABPersonFirstNameProperty).takeRetainedValue() as? String
-                }
-                if  ABRecordCopyValue(people as ABRecord!, kABPersonMiddleNameProperty) != nil {
-                    middleName =  ABRecordCopyValue(people as ABRecord!, kABPersonMiddleNameProperty).takeRetainedValue() as? String
-                }
-                if ABRecordCopyValue(people as ABRecord!, kABPersonLastNameProperty) != nil {
-                    lastName =  ABRecordCopyValue(people as ABRecord!, kABPersonLastNameProperty).takeRetainedValue() as? String
-                }
-                
-                
-                var f = ""
-                var m = ""
-                var l = ""
-                
-                if firstName != nil {
-                    f = firstName!
-                }
-                
-                if middleName != nil{
-                    m = middleName!
-                }
-                if lastName != nil{
-                    l = lastName!
-                }
-                
-                let name = l + m + f
-                
-                // 8. 获取当前联系人的电话 数组
-                var phoneStr = ""
-                if ABRecordCopyValue(people as ABRecord!, kABPersonPhoneProperty) == nil {
-                    
-                }else{
-                    let  phones = ABRecordCopyValue(people as ABRecord!, kABPersonPhoneProperty).takeRetainedValue()
-                    let count = ABMultiValueGetCount(phones)
-                    if count == 0 || count >= 10{ // 没有手机号, 过滤掉360的黑、白名单（有几千条数据）
-                        
-                    }else{
-                        for j  in 0..<count {
-                            if ABMultiValueCopyValueAtIndex(phones, j) == nil {
-                                continue
-                            }
-                            if let phone = ABMultiValueCopyValueAtIndex(phones, j).takeRetainedValue() as? String  {
-                                // 拼接所有的手机号  ， 多个手机号之间有逗号分开
-                                if count == 1 {
-                                    phoneStr += phone
-                                }else{
-                                    if j == count - 1 {
-                                        phoneStr += phone
-                                    }else{
-                                        phoneStr += (phone + ",")
-                                    }
-                                }
-                                
-                            }
-                            
-                        }
-                    }
-                    
-                }
-                // 当前的联系人字典
-                let contactDic = ["name":name, "mobile":phoneStr]
-                
-                // 将当前联系人添加到联系人数组
-                contactsAry.append(contactDic as [String : AnyObject])
-            }
-
-                
-        }
-        
-        return contactsAry
-    }
+//    final class func getAllContactsWithoutUI() -> [[String:AnyObject]]{
+//        var contactsAry = [[String:AnyObject]]()
+//
+//        // 1. 获取联系人仓库
+//        if #available(iOS 9.0, *) {
+//            let store = CNContactStore()
+//
+//            // 2. 创建联系人信息的请求对象
+//            let  keys = [CNContactGivenNameKey, CNContactMiddleNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
+//
+//            // 3. 根据请求Key, 创建请求对象
+//            let fetchRequest = CNContactFetchRequest.init(keysToFetch: keys as [CNKeyDescriptor])
+//
+//            // 4. 发送请求
+//            do{
+//                try store.enumerateContacts(with: fetchRequest, usingBlock: { (contact, stop) in
+//
+//                    // 获取姓名 全名 givenName == firstName   familyName== lastName
+//                    let name = contact.familyName + contact.middleName + contact.givenName
+//
+//                    // 获取联系方式
+//                    let phoneAry = contact.phoneNumbers
+//
+//                    // 将所有的手机号拼接
+//                    var phoneStr = ""
+//                    if phoneAry.count == 0 || phoneAry.count >= 10 { // 过滤掉360的黑、白名单
+//
+//                    }else{
+//                        let count = phoneAry.count
+//                        for i in 0..<count {
+//                            let labelValue = phoneAry[i]
+//                            let phoneNumber = labelValue.value
+//                            let phone = (phoneNumber.stringValue)
+//                            // 拼接所有的手机号  ， 多个手机号之间有逗号分开
+//                            if phoneAry.count == 1 {
+//                                phoneStr = phone
+//                            }else {
+//                                if i == count - 1 {
+//                                    phoneStr += phone
+//                                }else{
+//                                    phoneStr += phone + ","
+//                                }
+//                            }
+//                        }
+//                    }
+//
+//                    // 当前的联系人字典
+//                    let contactDic = ["name":name, "mobile":phoneStr]
+//                    // 将当前联系人添加到联系人数组
+//                    contactsAry.append(contactDic as [String : AnyObject])
+//                })
+//
+//            } catch{
+//
+//
+//            }
+//
+//
+//        } else {
+//
+//            // 1. 声明一个通讯簿的引用
+//            // 2. 创建通讯簿的引用
+//            if ABAddressBookCreateWithOptions(nil, nil) == nil {
+//                return []
+//            }
+//
+//            let addBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
+//            // 3. 创建一个出事信号量为0的信号
+//            //            let  sema = dispatch_semaphore_create(0)
+//
+//            //发送一次信号
+//            //            dispatch_semaphore_signal(sema)
+//
+//            // 4. 等待信号触发 马上触发
+//            //            dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)
+//
+//            // 5. 获取所有联系人的数组
+//            if ABAddressBookCopyArrayOfAllPeople(addBook) == nil { // 通讯录里没有联系人
+//                debugPrint("联系人数组为空！")
+//                return []
+//            }
+//
+//            // 对于类似 ABAddressBookCopyArrayOfAllPeople(addBook!) -> Unmanaged<CFArray>!，必须先takeRetainedValue后才能转成其他类型
+//            let  allLinkPeople = ABAddressBookCopyArrayOfAllPeople(addBook).takeRetainedValue()
+//
+//
+//            // 6. 获取联系人总数
+//            for people in  allLinkPeople as NSArray {
+//
+//                // 7. 获取全名
+//                var firstName:String?
+//                var middleName:String?
+//                var lastName:String?
+//
+//                if  ABRecordCopyValue(people as ABRecord!, kABPersonFirstNameProperty) != nil {
+//                    firstName =  ABRecordCopyValue(people as ABRecord!, kABPersonFirstNameProperty).takeRetainedValue() as? String
+//                }
+//                if  ABRecordCopyValue(people as ABRecord!, kABPersonMiddleNameProperty) != nil {
+//                    middleName =  ABRecordCopyValue(people as ABRecord!, kABPersonMiddleNameProperty).takeRetainedValue() as? String
+//                }
+//                if ABRecordCopyValue(people as ABRecord!, kABPersonLastNameProperty) != nil {
+//                    lastName =  ABRecordCopyValue(people as ABRecord!, kABPersonLastNameProperty).takeRetainedValue() as? String
+//                }
+//
+//
+//                var f = ""
+//                var m = ""
+//                var l = ""
+//
+//                if firstName != nil {
+//                    f = firstName!
+//                }
+//
+//                if middleName != nil{
+//                    m = middleName!
+//                }
+//                if lastName != nil{
+//                    l = lastName!
+//                }
+//
+//                let name = l + m + f
+//
+//                // 8. 获取当前联系人的电话 数组
+//                var phoneStr = ""
+//                if ABRecordCopyValue(people as ABRecord!, kABPersonPhoneProperty) == nil {
+//
+//                }else{
+//                    let  phones = ABRecordCopyValue(people as ABRecord!, kABPersonPhoneProperty).takeRetainedValue()
+//                    let count = ABMultiValueGetCount(phones)
+//                    if count == 0 || count >= 10{ // 没有手机号, 过滤掉360的黑、白名单（有几千条数据）
+//
+//                    }else{
+//                        for j  in 0..<count {
+//                            if ABMultiValueCopyValueAtIndex(phones, j) == nil {
+//                                continue
+//                            }
+//                            if let phone = ABMultiValueCopyValueAtIndex(phones, j).takeRetainedValue() as? String  {
+//                                // 拼接所有的手机号  ， 多个手机号之间有逗号分开
+//                                if count == 1 {
+//                                    phoneStr += phone
+//                                }else{
+//                                    if j == count - 1 {
+//                                        phoneStr += phone
+//                                    }else{
+//                                        phoneStr += (phone + ",")
+//                                    }
+//                                }
+//
+//                            }
+//
+//                        }
+//                    }
+//
+//                }
+//                // 当前的联系人字典
+//                let contactDic = ["name":name, "mobile":phoneStr]
+//
+//                // 将当前联系人添加到联系人数组
+//                contactsAry.append(contactDic as [String : AnyObject])
+//            }
+//
+//
+//        }
+//
+//        return contactsAry
+//    }
 
 }
 

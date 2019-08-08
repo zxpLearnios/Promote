@@ -189,6 +189,14 @@ extension String{
         
     }
 
+    /** 7.
+     */
+    static func isUrlStr(_ str: String) -> Bool {
+        if str.hasPrefix("http") || str.hasPrefix("https") {
+            return true
+        }
+        return false
+    }
     
     
 }

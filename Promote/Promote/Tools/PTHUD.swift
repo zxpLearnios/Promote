@@ -12,7 +12,7 @@ class PTHUD: NSObject {
     fileprivate let timeOut = 1.8
     
     fileprivate static let hud = PTHUD()
-    class var shareInstance: PTHUD {
+    class var shared: PTHUD {
         return hud
     }
     

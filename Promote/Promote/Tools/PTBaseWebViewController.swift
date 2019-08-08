@@ -10,7 +10,7 @@ import WebKit
 
 
 class PTBaseWebViewController: UIViewController {
-
+    
     private let webView = WKWebView()
     private let activity = UIActivity()
     private let indicator = UIActivityIndicatorView()

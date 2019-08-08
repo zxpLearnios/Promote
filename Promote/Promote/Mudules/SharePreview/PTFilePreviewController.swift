@@ -3,14 +3,13 @@
 //  Promote
 //
 //  Created by Bavaria on 2018/5/3.
-//  本地文件查看, 文件必须下载到本地
-//  如果需要自定义页面上面有其他控件的话，可以将之加为子控制器使用即可
+//  原来 本地文件查看, 文件必须下载到本地
+//  如果需要自定义页面上面有其他控件的话，可以将之加为子控制器使用即可。除了pdf\word, 也能加载本地音视频文件
 
 import UIKit
 import QuickLook
 
 class PTFilePreviewController: QLPreviewController {
-
     
     var filePaths = [String]() {
         didSet {

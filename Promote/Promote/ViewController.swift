@@ -6,6 +6,10 @@
 //
 
 import UIKit
+
+
+
+
 class ViewController: UIViewController {
 
     // 类型限定
@@ -53,7 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func clickAction(_ sender: UIButton) {
         doAnimate(Enum.name("for_scale"))
-        let vc =  PTTestViewController()  // PTTestViewController PTLoginViewController()
+        let vc = PTTestViewController()  // PTTestViewController PTLoginViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     

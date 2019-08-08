@@ -11,7 +11,7 @@
 /**
  // dispose(by 后会对disposeBag弱引用，故disposeBag应该所谓当前实例的属性，随当前实例一起销毁，从而使得RxSwift在此实例上绑定的资源得到释放。
     labObservable.bindTo(self.lab.rx.text).dispose(by: disposeBag)
- */
+ */ 
 
 import UIKit
 import RxCocoa

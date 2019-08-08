@@ -3,7 +3,7 @@
 //  Promote
 //
 //  Created by Bavaria on 2018/5/17.
-//
+//  可以得到 正确行高的label
 
 import UIKit
 
@@ -52,7 +52,7 @@ class PTRichLabel: UILabel {
         
         // 每行字 的上下默认都有写间距
         // font!.lineHeight,包含了每行字默认的上下边距
-        let defaultLineWordInset = font!.lineHeight - 15
+        let defaultLineWordInset = font!.lineHeight - font!.pointSize
         let realLineSpace = lineSpace - defaultLineWordInset
         mutableParagraphStyle.lineSpacing = realLineSpace
         

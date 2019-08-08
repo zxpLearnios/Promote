@@ -11,7 +11,7 @@ import QuickLook
 
 
 class PTDocumentViewController: UIDocumentInteractionController, UIDocumentInteractionControllerDelegate {
-    private var vc: UIViewController!
+    private weak var vc: UIViewController!
     
     convenience init(_ vc: UIViewController, fileUrl: URL?, isQuickLook: Bool = true) {
         self.init()
@@ -63,5 +63,9 @@ class PTDocumentViewController: UIDocumentInteractionController, UIDocumentInter
     }
     
     func documentInteractionControllerWillPresentOpenInMenu(_ controller: UIDocumentInteractionController) {
+    }
+    
+    deinit {
+        PTPrint("PTDocumentViewController deinit")
     }
 }

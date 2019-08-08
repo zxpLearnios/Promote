@@ -53,8 +53,8 @@ class PTBaseBundle: NSObject {
                 if newName.hasSuffix("@2x") || newName.hasSuffix("@3x") {
                     let endIndex = newName.index(newName.endIndex, offsetBy: -3)
                    
-                    let range = Range(endIndex..<newName.endIndex)
-                    newName.removeSubrange(range)
+//                    let range = Range(endIndex..<newName.endIndex)
+                    newName.removeSubrange(endIndex..<newName.endIndex)
                 }
                 
                 if scale == 2 {
@@ -74,8 +74,9 @@ class PTBaseBundle: NSObject {
             newName = name
             if newName.hasSuffix("@2x") || newName.hasSuffix("@3x") {
                 let endIndex = newName.index(newName.endIndex, offsetBy: -3)
-                let range = Range(endIndex..<newName.endIndex)
-                newName.removeSubrange(range)
+//                let range = Range(endIndex..<newName.endIndex)
+                
+                newName.removeSubrange(endIndex..<newName.endIndex)
             }
             if scale == 2 { // 找@2x的图片，若无，则使用1x的
                 let lookfor2xResult = lookforImage(name)

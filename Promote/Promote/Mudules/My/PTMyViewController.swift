@@ -18,7 +18,7 @@ class PTMyViewController: PTBaseViewController { // PTBaseViewController
 
     private var simpleDataSource: [String] = {
         var ary = [String]()
-        for i in 0...20 {
+        for i in 0...120 {
             ary.append(String(i))
         }
         return ary
@@ -35,7 +35,7 @@ class PTMyViewController: PTBaseViewController { // PTBaseViewController
 
     private func setSubviews() {
         addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(PTMyViewControllerCell.self, forCellReuseIdentifier: cellId)
 
         _ = constrain(tableView) { (tv) in
             let sv = tv.superview!
@@ -68,15 +68,10 @@ class PTMyViewController: PTBaseViewController { // PTBaseViewController
 
 
         dataSourceOb.bind(to: tableView.rx.items){ [weak self] (tv, index, element) in
-            var cell = tv.dequeueReusableCell(withIdentifier: (self?.cellId)!)
-            if cell == nil {
-                cell = UITableViewCell.init()
-            }
-            cell?.contentView.backgroundColor = (index % 2 == 0) ? .red : .white
-            cell?.textLabel?.text = (index % 2 == 0) ? "simple" : "\(element)"
-            return cell!
+            let cell = tv.dequeueReusableCell(withIdentifier: (self?.cellId)!) as! PTMyViewControllerCell
+            cell.content = (index % 2 == 0) ? "simple" : "\(element)"
+            return cell
             }.disposed(by: disposeBag)
-
     }
 
     // MARK: 调整UI
@@ -106,6 +101,53 @@ extension PTMyViewController: UITableViewDelegate {
         tableView.reloadData()
     }
 
+}
+
+fileprivate class PTMyViewControllerCell: UITableViewCell {
+    
+    var content = "" {
+        didSet {
+            contentLab.text = content
+        }
+    }
+    
+    private let contentLab = PTBaseLabel(with: .blue, fontSize: 16)
+    private let imgV = UIImageView()
+    
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        contentView.addSubview(contentLab)
+        contentView.addSubview(imgV)
+        
+        imgV.backgroundColor = .red
+        imgV.layer.cornerRadius = 15
+//        imgV.alpha = 0.8
+        imgV.isOpaque = false
+        imgV.layer.shouldRasterize = true
+        imgV.layer.masksToBounds = true
+        
+        constrain(contentLab, imgV) { (lab, iv) in
+            let sv = lab.superview!
+            
+            lab.centerY == sv.centerY
+            lab.left == sv.left + 30
+            
+            iv.centerY == lab.centerY
+            iv.right == sv.right - 30
+            iv.width == 30
+            iv.height == 30
+        }
+    }
+    
 }
 
 //
