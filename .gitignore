@@ -1,7 +1,11 @@
 # Xcode 
 .DS_Store
 
-# pod
+#other
+
 Promote/Promote.xcodeproj/xcuserdata
 Promote/Promote.xcworkspace/xcuserdata 
-Pods/
+
+# pod
+Promote/Pods/
+Promote/Podfile.lock
