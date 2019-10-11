@@ -83,6 +83,12 @@
 		5544B034206A35570073F5FF /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B033206A35570073F5FF /* UIColor+extension.swift */; };
 		5544B038206A3EA10073F5FF /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5544B037206A3EA10073F5FF /* readme.txt */; };
 		5544B03D206A41960073F5FF /* PTOCReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544B03C206A41960073F5FF /* PTOCReference.swift */; };
+		55492E7A235077A30040B102 /* DeepChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E73235077A30040B102 /* DeepChartView.swift */; };
+		55492E7B235077A30040B102 /* PTDeepChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E74235077A30040B102 /* PTDeepChartViewController.swift */; };
+		55492E7C235077A30040B102 /* PTDeepChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E75235077A30040B102 /* PTDeepChartView.swift */; };
+		55492E7D235077A30040B102 /* PTKLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E77235077A30040B102 /* PTKLineCell.swift */; };
+		55492E7E235077A30040B102 /* PTKLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E78235077A30040B102 /* PTKLineModel.swift */; };
+		55492E7F235077A30040B102 /* PTKLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55492E79235077A30040B102 /* PTKLineViewController.swift */; };
 		55533287206B812D00F91354 /* khowledge.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55533286206B812D00F91354 /* khowledge.txt */; };
 		5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553328A206B84A600F91354 /* PTGuideViewController.swift */; };
 		55533295206B84F900F91354 /* guideImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5553328F206B84F900F91354 /* guideImage1@2x.png */; };
@@ -255,6 +261,12 @@
 		5544B033206A35570073F5FF /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		5544B037206A3EA10073F5FF /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		5544B03C206A41960073F5FF /* PTOCReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTOCReference.swift; sourceTree = "<group>"; };
+		55492E73235077A30040B102 /* DeepChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepChartView.swift; sourceTree = "<group>"; };
+		55492E74235077A30040B102 /* PTDeepChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTDeepChartViewController.swift; sourceTree = "<group>"; };
+		55492E75235077A30040B102 /* PTDeepChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTDeepChartView.swift; sourceTree = "<group>"; };
+		55492E77235077A30040B102 /* PTKLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKLineCell.swift; sourceTree = "<group>"; };
+		55492E78235077A30040B102 /* PTKLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKLineModel.swift; sourceTree = "<group>"; };
+		55492E79235077A30040B102 /* PTKLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTKLineViewController.swift; sourceTree = "<group>"; };
 		55533286206B812D00F91354 /* khowledge.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = khowledge.txt; sourceTree = "<group>"; };
 		5553328A206B84A600F91354 /* PTGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGuideViewController.swift; sourceTree = "<group>"; };
 		5553328F206B84F900F91354 /* guideImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guideImage1@2x.png"; sourceTree = "<group>"; };
@@ -551,9 +563,39 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		55492E71235077A30040B102 /* KLineAndDeep */ = {
+			isa = PBXGroup;
+			children = (
+				55492E72235077A30040B102 /* Deep */,
+				55492E76235077A30040B102 /* KLine */,
+			);
+			path = KLineAndDeep;
+			sourceTree = "<group>";
+		};
+		55492E72235077A30040B102 /* Deep */ = {
+			isa = PBXGroup;
+			children = (
+				55492E73235077A30040B102 /* DeepChartView.swift */,
+				55492E74235077A30040B102 /* PTDeepChartViewController.swift */,
+				55492E75235077A30040B102 /* PTDeepChartView.swift */,
+			);
+			path = Deep;
+			sourceTree = "<group>";
+		};
+		55492E76235077A30040B102 /* KLine */ = {
+			isa = PBXGroup;
+			children = (
+				55492E77235077A30040B102 /* PTKLineCell.swift */,
+				55492E78235077A30040B102 /* PTKLineModel.swift */,
+				55492E79235077A30040B102 /* PTKLineViewController.swift */,
+			);
+			path = KLine;
+			sourceTree = "<group>";
+		};
 		55533288206B848200F91354 /* Mudules */ = {
 			isa = PBXGroup;
 			children = (
+				55492E71235077A30040B102 /* KLineAndDeep */,
 				462F2AC321A799E4004D3D1A /* BitMap */,
 				4689616321869A9F004A0B8B /* Speech */,
 				467FC30B217F1E55002BC3E8 /* PopMessage */,
@@ -1111,6 +1153,7 @@
 				555CBDFD206CD3E700DECE85 /* PTRxSwiftTest.swift in Sources */,
 				5544B02E206A30FC0073F5FF /* Config.swift in Sources */,
 				460A74872112FE3600134F66 /* PTBaseTableViewController.swift in Sources */,
+				55492E7D235077A30040B102 /* PTKLineCell.swift in Sources */,
 				550B144220B56D3200582E52 /* PTTestRealm.swift in Sources */,
 				467FC311217F1E55002BC3E8 /* PTPopMessageLabel.swift in Sources */,
 				460A749C2112FE3600134F66 /* PTRichTitleScroller.swift in Sources */,
@@ -1150,6 +1193,7 @@
 				4681757D213A398F006AA09F /* PTIconManager.swift in Sources */,
 				46D005E621C107DB00F8C3B1 /* PTTestDeinitCall.swift in Sources */,
 				5566E97B2063561400600B3E /* PromoteProtocol+UIView.swift in Sources */,
+				55492E7A235077A30040B102 /* DeepChartView.swift in Sources */,
 				460A74852112FE3600134F66 /* PTBasePredicate.swift in Sources */,
 				551E27F220738CDD00A6561C /* UIViewController+extension.swift in Sources */,
 				555B8F8E20720202008646B5 /* PTMyViewController.swift in Sources */,
@@ -1166,6 +1210,7 @@
 				55125CB0209E90F10074CFF3 /* PTDocumentViewController.swift in Sources */,
 				555B8F8A207201ED008646B5 /* PTHomeViewController.swift in Sources */,
 				460A748D2112FE3600134F66 /* PTCoreTextManager.swift in Sources */,
+				55492E7B235077A30040B102 /* PTDeepChartViewController.swift in Sources */,
 				464ED44C221551680000436B /* PTTestQueue.swift in Sources */,
 				555CBDFF206CD45E00DECE85 /* Array+extension.swift in Sources */,
 				460A748B2112FE3600134F66 /* PTBlurredViewManager.swift in Sources */,
@@ -1177,6 +1222,7 @@
 				5544B004206A23070073F5FF /* PTLoginViewModel.swift in Sources */,
 				555B8F6D2071C4C2008646B5 /* NSObject+extention.swift in Sources */,
 				55C23B7220899B0300E9EA9B /* URL+extension.swift in Sources */,
+				55492E7F235077A30040B102 /* PTKLineViewController.swift in Sources */,
 				4621A8782121813600814FD0 /* PTGetIpManager.swift in Sources */,
 				460A749E2112FE3600134F66 /* PTTitleScrollerCell.swift in Sources */,
 				460A74942112FE3600134F66 /* PTOpenGLEarthView.swift in Sources */,
@@ -1191,6 +1237,7 @@
 				5544B02D206A30FC0073F5FF /* Const.swift in Sources */,
 				460A74962112FE3600134F66 /* PTRichLabel.swift in Sources */,
 				5553328B206B84A600F91354 /* PTGuideViewController.swift in Sources */,
+				55492E7E235077A30040B102 /* PTKLineModel.swift in Sources */,
 				460A749B2112FE3600134F66 /* PTUserDefaults.swift in Sources */,
 				46386E832108646200C87129 /* PTTestPushOrPresentViewController.swift in Sources */,
 				5530EE1F2082305D00D2A6AD /* UIImageView+extension.swift in Sources */,
@@ -1200,6 +1247,7 @@
 				460A749A2112FE3600134F66 /* PTTapLabel.swift in Sources */,
 				467FC313217F1E55002BC3E8 /* PTPopMessageViewController.swift in Sources */,
 				463D97C02186A0FC000BCBA7 /* PTSpeechManager.swift in Sources */,
+				55492E7C235077A30040B102 /* PTDeepChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
