@@ -67,6 +67,8 @@
 		46D7A5EA218841C50010F6F5 /* PTGetIpByOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7A5E9218841C50010F6F5 /* PTGetIpByOC.m */; };
 		46DF06E820FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF06E720FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift */; };
 		46FD396B212E946800A7A447 /* PTGetIdentifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD396A212E946800A7A447 /* PTGetIdentifyManager.swift */; };
+		5456308123955C430071C7A0 /* 360Http.html in Resources */ = {isa = PBXBuildFile; fileRef = 5456307F23955C430071C7A0 /* 360Http.html */; };
+		5456308223955C440071C7A0 /* baiduHttps.html in Resources */ = {isa = PBXBuildFile; fileRef = 5456308023955C430071C7A0 /* baiduHttps.html */; };
 		54900BE822FC036000BF6D18 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54900BE722FC036000BF6D18 /* UIButton+extension.swift */; };
 		54900BE922FC036000BF6D18 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54900BE722FC036000BF6D18 /* UIButton+extension.swift */; };
 		550B144220B56D3200582E52 /* PTTestRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B144120B56D3200582E52 /* PTTestRealm.swift */; };
@@ -246,6 +248,8 @@
 		46D7A5E9218841C50010F6F5 /* PTGetIpByOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTGetIpByOC.m; sourceTree = "<group>"; };
 		46DF06E720FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestOffScreenRenderViewController.swift; sourceTree = "<group>"; };
 		46FD396A212E946800A7A447 /* PTGetIdentifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTGetIdentifyManager.swift; sourceTree = "<group>"; };
+		5456307F23955C430071C7A0 /* 360Http.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 360Http.html; sourceTree = "<group>"; };
+		5456308023955C430071C7A0 /* baiduHttps.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = baiduHttps.html; sourceTree = "<group>"; };
 		54900BE722FC036000BF6D18 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		550B144120B56D3200582E52 /* PTTestRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestRealm.swift; sourceTree = "<group>"; };
 		550EF697209474EA00704F17 /* PTShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTShareViewController.swift; sourceTree = "<group>"; };
@@ -683,6 +687,8 @@
 		5564F72C209C56E900983FA4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5456307F23955C430071C7A0 /* 360Http.html */,
+				5456308023955C430071C7A0 /* baiduHttps.html */,
 				5564F72F209C572800983FA4 /* task.png */,
 				4661F7462136CDA500B5CA84 /* ios.pdf */,
 				5564F72D209C570E00983FA4 /* snapshot.jpeg */,
@@ -1054,8 +1060,10 @@
 				555B8F792071DF63008646B5 /* demo.css in Resources */,
 				55533297206B84F900F91354 /* guideImage2@2x.png in Resources */,
 				5564F732209C575200983FA4 /* snapshot1.jpg in Resources */,
+				5456308123955C430071C7A0 /* 360Http.html in Resources */,
 				5564F72E209C570E00983FA4 /* snapshot.jpeg in Resources */,
 				555B8F7C2071DF63008646B5 /* iconfont.ttf in Resources */,
+				5456308223955C440071C7A0 /* baiduHttps.html in Resources */,
 				5566E93A2062697300600B3E /* Assets.xcassets in Resources */,
 				460A74A02112FE3600134F66 /* readme_titleScroller.txt in Resources */,
 				4681757B213A3864006AA09F /* newIcon.png in Resources */,

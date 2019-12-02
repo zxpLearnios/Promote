@@ -1,0 +1,2007 @@
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--teser code @ 8080-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE1" />            <title>360软件分发_360社区</title>
+    <link href="http://bbs.360.cn/thread-15065560-1-1.html" rel="canonical" />
+<meta name="keywords" content="360企业安全,360手机助手,360手机卫士,360云盘,360安全卫士下载,360浏览器,360手机Q5,360手机Q5Plus,360N5S,360手机N4S,360手机n4,360手机f4,360手机,360,奇酷手机,360OS,360os官网,360智能硬件" />
+<meta name="description" content="360软件分发 " />
+<meta name="generator" content="Discuz! X3.1" />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="http://bbs.360.cn/" /><link rel="stylesheet" type="text/css" href="/data/cache/style_4_common.css?Plb" /><link rel="stylesheet" type="text/css" href="/data/cache/style_4_forum_viewthread.css?Plb" /><script type="text/javascript">var STYLEID = '4', STATICURL = 'https://b1.qikucdn.com/static/', IMGDIR = 'https://b1.qikucdn.com/static/image/common/', VERHASH = 'Plb', charset = 'utf-8', discuz_uid = '0', cookiepre = 'yTGF__b9c2_', cookiedomain = '.bbs.360.cn', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '1|金币|,2|经验|', defaultstyle = '', REPORTURL = 'aHR0cDovL2Jicy4zNjAuY24vdGhyZWFkLTE1MDY1NTYwLTEtMS5odG1s', SITEURL = 'http://bbs.360.cn/', JSPATH = 'https://b1.qikucdn.com/static/js/', DYNAMICURL = '';</script>
+    <script src="https://b1.qikucdn.com/static/js/jquery.min.js?v1.0.1" type="text/javascript"></script>
+<!--<script src="https://res.cloud.360os.com/pass/2.1/login/5.0.3.js" type="text/javascript"></script>-->
+<script> var jq = jQuery.noConflict();</script>
+<script src="https://b1.qikucdn.com/static/js/common.js?v1.1.0" type="text/javascript"></script>
+<!-- 	360用户中心登录开始
+<script src="//js.passport.qihucdn.com/5.0.3.js" type="text/javascript" type="text/javascript"></script>
+360用户中心登录结束
+<style>
+#fwin_login{
+display: none;
+}
+</style> -->
+        <script>
+            jq.getScript('//s.ssl.qhmsg.com/quc/quc6.js').then(function() {
+                var opts = {
+                    "src": "pcw_os",
+                    "primaryColor": "#2EC7BB",
+                    "signIn": {
+                        "types": [ "mobile","normal","qrcode" ],
+                        "panelLogo": "https://b1.qikucdn.com/dfsj_imgs/indeximg/qiku_community_logo.png",
+                        "thirdPart": { "providers": [ "weixin" ] },
+                        "hideKeepAlive": false
+                    },
+                    "signUp": {
+                        "types": [ "mobile", "email" ],
+                        "panelLogo": "https://b1.qikucdn.com/dfsj_imgs/indeximg/qiku_community_logo.png",
+                        "hidePasswordAgain": false
+                    }
+                };
+                QHPass.init(opts);
+                $(document).on('click','#signin_360',function(){
+                    QHPass.signIn("https://bbs.360.cn/login_sso_web.php");
+                });
+                $(document).on('click','#signup_360',function(){
+                    QHPass.signUp("https://bbs.360.cn/login_sso_web.php");
+                });
+            });
+        </script>
+<meta name="application-name" content="360社区" />
+<meta name="msapplication-tooltip" content="360社区" />
+<meta name="msapplication-task" content="name=版块;action-uri=http://bbs.360.cn/forum.php;icon-uri=http://bbs.360.cn/https://b1.qikucdn.com/static/image/common//bbs.ico" />
+<meta name="msapplication-task" content="name=同城;action-uri=http://bbs.360.cn/group.php;icon-uri=http://bbs.360.cn/https://b1.qikucdn.com/static/image/common//group.ico" />
+        <link rel="archives" title="360社区" href="http://bbs.360.cn/archiver/" />
+<script src="https://b1.qikucdn.com/static/js/forum.js?v1.0.2" type="text/javascript"></script>
+        <script>
+            function mySayGood (e) {
+            	var x = e.clientX;
+            	var y = e.clientY;
+                var countObj = jq('#myZanCountsSpan');
+                jq.ajax({
+                    url:'apkapi/quotation.php',
+                    type:"post",
+                    dataType:"json",
+                    data:{op:'saygood'},
+                    success:function (msg) {
+                        if (msg.rs==='success'){
+                            countObj.html(parseInt(countObj.html())+1);
+                        }else{
+                        	alerts.show(msg.info,x,y);
+                            alerts.hide();
+                        }
+                    }
+                });
+            }
+            
+            var alerts = new Object();
+            alerts.id = "alterts_"+parseInt(1000*Math.random());
+            alerts.show = function (str,x,y) {
+            	var div=document.createElement('div');
+                div.id = this.id;
+                div.style.position =  "absolute"; //position: absolute;
+                div.style.top=(y-40)+"px";
+                div.style.left=(x+5)+"px";
+                div.style.background="#fff";
+                div.style.padding="5px 10px";
+                div.style.boxShadow="2px 2px 5px rgba(0,0,0,0.3)"; //box-shadow: 10px 10px 5px #888888;
+                div.style.borderRadius="5px";
+                
+                div.innerHTML = str;
+                document.body.appendChild(div);
+            }
+            alerts.hide = function () {
+                setTimeout(function(){
+                    jq("#"+alerts.id).hide(500,function(){
+                        document.body.removeChild(document.getElementById(alerts.id));
+                    });
+                },2000);
+            }
+            var coolyunAttachment = '1'=='1' ? "yes" : "no";
+            var coolyunS0 = 'file.coolyun.com';
+            var coolyunS1 = 'd1.coolyun.com';
+var coolyunS2 = 'file.c.qikucdn.com';
+        </script>
+        
+</head>
+
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
+<script type="text/javascript">
+/*
+if('1'=='1' && (discuz_uid==null || discuz_uid=='' || discuz_uid==0) ){
+//第三方添加该代码,动态创建js，如果已经登陆成功，则不需要添加了
+(function(){
+var cs=document.createElement("script"); 
+cs.src='https://passport.360os.com/sso/login-api.js?appid=1010000675&callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php&_=' + new Date().getTime();  
+document.body.appendChild(cs);
+})();
+// 360登录验证
+if (location.href.index('login_sso_web.php') < 1 && typeof(QHPass) != 'undefined') {
+QHPass.getUserInfo(true, function(userinfo){
+window.location.href = SITEURL + "login_sso_web.php";
+}, function(err){console.log(err);});
+}
+}
+*/
+</script>
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="qmenu_menu" class="p_pop blk qmenu_menu_coolpad" style="display:none;">
+<div class="ptm pbw hm">
+请 <a href="member.php?mod=logging&amp;action=login" class="xi2"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod=cyreg" class="xi2 xw1">注册</a>
+</div>
+</div>
+<div class="apk-download">
+<div class="apk-download-pannel">
+<img src="https://b1.qikucdn.com/dfsj_imgs/indeximg/apk_download.png?Plb" />
+<a href="http://down.360safe.com/360bbs/360bbs.apk" target="_blank"></a>
+</div>
+<span class="apk-download-close">关闭</span>
+</div>
+<script>
+if(loadUserdata("apk_download_again")!=1){
+jQuery(".apk-download").show();
+}
+if(jQuery(".apk-download").length>0){
+jQuery(".apk-download-close").click(function(){
+jQuery(".apk-download").slideUp(500);
+saveUserdata("apk_download_again",1);
+});
+}
+function existmobile(){
+var mobile = true;
+jQuery.ajax({
+type:'get',
+url:'api/bindmobile.php',
+async: false,
+dataType:'json',
+success:function(data){
+if(data.ret_no === 1){
+jQuery(".bind-phonenum-pannel").css('display','block');
+mobile = false;
+}else if(data.ret_no === 2){
+jQuery("#qiku_bindmobile").val(data.ret_data);
+jQuery(".bind-phonenum-pannel").css('display','block');
+mobile = false;
+}
+}
+})
+return mobile;
+}
+</script>
+<div class="bind-phonenum-pannel">
+<div class="bind-phonenum" >
+<p class="title">绑定手机号</p>
+<p class="despration">
+应国家法规对于账号实名的要求，请您在进行下一步操作前，需要先完成手机绑定 (若绑定失败，请重新登录绑定)。<a href="http://bbs.360.cn/thread-15099669-1-1.html" target="_blank">了解更多</a>
+</p>
+<p class="bind-btn-pannel"><span class="no-bind-btn">不绑定</span><span class="bind-btn">绑定手机号</span></p>
+</div>
+<div class="no-bind" style="display: none">
+<p class="title">请悉知</p>
+<p class="despration">
+应国家法规对于账号实名的要求，如不绑定手机号，则只能浏览论坛，无法进行发帖、评论、回复、点赞等相关操作 (若绑定失败，请重新登录绑定)。<a href="http://bbs.360.cn/thread-15099669-1-1.html" target="_blank">了解更多</a>
+</p>
+<p class="bind-btn-pannel"><span class="no-bind-btn">确定</span><span class="bind-btn">绑定手机号</span></p>
+<p class="contactus">反馈360产品问题，<a href="//www.360.cn/about/contactus.html#fankui" target="_blank">请点击这里</a></p>
+</div>
+<input type="hidden" id="qiku_bindmobile" value="">
+</div>
+
+<script>
+jQuery(".bind-phonenum .no-bind-btn").click(function(){
+jQuery(".bind-phonenum").css('display','none');
+jQuery(".no-bind").css('display','block');
+});
+jQuery(".no-bind .no-bind-btn").click(function(){
+jQuery(".bind-phonenum-pannel").css('display','none');
+jQuery(".bind-phonenum").css('display','block');
+jQuery(".no-bind").css('display','none');
+});
+jQuery(".bind-btn").click(function(){
+jQuery(".bind-phonenum-pannel").css('display','none');
+bindMobile();
+});
+function bindMobile(){
+var bingtype = jQuery("#qiku_bindmobile").val();
+if(bingtype){
+window.open(bingtype);
+}else {
+QHPass.init('pcw_i360');
+QHPass.setConfig('domainList', ["360pay.cn", "so.com", "360.cn", "360.com"]);
+QHPass.utils.defineError(30000, "此号已绑定，请换号或<a class='quc-link quc-link-login' href='//i.360.cn/security/secmobile?op=modifyMobile' target='_blank'><u>解绑</u></a>");
+QHPass.getUserInfo(function (userInfo) {
+QHPass.bindMobile(function () {
+//成功之后的回调
+showDialog('手机绑定成功', 'right');
+});
+}, function () {
+QHPass.signIn(function () {
+QHPass.bindMobile(function () {
+//成功之后的回调
+showDialog('手机绑定成功', 'right');
+});
+});
+});
+}
+}
+</script>
+        <div class="xm_header_top">
+            <p class="xm_header_top_ul">
+                <span> <a href="//www.360.com/" target="_blank">360官网</a> <span class="pipe-head">|</span> </span>
+                <span> <a href="//mall.360.cn/?utm_source=SQDH007" target="_blank">会员商城</a> <span class="pipe-head">|</span> </span>
+                <span> <a href="//www.360shouji.com/" target="_blank">360手机官网</a> <span class="pipe-head">|</span> </span>
+<span> <a href="//bbs.360.cn/apk/download/" target="_blank">社区客户端</a></span>
+            </p>
+        </div>
+<div id="hd" class="xm_header">
+            <div class="xm_headerInner headerInner">                <div class="cl ">
+                    <div class="logo" id="logo">
+                        <a href="//bbs.360.cn/"> <img src="https://b1.qikucdn.com/dfsj_imgs/indeximg/qiku_community_logo.png?Plb" alt=""></a>
+                        <!-- 签到 delete by fengyuan -->
+                    </div>
+                    <!--<div class="athletes-refuel">-->
+                    	<!--&lt;!&ndash;<p class="refuel-number-pannel"><span class="refuel-number">0</span>&nbsp;人</p>-->
+                    	<!--<p class="refuel-word">为中国奥运健儿加油！</p>-->
+                    	<!--<span class="refuel-add">+1</span>&ndash;&gt;-->
+                    <!--</div>-->
+                    <script type="text/javascript">
+                    /*if(jQuery(".refuel-number-pannel").length>0){
+                    jQuery.ajax({
+type: "get",
+url: "http://bbs.360.cn/api/torches.php",
+data:{mod:"view"},
+success: function(res) {
+var data = JSON.parse(res);
+jQuery(".refuel-number").text(data[0].num);
+},
+error: function(err) {
+console.log(err);
+}
+});
+                    	jQuery(".athletes-refuel").bind("click",function(){
+                    		var _this=jQuery(this);
+                    		_this.stop();
+                    		_this.find(".refuel-add").stop();
+
+                    		var num=parseInt(_this.find(".refuel-number").text());
+                    		_this.css({"background-position":"0 4px"});
+                    		_this.animate({backgroundPositionY:"-26px"},1000);
+
+                    		_this.find(".refuel-add").css({"top":"15px","opacity":"1","display":"none"});
+                    		_this.find(".refuel-add").show("normal",function(){
+                    			jQuery(this).animate({"top":"-20px","opacity":"0"},1000);
+                    		});
+                    		_this.find(".refuel-number").text(num+1);
+                    		jQuery.ajax({
+type: "get",
+url: "http://bbs.360.cn/api/torches.php",
+data:{mod:"vote"},
+success: function(res) {
+
+},
+error: function(err) {
+console.log(err);
+}
+});
+                    	});
+                    }*/
+                    </script>
+                    
+                    <div class="nv-searchbox">
+                        <div id="searchbar2">
+                            <form id="scbar_form" method="post" autocomplete="off" onSubmit="searchFocus($('scbar_txt2'))" action="search.php?searchsubmit=yes" target="_blank">
+                                <input name="mod" id="scbar_mod" value="search" type="hidden">
+                                <input name="formhash" value="ac476e8c" type="hidden">
+                                <input name="srchtype" value="title" type="hidden">
+                                <input name="srhfid" value="3" type="hidden">
+                                <input name="srhlocality" value="forum::forumdisplayall" type="hidden">
+                                <input name="srchtxt" id="scbar_txt2" autocomplete="off" type="text" value='帖子/用户' onFocus="if(this.value=='帖子/用户'){this.value='';this.nextSibling.style.display='none';}" onBlur="if(this.value==''){this.value='帖子/用户';this.nextSibling.style.display='block';}"><span class="search-rec" onclick="document.location.href='http://hd.bbs.360.cn/feast2019';">360用户节</span>
+                                <input name="searchsubmit" id="scbar_submit2" value=" " type="submit" onClick="if(document.getElementById('scbar_txt2').value=='帖子/用户'){document.getElementById('scbar_txt2').value=''}">
+                            </form>
+                        </div>
+                        
+                        <!--add by hwl-->
+<div class="warning-info" >
+</div>
+<div class="xm_um">
+<div id="um">
+<p class="login">
+                <!--<a href="https://passport.360os.com/?appid=1010000675&callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php" >登录</a>-->
+                <!--<a href="http://bbs.360.cn/member.php?mod=logging&amp;action=login">登录</a>-->
+<!--<a href="https://passport.360os.com/register?appid=1010000675&callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php" class="xi2 xw1" style="color: #2ec7bb;font-weight:400;">注册</a>-->
+                <a href="javascript:;" id="signin_360">登录</a>
+<a href="javascript:;" id="signup_360" class="xi2 xw1" style="color: #2ec7bb;font-weight:400;">注册</a>
+                <!-- <a href="https://passport.360os.com/index_qiku.jsp?appid=1010000675&amp;callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php" style="font-size: 16px;">登录奇酷帐号</a> -->
+ 
+</p>
+    </div>
+</div>                                            
+                    </div>
+<div id="nv" style="float:right;margin-right:90px;"><!--<div class="xm_search">
+    <div id="scbar" class="fold">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="scbar_mod" value="search" />
+<input type="hidden" name="formhash" value="5374caef" />
+<input type="hidden" name="srchtype" value="title" />
+<input type="hidden" name="srhfid" value="136" />
+<input type="hidden" name="srhlocality" value="forum::viewthread" />
+
+            <div class="scbar_type_outer"><a href="javascript:;" id="scbar_type" onclick="showMenu(this.id)" hidefocus="true">搜索</a></div>
+            <input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech speech />
+            <button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true">搜索</button>
+        </form>
+    </div>
+</div>-->
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="curforum" fid="136" >本版</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('scbar', '');
+        if(document.getElementById("scbar")){
+            if (navigator.userAgent.indexOf('MSIE')>0) {
+                document.getElementById("scbar").attachEvent("onclick", function(e) {
+                    if (e.srcElement.className == "fold") {
+                        e.srcElement.className = "";
+                        e.srcElement.detachEvent('onclick');
+                        return false;
+                    }
+                })
+            } else {
+                document.getElementById("scbar").addEventListener("click", function(e) {
+                    if (this.className == "fold") {
+                        this.className = "";
+                        e.stopPropagation();
+                        return false
+                    }
+                })
+            }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+                        <span class="xm_nav">
+                            <!--eval echo mn_forum;--><span id="mn_N9b0f" ><a href="https://bbs.360.cn/newindex.php" hidefocus="true"  >推荐</a></span><!--eval echo mn_forum;--><span id="mn_Nb6f6" ><a href="https://bbs.360.cn/forumall.html" hidefocus="true"  >论坛</a></span><!--eval echo mn_forum;--><span class="a" id="mn_forum" ><a href="http://bbs.360.cn/forum.php" hidefocus="true"  >版块</a></span><!--eval echo mn_forum;--><span id="mn_Ne8d9" ><a href="https://bbs.360.cn/activityset.php" hidefocus="true"  >活动</a></span><!--eval echo mn_forum;--><span id="mn_Ne926" ><a href="https://try.bbs.360.cn/try/indexnew/" hidefocus="true"  >众测</a></span><!--eval echo mn_forum;--><span id="mn_N04d3" ><a href="https://mall.360.cn/?utm_source=SQDH007" hidefocus="true"  >会员商城</a></span><!--eval echo mn_forum;--><span id="mn_N9320" ><a href="http://jifen.360.cn/bbs_2017.html?src=bbs" hidefocus="true"  >积分商城</a></span></span>
+</div>
+                </div>
+
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">  <li><a href="dsu_paulsign-sign.html" id="mn_plink_sign">每日签到</a></li>
+ </ul>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><div id="mu" class="cl">
+</div><!--"{"subtemplate common/pubsearchform"}"-->
+</div>
+</div>
+
+
+<div id="wp" class="wp">
+
+<script type="text/javascript">var fid = parseInt('136'), tid = parseInt('15065560');</script>
+
+<script src="https://b1.qikucdn.com/static/js/forum_viewthread.js?v1.0.2&v=1" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '750';var aimgcount = new Array();</script>
+<script src="https://b1.qikucdn.com/static/js/pinyin.min.js" type="text/javascript"></script>
+<style id="diy_style" type="text/css"></style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<style id="diy_style" type="text/css"></style>
+
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="wp cl ct2 xm_ct2 detailframe">
+    <div class="mn xm_mn">
+        
+        <div id="pt-detail" class="bm cl">
+            <div class="viewthread-bread">
+                <a href="http://bbs.360.cn/forum.php">版块</a>
+                 <em>&rsaquo;</em> <a href="http://bbs.360.cn/forum.php?gid=90">360安全软件</a> <em>&rsaquo;</em> <a href="http://bbs.360.cn/forum-136-1.html">360企业安全</a>            </div>
+        </div>
+
+
+    <div class="xm_tp">
+        <div class="xm_p_tp">
+
+                                    <!--id="tath"-->
+                                        <a href="http://bbs.360.cn/space-uid-35096638.html" title="赵志文8" class="xm_avt" >
+                        
+                    </a>
+
+                    <h1>
+                        <a href="http://bbs.360.cn/thread-15065560-1-1.html" id="thread_subject">
+                           360软件分发                        </a>
+
+                        </span>
+                                            </h1>
+
+                    <div class="xm_tp_action">
+
+                        <span>2017-6-30 14:45</span>
+
+                                                <span>
+                                                                                                                
+                                                    </span>
+
+                                        <span class="pipe">|</span>
+                                                                        <span>
+                            <a href="thread-15065560-1-1.html" onclick="return copyThreadUrl(this, '360社区')" title="拷贝360软件分发链接">复制链接</a>
+                        </span>
+                                                                
+
+                    
+                                                                <div class="y">
+                            <div class="xm_tp_action">
+                                                                    <span class="y replies-uncursor">4</span>
+                                    <span class="y viewnum-uncursor">1255</span>
+                                                            </div>
+                        </div>
+
+                    </div>
+                
+
+                
+                
+            </div>
+
+                </div>
+
+
+        
+        
+        
+        <div id="postlist" class="pl">
+            
+            
+                        <script src="https://b1.qikucdn.com/static/js/classpage.js?v1.0.1" type="text/javascript"></script>
+            <style type="text/css">
+                .classpage { width:100%; margin:10px 0; text-align:center;display: none;}
+                .classpage a ,.classpage span{ padding: 0 4px;min-width: 12px;height: 24px;display: inline-block;line-height: 24px;font-size: 12px;color: #5c5c5c;}
+                .classpage .cur { background-color:#2ec7bb; color:#fff;}
+            </style>
+                                                                                        <div id="post_107366517" >
+                                                                    
+
+<div class="pl_t">
+<div id="threadstamp"><img alt="" src="https://b1.qikucdn.com/static/image/stamp/030.gif" title="已答复" /></div>
+</div>
+
+<table id="pid107366517" class="plhin post_lz" summary="pid107366517" cellspacing="0" cellpadding="0">
+<tr>
+<td class="plc"><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+ 
+<div class="t_fsz1">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f postmessage-top" id="postmessage_107366517">
+<!-- 未登陆提示 删除by fengyuan-->
+                                                                                                今天上午11点发的软件分发任务现在执行率是0，怎么回事呢（软件大小才30K）<br />
+                                                                                                        </td></tr></table>
+                                        <!--bug_module 开始-->
+                                                    <!--bug_module 结束-->
+            <!--complain_module 开始-->
+                        <!--complain_module 结束-->
+
+
+                        <div class="article-functions">
+<div class="zan">
+                <a class="zancontent" id="recommend_add" href="http://bbs.360.cn/forum.php?mod=misc&action=recommend&do=add&tid=15065560&hash=5374caef"  onclick="javascript:this.href='https://i.360.cn/login?src=pcw_os&destUrl=https://bbs.360.cn/login_sso_web.php';" target="_blank" >
+<input type="hidden" id="changeimg" value="0">
+          		          			<img alt="" src="https://b1.qikucdn.com/dfsj_imgs/zan_before.png" class="zan-image zan-image-top"/>
+          		 
+          	 
+<span class="zannums" id="recommendv_add">2</span>
+</a>	
+   
+     
+            </div>
+
+    <div class="viewthread-fivefunctions">
+                                        <!--不能点-->
+                        <a id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=136&tid=15065560')" href="javascript:;" title="回复">回复</a>
+                                        <!-- 去掉点评 alt by hwl -->
+                    <!--                         <a href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107366517', 'get', -1);return false;" title="评分表立场">点评</a>
+                     -->
+                                            <a href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107366517', 'get', -1);return false;" title="评分表立场">评分</a>
+                      
+
+                    <a href="http://bbs.360.cn/home.php?mod=spacecp&ac=favorite&type=thread&id=15065560" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖">收藏<span id="favoritenumber" style="display:none">0</span></a>
+        </div>
+
+</div>
+
+</div>
+<!--主评论下的点评去掉-->
+
+<!--评分本来位置，移到楼中楼上面-->
+</div>
+</div>
+
+</td>
+</tr>
+
+<tr id="_postposition107366517"></tr>
+<tr>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+
+<span class="y">            
+                    <em>
+                        
+                        
+                        
+                        
+                        
+                        
+                                                                    </em>
+
+                                        
+                    </span>
+<div class="pob cl">
+
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="plc">
+</td>
+</tr>
+</table>
+<!--楼中楼放的位置-->
+<div id="rate_pannel_107366517" class="lz-rate">
+    <div id="post_rate_div_107366517" class="rate-pannel" style="padding-left: 70px;">
+        <!-- <a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107366517', 'get', -1);return false;" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center">我来评分</a> -->
+    </div>
+</div><div class="post_comment_top" >
+    <a id="comment_top" style="display: block; margin-top: -45px;"></a>
+    <div style="margin-top: 45px;">
+        <h2 >共 4 个关于360软件分发的回复 最后回复于 2017-7-4 16:42</h2>
+    </div>
+    </div>
+<div class="comments-static">
+    <p class="comments-p">评论</p>
+    <p class="comments-floor">
+        <span>直达楼层</span> 
+                    <span id="fj">
+                <input type="text" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=15065560&authorid=0&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="跳转到指定楼层" />
+                <a href="javascript:;" id="fj_btn" title="跳转到指定楼层">
+                    <!-- <img alt="" src="https://b1.qikucdn.com/dfsj_imgs/pl_t_fj.gif" alt="跳转到指定楼层" class="vm" /> -->
+                </a>
+            </span>
+            </p>
+</div>
+                                    </div>
+                                                                                             <div id="post_107402204" >
+                                            <table id="pid107402204" class="plhin" summary="pid107402204" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar107402204" class="pls favatar">
+             <div class="p_pop blk bui xm_card card_gender_0" id="userinfo107402204" style="display: none;">
+<div class="card_inner">
+                        <div class="post-img">
+                            <div class="avatar" id="userinfo107402204_ma"></div>
+                                                    </div>
+                        <div class="post-info">
+                            <div class="c_info_top">
+                                <strong>
+                                    <a href="http://bbs.360.cn/space-uid-33519375.html" target="_blank" class="xi2">恐怖分数</a>
+                                    
+                                </strong>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=usergroup&gid=25" target="_blank">LV1.上等兵</a>
+                            </div>
+                            <p class="personinfo-fans">
+<span>粉丝: <a href="http://bbs.360.cn/home.php?mod=follow&do=follower&uid=33519375" target="_blank" class="xi2">2</a></span>
+<span>关注: <a href="http://bbs.360.cn/home.php?mod=follow&do=following&uid=33519375" target="_blank" class="xi2">0</a></span>
+<span>积分: <a href="http://bbs.360.cn/home.php?mod=space&uid=33519375&do=profile" target="_blank" class="xi2">18</a></span>
+</p>
+<p class="personinfo-fans">
+<span>精华: 0</span>
+<span>金币: 2 </span>
+<span>经验: 17 </span>
+</p>
+<p style="color: #9c9c9c;">最后登录 2017-7-12</p>
+                        </div>
+<div class="post_action">
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_33519375&touid=33519375&pmid=0&daterange=2&pid=107402204&tid=15065560" onclick="showWindow('sendpm', this.href);" title="发私信">私信</a>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=friend&op=add&uid=33519375&handlekey=addfriendhk_33519375" onclick="showWindow('adduser', this.href, 'get', 0);">加好友</a>
+<!-- <a class="z" href="http://bbs.360.cn/home.php?mod=space&uid=33519375" target="_blank">访问家园</a> -->
+</div>
+                    </div>
+                </div>
+<!--<div class="avatar_outer">-->
+                                            <div class="avatar">
+                            <a href="http://bbs.360.cn/space-uid-33519375.html" class="avtm" target="_blank"><img src="https://ucenter.bbs.360.cn/avatar.php?uid=33519375&size=middle" /></a>
+                        </div>
+                    
+                    <!--</div>-->
+
+</div>
+</td>
+	
+<td class="plc">
+<div class="pi floornum">
+<strong class="y">
+<a style="background: #ee5567;width: 43px;text-align:center;color:#fff;margin-right:15px;" href="http://bbs.360.cn/forum.php?mod=redirect&goto=findpost&ptid=15065560&pid=107402204"  id="postnum107402204" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+沙发</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+
+<div class="authi">
+
+
+                                    <span class="author"><a href="http://bbs.360.cn/space-uid-33519375.html" target="_blank">恐怖分数</a> 
+ </span>
+                    <span class="authortitle">LV1.上等兵</span>
+                    <em id="authorposton107402204">发表于 2017-7-2 23:15</em>
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/forum.php?mod=viewthread&tid=15065560&page=1&authorid=33519375" rel="nofollow">只看该作者</a>
+
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_33519375&touid=33519375&pmid=0&daterange=2&pid=107402204&tid=15065560" onclick="showWindow('sendpm', this.href);" title="私信" class="xi2">私信</a>
+
+<!-- "只看大图"“倒序浏览”“阅读模式”delete by fengyuan -->
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz1">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f postmessage-top" id="postmessage_107402204">
+完全不好使了，之前都会立马发布的，现在全部不行了。</td></tr></table>
+
+
+                
+</div>
+<!--主评论下的点评去掉-->
+
+<!--评分本来位置，移到楼中楼上面-->
+</div>
+</div>
+
+
+
+</td></tr>
+
+<!-- 个性签名 删除 by fengyuan-->
+
+<tr id="_postposition107402204"></tr>
+<tr style="height:36px;">
+<td>
+</td>
+<td class="plc" style="overflow:visible;">
+
+    
+<div class="po hin">
+<span class="y" style="margin-right: 15px;">
+<!--新版回复不要了，点评改为回复-->
+<!--点赞-->
+<!-- <a href="http://bbs.360.cn/forum.php?mod=post&action=reply&fid=136&tid=15065560&repquote=107402204&extra=page%3D1&page=1" onclick="showWindow('reply', this.href)">回复</a> -->
+					
+
+<!-- 推送delete by fengyuan -->
+
+                                        
+                                      
+
+                    
+                                        
+                    
+                    </span>
+<div class="pob cl">
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+
+<!--楼中楼放的位置-->
+<div id="rate_pannel_107402204">
+    <div id="post_rate_div_107402204" class="rate-pannel" style="padding-left: 70px;">
+        <!-- <a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107402204', 'get', -1);return false;" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center">我来评分</a> -->
+    </div>
+</div><div class="comm-root" style="padding-left: 70px; ">
+    <div id="comment_107402204" >
+        <div class="comm-pannel" >	
+                </div>
+                <div style="height: 0.1px;"></div>
+    </div>
+    <!-- <a href="http://bbs.360.cn/forum.php?mod=misc&action=comment&tid=15065560&pid=107402204&extra=page%3D1&page=1" onclick="showWindow('comment', this.href, 'get', 0)" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center;float:right;margin-top:10px">我来回复</a> -->
+</div>
+                                    </div>
+                                                                                             <div id="post_107403072" >
+                                            <table id="pid107403072" class="plhin" summary="pid107403072" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar107403072" class="pls favatar">
+             <div class="p_pop blk bui xm_card card_gender_0" id="userinfo107403072" style="display: none;">
+<div class="card_inner">
+                        <div class="post-img">
+                            <div class="avatar" id="userinfo107403072_ma"></div>
+                                                    </div>
+                        <div class="post-info">
+                            <div class="c_info_top">
+                                <strong>
+                                    <a href="http://bbs.360.cn/space-uid-33519375.html" target="_blank" class="xi2">恐怖分数</a>
+                                    
+                                </strong>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=usergroup&gid=25" target="_blank">LV1.上等兵</a>
+                            </div>
+                            <p class="personinfo-fans">
+<span>粉丝: <a href="http://bbs.360.cn/home.php?mod=follow&do=follower&uid=33519375" target="_blank" class="xi2">2</a></span>
+<span>关注: <a href="http://bbs.360.cn/home.php?mod=follow&do=following&uid=33519375" target="_blank" class="xi2">0</a></span>
+<span>积分: <a href="http://bbs.360.cn/home.php?mod=space&uid=33519375&do=profile" target="_blank" class="xi2">18</a></span>
+</p>
+<p class="personinfo-fans">
+<span>精华: 0</span>
+<span>金币: 2 </span>
+<span>经验: 17 </span>
+</p>
+<p style="color: #9c9c9c;">最后登录 2017-7-12</p>
+                        </div>
+<div class="post_action">
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_33519375&touid=33519375&pmid=0&daterange=2&pid=107403072&tid=15065560" onclick="showWindow('sendpm', this.href);" title="发私信">私信</a>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=friend&op=add&uid=33519375&handlekey=addfriendhk_33519375" onclick="showWindow('adduser', this.href, 'get', 0);">加好友</a>
+<!-- <a class="z" href="http://bbs.360.cn/home.php?mod=space&uid=33519375" target="_blank">访问家园</a> -->
+</div>
+                    </div>
+                </div>
+<!--<div class="avatar_outer">-->
+                                            <div class="avatar">
+                            <a href="http://bbs.360.cn/space-uid-33519375.html" class="avtm" target="_blank"><img src="https://ucenter.bbs.360.cn/avatar.php?uid=33519375&size=middle" /></a>
+                        </div>
+                    
+                    <!--</div>-->
+
+</div>
+</td>
+	
+<td class="plc">
+<div class="pi floornum">
+<strong class="y">
+<a style="background: #ff6f3d;width: 43px;text-align:center;color:#fff;margin-right:15px;" href="http://bbs.360.cn/forum.php?mod=redirect&goto=findpost&ptid=15065560&pid=107403072"  id="postnum107403072" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+板凳</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+
+<div class="authi">
+
+
+                                    <span class="author"><a href="http://bbs.360.cn/space-uid-33519375.html" target="_blank">恐怖分数</a> 
+ </span>
+                    <span class="authortitle">LV1.上等兵</span>
+                    <em id="authorposton107403072">发表于 2017-7-3 00:17</em>
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/forum.php?mod=viewthread&tid=15065560&page=1&authorid=33519375" rel="nofollow">只看该作者</a>
+
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_33519375&touid=33519375&pmid=0&daterange=2&pid=107403072&tid=15065560" onclick="showWindow('sendpm', this.href);" title="私信" class="xi2">私信</a>
+
+<!-- "只看大图"“倒序浏览”“阅读模式”delete by fengyuan -->
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz1">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f postmessage-top" id="postmessage_107403072">
+刚刚实验了一下，把主控机隔离独立不要连接外网，将内网封闭。<br />
+其次设置成隔离模式，不要作为代理下载服务器<br />
+重启主控机，再进行分发。</td></tr></table>
+
+
+                
+</div>
+<!--主评论下的点评去掉-->
+
+<!--评分本来位置，移到楼中楼上面-->
+</div>
+</div>
+
+
+
+</td></tr>
+
+<!-- 个性签名 删除 by fengyuan-->
+
+<tr id="_postposition107403072"></tr>
+<tr style="height:36px;">
+<td>
+</td>
+<td class="plc" style="overflow:visible;">
+
+    
+<div class="po hin">
+<span class="y" style="margin-right: 15px;">
+<!--新版回复不要了，点评改为回复-->
+<!--点赞-->
+<!-- <a href="http://bbs.360.cn/forum.php?mod=post&action=reply&fid=136&tid=15065560&repquote=107403072&extra=page%3D1&page=1" onclick="showWindow('reply', this.href)">回复</a> -->
+					
+
+<!-- 推送delete by fengyuan -->
+
+                                        
+                                      
+
+                    
+                                        
+                    
+                    </span>
+<div class="pob cl">
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+
+<!--楼中楼放的位置-->
+<div id="rate_pannel_107403072">
+    <div id="post_rate_div_107403072" class="rate-pannel" style="padding-left: 70px;">
+        <!-- <a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107403072', 'get', -1);return false;" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center">我来评分</a> -->
+    </div>
+</div><div class="comm-root" style="padding-left: 70px; ">
+    <div id="comment_107403072" >
+        <div class="comm-pannel" >	
+                </div>
+                <div style="height: 0.1px;"></div>
+    </div>
+    <!-- <a href="http://bbs.360.cn/forum.php?mod=misc&action=comment&tid=15065560&pid=107403072&extra=page%3D1&page=1" onclick="showWindow('comment', this.href, 'get', 0)" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center;float:right;margin-top:10px">我来回复</a> -->
+</div>
+                                    </div>
+                                                                                             <div id="post_107410708" >
+                                            <table id="pid107410708" class="plhin" summary="pid107410708" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar107410708" class="pls favatar">
+             <div class="p_pop blk bui xm_card card_gender_0" id="userinfo107410708" style="display: none;">
+<div class="card_inner">
+                        <div class="post-img">
+                            <div class="avatar" id="userinfo107410708_ma"></div>
+                                                    </div>
+                        <div class="post-info">
+                            <div class="c_info_top">
+                                <strong>
+                                    <a href="http://bbs.360.cn/space-uid-17081839.html" target="_blank" class="xi2">z121482072</a>
+                                    
+                                </strong>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=usergroup&gid=25" target="_blank">LV1.上等兵</a>
+                            </div>
+                            <p class="personinfo-fans">
+<span>粉丝: <a href="http://bbs.360.cn/home.php?mod=follow&do=follower&uid=17081839" target="_blank" class="xi2">0</a></span>
+<span>关注: <a href="http://bbs.360.cn/home.php?mod=follow&do=following&uid=17081839" target="_blank" class="xi2">0</a></span>
+<span>积分: <a href="http://bbs.360.cn/home.php?mod=space&uid=17081839&do=profile" target="_blank" class="xi2">15</a></span>
+</p>
+<p class="personinfo-fans">
+<span>精华: 0</span>
+<span>金币: 1 </span>
+<span>经验: 14 </span>
+</p>
+<p style="color: #9c9c9c;">最后登录 2017-9-20</p>
+                        </div>
+<div class="post_action">
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_17081839&touid=17081839&pmid=0&daterange=2&pid=107410708&tid=15065560" onclick="showWindow('sendpm', this.href);" title="发私信">私信</a>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=friend&op=add&uid=17081839&handlekey=addfriendhk_17081839" onclick="showWindow('adduser', this.href, 'get', 0);">加好友</a>
+<!-- <a class="z" href="http://bbs.360.cn/home.php?mod=space&uid=17081839" target="_blank">访问家园</a> -->
+</div>
+                    </div>
+                </div>
+<!--<div class="avatar_outer">-->
+                                            <div class="avatar">
+                            <a href="http://bbs.360.cn/space-uid-17081839.html" class="avtm" target="_blank"><img src="https://ucenter.bbs.360.cn/avatar.php?uid=17081839&size=middle" /></a>
+                        </div>
+                    
+                    <!--</div>-->
+
+</div>
+</td>
+	
+<td class="plc">
+<div class="pi floornum">
+<strong class="y">
+<a style="background: #ffce55;width: 43px;text-align:center;color:#fff;margin-right:15px;" href="http://bbs.360.cn/forum.php?mod=redirect&goto=findpost&ptid=15065560&pid=107410708"  id="postnum107410708" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+地板</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+
+<div class="authi">
+
+
+                                    <span class="author"><a href="http://bbs.360.cn/space-uid-17081839.html" target="_blank">z121482072</a> 
+ </span>
+                    <span class="authortitle">LV1.上等兵</span>
+                    <em id="authorposton107410708">发表于 2017-7-3 11:06</em>
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/forum.php?mod=viewthread&tid=15065560&page=1&authorid=17081839" rel="nofollow">只看该作者</a>
+
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_17081839&touid=17081839&pmid=0&daterange=2&pid=107410708&tid=15065560" onclick="showWindow('sendpm', this.href);" title="私信" class="xi2">私信</a>
+
+<!-- "只看大图"“倒序浏览”“阅读模式”delete by fengyuan -->
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz1">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f postmessage-top" id="postmessage_107410708">
+软件分发之前测试的小文件可以用，换成20几兆的就不好用了，什么情况，求解决</td></tr></table>
+
+
+                
+</div>
+<!--主评论下的点评去掉-->
+
+<!--评分本来位置，移到楼中楼上面-->
+</div>
+</div>
+
+
+
+</td></tr>
+
+<!-- 个性签名 删除 by fengyuan-->
+
+<tr id="_postposition107410708"></tr>
+<tr style="height:36px;">
+<td>
+</td>
+<td class="plc" style="overflow:visible;">
+
+    
+<div class="po hin">
+<span class="y" style="margin-right: 15px;">
+<!--新版回复不要了，点评改为回复-->
+<!--点赞-->
+<!-- <a href="http://bbs.360.cn/forum.php?mod=post&action=reply&fid=136&tid=15065560&repquote=107410708&extra=page%3D1&page=1" onclick="showWindow('reply', this.href)">回复</a> -->
+					
+
+<!-- 推送delete by fengyuan -->
+
+                                        
+                                      
+
+                    
+                                        
+                    
+                    </span>
+<div class="pob cl">
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+
+<!--楼中楼放的位置-->
+<div id="rate_pannel_107410708">
+    <div id="post_rate_div_107410708" class="rate-pannel" style="padding-left: 70px;">
+        <!-- <a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107410708', 'get', -1);return false;" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center">我来评分</a> -->
+    </div>
+</div><div class="comm-root" style="padding-left: 70px; ">
+    <div id="comment_107410708" >
+        <div class="comm-pannel" >	
+                </div>
+                <div style="height: 0.1px;"></div>
+    </div>
+    <!-- <a href="http://bbs.360.cn/forum.php?mod=misc&action=comment&tid=15065560&pid=107410708&extra=page%3D1&page=1" onclick="showWindow('comment', this.href, 'get', 0)" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center;float:right;margin-top:10px">我来回复</a> -->
+</div>
+                                    </div>
+                                                                                             <div id="post_107431099" >
+                                            <table id="pid107431099" class="plhin" summary="pid107431099" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar107431099" class="pls favatar">
+             <a name="lastpost"></a><div class="p_pop blk bui xm_card card_gender_0" id="userinfo107431099" style="display: none;">
+<div class="card_inner">
+                        <div class="post-img">
+                            <div class="avatar" id="userinfo107431099_ma"></div>
+                                                    </div>
+                        <div class="post-info">
+                            <div class="c_info_top">
+                                <strong>
+                                    <a href="http://bbs.360.cn/space-uid-30591996.html" target="_blank" class="xi2">yeeyee</a>
+                                    
+                                </strong>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=usergroup&gid=54" target="_blank">LV7.上尉</a>
+                            </div>
+                            <p class="personinfo-fans">
+<span>粉丝: <a href="http://bbs.360.cn/home.php?mod=follow&do=follower&uid=30591996" target="_blank" class="xi2">15</a></span>
+<span>关注: <a href="http://bbs.360.cn/home.php?mod=follow&do=following&uid=30591996" target="_blank" class="xi2">0</a></span>
+<span>积分: <a href="http://bbs.360.cn/home.php?mod=space&uid=30591996&do=profile" target="_blank" class="xi2">5059</a></span>
+</p>
+<p class="personinfo-fans">
+<span>精华: 0</span>
+<span>金币: 5646 </span>
+<span>经验: 4453 </span>
+</p>
+<p style="color: #9c9c9c;">最后登录 2019-11-28</p>
+                        </div>
+<div class="post_action">
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_30591996&touid=30591996&pmid=0&daterange=2&pid=107431099&tid=15065560" onclick="showWindow('sendpm', this.href);" title="发私信">私信</a>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=friend&op=add&uid=30591996&handlekey=addfriendhk_30591996" onclick="showWindow('adduser', this.href, 'get', 0);">加好友</a>
+<!-- <a class="z" href="http://bbs.360.cn/home.php?mod=space&uid=30591996" target="_blank">访问家园</a> -->
+</div>
+                    </div>
+                </div>
+<!--<div class="avatar_outer">-->
+                                            <div class="avatar">
+                            <a href="http://bbs.360.cn/space-uid-30591996.html" class="avtm" target="_blank"><img src="https://ucenter.bbs.360.cn/avatar.php?uid=30591996&size=middle" /></a>
+                        </div>
+                    
+                    <!--</div>-->
+
+</div>
+</td>
+	
+<td class="plc">
+<div class="pi floornum">
+<strong class="y">
+<a style="background: " href="http://bbs.360.cn/forum.php?mod=redirect&goto=findpost&ptid=15065560&pid=107431099"  id="postnum107431099" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>5</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+
+<div class="authi">
+
+
+                                    <span class="author"><a href="http://bbs.360.cn/space-uid-30591996.html" target="_blank">yeeyee</a> 
+ </span>
+                    <span class="authortitle">LV7.上尉</span>
+                    <em id="authorposton107431099">发表于 2017-7-4 16:42</em>
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/forum.php?mod=viewthread&tid=15065560&page=1&authorid=30591996" rel="nofollow">只看该作者</a>
+
+<span class="pipe">|</span>
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_30591996&touid=30591996&pmid=0&daterange=2&pid=107431099&tid=15065560" onclick="showWindow('sendpm', this.href);" title="私信" class="xi2">私信</a>
+
+<!-- "只看大图"“倒序浏览”“阅读模式”delete by fengyuan -->
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz1">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f postmessage-top" id="postmessage_107431099">
+您好，控制中心与终端会存在通讯间隔，不是实时通讯的，默认的通讯间隔是30分钟的，这个下发时间也会跟您控制中心上传分发的软件大小也有关系，文件越大下发的时间就会越长的。</td></tr></table>
+
+
+                
+</div>
+<!--主评论下的点评去掉-->
+
+<!--评分本来位置，移到楼中楼上面-->
+</div>
+</div>
+
+
+
+</td></tr>
+
+<!-- 个性签名 删除 by fengyuan-->
+
+<tr id="_postposition107431099"></tr>
+<tr style="height:36px;">
+<td>
+</td>
+<td class="plc" style="overflow:visible;">
+
+    
+<div class="po hin">
+<span class="y" style="margin-right: 15px;">
+<!--新版回复不要了，点评改为回复-->
+<!--点赞-->
+<!-- <a href="http://bbs.360.cn/forum.php?mod=post&action=reply&fid=136&tid=15065560&repquote=107431099&extra=page%3D1&page=1" onclick="showWindow('reply', this.href)">回复</a> -->
+					
+
+<!-- 推送delete by fengyuan -->
+
+                                        
+                                      
+
+                    
+                                        
+                    
+                    </span>
+<div class="pob cl">
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+
+<!--楼中楼放的位置-->
+<div id="rate_pannel_107431099">
+    <div id="post_rate_div_107431099" class="rate-pannel" style="padding-left: 70px;">
+        <!-- <a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107431099', 'get', -1);return false;" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center">我来评分</a> -->
+    </div>
+</div><div class="comm-root" style="padding-left: 70px; ">
+    <div id="comment_107431099" >
+        <div class="comm-pannel" >	
+                </div>
+                <div style="height: 0.1px;"></div>
+    </div>
+    <!-- <a href="http://bbs.360.cn/forum.php?mod=misc&action=comment&tid=15065560&pid=107431099&extra=page%3D1&page=1" onclick="showWindow('comment', this.href, 'get', 0)" style="padding:5px 10px;margin:0 auto;display:block;background-color:#2ec7bb;color:#fff;width:100px;text-align:center;float:right;margin-top:10px">我来回复</a> -->
+</div>
+                                    </div>
+                             
+    <script type="text/javascript">
+        // jq('body').on('click','.reply-btn',function(){
+        //     var _this = jq(this);
+        //     var rootParent = _this.parents("table").parent();
+        //     rootParent.find(".reply-btn").css("color","#2ec7bb");
+        //     rootParent.find(".comm-root").show();
+        //     rootParent.find(".rate-btn").css("color","#b0b0b0");
+        //     rootParent.find(".rate-pannel").hide();
+        //     rootParent.find(".comm-root").show();
+        // });
+        // jq('body').on('click','.rate-btn',function(){
+        //     var _this = jq(this);
+        //     var rootParent = _this.parents("table").parent();
+        //     rootParent.find(".rate-btn").css("color","#2ec7bb");
+        //     rootParent.find(".rate-pannel").show();
+        //     rootParent.find(".reply-btn").css("color","#b0b0b0");
+        //     rootParent.find(".comm-root").hide();
+        //     rootParent.find(".rate-pannel").show();
+        // });
+        jq(function(){
+            // jq('body').on('click','.stampid-option',function(){
+            //     console.log('11');
+            //     jq(this).toggleClass('stampid-select').siblings().removeClass('stampid-select');
+            // });
+            jq(document).on('click','#fastpostsubmit1',function(){
+                if(jq('#fastpostmessage').val() != 0) {
+                    is_stamp();
+                }
+            });
+            jq(document).on('click','#vreplysubmit',function(){
+                if(jq('#vmessage').val() != 0) {
+                    is_stamp();
+                }
+            });
+            jq(document).on('click','.wait-praise-a',function(){
+                if(!existmobile()){
+                    return false;
+                }
+                var _this = jq(this);
+                _this.removeClass('wait-praise-a');
+                var data = {
+                    formhash : jq("[name='formhash']").eq(-1).val(),
+                    tid : _this.data('tid'),
+                    pid : _this.data('pid'),
+                    status : 1 
+                }
+                handdlePraise(data,1,_this);
+            });
+            jq(document).on('click','.praise-over-a',function(){
+                if(!existmobile()){
+                    return false;
+                }
+                var _this = jq(this);
+                _this.removeClass('praise-over-a');
+                var data = {
+                    formhash : jq("[name='formhash']").eq(-1).val(),
+                    tid : _this.data('tid'),
+                    pid : _this.data('pid'),
+                    status : 0 
+                }
+                handdlePraise(data,0,_this);
+            });
+        })
+
+        function handdlePraise(data,status,_this){
+            jq.ajax({
+                type:'post',
+                url:'forum.php?mod=misc&action=favorite&infloat=yes&inajax=1&ajaxdata=json',
+                data:data,
+                success:function(data){
+                    if(data.data<0){
+                        showDialog(data.message,'notice','',function(){},'','','');
+                        if(status){
+                            _this.addClass('wait-praise-a');
+                        }else{
+                            _this.addClass('praise-over-a');
+                        }
+                    }else{
+//                        showDialog(data.message,'notice','',function(){},'','','');
+                        if(data.data==1){
+                            _this.addClass('praise-over-a');
+                            _this.removeClass('wait-praise').addClass('praise-over');
+                            if(_this.html()=='赞'){
+                                _this.html('1');
+                            }else{
+                                _this.html(parseInt(_this.html())+1)
+                            }
+                        }else{
+                            _this.addClass('wait-praise-a');
+                            _this.removeClass('praise-over').addClass('wait-praise');
+                            if(_this.html()==1){
+                                _this.html('赞');
+                            }else{
+                                _this.html(parseInt(_this.html())-1)
+                            }
+                        }
+                    }
+                        
+                },
+                error:function(error){
+                    console.log(error)
+                    if(status){
+                        _this.addClass('wait-praise-a');
+                    }else{
+                        _this.addClass('praise-over-a');
+                    }
+                },
+                dataType:'json'
+
+            })
+        }
+
+        function stampidOptionClick(_this){
+            var stampid = jq(_this).data('stampid');
+            if(jq(_this).hasClass('stampid-select')){
+                jq('.stampid-option').removeClass('stampid-select');
+            }else{
+                jq('.stampid-option').removeClass('stampid-select');
+                jq('.stampid-option[data-stampid="'+stampid+'"]').addClass('stampid-select');
+            }
+        }
+        
+        //调用ajax发起的接口
+        function is_stamp(){
+            var stampid = jq('.stampid-select').eq(0).data('stampid')
+            var stamp_url = jq('#stamp_'+stampid).val();
+            stamp_fast(stampid,stamp_url);
+        }
+        function stamp_fast(stampid,stamp_url){
+            if (stampid == '' || stampid == null || typeof(stampid) == "undefined") {
+                return;
+            } else {
+                jq.ajax({
+                    type: "POST",
+                    url: 'forum.php?mod=topicadmin&action=stamp&modsubmit=yes&infloat=yes&modclick=yes&inajax=1',
+                    data: {
+                        formhash: jq("#stamp_formhash").val(),
+                        fid: fid,
+                        tid: tid,
+                        page: jq("[name='page']").val(),
+                        handlekey: 'mods',
+                        stamp: stampid,
+                    },
+                    success: function (results) {
+                        if($('threadstamp')) {
+                            $('threadstamp').innerHTML = stamp_url ? '<img alt="" src="https://b1.qikucdn.com/static/image/stamp/' + stamp_url + '">' : '<img alt="" src="https://b1.qikucdn.com/static/image/common/none.gif">';
+                        }else if(jq("[name='page']").val() == 1){
+                            var html = '<div class="pl_t"><div id="threadstamp"><img alt="" src="https://b1.qikucdn.com/static/image/stamp/'+stamp_url+'"/></div></div>';
+                            var pid = jq('#postlist').find('div')[0].id;
+                            jq('#'+pid).prepend(html);
+                        }
+                        jq('#stamp_fast').val(stampid);
+                        jq('#stampv_fast').val(stampid);
+                        return;
+                    },
+                    error: function (err) {
+                        console.log('bug also meet err', err);
+                    }
+                });
+            }
+        }
+        jq(document).on("click",".comm-load-more",function(){
+            var _this =jq(this);
+            _this.parent().find(".comm-pannel .comm-hide").show();
+            _this.hide();
+            _this.parent().find(".classpage").length > 0 ? _this.parent().find(".classpage").show() :'';
+        });
+        jq(document).on('click','.classpage a',function(){
+            var _this = jq(this);
+            var newcurpage = _this.data('page');
+            options.curPage = newcurpage;
+            options.pagePannel = _this.parent().attr('id');
+            options.allNum = Math.ceil(_this.parent().data('allnum')/10)
+            var commpid = _this.parent().data('pid');
+            jq.ajax({
+                url: encodeURI("/apkapi/postcomment.php?mod=index"+"&pid="+commpid+"&page="+newcurpage+"&perpage=10"),
+                type: "get",
+                success: function(jsonData){
+                    //var jsonData = JSON.parse(data);
+                    //console.log(jsonData);
+                    try{
+                        if(jsonData.result == 0){
+                            var data = jsonData.data.data;
+                            var appendStr = '';
+                            for(var i=0;i<data.length;i++){
+                                appendStr+='<div id="comm_'+data[i].pid+'" class="comm" style="padding-left: 10px;"><div class="pstl xs1 cl" style="padding-top: 4px;"><div class="psta vm" style="margin-top: 3px;"><a href="'+SITEURL+'home.php?mod=space&uid='+data[i].authorid+'" c="1">'+data[i].avatar+'</a></div><div class="psti" style="margin-left: 12px;display: inline-block;width: 70%;"><a href="'+SITEURL+'home.php?mod=space&uid='+data[i].authorid+'" style="color:#1c9ce4;padding-right:10px;">'+data[i].author+'</a>'+data[i].comment+'&nbsp;<br/></div><div class="comm-apply-pannel" style="text-align: right;display: inline-block;width: 20%;vertical-align:top;"><span class="comm-time">'+data[i].dateline+'</span><a href="http://bbs.360.cn/forum.php?mod=misc&amp;action=comment&amp;tid='+data[i].tid+'&amp;pid='+data[i].pid+'&amp;replyid='+data[i].id+'" onclick="showWindow(\'comment\', this.href, \'get\', 0)" class="comm-apply" style="margin-left: 10px;">回复</a><a href="http://bbs.360.cn/forum.php?mod=misc&amp;action=comment&amp;tid='+data[i].tid+'&amp;pid='+data[i].pid+'&amp;replyid='+data[i].id+'&amp;isedit=1" onclick="showWindow(\'comment\', this.href, \'get\', 0)">编辑</a></div></div></div>';
+                            }
+                            _this.parent().parent().find(".comm-pannel").html(appendStr);
+                            var classPage=new ClassPage(options);
+                            classPage.fillPageStr();
+                        }
+                    }
+                    catch(e){
+                        console.log(e.message);
+                    }  
+                },
+                error: function(err) {
+                    console.log(err);
+                },
+                dataType:"json"
+            });
+
+        });
+        jq(document).on("click",".rate-load-more",function(){
+            $('.comment-content').show();
+        });
+    </script>
+<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+
+
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="5374caef" />
+<input type="hidden" name="optgroup" />
+<input type="hidden" name="operation" />
+<input type="hidden" name="listextra" value="page%3D1" />
+<input type="hidden" name="page" value="1" />
+</form>
+
+
+<div class="pgs cl">
+<span class="pgb"><a href="http://bbs.360.cn/forum-136-1.html">返回列表</a></span></div>
+
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('500000');
+var disablepostctrl = parseInt('0');
+</script>
+
+<div id="f_pst" class="pl bm xm_bm">
+ <span id="fastpostreturn" class="ttt" style="display:none;"></span>
+<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&action=reply&fid=136&tid=15065560&extra=page%3D1&replysubmit=yes&infloat=yes&handlekey=fastpost" onSubmit="if(existmobile()){return fastpostvalidate(this)}else{return false;}">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" style="display: none">
+</td>
+<td class="plc">
+
+<!--        <span id="fastpostreturn" class="ttt"></span>-->
+
+
+<div class="cl">
+<!-- fastsmiliesdiv delete by fengyuan -->
+<div class="hasfsl" id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="http://bbs.360.cn/forum.php?mod=post&action=reply&fid=136&tid=15065560" onclick="return switchAdvanceMode(this.href)">高级模式</a>&nbsp;&nbsp;&nbsp;
+</span><script src="https://b1.qikucdn.com/static/js/seditor.js?v1.0.1" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+    <!--新增特殊权限和版块的盖章选项 dingshibin by 2017.5.12-->
+    </div></div>
+<div class="area">
+<div class="pt hm">
+您需要登录后才可以回帖 
+<a href="http://bbs.360.cn/member.php?mod=logging&action=login" class="xi2">登录</a> | 
+<a href="https://passport.360os.com/register?appid=1010000675" class="xi2">注册</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="seccheck_fastpost">
+</div>
+
+
+<input type="hidden" name="formhash" value="5374caef" />
+<input type="hidden" name="usesig" value="" />
+<input type="hidden" name="subject" value="  " />
+<p class="ptm pnpost">
+<a href="http://bbs.360.cn/home.php?mod=spacecp&ac=credit&op=rule&fid=136" class="y" target="_blank">本版积分规则</a>
+								
+<button type="button" onclick="javascript:window.location= 'https://passport.360os.com/?appid=1010000675&callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php';"  name="replysubmit1" id="fastpostsubmit1" class="pn pnc vm" value="replysubmit1" tabindex="5"><strong>发表回复</strong></button>
+
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc" />回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<script>
+//            jq("#fastpostsubmit1").on("click",function(){
+//                var _ta = jq("#fastpostmessage");
+//                var text = _ta.val();
+//                var textSplits = text.split("[/url]");
+//                var len = textSplits.length;
+//                var dealParts = [];
+//                var result = "";
+//                for(var i = 0; i < len; i++){
+//                    dealParts[i] = textSplits[i].replace(/(.*?)(?=\[url)/,'[url=$1]$1[/url]');
+//                    result += dealParts[i];
+//                    if(i != len - 1){
+//                        result += "[/url]";
+//                    }
+//                }
+//                _ta.val(result);
+//            })
+</script>
+
+<script type="text/javascript">
+new lazyload();
+</script>
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=15065560', 1);}</script>
+
+    </div>
+    <div class="sd xm_sd">
+
+        <div class="personinformaion">
+            <a href="http://bbs.360.cn/space-uid-35096638.html" title="赵志文8" class="person-imgs" target="_blank">
+                <img src="https://ucenter.bbs.360.cn/avatar.php?uid=35096638&size=big" />            </a>
+            
+            <div class="personinfo-hard" style="display: block;">
+                <p class="personinfo-name">
+                    <a href="http://bbs.360.cn/space-uid-35096638.html" title="赵志文8" >赵志文8</a>
+                                    <a href="http://bbs.360.cn/home.php?mod=spacecp&ac=usergroup&gid=54" style="font-size:12px;color:#9c9c9c;" target="_blank">LV1.上等兵</a>
+                </p>
+                <p class="personinfo-fans">
+                    <span>粉丝：0</span>
+                    <span>关注：0</span>
+                    <span>积分：6</span>
+                </p>
+                <p class="personinfo-fans">
+                    <span>精华：0</span>
+                    <span>金币：4</span>
+                    <span>经验：7</span>
+                </p>
+                <p class="personinfo-lastlogintime">最后登录时间：2019-7-17</p>
+                            <p class="personinfo-btns">
+                                    <a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_35096638&touid=35096638&pmid=0&daterange=2&pid=&tid=" onclick="showWindow('sendpm', this.href);" title="私信">私信</a>
+
+                    <a  style="color:#9c9c9c;" href="http://bbs.360.cn/home.php?mod=spacecp&ac=friend&op=add&uid=35096638&handlekey=addfriendhk_35096638" onclick="showWindow('adduser', this.href, 'get', 0);">加好友</a>
+                </p>
+            </div>
+
+            <div class="personinfo-simple" style="display: none;">
+                <p class="personinfo-name" style="margin-bottom:8px;">
+                    <a href="http://bbs.360.cn/space-uid-35096638.html" title="赵志文8">赵志文8</a>
+                </p>
+                <p class="personinfo-fans" style="margin-bottom:12px;">
+                    <span>粉丝：0</span>
+                    <span>关注：0</span>
+                </p>
+                <p class="personinfo-btns">
+                                    <a href="http://bbs.360.cn/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_35096638&touid=35096638&pmid=0&daterange=2&pid=&tid=" onclick="showWindow('sendpm', this.href);" title="私信">私信</a>
+                </p>
+            </div>
+
+           
+        </div>
+
+    
+        <div class="viewthread-fourfunctions" id="float_post_act">
+            <ul>
+                                <li class="a1">
+                    
+                                                                        <a id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"  href="member.php?mod=logging&amp;action=login" title="发新帖">
+                               发帖
+                            </a>
+                                                                                </li>
+                <!-- 去掉点评 alt by hwl -->
+                <!-- <li class="a2">
+                                            <a href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107366517', 'get', -1);return false;" title="评分表立场">点评</a>
+                                    </li> -->
+                <li class="a3">
+                                            <a href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=15065560&pid=107366517', 'get', -1);return false;" title="评分表立场">评分</a>
+                                    </li>
+                <li class="a4">
+                    <a class="a4" id="shareLink" target="_blank" style="cursor:pointer;">分享</a>
+                </li>
+                            </ul>
+            <div class="share" id="shares">
+                <div class="bdsharebuttonbox">
+                    <a href="javascript:void(0);" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a href="javascript:void(0);" class="share_xinlang" title="分享到新浪微博"></a>
+                    <a href="javascript:void(0);" class="share_qq" title="分享到qq好友" target="_blank"></a>
+                    <a href="javascript:void(0);" class="share_qqone" title="分享到QQ空间" target="_blank"></a>
+                    <a href="javascript:void(0);" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+                </div>
+            </div>
+
+        <div id="post_act">
+
+            <div class="bm xm_bm post_new">
+                <div class="bm_c">
+                                        <!--不能点-->
+                        <!--<a id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=136&tid=15065560')" href="javascript:;" title="回复">回复</a>-->
+                                    
+                    
+                </div>
+            </div>
+
+        </div>
+            <script type="text/javascript" charset="utf-8">
+                var dfsj_jq = jQuery.noConflict();
+
+                var contenttitle="360软件分发";
+                window._bd_share_config = {
+                    "common": {
+                        bdText: contenttitle,
+                        bdDesc: contenttitle,
+                        bdUrl: location.href,
+                        bdSnsKey: {
+                            'tsina': '3154391214',
+                            'qzone': '3154391214',
+                            'weixin': '3154391214',
+                            'tieba': '3154391214'
+                        }
+                    },
+                    "share": {}
+                };
+                with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '//b1.qikucdn.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+            
+                dfsj_jq(document).ready(function(){
+
+                    dfsj_jq(".a4").click(function(){
+                        dfsj_jq(".share").show();
+                    });
+
+                     setInterval(function () {
+                        dfsj_jq(".share").hide();
+                    }, 3500);
+
+                     dfsj_jq(".share").hover(function(){
+                        dfsj_jq(".share").show();
+                     });
+
+                    var contenttitle="360软件分发";
+                    var url=location.href;
+                    dfsj_jq("a.share_qqone").click(function(){
+                        var title = contenttitle;
+                        var rLink = url;
+                        var summary=contenttitle;
+                        var site = "360社区";
+                        var pic="";
+                        shareQzone(title, rLink, summary, site, pic);
+                    });
+
+                    dfsj_jq("a.share_xinlang").click(function(){
+                        var summary=contenttitle;
+                        var site = "1874498659";
+                        var pic="";
+                        shareWeibo(summary+"@360社区", url, site, pic);
+                    });
+                    qqshare();
+                });
+                
+                var qqshare=function() {
+                    var p = {
+                        url:location.href,
+                        desc: contenttitle,
+                        title: contenttitle,
+                        summary:contenttitle,
+                        pics: "",
+                        site: '360社区',
+                    };
+                    var s = [];
+                    for (var i in p) {
+                        s.push(i + '=' + encodeURIComponent(p[i] || ''));
+                    }
+                    dfsj_jq(".share_qq").attr("href","//connect.qq.com/widget/shareqq/index.html?"+s.join('&'));
+                };
+
+                function shareQzone(title, url, summary, site, picurl) {
+                    var top = window.screen.height / 2 - 250;
+                    var left = window.screen.width / 2 - 300;
+                    var shareqqzonestring='//sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title='+title+'&url='+encodeURIComponent(url)+'&summary='+summary+'&site='+site+'&pics='+encodeURIComponent(picurl);
+                    window.open(shareqqzonestring, 'newwindow', 'scrollbars=no,width=600,height=450,left=' + left + ',top=' + top + ',status=no,resizable=yes');
+
+                }
+
+                function shareWeibo(summary,url, site, picurl){
+                    var top = window.screen.height / 2 - 250;
+                    var left = window.screen.width / 2 - 300;
+                    var sharesinastring='//v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(summary)+'&url='+encodeURIComponent(url)+'&content=utf-8&sourceUrl='+encodeURIComponent(url)+'&pic='+encodeURIComponent(picurl)+'&appkey='+site;
+                    window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+                }
+
+                (function(){
+                    var postAct = document.getElementById("float_post_act");
+                    var postActTop = postAct.offsetTop;
+
+                    window.onscroll = function() {
+                        var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                        if (postActTop < (docTop + 10)) {
+                            postAct.setAttribute("style", "position:fixed;padding-bottom: 20px;top: 10px; z-index:300;-o-box-shadow:0px 12px 16px rgba(240,240,240,0.8);-moz-box-shadow:0px 12px 16px rgba(240,240,240,0.8);-webkit-box-shadow:0px 12px 16px rgba(240,240,240,0.8);box-shadow:0px 12px 16px rgba(240,240,240,0.8);filter:progid:DXImageTransform.Microsoft.Shadow(color=#efefef, Direction=180,Strength=14);");
+                        } else {
+                            postAct.setAttribute("style", "position:static;padding-bottom:0;top:0;filter:default;");
+                        }
+                    }
+                })()
+                var flog = false;
+                var timers = null;
+                // dfsj_jq(".person-imgs>img").hover(function () {
+                //     dfsj_jq(".personinfo-simple").fadeOut(100);
+                //     dfsj_jq(".personinfo-hard").fadeIn(300);
+                //     flog = false;
+                // },function () {
+                //     if(timers){
+                //         clearTimeout(timers);
+                //         timers = null;
+                //     }
+                //     timers = setTimeout(function () {
+                //         if(!flog){
+                //             dfsj_jq(".personinfo-hard").fadeOut(100);
+                //             dfsj_jq(".personinfo-simple").fadeIn(100);
+                //         }
+                //     },300)
+                // })
+                // dfsj_jq(".personinfo-hard").hover(function () {
+                //     flog = true;
+                // },function () {
+                //     if(timers){
+                //         clearTimeout(timers);
+                //         timers = null;
+                //     }
+                //     timers = setTimeout(function () {
+                //         if(flog){
+                //             dfsj_jq(".personinfo-hard").fadeOut(100);
+                //             dfsj_jq(".personinfo-simple").fadeIn(100);
+                //         }
+                //     },300)
+                // })
+            </script>
+        </div>            
+
+        <script src="https://b1.qikucdn.com/dfsj_imgs/index/comm.js?v1.0.1" type="text/javascript"></script><div id="portal_block_235" class="block move-span"><div id="portal_block_235_content" class="dxb_bc"><div class="plays box">
+				<h4><strong>版块推荐</strong></h4>
+				<ul><li class="playlist"><a href="https://bbs.360.cn/forum.php?mod=forumdisplay&fid=7007" target="_blank" title="360安全路由"><img src="https://p0.ssl.qhmsg.com/t011cfce70442278c24.png" width="24" height="24" alt="360安全路由" />360安全路由</a></li><li class="playlist"><a href="https://bbs.360.cn/forum-7004-1.html" target="_blank" title="360智能摄像机"><img src="https://p0.ssl.qhmsg.com/t01dd64cc5b9ada4d94.png" width="24" height="24" alt="360智能摄像机" />360智能摄像机</a></li><li class="playlist"><a href="https://bbs.360.cn/forum.php?mod=forumdisplay&fid=7580" target="_blank" title="360可视门铃"><img src="https://p0.ssl.qhmsg.com/t01cf9c2213f9216569.png" width="24" height="24" alt="360可视门铃" />360可视门铃</a></li><li class="playlist"><a href="https://bbs.360.cn/forum.php?mod=forumdisplay&fid=7427" target="_blank" title="360扫地机器人"><img src="http://p0.qhmsg.com/t015fe746655144cfcb.png" width="24" height="24" alt="360扫地机器人" />360扫地机器人</a></li><li class="playlist"><a href="https://bbs.360.cn/forum.php?mod=forumdisplay&fid=7005" target="_blank" title="360儿童卫士"><img src="http://p0.qhmsg.com/t011cfce70442278c24.png" width="24" height="24" alt="360儿童卫士" />360儿童卫士</a></li><li class="playlist"><a href="https://bbs.360.cn/forum.php?mod=forumdisplay&fid=7587" target="_blank" title="360AI音箱"><img src="http://p0.qhmsg.com/t01da1f14c026246cce.png" width="24" height="24" alt="360AI音箱" />360AI音箱</a></li></ul>
+			</div></div></div><div id="portal_block_237" class="block move-span"><div id="portal_block_237_content" class="dxb_bc"><div class="module cl ml newestact"><h4 class="newestact-title">最新活动</h4>
+
+
+<div class="newestact_focus">
+		<div class="col topCol" style="width: 270px"><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15814715" target="_blank" title="观影招募活动"><img src="http://p0.qhmsg.com/t01bd91c5163ced8b3b.jpg" width="270" height="152" alt="观影招募活动" /></a><ul style="display: block">
+<li class="now"> </li>
+</ul>
+		</div>
+	</div>
+
+</div></div></div><!--排行榜-->
+<style>
+    .rank-header {
+        overflow: hidden;
+        border-top: 1px solid #E3E3E3;
+    }
+    .rank-header span {
+        float: left;
+        margin: 8px 0;
+        height: 15px;
+        line-height: 15px;
+        cursor: pointer;
+        color: #9c9c9c;
+    }
+    .rank-header span.actives {
+        color: #434a54;
+    }
+    .rank-header-left {
+        padding-right: 10px;
+        border-right: 1px solid #E3E3E3;
+    }
+    .rank-header-right {
+        padding-left: 10px;
+    }
+    .rank-btn {
+        overflow: hidden;
+    }
+    .rank-btn span {
+        float: left;
+        margin: 0 6px;
+        cursor: pointer;
+        color: #9c9c9c;
+    }
+    .rank-look {
+        display: none;
+    }
+    .rank-btn span.actives {
+        color: #434a54;
+    }
+    .rank-list {
+        overflow: hidden;
+        max-height: 420px;
+    }
+    .rank-list li {
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        padding: 10px 0;
+        height: 20px;
+        line-height: 20px;
+        border-bottom: 1px solid #E3E3E3;
+    }
+    .rank-list li span {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-align: center;
+        margin-right: 10px;
+        border-radius: 2px;
+    }
+    .rank-list li:nth-child(1) span {
+        background: rgba(237,116,28,1);
+        color: #fff;
+    }
+    .rank-list li:nth-child(2) span {
+        background: rgba(243,172,39,1);
+        color: #fff;
+    }
+    .rank-list li:nth-child(3) span {
+        background: rgba(248,203,94,1);
+        color: #fff;
+    }
+</style>
+<div id="portal_block" class="block move-span">
+    <div class=" box">
+        <h4>
+            <strong>排行榜</strong>
+        </h4>
+        <div class="rank-header">
+            <span data-url="hot" class="rank-header-left actives">热度排行</span>
+            <span data-url="look" class="rank-header-right">查看排行</span>
+        </div>
+        <div class="rank-hot">
+            <div class="rank-btn">
+                <span class="actives" data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=heats&amp;orderby=today">今日</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=heats&amp;orderby=thisweek">本周</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=heats&amp;orderby=thismonth">本月</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=heats&amp;orderby=all">全部</span>
+            </div>
+            <ul class="rank-list rank-list-hot"></ul>
+
+        </div>
+        <div class="rank-look">
+            <div class="rank-btn">
+                <span class="actives" data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=views&amp;orderby=today">今日</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=views&amp;orderby=thisweek">本周</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=views&amp;orderby=thismonth">本月</span>
+                <span data-url="/apkapi/getthreadlist.php?action=ranklist&amp;view=views&amp;orderby=all">全部</span>
+            </div>
+            <ul class="rank-list rank-list-look"></ul>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(".rank-header span").on('click',function () {
+        var status = jQuery(this).attr('data-url');
+        jQuery(this).addClass('actives').siblings('span').removeClass('actives');
+        if(status == 'hot'){
+            jQuery(".rank-look").fadeOut(100);
+            jQuery(".rank-hot").fadeIn(300);
+        } else {
+            jQuery(".rank-hot").fadeOut(100);
+            jQuery(".rank-look").fadeIn(300);
+        }
+    })
+    jQuery(".rank-btn span").on('click',function () {
+        var url = jQuery(this).attr('data-url');
+        var rankList = jQuery(this).parent('.rank-btn').siblings(".rank-list");
+        jQuery(this).addClass('actives').siblings('span').removeClass('actives');
+        getRankList(url,rankList);
+    })
+    function getRankList(url,rankList) {
+        rankList.empty();
+        jQuery.ajax({
+            url: url,
+            type: 'GET',
+            async: false,
+            dataType: 'json',
+            success: function(res){
+                var data = res.datas;
+                if(data && data.length>0){
+                    var srt = '';
+                    data.forEach(function (item,inx) {
+                        srt += '<li><span>'+ (inx+1) +'</span><a href="'+ item.url +'">'+ item.subject +'</a></li>';
+                    })
+                    rankList.append(srt);
+                }
+            }
+        });
+    }
+    //初始化默认列表
+    getRankList('/apkapi/getthreadlist.php?action=ranklist&view=heats&orderby=today',jQuery(".rank-list-hot"));
+    getRankList('/apkapi/getthreadlist.php?action=ranklist&view=views&orderby=today',jQuery(".rank-list-look"));
+</script><div id="portal_block_283" class="block move-span"><div id="portal_block_283_content" class="dxb_bc"><div class="editorChoice box hot-posts-pannel">
+        <h4>
+			<strong>热门推荐</strong>  <!--<span class="hot-posts posts-selected">热门推荐</span><span class="new-posts">最新主帖</span>-->     
+		</h4>
+        <ul><li><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15814715"  target="_blank" title="360粉丝团准备了100张电影票，请你看电影！"><font style="font-weight: 900;color: #FF0000;">360粉丝团准备了100张电影票，请你看电影！</font></a></li><li><a href="https://mall.360.cn/shop/item?item_id=5d4bdefbf759f15aec594e55&utm_source=shequxinlu"  target="_blank" title="新品预售|360全屋路由子母装V5M购买减70元"><font style="color: #000000;">新品预售|360全屋路由子母装V5M购买减70元</font></a></li><li><a href="https://mall.360.cn/shop/seckill?utm_source=shequms"  target="_blank" title="商城活动|限时抢购，疯狂秒杀，每日有惊喜">商城活动|限时抢购，疯狂秒杀，每日有惊喜</a></li><li><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15810719"  target="_blank" title="360家庭防火墙APP黑名单网址的设置方法详解">360家庭防火墙APP黑名单网址的设置方法详解</a></li><li><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15808386"  target="_blank" title="360智能家庭安防套装使用评测">360智能家庭安防套装使用评测</a></li><li><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15806854"  target="_blank" title="【镜面新美学】360行车记录仪M310 开箱鉴赏">【镜面新美学】360行车记录仪M310 开箱鉴赏</a></li><li><a href="https://bbs.360.cn/forum.php?mod=viewthread&tid=15805064"  target="_blank" title="小提升大不同-360家庭防火墙V5S增强版评测">小提升大不同-360家庭防火墙V5S增强版评测</a></li><li><a href="https://bbs.360.cn/thread-15807384-1-1.html"  target="_blank" title="小水滴再进化，AI加持为你看家护院！">小水滴再进化，AI加持为你看家护院！</a></li></ul>
+</div>
+</div></div><div id="portal_block_282" class="block move-span"><div id="portal_block_282_content" class="dxb_bc"><div class="editorChoice box new-posts-pannel">
+        <h4>
+			<strong>内容推荐</strong>  <span class="hot-posts">热门推荐</span><span class="new-posts">最新主帖</span>     
+		</h4>
+        <ul></ul>
+</div>
+</div></div> <div id="portal_block_241" class="block move-span"><div id="portal_block_241_content" class="dxb_bc"><div class="portal_block_summary"><div class="bm xm_bm" style="margin-bottom:0;">
+				<div class="download box"><h4>关注360粉丝团，回复：抽奖，每周抽一个锦鲤大奖，等啥呢？扫它！！！</h4></div>
+				<div class="bm_c">
+					<table width="100%" border="0">
+						<tr>
+							<td align="center"><img src="https://p0.ssl.qhmsg.com/dr/400__100/t0172955b91e82d95f4.png" width="240" height="240"></td>
+						</tr>
+						
+					</table>
+				</div>
+			</div></div></div></div> <div id="portal_block_242" class="block move-span"><div id="portal_block_242_content" class="dxb_bc"><div class="portal_block_summary"><!--<div class="bm xm_bm">
+		        <div class="focusus box">
+		            <h4>关注我们</h4>
+		        </div>
+		        <div class="bm_c">
+		            <div class="focusus-img">
+		                <img src="http://b.qikucdn.com/dfsj_imgs/weixin_bbs.png?v=1.1" width="105" height="105">
+		                <img src="http://b.qikucdn.com/dfsj_imgs/weixin_360OS.jpg" width="105" height="105">
+		            </div>
+		            <div class="focusus-share">
+		            	<a href="http://weibo.com/qikushequ?is_all=1" target="_blank"> <img src="http://b.qikucdn.com/dfsj_imgs/indeximg/weibo_weibo.png?v=1.1" alt="">360手机社区</a>
+		            	<a href="http://weibo.com/qiku360os?is_all=1" target="_blank"> <img src="http://b.qikucdn.com/dfsj_imgs/indeximg/weibo_weibo.png?v=1.1" alt="">360 OS</a>
+		            </div>
+		        </div>
+			</div>--></div></div></div> 
+        
+    </div>
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不关注';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '关注';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=5374caef&fuid='+values['fuid'];
+}
+}
+fixed_avatar([107366517,107402204,107403072,107410708,107431099]);
+</script>
+
+
+<script type="text/javascript">
+    var dfsj_jq = jQuery.noConflict();
+    dfsj_jq(".xm_nav>span:eq(2)>a").css("color","#2ec7bb");
+</script>   <html>
+</div>
+            
+                        
+
+    <script src="https://b1.qikucdn.com/static/js/monitor_analytic.js"></script>
+<script>
+monitor.setProject('QH_82_1').getTrack().getClickAndKeydown().getClickHeatmap(10, 1);
+</script>                            
+    
+        <script src="http://bbs.360.cn/home.php?mod=misc&ac=sendmail&rand=1575298111" type="text/javascript"></script>
+    
+    <div id="scrolltop">
+                    <span><a href="https://passport.360os.com/?appid=1010000675&callback=http%3a%2f%2fbbs.360.cn%2flogin_sso_web.php"  class="replyfast" title="快速回复"><b>快速回复</b></a></span>                                        
+            
+        <span hidefocus="true"><a title="返回顶部" onClick="window.scrollTo('0','0')" class="scrolltopa" ><b>返回顶部</b></a></span>
+        <span>
+                <a href="http://bbs.360.cn/forum-136-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+            </span>
+    </div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+
+<script type="text/javascript">
+            jq(function(){
+                // adjust height
+                var win_h = jq(window).height(), 
+                    body_h = jq(document.body).height();
+                if(body_h < win_h) {
+                    jq("#wp").height( jq("#wp").height() + (win_h-body_h) );
+                }
+                document.querySelector('.xm_footer .footer-now-year').innerText = new Date().getFullYear();
+
+                //add by dingshibin 增加调用极速浏览器和安全浏览器的接口记录
+                if(external.GetSID && typeof(external.GetSID)=="function" && external.AppCmd && typeof(external.AppCmd)=="function"){
+                    external.AppCmd(external.GetSID(window), "", "Check360BBsUser", "", "", function(s,r){})
+                }
+            });
+</script>
+<script>
+    function loadStyleString(cssText) {
+        var style = document.createElement("style");
+        style.type = "text/css";
+        try{
+            // firefox、safari、chrome和Opera
+            style.appendChild(document.createTextNode(cssText));
+        }catch(ex) {
+            // IE早期的浏览器 ,需要使用style元素的stylesheet属性的cssText属性
+            style.styleSheet.cssText = cssText;
+        }
+        document.getElementsByTagName("head")[0].appendChild(style);
+    }
+    function getCookie_merg(name){
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+    var str = getCookie_merg("yTGF__b9c2_accoutType");
+    //var booluid = 0;
+    if(str === 'qiku' && !(/pc_login_merge.php/.test(location.href)) && !(/login_sso_web.php/.test(location.href))){
+        loadStyleString('.layout2{background:#000;opacity:0.3;filter:Alpha(opacity=30);position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;}.prompt2{width:500px;height:300px;border-radius:5px;overflow:hidden;background:#fff;position:fixed;top:43%;left:50%;z-index:9999;margin:-150px 0 0 -250px;}.prompt2 em{display:block;height:60px;line-height:60px;padding:0 15px;color:#1a1a1a;font-style:normal;border-bottom:1px solid #e9e9e9;font-size:20px;background:#fff;}.prompt2 span{display:block;padding:20px;text-align:center;overflow:hidden;}.prompt2 span a.up360{display:inline-block;height:42px;line-height:42px;text-align:center;color:#fff;font-size:24px;background:#1c9ce4;text-decoration:none;padding:6px 40px;}.prompt2 span p{line-height:26px;text-align:left;color:#1a1a1a;font-size:16px;}.actived{font-size:12px;color:#fff;background-color:#1c9ce4;}.inactived{font-size:12px;color:#fff;background-color:#a5adb1;}#uptsuccess span.close{position:absolute;top:0;right:10px;width:32px;height:32px;font-size:32px;display:inline;padding:0;overflow:visible;cursor:pointer;}.prompt2 span a.btn_green{width:100px;font-size:14px;text-align:center;display:block;margin:0 auto;color:#666;text-decoration:none;background-color:transparent;margin-top:10px;height:14px;line-height:14px;}.prompt2 span a.btn_green:hover{color:#36b447;}');
+        var div = document.createElement("div");
+        div.setAttribute("class", "layout2");
+        var div2 = document.createElement("div");
+        div2.setAttribute("id", "uptsuccess");
+        div2.setAttribute("class", "prompt2");
+        div2.innerHTML = '<div id="uptsuccess" class="prompt2" style=""><em>奇酷账号绑定360账号通知：<span style="padding:0;    margin-top: 15px;"><p id="uptsuccessTips">亲爱的360社区奇酷用户：</p><p style="text-indent: 2em;"> 您好，奇酷账号将于<b style="color: #FF0000">2019年3月31日</b>正式停用，为不影响您正常登陆360社区，请您尽快与360账号进行绑定。原奇酷账号数据将自动保留至360账号下。</p><a style="margin-top: 25px;" class="up360" href="//i.360.cn/login?src=pcw_os&amp;destUrl=http://bbs.360.cn/api/pc_login_merge.php?mod=login" id="upnow">立即绑定</a></span></em></div>';
+        document.body.appendChild(div);
+        document.body.appendChild(div2);
+    }
+    //jq.getScript('https://b1.qikucdn.com/static/js/jquery.min.js?v1.0.1').then(function() {
+    //});
+</script>
+ 
+    <div id="ft" class="xm_footer">
+        <div class="xm_footerInner">
+            <div style="clear:both;"></div>
+            <div class="xm_footerInnerInner">
+               <!-- <a href="https://bbs.360.cn/newindex.php" class="logo"><em>360社区</em></a> -->
+                <div class="links">
+                <a href="http://bbs.360.cn/thread-14623327-1-1.html" >社区合作</a><span class="pipe">|</span><a href="http://jifen.360.cn/bbs_2017.html?src=bbs" >积分商城</a><span class="pipe">|</span><a href="http://bbs.360.cn/forum.php?mod=misc&action=showdarkroom" >小黑屋</a><span class="pipe">|</span><a href="http://bbs.360.cn/archiver/" >Archiver</a><span class="pipe">|</span>                    备案证号：<a href="http://beian.miit.gov.cn/" target="_blank">京ICP备08010314号-6</a>&nbsp; Copyright&copy;2005-<span class="footer-now-year">2017</span> 360.com 版权所有 360互联网安全中心 <!-- All Rights Reserved -->
+                </div>
+            </div>
+        </div>
+    </div>
+</html>			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '25595882|X3.1|0.6||0||0|7|1575298111|5620b3ef52df4ea3b47312c1dadb1d3d|2';
+			</script>

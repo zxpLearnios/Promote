@@ -260,6 +260,15 @@ class PTHomeViewController: PTBaseViewController {
         navigationController?.pushViewController(webVc, animated: true)
 //        // 加载本地文件 、网络文件
          webVc.urlString = file //"https://blog.csdn.net/u010105969/article/details/53942862"
+        
+        // 2.
+//        let remotoHtml = "https://www.baidu.com"
+//        // wkwebview 加载本地html  http 和https的本地文件
+//        let localHtml = Bundle.main.path(forResource: "360Http.html", ofType: nil)!  // 360 baiduHttps.html
+//        //        let url = URL.init(fileURLWithPath: localHtml)
+//        let webVc = PTBaseWebViewController()
+//        webVc.urlString = localHtml // remotoHtml
+        
 //        PTPrint("点击了按钮---")
     }
     
