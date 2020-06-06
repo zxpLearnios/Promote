@@ -12,7 +12,7 @@ class PTTapLabel: PTBaseLabel {
     private var tap: UITapGestureRecognizer!
     
     typealias TapClosureType = ((String, PTBaseLabel) -> Void)?
-    var tapClosure: TapClosureType
+    var tapClosure: TapClosureType = nil
     
     
     override init(frame: CGRect) {
