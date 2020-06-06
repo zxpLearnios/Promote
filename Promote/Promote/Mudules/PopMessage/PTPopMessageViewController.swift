@@ -54,7 +54,7 @@ class PTPopMessageViewController: UIViewController {
             }
             self.timerAction()
         })
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: .common)
     }
     
     private func setup() {

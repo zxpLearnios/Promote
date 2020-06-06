@@ -13,7 +13,7 @@ class PTBaseTableView: UITableView {
         self.init(with: .plain)
     }
     
-    convenience init(with style: UITableViewStyle) {
+    convenience init(with style: UITableView.Style) {
         self.init(frame: .zero, style: style)
         setup()
     }

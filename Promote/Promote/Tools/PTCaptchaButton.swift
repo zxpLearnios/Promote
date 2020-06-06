@@ -43,7 +43,7 @@ class PTCaptchaButton: UIButton {
     
     private func doInitTimer(){
        countTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDecline), userInfo: nil, repeats: true)
-        RunLoop.current.add(countTimer, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(countTimer, forMode: .common)
     }
     
 //    private func stopTimer(){
@@ -63,7 +63,7 @@ class PTCaptchaButton: UIButton {
             if count == 0 {
                 countTimer.invalidate()
                 self.isEnabled = true
-                self.setTitle("获取验证码", for: UIControlState())
+                self.setTitle("获取验证码", for: .normal)
                 isNextRunLoop = true
             }
             count -= 1

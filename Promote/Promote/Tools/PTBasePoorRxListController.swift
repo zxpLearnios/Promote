@@ -22,7 +22,7 @@ class PTBasePoorRxListController: UIViewController {
     var rowH: CGFloat = 80
     var isHaveMore = false
     
-    var listStyle: UITableViewStyle = .plain {
+    var listStyle: UITableView.Style = .plain {
         didSet {
             guard tableView == nil else {
                 return
@@ -42,7 +42,7 @@ class PTBasePoorRxListController: UIViewController {
     
     
     // 初始化属性时，不会触发属性的didSet
-    convenience init(with style: UITableViewStyle) {
+    convenience init(with style: UITableView.Style) {
         self.init()
         listStyle = style
         tableView = UITableView.init(frame: .zero, style: listStyle)

@@ -44,7 +44,7 @@ class PTNavigationController: UINavigationController {
         }
         
         // 所有push出的控制器的title的属性设置
-        let textAttibute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: knavTitleColor]
+        let textAttibute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: knavTitleColor]
         navigationBar.titleTextAttributes = textAttibute
 //
 //        
@@ -56,7 +56,7 @@ class PTNavigationController: UINavigationController {
             navBaritem = UIBarButtonItem.appearance()
         }
         
-        let itemAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15), NSAttributedStringKey.foregroundColor: knavTitleColor]
+        let itemAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: knavTitleColor]
         navBaritem.setTitleTextAttributes(itemAttribute, for: .normal)
         navBaritem.setTitleTextAttributes(itemAttribute, for: .highlighted) //  Selected Focused Reserved Highlighted
         
@@ -89,11 +89,11 @@ class PTNavigationController: UINavigationController {
     // MARK: 重写此法以拦截所有push的控制器. ios 10 后，隐藏tabbar用此法不会出现任何问题.经测试，ios10后在别处设置hidesBottomBarWhenPushed都会有问题。
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-        if self.childViewControllers.count > 0 { // 非第一批控制器时 的情况
+        if self.children.count > 0 { // 非第一批控制器时 的情况
             
             // 左边的按钮
             let leftBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-            leftBtn.setImage(UIImage(named: "navigationbar_back"), for: UIControlState())
+            leftBtn.setImage(UIImage(named: "navigationbar_back"), for: UIControl.State())
             leftBtn.setImage(UIImage(named: "navigationbar_back"), for: .highlighted)
             leftBtn.addTarget(self, action: #selector(back), for: .touchUpInside)
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBtn)

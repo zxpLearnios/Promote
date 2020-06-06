@@ -11,7 +11,7 @@ import UIKit
 class PTGetIdentifyManager {
 
     // 此剪切板，仅仅用于存储设备的唯一标识
-    private let pasteboard = UIPasteboard.init(name: UIPasteboardName(rawValue: "this is just use to save the uniqueIdentify of app"), create: true)! // general
+    private let pasteboard = UIPasteboard.init(name: UIPasteboard.Name(rawValue: "this is just use to save the uniqueIdentify of app"), create: true)! // general
     
     func config() {
         // 永久存在

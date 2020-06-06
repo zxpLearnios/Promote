@@ -63,8 +63,8 @@ class PTBaseChatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 40 + 10 + 10
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         // 输入框
         addSubview(inputTextView)
         constrain(inputTextView) { (input) in

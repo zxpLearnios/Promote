@@ -78,7 +78,7 @@ extension String{
         
         newStr = zNumber
         
-        let count = newStr.characters.count // 整数部分的长度
+        let count = newStr.count // 整数部分的长度
         let  discuss = count / 3 // 商 （整数商）
         let remainder = count % 3 // 余数
         
@@ -89,7 +89,7 @@ extension String{
             }else{ // 3n位时
                 for i in 1..<discuss {
                     let  muti = i * 3 + (i - 1)
-                    let start = newStr.characters.index(newStr.endIndex, offsetBy: -muti)
+                    let start = newStr.index(newStr.endIndex, offsetBy: -muti)
                     newStr.insert(char, at: start)
                 }
             }
@@ -101,7 +101,7 @@ extension String{
             }else{ //  >=3 位时
                 for i in 1...discuss {
                     let  muti = i * 3 + (i - 1)
-                    let start = newStr.characters.index(newStr.endIndex, offsetBy: -muti)
+                    let start = newStr.index(newStr.endIndex, offsetBy: -muti) // newStr.characters.index(newStr.endIndex, offsetBy: -muti)
                     newStr.insert(char, at: start)
                 }
             }
@@ -142,7 +142,7 @@ extension String{
      */
     static func verityNewEstMobileFormat(_ mobileNum:String) -> Bool{
         
-        if (mobileNum.characters.count != 11){
+        if (mobileNum.count != 11){
             return false
         }
         /**

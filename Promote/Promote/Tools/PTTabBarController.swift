@@ -12,10 +12,10 @@ class PTTabBarController: UITabBarController {
     class  func doInit() {
         // 所有的字控制器的tabbarItem的 字体属性
         let tabbarItem = UITabBarItem.appearance() // 不能用UIBarButtonItem
-        let itemAttributeNormal = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10), NSAttributedStringKey.foregroundColor: UIColor.red]
-        let itemAttributeHighlight = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10), NSAttributedStringKey.foregroundColor: UIColor.green]
+        let itemAttributeNormal = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.red]
+        let itemAttributeHighlight = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.green]
         
-        tabbarItem.setTitleTextAttributes(itemAttributeNormal, for: UIControlState())
+        tabbarItem.setTitleTextAttributes(itemAttributeNormal, for: UIControl.State())
         tabbarItem.setTitleTextAttributes(itemAttributeHighlight, for: .selected) // 用highlight无效
         
         //   此处设置tabbarItem的图片无效(估计纯代码情况下也是无效)
@@ -86,7 +86,7 @@ class PTTabBarController: UITabBarController {
 //            }
 //        }
         
-        self.addChildViewController(nav)
+        self.addChild(nav)
     }
     
 

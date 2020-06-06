@@ -27,8 +27,8 @@ class PTBaseChatInputView: UIView {
     
     private func setup() {
         
-        PTBaseNotificateAdaptor.addNotification(with: self, method: #selector(keyboardWillShow(noti:)), notificateName: NSNotification.Name.UIKeyboardWillShow)
-        PTBaseNotificateAdaptor.addNotification(with: self, method: #selector(keyboardWillHide(noti:)), notificateName: NSNotification.Name.UIKeyboardWillHide)
+        PTBaseNotificateAdaptor.addNotification(with: self, method: #selector(keyboardWillShow(noti:)), notificateName: UIResponder.keyboardWillShowNotification)
+        PTBaseNotificateAdaptor.addNotification(with: self, method: #selector(keyboardWillHide(noti:)), notificateName: UIResponder.keyboardWillHideNotification)
     }
     
     private func setSubViews() {
@@ -84,8 +84,8 @@ class PTBaseChatInputView: UIView {
     
     @objc private func keyboardWillShow(noti: Notification) {
         if let notiDic = noti.userInfo {
-            if let keyboardF = notiDic[UIKeyboardFrameEndUserInfoKey] as? CGRect {
-                let duration = notiDic[UIKeyboardAnimationDurationUserInfoKey] as? Double
+            if let keyboardF = notiDic[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+                let duration = notiDic[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
                 let t = duration ?? 0.25
                 let h = keyboardF.height
                 UIView.animate(withDuration: t) { [weak self] in
@@ -106,7 +106,7 @@ class PTBaseChatInputView: UIView {
     
     @objc private func keyboardWillHide(noti: Notification) {
         if let notiDic = noti.userInfo {
-            let duration = notiDic[UIKeyboardAnimationDurationUserInfoKey] as? Double
+            let duration = notiDic[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
             
             let t = duration ?? 0.25
             UIView.animate(withDuration: t) { [weak self] in
@@ -121,8 +121,8 @@ class PTBaseChatInputView: UIView {
     }
     
     deinit {
-        PTBaseNotificateAdaptor.removeNotification(with: self, notificateName: NSNotification.Name.UIKeyboardWillShow)
-        PTBaseNotificateAdaptor.removeNotification(with: self, notificateName: NSNotification.Name.UIKeyboardWillHide)
+        PTBaseNotificateAdaptor.removeNotification(with: self, notificateName: UIResponder.keyboardWillShowNotification)
+        PTBaseNotificateAdaptor.removeNotification(with: self, notificateName: UIResponder.keyboardWillHideNotification)
     }
     
     

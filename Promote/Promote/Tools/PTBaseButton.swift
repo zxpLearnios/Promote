@@ -44,7 +44,7 @@ class PTBaseButton: UIButton {
         
         if let tapInsets = tapEdgeInsets {
             let relativeFrame = bounds
-            let newFrame = UIEdgeInsetsInsetRect(relativeFrame, tapInsets)
+            let newFrame = relativeFrame.inset(by: tapInsets)
             return newFrame.contains(point)
         }
         return frame.contains(point)

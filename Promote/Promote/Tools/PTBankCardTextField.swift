@@ -81,7 +81,7 @@ class PTBankCardTextField: UITextField {
             
             newString = newString + subString
             
-            if subString.characters.count == 4
+            if subString.count == 4
             {
                 newString = newString + " "
             }

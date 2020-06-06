@@ -24,7 +24,7 @@ class PTBaseChatCell: UITableViewCell {
     let constrainGroup = ConstraintGroup()
     
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
 //        debugPrint("reuseIdentifier")

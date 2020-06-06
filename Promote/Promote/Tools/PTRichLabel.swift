@@ -56,10 +56,10 @@ class PTRichLabel: UILabel {
         let realLineSpace = lineSpace - defaultLineWordInset
         mutableParagraphStyle.lineSpacing = realLineSpace
         
-        let attributeDic: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey.paragraphStyle: mutableParagraphStyle,
-            NSAttributedStringKey.kern: 10, // 字间距
-            NSAttributedStringKey.font: font!,
+        let attributeDic: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.paragraphStyle: mutableParagraphStyle,
+            NSAttributedString.Key.kern: 10, // 字间距
+            NSAttributedString.Key.font: font!,
 //            NSAttributedStringKey.backgroundColor: UIColor.white
         ]
         attributeStr.addAttributes(attributeDic, range: range)

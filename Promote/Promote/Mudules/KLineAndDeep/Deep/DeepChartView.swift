@@ -580,7 +580,7 @@ extension PTDeepChartView {
                 make.right.equalTo(contentView)
                 make.bottom.equalTo(hLayer.snp_top).offset(1)
             }
-            contentView.bringSubview(toFront: amtLab)
+            contentView.bringSubviewToFront(amtLab)
             amtLabs.append(amtLab)
         }
         

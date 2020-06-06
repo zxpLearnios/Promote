@@ -20,17 +20,17 @@ extension UIColor {
     {
         var cString: String = color.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
-        if cString.characters.count < 6 {
+        if cString.count < 6 {
             return UIColor.black
         }
         if cString.hasPrefix("0X") || cString.hasPrefix("0x") {
-            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 2))
+            cString = cString.substring(from: cString.index(cString.startIndex, offsetBy: 2))
         }
         if cString.hasPrefix("#") {
-            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
+            cString = cString.substring(from: cString.index(cString.startIndex, offsetBy: 1))
         }
         
-        if cString.characters.count != 6 {
+        if cString.count != 6 {
             return .red
         }
         

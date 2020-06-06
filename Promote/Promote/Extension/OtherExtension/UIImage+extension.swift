@@ -30,12 +30,12 @@ extension UIImage{
         paragraph.alignment = .center
         
         var attributes = [
-            NSAttributedStringKey.font: color,
-            NSAttributedStringKey.paragraphStyle: paragraph
+            NSAttributedString.Key.font: color,
+            NSAttributedString.Key.paragraphStyle: paragraph
         ]
         
         if let font = UIFont(name: familyName, size: size) {
-            attributes[NSAttributedStringKey.font] = font
+            attributes[NSAttributedString.Key.font] = font
         }
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: size, height: size), false, 0)

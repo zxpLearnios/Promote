@@ -97,9 +97,10 @@ class PTVoiceRecognizeManager: NSObject {
                 
                 let audioSession = AVAudioSession.sharedInstance()
                 do {
-                    try audioSession.setCategory(AVAudioSessionCategoryRecord)
-                    try audioSession.setMode(AVAudioSessionModeMeasurement)
-                    try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+                    try audioSession.setCategory(AVAudioSession.Category.record)
+                    try audioSession.setMode(AVAudioSession.Mode.measurement)
+//                    try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+                    try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
                 } catch let err {
                     PTPrint("audioSession 在set时出现错误\(err.localizedDescription)")
                 }

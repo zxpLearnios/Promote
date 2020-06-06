@@ -274,12 +274,12 @@ class PTRichTitleScroller: UIView {
         if isForLeftTimer {
             if leftDisplayLink == nil {
                 leftDisplayLink = CADisplayLink.init(target: self, selector: #selector(handleLeftCollectionViewAnimate))
-                leftDisplayLink.add(to: .main, forMode: .commonModes)
+                leftDisplayLink.add(to: .main, forMode: .common)
             }
         } else {
             if rightDisplayLink == nil {
                 rightDisplayLink = CADisplayLink.init(target: self, selector: #selector(handleRightCollectionViewAnimate))
-                rightDisplayLink.add(to: .main, forMode: .commonModes)
+                rightDisplayLink.add(to: .main, forMode: .common)
             }
         }
         

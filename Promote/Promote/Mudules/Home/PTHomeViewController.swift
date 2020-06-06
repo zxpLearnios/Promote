@@ -135,7 +135,7 @@ class PTHomeViewController: PTBaseViewController {
         let coreTextManager = PTCoreTextManager(with: view)
         
         // 8. 测试按钮扩大点击范围
-        btn.tapEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0)
+        btn.tapEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         
     }
     

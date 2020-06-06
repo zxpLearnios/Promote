@@ -5,7 +5,7 @@
 //  Created by Bavaria on 2018/5/23.
 //  realm数据库
 //  1. 数据库只能在当初创建的线程里使用，不能跨线程 2. 对象必须直接继承RealmObject，间接继承不行 3. 主键不能自增 4. 数据库升级后不能降
-
+//  2. 不能跨线程共享realm实例，不同线程中，都要创建独立的realm实例，只要配置(configuration)相同，它们操作的就是同一个实体数据库。
 import UIKit
 //import Realm
 import RealmSwift
@@ -31,6 +31,7 @@ class PTTestRealm {
     
     static let peopleRealm: Realm = {
         // 使用该配置来打开 Realm 数据库
+        let realm1 = try? Realm(configuration: configForPeopleInfo)
         let realm = try! Realm(configuration: configForPeopleInfo)
         // 打开
         Realm.asyncOpen { (realm, error) in

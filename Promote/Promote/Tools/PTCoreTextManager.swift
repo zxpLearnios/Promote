@@ -53,12 +53,12 @@ class PTCoreTextManager: UIView {
             // 段落样式
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineBreakMode = .byCharWrapping
-            let paragraphDic = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+            let paragraphDic = [NSAttributedString.Key.paragraphStyle: paragraphStyle]
             
-            let mainAttributeDic: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: UIColor.red]
-            let numberAttributeDic = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20), NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+            let mainAttributeDic: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 26), NSAttributedString.Key.foregroundColor: UIColor.red]
+            let numberAttributeDic = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
             // baselineOffset
-            let linkAttributeDic: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15), NSAttributedStringKey.foregroundColor: UIColor.blue, NSAttributedStringKey.strikethroughStyle: NSNumber(value: 3)]
+            let linkAttributeDic: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.blue, NSAttributedString.Key.strikethroughStyle: NSNumber(value: 3)]
             
             // 其他内容字符
             mainAttributeStr.addAttributes(mainAttributeDic, range: NSRange.init(location: 0, length: mainAttributeStr.length))
@@ -153,7 +153,7 @@ class PTCoreTextManager: UIView {
         
         // 占位文字代理
         // CTRunDelegateCreate(&callbacks1, &placeholderTwoDic)
-        let attributeDic: [NSAttributedStringKey: Any] = [NSAttributedStringKey.init(kCTRunDelegateAttributeName as String): delegate, NSAttributedStringKey(tag): tag]
+        let attributeDic: [NSAttributedString.Key: Any] = [NSAttributedString.Key.init(kCTRunDelegateAttributeName as String): delegate, NSAttributedString.Key(tag): tag]
         
         // 插入占位符
         var char: UniChar = 0xFFFC

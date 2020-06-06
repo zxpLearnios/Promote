@@ -15,7 +15,7 @@ class AppDelegate: UIResponder {
     var window: UIWindow?
     let test = PTRxSwiftTest()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
 //        autoreleasepool {
 //            debugPrint("fsdfsdffsd \(a)")
@@ -75,8 +75,11 @@ class AppDelegate: UIResponder {
         str1 = "aa1"
         
         // 测试使用realm创建多个不同的数据库
-        let pdr = PTTestRealm.defaultRealm
-        let ppr = PTTestRealm.peopleRealm
+        
+//        let pdr = PTTestRealm.defaultRealm
+        delay(1) {
+            let ppr = PTTestRealm.peopleRealm
+        }
         let peopleA = PTTestRealmPeopleModel()
         peopleA.name = "张三"
         peopleA.age = 22
@@ -269,7 +272,7 @@ extension AppDelegate: UIApplicationDelegate {
     }
     
     // MARK： iOS9之后
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 //        options[sourceApplication]
         // 其他应用发送过来的数据
         return true

@@ -64,7 +64,7 @@ class PTPhoneTextField: UITextField {
            
             newString = newString + subString
             
-            if subString.characters.count == 4
+            if subString.count == 4
             {
                 newString = newString + " "
             }
@@ -74,10 +74,10 @@ class PTPhoneTextField: UITextField {
         newString = newString.trimmingCharacters(in: characterSet.inverted)
         
         // 4. 号码14 银行卡 24
-        if newString.characters.count >= 14
+        if newString.count >= 14
         {
             // 有了这三句，外部就不用做任何长度限制处理了. 实际上此时也不用返回bool了,只有外部shouldChangeCharactersInRange不调之
-            let end = newString.characters.index(newString.startIndex, offsetBy: 13)
+            let end = newString.index(newString.startIndex, offsetBy: 13)
             newString = newString.substring(to: end)
             self.text = newString
             

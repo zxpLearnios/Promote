@@ -76,7 +76,7 @@ class PTTitleScroller: UIView {
             //            leftDisplayLink = Timer.init(timeInterval: 0.5, target: self, selector: #selector(handleLeftCollectionViewAnimate), userInfo: nil, repeats: true)
             //            RunLoop.main.add(leftDisplayLink, forMode: .commonModes)
             leftDisplayLink = CADisplayLink.init(target: self, selector: #selector(self.handleLeftCollectionViewAnimate))
-            leftDisplayLink.add(to: .main, forMode: .commonModes)
+            leftDisplayLink.add(to: .main, forMode: .common)
         }
     }
     
@@ -103,7 +103,7 @@ class PTTitleScroller: UIView {
     private func calculateLength(withString str: String) -> CGFloat {
         
         let mutableStr = NSMutableString.init(string: str)
-        mutableStr.boundingRect(with: CGSize.init(width: CGFloat(MAXFLOAT), height: 0), options: .usesFontLeading, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15)], context: nil)
+        mutableStr.boundingRect(with: CGSize.init(width: CGFloat(MAXFLOAT), height: 0), options: .usesFontLeading, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)], context: nil)
         return 1
     }
     

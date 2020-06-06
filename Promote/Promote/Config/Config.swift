@@ -94,13 +94,13 @@ class Config: NSObject {
     // 操作状态栏
     private func opeateStuatusBar(_ error:String){
         msgLabel.errorMessage = error
-        kwindow!.windowLevel = UIWindowLevelAlert
+        kwindow!.windowLevel = .alert
         self.perform(#selector(statusBarRevert), with: self, afterDelay: 3)
     }
     
     // 状态栏恢复
     @objc private func statusBarRevert(){
-        kwindow!.windowLevel = UIWindowLevelNormal
+        kwindow!.windowLevel = .normal
         msgLabel.isHidden = true
     }
     

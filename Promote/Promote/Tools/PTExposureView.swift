@@ -88,7 +88,7 @@ class PTExposureView: UIView {
         // 动画执行完成后保持最新的效果
 //        groupAnimate.fillMode = kCAFillModeBoth
         
-        groupAnimate.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        groupAnimate.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
         
         
@@ -100,9 +100,9 @@ class PTExposureView: UIView {
         hintGroupAnimate.isRemovedOnCompletion = true
         hintGroupAnimate.repeatCount = 1
         // 动画执行完成后保持最新的效果
-        groupAnimate.fillMode = kCAFillModeBoth
+        groupAnimate.fillMode = CAMediaTimingFillMode.both
         
-        groupAnimate.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        groupAnimate.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
 //        entityLayer.add(groupAnimate, forKey: animatekey)
         

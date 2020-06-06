@@ -77,7 +77,7 @@ class PTMyViewController: PTBaseViewController { // PTBaseViewController
     // MARK: 调整UI
     private func adjustUI() {
         if #available(iOS 11.0, *) {
-            self.tableView.contentInset = UIEdgeInsetsMake(-44, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsets(top: -44, left: 0, bottom: 0, right: 0)
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
@@ -115,7 +115,7 @@ fileprivate class PTMyViewControllerCell: UITableViewCell {
     private let imgV = UIImageView()
     
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }

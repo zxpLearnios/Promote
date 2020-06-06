@@ -58,7 +58,7 @@ import UIKit
      * 1. 对象的某个属性是否含有前缀
      * 使用like时，一定要带上通配符*。 如 "name like 'a'" ==  "name == 'a'"
      */
-    open static func ishavePrefix(in property: String, prefix char: String) -> NSPredicate {
+    public static func ishavePrefix(in property: String, prefix char: String) -> NSPredicate {
 //        let operate  = "\(property) like '\(char)*'"
         let operate  = "\(property) beginswith '\(char)'"
         let predicate = NSPredicate.init(format: operate)
@@ -68,7 +68,7 @@ import UIKit
     /**
      * 2. 对象的某个属性是否含有后缀
      */
-    open static func ishaveSuffix(in property: String, suffix char: String) -> NSPredicate {
+    public static func ishaveSuffix(in property: String, suffix char: String) -> NSPredicate {
 //        let operate  = "\(property) like '*\(char)'"
         let operate  = "\(property) endswith '\(char)'"
         let predicate = NSPredicate.init(format: operate)
@@ -78,7 +78,7 @@ import UIKit
     /**
      * 3. 对象的某个属性是否含有某一字符
      */
-    open static func isContainString(in property: String, string str: String) -> NSPredicate {
+    public static func isContainString(in property: String, string str: String) -> NSPredicate {
         let operate  = "\(property) contains '\(str)'"
 //        let predicate = NSPredicate.init(format: operate)
         
@@ -89,7 +89,7 @@ import UIKit
     /**
      * 4. 对象的某个属性是否等于**
      */
-    open static func isEqualToString(in property: String, string str: String) -> NSPredicate {
+    public static func isEqualToString(in property: String, string str: String) -> NSPredicate {
         //        let operate  = "\(property) like '\(str)'"
         let operate  = "\(property) == '\(str)'"
         let predicate = NSPredicate.init(format: operate)
