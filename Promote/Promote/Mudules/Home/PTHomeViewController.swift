@@ -46,8 +46,8 @@ class PTHomeViewController: PTBaseViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
 //        doThing()
-        setSubviews()
-        
+//        setSubviews()
+        testMap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,6 +176,10 @@ class PTHomeViewController: PTBaseViewController {
             self.richTitleScroller.dataSource = self.ary
         }
         
+        
+    }
+    
+    private func testMap() {
         
     }
     

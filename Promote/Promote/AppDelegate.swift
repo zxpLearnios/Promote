@@ -66,7 +66,7 @@ class AppDelegate: UIResponder {
 //        } catch {
 //
 //        }
-        PTGetOtherInfoManager.getCurrentConnectWifiInfo() //getMobileCardOperatorInfo() //isPhoneHaveRootAccess()
+//        PTGetOtherInfoManager.getCurrentConnectWifiInfo() //getMobileCardOperatorInfo() //isPhoneHaveRootAccess()
 
         var str = "a"
         var str1 = str
@@ -77,15 +77,16 @@ class AppDelegate: UIResponder {
         // 测试使用realm创建多个不同的数据库
         
 //        let pdr = PTTestRealm.defaultRealm
-        delay(1) {
-            let ppr = PTTestRealm.peopleRealm
-        }
-        let peopleA = PTTestRealmPeopleModel()
-        peopleA.name = "张三"
-        peopleA.age = 22
-        let peopleB = PTTestRealmPeopleModel()
-        peopleB.name = "defualt"
-        peopleB.age = 90
+        
+        let ppr = PTTestRealm.peopleRealm
+        
+//        let peopleA = PTTestRealmPeopleModel()
+//        peopleA.name = "张三"
+//        peopleA.age = 22
+//        peopleA.part
+//        let peopleB = PTTestRealmPeopleModel()
+//        peopleB.name = "defualt"
+//        peopleB.age = 90
         
         // 数据库只能在当初创建的线程里使用
 //        asyncExecuteInSubThread(1) {

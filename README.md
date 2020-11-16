@@ -1,6 +1,6 @@
 # Promote
 
-# 本项目为[![Swift 4](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)项目，使用<font color="#FF0000">cocoapods</font>进行第三方库的管理
+# 本项目为[![Swift 5](https://img.shields.io/badge/swift-5.0-orange.svg?style=flat)](https://swift.org)项目，使用<font color="#FF0000">cocoapods</font>进行第三方库的管理
 <br> 工具
 * Xcode 9.3+ 
 ***

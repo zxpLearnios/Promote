@@ -31,7 +31,7 @@ class PTTestRealm {
     
     static let peopleRealm: Realm = {
         // 使用该配置来打开 Realm 数据库
-        let realm1 = try? Realm(configuration: configForPeopleInfo)
+//        let realm1 = try? Realm(configuration: configForPeopleInfo)
         let realm = try! Realm(configuration: configForPeopleInfo)
         // 打开
         Realm.asyncOpen { (realm, error) in
@@ -275,15 +275,17 @@ class PTTestRealm {
     @objc dynamic var name = ""
     var peoples = List<PTTestRealmPeopleModel>()
     
+    
+    
     // 声明主键之后，对象将允许进行查询，并且更新速度更加高效，而这也会要求每个对象保持唯一性。 一旦带有主键的对象被添加到 Realm 之后，该对象的主键将不可修改。
     override class func primaryKey() -> String? {
         return "id"
     }
     
     
-    // 会提升效率
+    // 会提升效率  不知道为啥以配置方式初始化时会crash, "peoples"
     @objc override class func indexedProperties() -> [String] {
-        return ["name", "peoples"]
+        return ["name"] // ["name", "peoples"]
     }
     
 }

@@ -67,6 +67,7 @@
 		46D7A5EA218841C50010F6F5 /* PTGetIpByOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7A5E9218841C50010F6F5 /* PTGetIpByOC.m */; };
 		46DF06E820FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF06E720FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift */; };
 		46FD396B212E946800A7A447 /* PTGetIdentifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD396A212E946800A7A447 /* PTGetIdentifyManager.swift */; };
+		541575CA25105D6000AF196B /* PTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541575C925105D6000AF196B /* PTMapViewController.swift */; };
 		5456308123955C430071C7A0 /* 360Http.html in Resources */ = {isa = PBXBuildFile; fileRef = 5456307F23955C430071C7A0 /* 360Http.html */; };
 		5456308223955C440071C7A0 /* baiduHttps.html in Resources */ = {isa = PBXBuildFile; fileRef = 5456308023955C430071C7A0 /* baiduHttps.html */; };
 		54900BE822FC036000BF6D18 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54900BE722FC036000BF6D18 /* UIButton+extension.swift */; };
@@ -248,6 +249,7 @@
 		46D7A5E9218841C50010F6F5 /* PTGetIpByOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTGetIpByOC.m; sourceTree = "<group>"; };
 		46DF06E720FDD65100F02AA9 /* PTTestOffScreenRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTTestOffScreenRenderViewController.swift; sourceTree = "<group>"; };
 		46FD396A212E946800A7A447 /* PTGetIdentifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTGetIdentifyManager.swift; sourceTree = "<group>"; };
+		541575C925105D6000AF196B /* PTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTMapViewController.swift; sourceTree = "<group>"; };
 		5456307F23955C430071C7A0 /* 360Http.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 360Http.html; sourceTree = "<group>"; };
 		5456308023955C430071C7A0 /* baiduHttps.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = baiduHttps.html; sourceTree = "<group>"; };
 		54900BE722FC036000BF6D18 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
@@ -473,6 +475,14 @@
 			path = TestOffScreenRender;
 			sourceTree = "<group>";
 		};
+		541575C525105C9600AF196B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				541575C925105D6000AF196B /* PTMapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		552A257D2081FEA4000B86F8 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +609,7 @@
 		55533288206B848200F91354 /* Mudules */ = {
 			isa = PBXGroup;
 			children = (
+				541575C525105C9600AF196B /* Map */,
 				55492E71235077A30040B102 /* KLineAndDeep */,
 				462F2AC321A799E4004D3D1A /* BitMap */,
 				4689616321869A9F004A0B8B /* Speech */,
@@ -1181,6 +1192,7 @@
 				460A74952112FE3600134F66 /* PTPhoneTextField.swift in Sources */,
 				46A8A66F216D981200FAE06C /* PTGetOtherInfoManager.swift in Sources */,
 				460A748C2112FE3600134F66 /* PTCaptchaButton.swift in Sources */,
+				541575CA25105D6000AF196B /* PTMapViewController.swift in Sources */,
 				5544AFF9206A21B10073F5FF /* PTLoginViewController.swift in Sources */,
 				460A748E2112FE3600134F66 /* PTError.swift in Sources */,
 				4661F74521354C7400B5CA84 /* PTTestScreenRotationViewController.swift in Sources */,
