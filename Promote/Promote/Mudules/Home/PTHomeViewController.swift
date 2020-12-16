@@ -45,8 +45,8 @@ class PTHomeViewController: PTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
-//        doThing()
-//        setSubviews()
+        doThing()
+        setSubviews()
         testMap()
     }
     
@@ -62,16 +62,16 @@ class PTHomeViewController: PTBaseViewController {
     func setSubviews() {
         
         // 1. 测试safeArea扩展
-        let btn = PTBaseButton()
-        btn.backgroundColor = .gray
-        btn.addTarget(self, action: #selector(clickAction), for: .touchUpInside)
-        addSubview(btn)
-        constrain(btn) { btn in
-            btn.width == 200
-            btn.height == 200
-            btn.top == safeAreaTop + 100
-            btn.left == safeAreaLeft + 5
-        }
+//        let btn = PTBaseButton()
+//        btn.backgroundColor = .gray
+//        btn.addTarget(self, action: #selector(clickAction), for: .touchUpInside)
+//        addSubview(btn)
+//        constrain(btn) { btn in
+//            btn.width == 200
+//            btn.height == 200
+//            btn.top == safeAreaTop + 100
+//            btn.left == safeAreaLeft + 5
+//        }
         
         
        // 2. 测试圆角图片
@@ -105,37 +105,37 @@ class PTHomeViewController: PTBaseViewController {
         customeRightItem.setTitle("聊天", for: .normal)
         customeRightItem.setTitleColor(.black, for: .normal)
 //        customeRightItem.setTitleColor(.black, for: .highlighted)
-        // 添加手势，看手势与UIcontrol的touch事件响应情况
-        let tap = UITapGestureRecognizer(target: self, action: #selector(customeRightItemTapAction))
-        customeRightItem.addGestureRecognizer(tap)
+        // 4.1 添加手势，看手势与UIcontrol的touch事件响应情况
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(customeRightItemTapAction))
+//        customeRightItem.addGestureRecognizer(tap)
         
         customeRightItem.addTarget(self, action: #selector(rightItemAction), for: .touchUpInside)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customeRightItem)
         // 5. 退出登录
-       let loginOutBtn = PTTapLabel()
-        loginOutBtn.text = "退出登录"
-        addSubview(loginOutBtn)
-        constrain(loginOutBtn) { btn in
-            btn.centerX == btn.superview!.centerX
-            btn.top == btn.superview!.centerY + 30
-        }
-        
-        loginOutBtn.tapClosure = { [weak self] _,_ in
-            if let `self` = self {
-                //            self.loginOutAction()
-                let vc = PTTestOffScreenRenderViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
+//       let loginOutBtn = PTTapLabel()
+//        loginOutBtn.text = "退出登录"
+//        addSubview(loginOutBtn)
+//        constrain(loginOutBtn) { btn in
+//            btn.centerX == btn.superview!.centerX
+//            btn.top == btn.superview!.centerY + 30
+//        }
+//
+//        loginOutBtn.tapClosure = { [weak self] _,_ in
+//            if let `self` = self {
+//                //            self.loginOutAction()
+//                let vc = PTTestOffScreenRenderViewController()
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
+//        }
         
         // 6. 测试 离屏渲染
         
         // 7. 测试coreText
-        let coreTextManager = PTCoreTextManager(with: view)
+//        let coreTextManager = PTCoreTextManager(with: view)
         
         // 8. 测试按钮扩大点击范围
-        btn.tapEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+//        btn.tapEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         
     }
     
@@ -223,10 +223,12 @@ class PTHomeViewController: PTBaseViewController {
     }
     
     @objc func rightItemAction() {
-       let vc = PTTestPushOrPresentViewController() // PTBaseChatViewController()
-        let nav = UINavigationController(rootViewController: vc)
+        
+       let vc = PTSecurityViewController() // PTBaseChatViewController() PTTestPushOrPresentViewController  PTSecurityViewController
+//        let nav = UINavigationController(rootViewController: vc)
 //        present(nav, animated: true, completion: nil)
-//        navigationController?.pushViewController(vc, animated: true)
+        
+        navigationController?.pushViewController(vc, animated: true)
         
         // 测试模糊效果
 //        if bm == nil {
